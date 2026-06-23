@@ -207,3 +207,28 @@ document.querySelectorAll(".gallery-item").forEach(item => {
   item.addEventListener("click", open);
   item.addEventListener("keydown", e => { if (e.key === "Enter") open(); });
 });
+
+// ── Profile card 3D tilt effect ──────────────────────────────
+const profileCard = document.querySelector(".profile-card");
+if (profileCard) {
+  profileCard.addEventListener("mousemove", (e) => {
+    const rect = profileCard.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    // Normalize to -1 to 1 range
+    const xPercent = (x / rect.width) * 2 - 1;
+    const yPercent = (y / rect.height) * 2 - 1;
+    
+    // Inverse rotation: mouse at top-left tilts bottom-right up
+    const rotateX = yPercent * 12; // Tilt up/down
+    const rotateY = xPercent * -12; // Tilt left/right
+    
+    profileCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+  
+  profileCard.addEventListener("mouseleave", () => {
+    profileCard.style.transform = `rotateX(0deg) rotateY(0deg)`;
+  });
+}
+
