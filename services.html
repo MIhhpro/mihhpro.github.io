@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="hu">
 <head>
   <meta charset="UTF-8" />
@@ -27,7 +27,6 @@
     <a href="index.html">Főoldal</a>
     <a href="services.html">Szolgáltatások</a>
     <a href="about.html">Rólam</a>
-    <a href="velemenyek.html">Vélemények</a>
     <a href="sikerek.html">Sikerek</a>
     <a href="life.html">Életem</a>
     <a href="contact.html">Kapcsolat</a>
@@ -37,7 +36,7 @@
 </header>
 <nav class="mobile-menu">
   <a href="index.html">Főoldal</a><a href="services.html">Szolgáltatások</a>
-  <a href="about.html">Rólam</a><a href="velemenyek.html">Vélemények</a><a href="sikerek.html">Sikerek</a><a href="life.html">Életem</a>
+  <a href="about.html">Rólam</a><a href="sikerek.html">Sikerek</a><a href="life.html">Életem</a>
   <a href="contact.html">Kapcsolat</a>
 </nav>
 
@@ -50,7 +49,9 @@
         <div>
           <p class="eyebrow reveal">Szolgáltatások</p>
           <h1 id="srv-title" class="reveal">
-            A megfelelő<br><em>keretrendszer.</em>
+            <span class="srv-word-a">A</span>
+            <span class="srv-word-megfelelo">Megfelelő</span>
+            <span class="srv-word-rendszer">Rendszer</span>
           </h1>
           <p class="page-hero-sub reveal">
             Minden csomag egy alapelv köré épül: strukturált progresszió,
@@ -63,7 +64,7 @@
           </div>
         </div>
         <div class="services-hero-visual reveal">
-          <img src="assets/physique.png" alt="Mihály Bence – fizikai forma" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;" />
+          <img class="services-hero-img" src="assets/shirtless.png" alt="Mihály Bence – fizikai forma" />
         </div>
       </div>
     </div>
@@ -74,7 +75,7 @@
     <div class="shell">
       <div class="section-heading reveal">
         <p class="eyebrow">Csomagok</p>
-        <h2 id="srv-list-title">Válaszd a te szintedhez valót.</h2>
+        <h2 id="srv-list-title">Válaszd a neked megfelelőt!</h2>
       </div>
       <div class="services-list">
 
@@ -82,11 +83,11 @@
           <div class="service-row-num">01</div>
           <div class="service-row-body">
             <h3>Bevezető konzultáció</h3>
-            <p>Célok, jelenlegi szint és élethelyzet felmérése. Személyes találkozó ~60 perc – kötelezettség nélkül. Tökéletes kiindulópont, ha még nem tudod, hol kezdd.</p>
+            <p>Célok, jelenlegi szint és élethelyzet felmérése. Személyes találkozó ~20 perc – kötelezettség nélkül. Tökéletes kiindulópont, ha még nem tudod, hol kezdd.</p>
             <div class="service-row-tags">
               <span class="service-tag">Felmérés</span>
               <span class="service-tag">Célmeghatározás</span>
-              <span class="service-tag">Személyes</span>
+              <span class="service-tag">Megbeszélés</span>
             </div>
           </div>
           <div class="service-row-price">
@@ -98,12 +99,12 @@
         <article class="service-row reveal">
           <div class="service-row-num">02</div>
           <div class="service-row-body">
-            <h3>Személyi edzés – egyóra</h3>
-            <p>Felügyelt edzés élőben. Technika-korrekció, terhelés-progresszió és motiváló jelenlét minden egyes alkalommal. Saját testsúlyos és calisthenics fókusszal.</p>
+            <h3>Személyi edzés</h3>
+            <p>Felügyelt edzés élőben. Technika-korrekció, terhelés-progresszió és motiváló jelenlét minden egyes alkalommal.</p>
             <div class="service-row-tags">
-              <span class="service-tag">Calisthenics</span>
-              <span class="service-tag">Erőfejlesztés</span>
-              <span class="service-tag">Technikai korrekció</span>
+              <span class="service-tag">Erősítés</span>
+              <span class="service-tag">Izom építés</span>
+              <span class="service-tag">Rehabilitáció</span>
             </div>
           </div>
           <div class="service-row-price">
@@ -115,11 +116,11 @@
         <article class="service-row reveal">
           <div class="service-row-num">03</div>
           <div class="service-row-body">
-            <h3>Havi edzéscsomag (8 alkalom)</h3>
-            <p>Heti 2× személyi edzés, havi értékelő konzultáció és folyamatos kommunikáció. Az erős progresszió ebbe a keretbe fér a legjobban.</p>
+            <h3>Havi edzéscsomag (10 alkalom)</h3>
+            <p>Folyamatos támogatás, vezetett edzések. Az erős progresszió ebbe a keretbe fér a legjobban.</p>
             <div class="service-row-tags">
-              <span class="service-tag">Heti 2×</span>
-              <span class="service-tag">Progresszív terhelés</span>
+              <span class="service-tag">Heti 2-5 edzés</span>
+              <span class="service-tag">3 hónapig érvényes</span>
               <span class="service-tag">Havi értékelés</span>
             </div>
           </div>
@@ -133,7 +134,7 @@
           <div class="service-row-num">04</div>
           <div class="service-row-body">
             <h3>Egyedi edzésterv</h3>
-            <p>Részletes, célalapú heti program – edzőteremre, saját testsúlyra vagy vegyes felszerelésre. Digitális formátumban, magyarázatokkal.</p>
+            <p>Részletes, célalapú heti program – edzőteremre, saját testsúlyra vagy otthonra. Digitális formátumban, magyarázatokkal.</p>
             <div class="service-row-tags">
               <span class="service-tag">Személyre szabott</span>
               <span class="service-tag">Digitális</span>
@@ -155,7 +156,6 @@
               <span class="service-tag">Bárhonnan</span>
               <span class="service-tag">Napi üzenetváltás</span>
               <span class="service-tag">Videó visszajelzés</span>
-              <span class="service-tag">Heti terv</span>
             </div>
           </div>
           <div class="service-row-price">
@@ -178,7 +178,7 @@
     <div class="shell">
       <div class="section-heading reveal">
         <p class="eyebrow">Hogyan működünk</p>
-        <h2 id="process-title">4 lépés az első edzésig.</h2>
+        <h2 id="process-title">Csak 4 lépés az első sikerig.</h2>
       </div>
       <div class="process-grid">
         <article class="process-step reveal">
@@ -189,12 +189,12 @@
         <article class="process-step reveal">
           <div class="process-num">02</div>
           <h3>Ingyenes konzultáció</h3>
-          <p>Felmérem a célodat, szintedet és életritmust. Megbeszéljük, hogyan dolgozunk.</p>
+          <p>Felmérem a célodat, egészségi állapotodat és életritmusodat. Megbeszéljük, hogyan dolgozunk.</p>
         </article>
         <article class="process-step reveal">
           <div class="process-num">03</div>
-          <h3>Személyre szabott terv</h3>
-          <p>Az első hétre már konkrét programot kapsz – semmi általánosság.</p>
+          <h3>Fizikai felmérés</h3>
+          <p>Megvizsgáljuk az erőnlétedet, mobilitásodat és testösszetételedet. Ez alapján készítjük el a személyre szabott edzéstervedet.</p>
         </article>
         <article class="process-step reveal">
           <div class="process-num">04</div>
@@ -229,7 +229,7 @@
               <svg class="lucide lucide-plus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /> <path d="M12 5v14" /></svg>
             </button>
             <div class="faq-a">
-              <p>Igen – sőt, kezdőként a legtöbbet nyerod a személyi edzővel való munkából. A technikai alapok helyesen bevésve gyorsabb és biztonságosabb fejlődést hoznak.</p>
+              <p>Igen – sőt, kezdőként a legtöbbet nyered a személyi edzővel való munkából. A technikai alapok helyesen bevésve gyorsabb és biztonságosabb fejlődést hoznak.</p>
             </div>
           </div>
           <div class="faq-item">
@@ -238,7 +238,7 @@
               <svg class="lucide lucide-plus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /> <path d="M12 5v14" /></svg>
             </button>
             <div class="faq-a">
-              <p>Budapest XI. kerületben, edzőteremben vagy szabadtéren. Az online coaching csomag esetén bárhonnan dolgozhatunk együtt.</p>
+              <p>Budapesten, edzőteremben vagy szabadtéren. Az online coaching csomag esetén bárhonnan dolgozhatunk együtt.</p>
             </div>
           </div>
           <div class="faq-item">
@@ -247,7 +247,7 @@
               <svg class="lucide lucide-plus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /> <path d="M12 5v14" /></svg>
             </button>
             <div class="faq-a">
-              <p>Az alapokhoz csak a saját tested kell. Haladó szinten gyűrű, húzódzkodófa vagy párhuzamos nyújtók segítik a progressziót – ezeket a terv figyelembe veszi.</p>
+              <p>Az alapokhoz csak a saját tested kell. Haladó szinten gyűrű, húzódzkodó vagy párhuzamos korlát segítik a progressziót – ezeket biztosítom.</p>
             </div>
           </div>
           <div class="faq-item">
@@ -256,7 +256,7 @@
               <svg class="lucide lucide-plus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /> <path d="M12 5v14" /></svg>
             </button>
             <div class="faq-a">
-              <p>Heti edzéstervet kapsz, amit üzenetben kísérünk figyelemmel. Technikáról videót küldesz, én visszajelzést adok. Kétheti video check-in-nel mérjük a haladást.</p>
+              <p>Heti edzéstervet kapsz, amit üzenetben kísérünk figyelemmel. Technikáról videót küldesz, én visszajelzést adok. Heti video check-in-nel mérjük a haladást.</p>
             </div>
           </div>
           <div class="faq-item">
@@ -274,7 +274,7 @@
               <svg class="lucide lucide-plus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /> <path d="M12 5v14" /></svg>
             </button>
             <div class="faq-a">
-              <p>Az első mérhető változások általában 4–6 hét után jelennek meg, de ez függ a kiindulóponttól, a céltól és a konzisztenciától. Őszintén tájékoztatom, mit várhat a te esetedben.</p>
+              <p>Az első mérhető változások általában 4–6 hét után jelennek meg, de ez függ a kiindulóponttól, egészségi állapottól, a céltól és a konzisztenciától.</p>
             </div>
           </div>
         </div>
@@ -287,7 +287,7 @@
     <div class="home-cta-card reveal">
       <p class="eyebrow" style="justify-content:center;">Kezdjük el</p>
       <h2 id="srv-cta-title" class="display" style="font-size:clamp(2.4rem,5vw,4.6rem);">
-        Első konzultáció <em style="font-style:normal;background:linear-gradient(95deg,#ffe89a,#d4a843);-webkit-background-clip:text;background-clip:text;color:transparent;">díjmentes.</em>
+        Első konzultáció <em style="font-style:italic;background:linear-gradient(95deg,#ffe89a,#d4a843);-webkit-background-clip:text;background-clip:text;color:transparent;">díjmentes.</em>
       </h2>
       <p>Nincs veszíteni valód. Csak egy őszinte beszélgetés arról, hol tartasz és hova szeretnél jutni.</p>
       <div class="home-cta-actions">
@@ -307,7 +307,6 @@
     </div>
     <nav class="footer-links">
       <a href="services.html">Szolgáltatások</a><a href="about.html">Rólam</a>
-      <a href="velemenyek.html">Vélemények</a>
       <a href="sikerek.html">Sikerek</a>
       <a href="life.html">Életem</a><a href="contact.html">Kapcsolat</a>
     </nav>

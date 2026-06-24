@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="hu">
 <head>
   <meta charset="UTF-8" />
@@ -19,24 +19,6 @@
   <link rel="stylesheet" href="styles.css" />
   <style>
     /* Gallery-specific overrides */
-    .gallery-filters {
-      display: flex; flex-wrap: wrap; gap: 8px;
-      margin-bottom: clamp(28px,4vw,44px);
-    }
-    .filter-btn {
-      padding: 8px 18px;
-      border: 1px solid rgba(255,230,160,.18);
-      border-radius: 999px;
-      background: rgba(255,242,200,.05);
-      color: rgba(245,240,232,.65);
-      font-size: .8rem; font-weight: 700; letter-spacing: .05em;
-      cursor: pointer; transition: background 180ms, border-color 180ms, color 180ms;
-    }
-    .filter-btn:hover, .filter-btn.active {
-      background: rgba(245,200,66,.14);
-      border-color: rgba(245,200,66,.45);
-      color: var(--gold-bright);
-    }
     .gallery-item { cursor: zoom-in; }
   </style>
 </head>
@@ -47,7 +29,7 @@
   <a class="brand" href="index.html"><span class="brand-mark">MB</span><span class="brand-name">Mihály Bence</span></a>
   <nav class="nav-links">
     <a href="index.html">Főoldal</a><a href="services.html">Szolgáltatások</a>
-    <a href="about.html">Rólam</a><a href="velemenyek.html">Vélemények</a><a href="sikerek.html">Sikerek</a><a href="life.html">Életem</a>
+    <a href="about.html">Rólam</a><a href="sikerek.html">Sikerek</a><a href="life.html">Életem</a>
     <a href="contact.html">Kapcsolat</a>
   </nav>
   <a class="nav-cta" href="contact.html">Időpontot kérek</a>
@@ -55,7 +37,7 @@
 </header>
 <nav class="mobile-menu">
   <a href="index.html">Főoldal</a><a href="services.html">Szolgáltatások</a>
-  <a href="about.html">Rólam</a><a href="velemenyek.html">Vélemények</a><a href="sikerek.html">Sikerek</a><a href="life.html">Életem</a>
+  <a href="about.html">Rólam</a><a href="sikerek.html">Sikerek</a><a href="life.html">Életem</a>
   <a href="contact.html">Kapcsolat</a>
 </nav>
 
@@ -70,7 +52,6 @@
       </h1>
       <p class="page-hero-sub reveal">
         Pillanatok az edzőteremből, a szabadból és a mindennapokból.
-        Mert az edző sem csak a munkájából áll.
       </p>
     </div>
   </section>
@@ -87,10 +68,8 @@
       </div>
       <div class="gallery-feature-body">
         <p class="eyebrow">Kiemelt pillanat</p>
-        <h3 id="feat-title">Ott, ahol az erő megterem.</h3>
         <p>
-          Minden nagy eredmény mögött ott vannak a csendes reggeli edzések, az apró technikai áttörések
-          és az a pillanat, amikor valami, ami hetekig nem ment, végre kattan.
+          Minden nagy eredmény mögött ott van a sok jelentéktelennek tűnő pillanat, legyenaz egy ebéd vagy egy túra a szabadban.
         </p>
         <p style="color:var(--soft);font-size:.88rem;">📍 Budapest, 2025</p>
       </div>
@@ -105,19 +84,10 @@
         <h2 id="gallery-title">Pillanatok.</h2>
       </div>
 
-      <!-- Filter buttons -->
-      <div class="gallery-filters reveal">
-        <button class="filter-btn active" data-filter="all">Összes</button>
-        <button class="filter-btn" data-filter="training">Edzés</button>
-        <button class="filter-btn" data-filter="life">Mindennapok</button>
-        <button class="filter-btn" data-filter="outdoor">Szabadtér</button>
-        <button class="filter-btn" data-filter="events">Események</button>
-      </div>
-
       <div class="gallery-grid reveal">
 
         <!-- Training photos -->
-        <div class="gallery-item gallery-item-tall" data-cat="training">
+        <div class="gallery-item gallery-item-tall" data-cat="training" data-note="Blank text">
           <!-- Replace: <img src="assets/life-1.jpg" alt="Edzés – húzódzkodás" /> -->
           <div class="img-placeholder gallery-item-tall">
             <svg class="lucide lucide-dumbbell" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.4 14.4 9.6 9.6" /> <path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z" /> <path d="m21.5 21.5-1.4-1.4" /> <path d="M3.9 3.9 2.5 2.5" /> <path d="M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z" /></svg>
@@ -126,15 +96,12 @@
           <div class="gallery-caption">Húzódzkodás sorozat</div>
         </div>
 
-        <div class="gallery-item gallery-item-short" data-cat="life">
-          <div class="img-placeholder">
-            <svg class="lucide lucide-coffee" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v2" /> <path d="M14 2v2" /> <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" /> <path d="M6 2v2" /></svg>
-            Mindennapi fotó 1
-          </div>
-          <div class="gallery-caption">Reggeli rutin</div>
+        <div class="gallery-item gallery-item-short" data-cat="life" data-note="A Beoplay H100 számomra nem csak egy tárgy: amikor felkerül a fejemre, a külvilág háttérzajjá válik, és marad a fókusz. Régen egy elérhetetlennek tűnő cél volt, ma pedig a mindennapjaim része.">
+          <img src="assets/headphone.png" alt="Fejhallgató és fókuszált munka" />
+          <div class="gallery-caption">Fejhallgató</div>
         </div>
 
-        <div class="gallery-item gallery-item-short" data-cat="outdoor">
+        <div class="gallery-item gallery-item-short" data-cat="outdoor" data-note="Blank text">
           <div class="img-placeholder">
             <svg class="lucide lucide-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /> <path d="M12 2v2" /> <path d="M12 20v2" /> <path d="m4.93 4.93 1.41 1.41" /> <path d="m17.66 17.66 1.41 1.41" /> <path d="M2 12h2" /> <path d="M20 12h2" /> <path d="m6.34 17.66-1.41 1.41" /> <path d="m19.07 4.93-1.41 1.41" /></svg>
             Szabadtéri fotó 1
@@ -142,7 +109,7 @@
           <div class="gallery-caption">Szabadtéri edzés</div>
         </div>
 
-        <div class="gallery-item gallery-item-tall" data-cat="training">
+        <div class="gallery-item gallery-item-tall" data-cat="training" data-note="Blank text">
           <div class="img-placeholder gallery-item-tall">
             <svg class="lucide lucide-activity" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2" /></svg>
             Edzés fotó 2
@@ -150,7 +117,7 @@
           <div class="gallery-caption">Gyűrűtorna</div>
         </div>
 
-        <div class="gallery-item gallery-item-short" data-cat="events">
+        <div class="gallery-item gallery-item-short" data-cat="events" data-note="Blank text">
           <div class="img-placeholder">
             <svg class="lucide lucide-award" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526" /> <circle cx="12" cy="8" r="6" /></svg>
             Esemény fotó 1
@@ -158,7 +125,7 @@
           <div class="gallery-caption">Képesítés nap</div>
         </div>
 
-        <div class="gallery-item gallery-item-short" data-cat="life">
+        <div class="gallery-item gallery-item-short" data-cat="life" data-note="Blank text">
           <div class="img-placeholder">
             <svg class="lucide lucide-book" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" /></svg>
             Mindennapi fotó 2
@@ -166,7 +133,7 @@
           <div class="gallery-caption">Tanulás, kutatás</div>
         </div>
 
-        <div class="gallery-item gallery-item-short" data-cat="outdoor">
+        <div class="gallery-item gallery-item-short" data-cat="outdoor" data-note="Blank text">
           <div class="img-placeholder">
             <svg class="lucide lucide-map-pin" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /> <circle cx="12" cy="10" r="3" /></svg>
             Szabadtéri fotó 2
@@ -174,7 +141,7 @@
           <div class="gallery-caption">Budapest, XI. kerület</div>
         </div>
 
-        <div class="gallery-item gallery-item-tall" data-cat="training">
+        <div class="gallery-item gallery-item-tall" data-cat="training" data-note="Blank text">
           <div class="img-placeholder gallery-item-tall">
             <svg class="lucide lucide-zap" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></svg>
             Edzés fotó 3
@@ -182,7 +149,7 @@
           <div class="gallery-caption">Muscle-up progresszió</div>
         </div>
 
-        <div class="gallery-item gallery-item-short" data-cat="life">
+        <div class="gallery-item gallery-item-short" data-cat="life" data-note="Blank text">
           <div class="img-placeholder">
             <svg class="lucide lucide-camera" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" /> <circle cx="12" cy="13" r="3" /></svg>
             Mindennapi fotó 3
@@ -190,7 +157,7 @@
           <div class="gallery-caption">A csapat</div>
         </div>
 
-        <div class="gallery-item gallery-item-short" data-cat="events">
+        <div class="gallery-item gallery-item-short" data-cat="events" data-note="Blank text">
           <div class="img-placeholder">
             <svg class="lucide lucide-users" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <circle cx="9" cy="7" r="4" /> <path d="M22 21v-2a4 4 0 0 0-3-3.87" /> <path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
             Esemény fotó 2
@@ -198,7 +165,7 @@
           <div class="gallery-caption">Workshop</div>
         </div>
 
-        <div class="gallery-item gallery-item-tall" data-cat="outdoor">
+        <div class="gallery-item gallery-item-tall" data-cat="outdoor" data-note="Blank text">
           <div class="img-placeholder gallery-item-tall">
             <svg class="lucide lucide-mountain" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z" /></svg>
             Szabadtéri fotó 3
@@ -206,12 +173,22 @@
           <div class="gallery-caption">Aktív szabadidő</div>
         </div>
 
-        <div class="gallery-item gallery-item-short" data-cat="training">
+        <div class="gallery-item gallery-item-short" data-cat="training" data-note="Blank text">
           <div class="img-placeholder">
             <svg class="lucide lucide-trending-up" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /> <polyline points="16 7 22 7 22 13" /></svg>
             Edzés fotó 4
           </div>
           <div class="gallery-caption">Progresszió</div>
+        </div>
+
+        <div class="gallery-item gallery-item-short" data-cat="outdoor" data-note="Egy hazautazás során készült fotó a Fogarasi havasokról.">
+          <img src="assets/mountains.png" alt="Hegyek" />
+          <div class="gallery-caption">Hegyekben</div>
+        </div>
+
+        <div class="gallery-item gallery-item-short" data-cat="life" data-note="Szokásos utazás a legjobb barátommal. Valamint igen, a napszemüvegemnek is kellett egy napszemüveg.">
+          <img src="assets/brotrip.png" alt="Utazás" />
+          <div class="gallery-caption">Utazás</div>
         </div>
 
       </div>
@@ -245,7 +222,6 @@
     </div>
     <nav class="footer-links">
       <a href="services.html">Szolgáltatások</a><a href="about.html">Rólam</a>
-      <a href="velemenyek.html">Vélemények</a>
       <a href="sikerek.html">Sikerek</a>
       <a href="life.html">Életem</a><a href="contact.html">Kapcsolat</a>
     </nav>
@@ -255,20 +231,5 @@
   </div>
 </footer>
 <script src="script.js"></script>
-<script>
-  // Gallery filter
-  const filterBtns = document.querySelectorAll(".filter-btn");
-  const galleryItems = document.querySelectorAll(".gallery-item");
-  filterBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      filterBtns.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      const f = btn.dataset.filter;
-      galleryItems.forEach(item => {
-        item.style.display = (f === "all" || item.dataset.cat === f) ? "" : "none";
-      });
-    });
-  });
-</script>
 </body>
 </html>

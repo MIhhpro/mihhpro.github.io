@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="hu">
 <head>
   <meta charset="UTF-8" />
@@ -25,7 +25,7 @@
   <a class="brand" href="index.html"><span class="brand-mark">MB</span><span class="brand-name">Mihály Bence</span></a>
   <nav class="nav-links">
     <a href="index.html">Főoldal</a><a href="services.html">Szolgáltatások</a>
-    <a href="about.html">Rólam</a><a href="velemenyek.html">Vélemények</a><a href="sikerek.html">Sikerek</a><a href="life.html">Életem</a>
+    <a href="about.html">Rólam</a><a href="sikerek.html">Sikerek</a><a href="life.html">Életem</a>
     <a href="contact.html">Kapcsolat</a>
   </nav>
   <a class="nav-cta" href="contact.html">Időpontot kérek</a>
@@ -33,7 +33,7 @@
 </header>
 <nav class="mobile-menu">
   <a href="index.html">Főoldal</a><a href="services.html">Szolgáltatások</a>
-  <a href="about.html">Rólam</a><a href="velemenyek.html">Vélemények</a><a href="sikerek.html">Sikerek</a><a href="life.html">Életem</a>
+  <a href="about.html">Rólam</a><a href="sikerek.html">Sikerek</a><a href="life.html">Életem</a>
   <a href="contact.html">Kapcsolat</a>
 </nav>
 
@@ -145,6 +145,13 @@
           </div>
 
           <div class="form-group">
+            <label class="form-label" for="selected-time">Kezdési időpont</label>
+            <select class="form-select" id="selected-time" name="time" required disabled>
+              <option value="">Először válassz napot...</option>
+            </select>
+          </div>
+
+          <div class="form-group">
             <label class="form-label" for="message">Üzenet</label>
             <textarea class="form-textarea" id="message" name="message" placeholder="Írj néhány mondatot a céljaidról, jelenlegi szintedről vagy bármiről, ami fontos..." required></textarea>
           </div>
@@ -178,35 +185,53 @@
       </div>
 
       <div class="calendar-shell reveal">
-        <div class="calendar-header">
-          <h3 class="cal-month-title">...</h3>
-          <div class="cal-nav">
-            <button class="cal-btn cal-prev" aria-label="Előző hónap">
-              <svg class="lucide lucide-chevron-left" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
-            </button>
-            <button class="cal-btn cal-next" aria-label="Következő hónap">
-              <svg class="lucide lucide-chevron-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
-            </button>
+        <div class="calendar-step calendar-step-days">
+          <div class="calendar-header">
+            <h3 class="cal-month-title">...</h3>
+            <div class="cal-nav">
+              <button class="cal-btn cal-prev" aria-label="Előző hónap">
+                <svg class="lucide lucide-chevron-left" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+              </button>
+              <button class="cal-btn cal-next" aria-label="Következő hónap">
+                <svg class="lucide lucide-chevron-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="calendar-grid">
+            <div class="cal-days-header">
+              <div class="cal-day-name">H</div>
+              <div class="cal-day-name">K</div>
+              <div class="cal-day-name">Sz</div>
+              <div class="cal-day-name">Cs</div>
+              <div class="cal-day-name">P</div>
+              <div class="cal-day-name">Szo</div>
+              <div class="cal-day-name">V</div>
+            </div>
+            <div class="cal-days"></div>
+          </div>
+
+          <div class="cal-legend">
+            <div class="cal-legend-item"><span class="cal-legend-dot avail"></span> Szabad</div>
+            <div class="cal-legend-item"><span class="cal-legend-dot sel"></span> Kiválasztva</div>
+            <div class="cal-legend-item"><span class="cal-legend-dot today-d"></span> Ma</div>
           </div>
         </div>
 
-        <div class="calendar-grid">
-          <div class="cal-days-header">
-            <div class="cal-day-name">H</div>
-            <div class="cal-day-name">K</div>
-            <div class="cal-day-name">Sz</div>
-            <div class="cal-day-name">Cs</div>
-            <div class="cal-day-name">P</div>
-            <div class="cal-day-name">Szo</div>
-            <div class="cal-day-name">V</div>
+        <div class="calendar-step calendar-step-times" aria-live="polite">
+          <div class="calendar-header calendar-header-times">
+            <button class="cal-btn cal-back" type="button" aria-label="Vissza a napokhoz">
+              <svg class="lucide lucide-arrow-left" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></svg>
+            </button>
+            <div class="cal-times-title-wrap">
+              <h3>Szabad idősávok</h3>
+              <p class="cal-times-date">-</p>
+              <p class="cal-times-hint">Minden időpont az óra kezdete, és az óra 1 teljes óráig tart.</p>
+            </div>
           </div>
-          <div class="cal-days"></div>
-        </div>
-
-        <div class="cal-legend">
-          <div class="cal-legend-item"><span class="cal-legend-dot avail"></span> Szabad</div>
-          <div class="cal-legend-item"><span class="cal-legend-dot sel"></span> Kiválasztva</div>
-          <div class="cal-legend-item"><span class="cal-legend-dot today-d"></span> Ma</div>
+          <div class="cal-times-body">
+            <div class="cal-time-slots"></div>
+          </div>
         </div>
       </div>
 
@@ -227,7 +252,6 @@
     </div>
     <nav class="footer-links">
       <a href="services.html">Szolgáltatások</a><a href="about.html">Rólam</a>
-      <a href="velemenyek.html">Vélemények</a>
       <a href="sikerek.html">Sikerek</a>
       <a href="life.html">Életem</a><a href="contact.html">Kapcsolat</a>
     </nav>
