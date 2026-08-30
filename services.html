@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mihály Bence szolgáltatásai – személyi edzés, edzésterv, online coaching Budapesten." />
+  <meta name="description" content="Személyi edzés rehabilitációs szemlélettel és online coaching Mihály Bencével, a Victory Fitness Békásmegyer edzőteremben." />
   <title>Szolgáltatások | Mihály Bence</title>
   <script>
     (function(){var d=document.documentElement;d.classList.add("has-js","preload");
@@ -12,10 +12,9 @@
       window.addEventListener("load",function(){setTimeout(function(){if(!window.__revealInit)show();},1000);});
       setTimeout(function(){if(!window.__revealInit)show();},4000);})();
   </script>
-  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/inter-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/barlow-condensed-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/barlow-condensed-latin-ext-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -26,6 +25,7 @@
   <nav class="nav-links">
     <a href="index.html">Főoldal</a>
     <a href="services.html">Szolgáltatások</a>
+    <a href="szemelyi-edzes.html">Személyi edzés</a>
     <a href="about.html">Rólam</a>
     <a href="sikerek.html">Sikerek</a>
     <a href="life.html">Életem</a>
@@ -35,43 +35,51 @@
   <button class="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
 </header>
 <nav class="mobile-menu">
-  <a href="index.html">Főoldal</a><a href="services.html">Szolgáltatások</a>
+  <a href="index.html">Főoldal</a><a href="services.html">Szolgáltatások</a><a href="szemelyi-edzes.html">Személyi edzés</a>
   <a href="about.html">Rólam</a><a href="sikerek.html">Sikerek</a><a href="life.html">Életem</a>
   <a href="contact.html">Kapcsolat</a>
 </nav>
 
 <main>
 
-  <!-- ── Page hero ── -->
-  <section class="page-hero" aria-labelledby="srv-title">
+  <!-- ── Services hero ── -->
+  <section class="page-hero services-hero" aria-labelledby="srv-title">
     <div class="shell">
       <div class="services-hero-grid">
-        <div>
-          <p class="eyebrow reveal">Szolgáltatások</p>
-          <h1 id="srv-title" class="reveal">
-            <span class="srv-word-a">A</span>
-            <span class="srv-word-megfelelo">Megfelelő</span>
-            <span class="srv-word-rendszer">Rendszer</span>
-          </h1>
+        <div class="services-hero-copy">
+          <p class="eyebrow reveal">Személyre szabott rendszer</p>
+          <h1 id="srv-title" class="reveal">Nem csak edzést kapsz. <em>Irányt is.</em></h1>
           <p class="page-hero-sub reveal">
-            Minden csomag egy alapelv köré épül: strukturált progresszió,
-            személyes figyelem, és mérhető eredmény. Válaszd azt, ami a te
-            életritmusodba illik.
+            A céljaidhoz, az előzményeidhez és az életviteledhez illő tervet építünk —
+            világos lépésekkel, személyes figyelemmel és mérhető fejlődéssel.
           </p>
-          <div class="hero-actions reveal" style="margin-top:28px;">
-            <a class="btn btn-primary" href="contact.html">Ingyenes konzultáció
-            </a>
+          <div class="hero-actions services-hero-actions reveal">
+            <a class="btn btn-primary" href="contact.html?service=consult">Ingyenes konzultáció</a>
+            <a class="btn btn-ghost" href="#csomagok">Csomagok és árak</a>
           </div>
+          <ul class="services-hero-points reveal" aria-label="A közös munka előnyei">
+            <li><span aria-hidden="true">01</span> Kilenc év edzésmunka</li>
+            <li><span aria-hidden="true">02</span> Rehabilitációs szemlélet</li>
+            <li><span aria-hidden="true">03</span> Folyamatos visszajelzés</li>
+          </ul>
         </div>
         <div class="services-hero-visual reveal">
-          <img class="services-hero-img" src="assets/shirtless.png" alt="Mihály Bence – fizikai forma" />
+          <img class="services-hero-img" src="assets/body1.png" alt="Mihály Bence edzés közben a teremben" />
+          <div class="services-hero-location">
+            <span>Helyszín</span>
+            <strong>Victory Fitness Békásmegyer</strong>
+          </div>
+          <div class="services-hero-badge" aria-label="MES Trainer rehabilitációs szemlélet">
+            <strong>MES</strong>
+            <span>rehabilitációs<br>szemlélet</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ── Services list ── -->
-  <section class="services-main" aria-labelledby="srv-list-title">
+  <section class="services-main" id="csomagok" aria-labelledby="srv-list-title">
     <div class="shell">
       <div class="section-heading reveal">
         <p class="eyebrow">Csomagok</p>
@@ -106,9 +114,10 @@
               <span class="service-tag">Izom építés</span>
               <span class="service-tag">Rehabilitáció</span>
             </div>
+            <a class="service-detail-link" href="szemelyi-edzes.html">Részletesen a személyi edzésről</a>
           </div>
           <div class="service-row-price">
-            <strong>Árajánlat</strong>
+            <strong>11 000 Ft</strong>
             <span>/ alkalom</span>
           </div>
         </article>
@@ -125,33 +134,16 @@
             </div>
           </div>
           <div class="service-row-price">
-            <strong>Árajánlat</strong>
-            <span>/ hó</span>
+            <strong>100 000 Ft</strong>
+            <span>/ 10 alkalom</span>
           </div>
         </article>
 
         <article class="service-row reveal">
           <div class="service-row-num">04</div>
           <div class="service-row-body">
-            <h3>Egyedi edzésterv</h3>
-            <p>Részletes, célalapú heti program – edzőteremre, saját testsúlyra vagy otthonra. Digitális formátumban, magyarázatokkal.</p>
-            <div class="service-row-tags">
-              <span class="service-tag">Személyre szabott</span>
-              <span class="service-tag">Digitális</span>
-              <span class="service-tag">Otthon is elvégezhető</span>
-            </div>
-          </div>
-          <div class="service-row-price">
-            <strong>Árajánlat</strong>
-            <span>egyszeri díj</span>
-          </div>
-        </article>
-
-        <article class="service-row reveal">
-          <div class="service-row-num">05</div>
-          <div class="service-row-body">
             <h3>Online coaching csomag</h3>
-            <p>Teljes online támogatás: heti edzésterv, napi üzenetváltás, videó technika-ellenőrzés és kétheti check-in. Ideális, ha nem vagy Budapesten, vagy rugalmas beosztású vagy.</p>
+            <p>Teljes online támogatás: heti program, napi üzenetváltás, videó technika-ellenőrzés és kétheti check-in. Ideális, ha nem vagy Budapesten, vagy rugalmas beosztású vagy.</p>
             <div class="service-row-tags">
               <span class="service-tag">Bárhonnan</span>
               <span class="service-tag">Napi üzenetváltás</span>
@@ -159,7 +151,7 @@
             </div>
           </div>
           <div class="service-row-price">
-            <strong>Árajánlat</strong>
+            <strong>Akár 8 000 Ft-tól</strong>
             <span>/ hó</span>
           </div>
         </article>
@@ -167,7 +159,7 @@
       </div>
 
       <p class="reveal" style="margin-top:24px;color:var(--soft);font-size:.88rem;text-align:center;">
-        Az árak a bevezető konzultáció során kerülnek meghatározásra – minden csomag személyre szabott.
+        A bevezető konzultáción együtt választjuk ki a céljaidhoz legjobban illő lehetőséget.
         <a href="contact.html" style="color:var(--gold-bright);font-weight:700;">Lépj kapcsolatba.</a>
       </p>
     </div>
@@ -194,7 +186,7 @@
         <article class="process-step reveal">
           <div class="process-num">03</div>
           <h3>Fizikai felmérés</h3>
-          <p>Megvizsgáljuk az erőnlétedet, mobilitásodat és testösszetételedet. Ez alapján készítjük el a személyre szabott edzéstervedet.</p>
+          <p>Megvizsgáljuk az erőnlétedet, mobilitásodat és testösszetételedet. Ez alapján készítjük el a személyre szabott programodat.</p>
         </article>
         <article class="process-step reveal">
           <div class="process-num">04</div>
@@ -238,7 +230,7 @@
               <svg class="lucide lucide-plus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /> <path d="M12 5v14" /></svg>
             </button>
             <div class="faq-a">
-              <p>Budapesten, edzőteremben vagy szabadtéren. Az online coaching csomag esetén bárhonnan dolgozhatunk együtt.</p>
+              <p>Személyesen a Victory Fitness Békásmegyer edzőteremben dolgozunk együtt, az online coaching csomag esetén pedig bárhonnan.</p>
             </div>
           </div>
           <div class="faq-item">
@@ -256,16 +248,7 @@
               <svg class="lucide lucide-plus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /> <path d="M12 5v14" /></svg>
             </button>
             <div class="faq-a">
-              <p>Heti edzéstervet kapsz, amit üzenetben kísérünk figyelemmel. Technikáról videót küldesz, én visszajelzést adok. Heti video check-in-nel mérjük a haladást.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q">
-              Mennyibe kerül?
-              <svg class="lucide lucide-plus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /> <path d="M12 5v14" /></svg>
-            </button>
-            <div class="faq-a">
-              <p>Az árakat a bevezető konzultáción egyeztetjük, mert minden csomag személyre szabott. Az első konzultáció ingyenes és kötelezettségtől mentes.</p>
+              <p>Heti programot kapsz, amit üzenetben kísérünk figyelemmel. Technikáról videót küldesz, én visszajelzést adok. Heti video check-in-nel mérjük a haladást.</p>
             </div>
           </div>
           <div class="faq-item">
@@ -303,7 +286,7 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <a class="brand" href="index.html"><span class="brand-mark">MB</span><span class="brand-name">Mihály Bence</span></a>
-      <p>Személyi edző és fitness instruktor, Budapest XI. kerület.</p>
+      <p>Victory Fitness Békásmegyer · 1039 Budapest, Hatvany Lajos utca 10.</p>
     </div>
     <nav class="footer-links">
       <a href="services.html">Szolgáltatások</a><a href="about.html">Rólam</a>

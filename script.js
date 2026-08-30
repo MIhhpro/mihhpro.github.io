@@ -80,6 +80,73 @@ if ("IntersectionObserver" in window) {
 const yearEl = document.querySelector("#year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+// ── Reliable email copy action ──────────────────────────────
+const fallbackCopy = (value) => {
+  const helper = document.createElement("textarea");
+  helper.value = value;
+  helper.setAttribute("readonly", "");
+  helper.style.position = "fixed";
+  helper.style.opacity = "0";
+  helper.style.pointerEvents = "none";
+  document.body.appendChild(helper);
+  helper.select();
+  const copied = document.execCommand("copy");
+  helper.remove();
+  return copied;
+};
+
+const copyText = async (value) => {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(value);
+      return true;
+    }
+    return fallbackCopy(value);
+  } catch {
+    return fallbackCopy(value);
+  }
+};
+
+const copyEmailButton = document.querySelector(".js-copy-email");
+if (copyEmailButton) {
+  const copyEmailLabel = copyEmailButton.querySelector(".js-copy-email-label");
+  const defaultCopyLabel = copyEmailLabel?.textContent || "Cím másolása";
+
+  copyEmailButton.addEventListener("click", async () => {
+    const email = copyEmailButton.dataset.email || "";
+    if (!email) return;
+    const copied = await copyText(email);
+
+    if (copyEmailLabel) copyEmailLabel.textContent = copied ? "Email másolva" : email;
+    copyEmailButton.classList.toggle("is-copied", copied);
+
+    window.setTimeout(() => {
+      if (copyEmailLabel) copyEmailLabel.textContent = defaultCopyLabel;
+      copyEmailButton.classList.remove("is-copied");
+    }, 2400);
+  });
+}
+
+const inquiryCopyButton = document.querySelector("#inquiry-copy-button");
+if (inquiryCopyButton) {
+  const inquiryCopyLabel = inquiryCopyButton.querySelector(".js-inquiry-copy-label");
+  const defaultInquiryLabel = inquiryCopyLabel?.textContent || "Megkeresés másolása";
+
+  inquiryCopyButton.addEventListener("click", async () => {
+    const content = inquiryCopyButton.dataset.copyText || "";
+    if (!content) return;
+    const copied = await copyText(content);
+
+    if (inquiryCopyLabel) inquiryCopyLabel.textContent = copied ? "Megkeresés másolva" : "Másolás sikertelen";
+    inquiryCopyButton.classList.toggle("is-copied", copied);
+
+    window.setTimeout(() => {
+      if (inquiryCopyLabel) inquiryCopyLabel.textContent = defaultInquiryLabel;
+      inquiryCopyButton.classList.remove("is-copied");
+    }, 2400);
+  });
+}
+
 // ── FAQ accordion ────────────────────────────────────────────
 document.querySelectorAll(".faq-q").forEach(btn => {
   btn.addEventListener("click", () => {
@@ -145,269 +212,151 @@ document.querySelectorAll(".faq-q").forEach(btn => {
   }
 })();
 
-// ── Calendar widget ──────────────────────────────────────────
-(function initCalendar() {
-  const cal = document.querySelector(".calendar-shell");
-  if (!cal) return;
+// ── Contact form + Calendly handoff ─────────────────────────
+const CALENDLY_EVENTS = window.SITE_CONFIG?.calendlyEvents || {};
+const INQUIRY_EMAIL = window.SITE_CONFIG?.inquiryEmail?.trim() || "mihalybence.9@gmail.com";
+const APPOINTMENT_SERVICES = new Set(["consult", "pt", "online"]);
+const buildBrandedCalendlyUrl = (eventUrl) => {
+  const url = new URL(eventUrl);
+  url.searchParams.set("hide_event_type_details", "1");
+  url.searchParams.set("background_color", "100f0c");
+  url.searchParams.set("text_color", "f5f0e8");
+  url.searchParams.set("primary_color", "f5c842");
+  return url.toString();
+};
 
-  // Available days: Mon/Wed/Fri/Sat  (1,3,5,6)
-  const availDow = new Set([1, 3, 5, 6]);
-  let current = new Date();
-  let selected = null;
-  const hiddenDate = document.querySelector("#selected-date");
-  const timeSelect = document.querySelector("#selected-time");
-  const label = document.querySelector(".selected-date-label");
-  const timesDate = cal.querySelector(".cal-times-date");
-  const timesWrap = cal.querySelector(".cal-time-slots");
-  const backBtn = cal.querySelector(".cal-back");
-
-  const monthNames = [
-    "Január","Február","Március","Április","Május","Június",
-    "Július","Augusztus","Szeptember","Október","November","December"
-  ];
-
-  const toIsoDate = (date) => {
-    const y = date.getFullYear();
-    const m = String(date.getMonth() + 1).padStart(2, "0");
-    const d = String(date.getDate()).padStart(2, "0");
-    return `${y}-${m}-${d}`;
-  };
-
-  const prettyDate = (date) => date.toLocaleDateString("hu-HU", {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric"
-  });
-
-  const updateSelectedLabel = () => {
-    if (!label || !selected) return;
-    const t = timeSelect?.value ? ` ${timeSelect.value}` : "";
-    label.textContent = `Kiválasztott időpont: ${prettyDate(selected)}${t}`;
-    label.style.display = "block";
-  };
-
-  const asStartLabel = (time) => time;
-
-  const setTimeSelectOptions = (options, disabled = false) => {
-    if (!timeSelect) return;
-    timeSelect.innerHTML = "";
-    options.forEach((opt) => {
-      const el = document.createElement("option");
-      el.value = opt.value;
-      el.textContent = opt.label;
-      el.disabled = Boolean(opt.disabled);
-      timeSelect.appendChild(el);
-    });
-    timeSelect.disabled = disabled;
-  };
-
-  const openDaysStep = () => {
-    cal.classList.remove("show-times");
-  };
-
-  const openTimesStep = () => {
-    cal.classList.add("show-times");
-  };
-
-  const syncSlotSelection = () => {
-    if (!timesWrap) return;
-    timesWrap.querySelectorAll(".cal-time-btn").forEach((btn) => {
-      btn.classList.toggle("is-selected", btn.dataset.time === timeSelect?.value);
-    });
-  };
-
-  const renderTimeButtons = (availableTimes) => {
-    if (!timesWrap) return;
-    timesWrap.innerHTML = "";
-
-    if (!availableTimes.length) {
-      const empty = document.createElement("div");
-      empty.className = "cal-time-empty";
-      empty.textContent = "Erre a napra jelenleg nincs szabad idősáv.";
-      timesWrap.appendChild(empty);
-      return;
-    }
-
-    availableTimes.forEach((time) => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "cal-time-btn";
-      btn.dataset.time = time;
-      btn.textContent = asStartLabel(time);
-      btn.addEventListener("click", () => {
-        if (!timeSelect) return;
-        timeSelect.value = time;
-        timeSelect.dispatchEvent(new Event("change", { bubbles: true }));
-        syncSlotSelection();
-      });
-      timesWrap.appendChild(btn);
-    });
-
-    syncSlotSelection();
-  };
-
-  const loadTimeSlots = async (date) => {
-    if (!timeSelect) return;
-    const isoDate = toIsoDate(date);
-    setTimeSelectOptions([{ value: "", label: "Időpontok betöltése...", disabled: true }], true);
-
-    try {
-      const res = await fetch(`/api/slots?date=${encodeURIComponent(isoDate)}`);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-      const payload = await res.json();
-      const slots = Array.isArray(payload?.slots) ? payload.slots : [];
-      const available = slots
-        .filter((slot) => slot && slot.available && typeof slot.time === "string")
-        .map((slot) => slot.time);
-
-      if (!available.length) {
-        setTimeSelectOptions([{ value: "", label: "Nincs elérhető időpont ezen a napon", disabled: true }], true);
-        return [];
-      }
-
-      const optionList = [{ value: "", label: "Válassz időpontot..." }]
-        .concat(available.map((time) => ({ value: time, label: asStartLabel(time) })));
-      setTimeSelectOptions(optionList, false);
-      return available;
-    } catch {
-      setTimeSelectOptions([{ value: "", label: "Szerver nem elérhető. Próbáld később.", disabled: true }], true);
-      return [];
-    }
-  };
-
-  function render() {
-    const titleEl = cal.querySelector(".cal-month-title");
-    if (titleEl) titleEl.textContent = `${monthNames[current.getMonth()]} ${current.getFullYear()}`;
-
-    const grid = cal.querySelector(".cal-days");
-    if (!grid) return;
-    grid.innerHTML = "";
-
-    const first = new Date(current.getFullYear(), current.getMonth(), 1);
-    const last  = new Date(current.getFullYear(), current.getMonth() + 1, 0);
-    const today = new Date(); today.setHours(0,0,0,0);
-
-    // leading empty cells (Mon = 0 offset)
-    let startDow = first.getDay(); // 0=Sun
-    startDow = startDow === 0 ? 6 : startDow - 1; // convert to Mon-based
-    for (let i = 0; i < startDow; i++) {
-      const empty = document.createElement("div");
-      empty.className = "cal-day empty";
-      grid.appendChild(empty);
-    }
-
-    for (let d = 1; d <= last.getDate(); d++) {
-      const date = new Date(current.getFullYear(), current.getMonth(), d);
-      const div = document.createElement("div");
-      div.className = "cal-day";
-      div.textContent = d;
-
-      if (date < today) {
-        div.classList.add("past");
-      } else {
-        if (availDow.has(date.getDay())) div.classList.add("available");
-        if (date.toDateString() === today.toDateString()) div.classList.add("today");
-        if (selected && date.toDateString() === selected.toDateString()) div.classList.add("selected");
-        if (!div.classList.contains("past")) {
-          div.addEventListener("click", async () => {
-            if (!div.classList.contains("available")) return;
-            selected = date;
-            render();
-            if (hiddenDate) {
-              hiddenDate.value = date.toLocaleDateString("hu-HU");
-              hiddenDate.dataset.isoDate = toIsoDate(date);
-            }
-            if (timeSelect) timeSelect.value = "";
-            updateSelectedLabel();
-            const availableTimes = await loadTimeSlots(date);
-            if (timesDate) timesDate.textContent = prettyDate(date);
-            renderTimeButtons(availableTimes);
-            openTimesStep();
-          });
-        }
-      }
-      grid.appendChild(div);
-    }
-  }
-
-  cal.querySelector(".cal-prev")?.addEventListener("click", () => {
-    current = new Date(current.getFullYear(), current.getMonth() - 1, 1);
-    render();
-  });
-  cal.querySelector(".cal-next")?.addEventListener("click", () => {
-    current = new Date(current.getFullYear(), current.getMonth() + 1, 1);
-    render();
-  });
-
-  render();
-
-  if (timeSelect) {
-    timeSelect.addEventListener("change", () => {
-      if (!timeSelect.value) return;
-      updateSelectedLabel();
-      syncSlotSelection();
-    });
-  }
-
-  backBtn?.addEventListener("click", openDaysStep);
-})();
-
-// ── Contact form ─────────────────────────────────────────────
 const contactForm = document.querySelector(".js-contact-form");
 if (contactForm) {
-  contactForm.addEventListener("submit", async (e) => {
+  const serviceSelect = contactForm.querySelector("#service");
+  const routeNote = contactForm.querySelector("#route-note");
+  const routeSubmit = contactForm.querySelector("#route-submit");
+
+  const requestedService = new URLSearchParams(window.location.search).get("service");
+  if (serviceSelect && ["consult", "pt", "online", "other"].includes(requestedService || "")) {
+    serviceSelect.value = requestedService;
+  }
+
+  const updateRouteHint = () => {
+    const serviceKey = serviceSelect?.value || "";
+    const usesCalendar = APPOINTMENT_SERVICES.has(serviceKey);
+    if (!serviceKey) {
+      if (routeNote) routeNote.textContent = "A kiválasztott szolgáltatás alapján mutatjuk a következő lépést.";
+      if (routeSubmit) routeSubmit.textContent = "Tovább";
+      return;
+    }
+    if (routeNote) {
+      routeNote.textContent = usesCalendar
+        ? "A következő lépésben a valós, szabad időpontok közül választhatsz."
+        : "A következő lépésben elkészítjük az emailes megkeresésedet.";
+    }
+    if (routeSubmit) routeSubmit.textContent = usesCalendar ? "Tovább az időpontokhoz" : "Tovább az üzenethez";
+  };
+
+  serviceSelect?.addEventListener("change", updateRouteHint);
+  updateRouteHint();
+
+  contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const btn = contactForm.querySelector(".form-submit");
-    const success = document.querySelector(".form-success");
-    const dateInput = contactForm.querySelector("#selected-date");
-    const timeInput = contactForm.querySelector("#selected-time");
-    const isoDate = dateInput?.dataset?.isoDate || "";
+    if (!contactForm.reportValidity()) return;
 
-    if (!isoDate) {
-      alert("Kérlek válassz napot a naptárból.");
-      return;
-    }
-    if (!timeInput?.value) {
-      alert("Kérlek válassz pontos időpontot is.");
-      return;
-    }
+    const schedulingSection = document.querySelector(".calendly-section");
+    const inquirySection = document.querySelector(".inquiry-section");
+    const embed = document.querySelector("#calendly-embed");
+    const notice = document.querySelector("#calendly-config-notice");
+    const selectedServiceBadge = document.querySelector("#selected-service-badge");
+    const serviceLabel = serviceSelect?.selectedOptions?.[0]?.textContent?.trim() || "";
+    const serviceKey = serviceSelect?.value || "";
+    const firstName = contactForm.querySelector("#fname")?.value?.trim() || "";
+    const lastName = contactForm.querySelector("#lname")?.value?.trim() || "";
+    const email = contactForm.querySelector("#email")?.value?.trim() || "";
+    const phone = contactForm.querySelector("#phone")?.value?.trim() || "";
 
-    btn.textContent = "Küldés...";
-    btn.disabled = true;
+    if (!APPOINTMENT_SERVICES.has(serviceKey)) {
+      if (schedulingSection) schedulingSection.hidden = true;
+      if (inquirySection) inquirySection.hidden = false;
 
-    const payload = {
-      fname: contactForm.querySelector("#fname")?.value?.trim() || "",
-      lname: contactForm.querySelector("#lname")?.value?.trim() || "",
-      email: contactForm.querySelector("#email")?.value?.trim() || "",
-      phone: contactForm.querySelector("#phone")?.value?.trim() || "",
-      service: contactForm.querySelector("#service")?.value || "",
-      date: isoDate,
-      time: timeInput.value,
-      message: contactForm.querySelector("#message")?.value?.trim() || ""
-    };
+      const inquiryServiceName = document.querySelector("#inquiry-service-name");
+      const inquiryEmailLink = document.querySelector("#inquiry-email-link");
+      const inquiryCopyButton = document.querySelector("#inquiry-copy-button");
+      if (inquiryServiceName) inquiryServiceName.textContent = serviceLabel;
+      if (inquiryEmailLink) {
+        const subject = `${serviceLabel} – weboldali érdeklődés`;
+        const body = [
+          `Név: ${firstName} ${lastName}`.trim(),
+          `Email: ${email}`,
+          `Telefon: ${phone || "nincs megadva"}`,
+          `Szolgáltatás: ${serviceLabel}`
+        ].join("\n");
+        const gmailUrl = new URL("https://mail.google.com/mail/");
+        gmailUrl.searchParams.set("view", "cm");
+        gmailUrl.searchParams.set("fs", "1");
+        gmailUrl.searchParams.set("to", INQUIRY_EMAIL);
+        gmailUrl.searchParams.set("su", subject);
+        gmailUrl.searchParams.set("body", body);
+        inquiryEmailLink.href = gmailUrl.toString();
 
-    try {
-      const res = await fetch("/api/bookings", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        throw new Error(err?.error || "Nem sikerült az időpontfoglalás.");
+        if (inquiryCopyButton) {
+          inquiryCopyButton.dataset.copyText = [
+            `Címzett: ${INQUIRY_EMAIL}`,
+            `Tárgy: ${subject}`,
+            "",
+            body
+          ].join("\n");
+        }
       }
 
-      contactForm.style.display = "none";
-      if (success) success.classList.add("visible");
-
-    } catch (error) {
-      alert(error.message || "Hiba történt küldés közben.");
-      btn.textContent = "Üzenet küldése";
-      btn.disabled = false;
+      inquirySection?.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
     }
+
+    const eventUrl = String(CALENDLY_EVENTS[serviceKey] || "").trim();
+    if (inquirySection) inquirySection.hidden = true;
+    if (schedulingSection) schedulingSection.hidden = false;
+    if (selectedServiceBadge) selectedServiceBadge.textContent = serviceLabel;
+
+    if (!eventUrl) {
+      if (notice) notice.hidden = false;
+      schedulingSection?.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+
+    if (!window.Calendly || !embed) {
+      alert("A naptár még töltődik. Kérlek próbáld újra néhány másodperc múlva.");
+      return;
+    }
+
+    embed.innerHTML = "";
+    if (notice) notice.hidden = true;
+    window.Calendly.initInlineWidget({
+      url: buildBrandedCalendlyUrl(eventUrl),
+      parentElement: embed,
+      resize: true,
+      prefill: {
+        name: `${firstName} ${lastName}`.trim(),
+        email,
+        customAnswers: {
+          a1: serviceLabel,
+          a2: phone
+        }
+      },
+      utm: {
+        utmSource: "mihaly-bence-weboldal",
+        utmMedium: "website",
+        utmCampaign: serviceKey
+      }
+    });
+
+    schedulingSection?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  window.addEventListener("message", (event) => {
+    if (event.origin !== "https://calendly.com" || event.data?.event !== "calendly.event_scheduled") return;
+    const success = document.querySelector(".form-success");
+    const calendlyShell = document.querySelector(".calendly-shell");
+    contactForm.style.display = "none";
+    if (calendlyShell) calendlyShell.hidden = true;
+    success?.classList.add("visible");
+    success?.scrollIntoView({ behavior: "smooth", block: "center" });
   });
 }
 
@@ -530,27 +479,30 @@ if (contactForm) {
   });
 })();
 
-// ── Profile card 3D tilt effect ──────────────────────────────
+// ── Profile card: restrained pointer depth ───────────────────
 const profileCard = document.querySelector(".profile-card");
-if (profileCard) {
-  profileCard.addEventListener("mousemove", (e) => {
+if (profileCard && matchMedia("(hover: hover) and (pointer: fine)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  let profileFrame = 0;
+
+  profileCard.addEventListener("pointermove", (event) => {
     const rect = profileCard.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    // Normalize to -1 to 1 range
-    const xPercent = (x / rect.width) * 2 - 1;
-    const yPercent = (y / rect.height) * 2 - 1;
-    
-    // Inverse rotation: mouse at top-left tilts bottom-right up
-    const rotateX = yPercent * 12; // Tilt up/down
-    const rotateY = xPercent * -12; // Tilt left/right
-    
-    profileCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    const x = (event.clientX - rect.left) / rect.width;
+    const y = (event.clientY - rect.top) / rect.height;
+
+    cancelAnimationFrame(profileFrame);
+    profileFrame = requestAnimationFrame(() => {
+      const rotateX = (y - .5) * -3.2;
+      const rotateY = (x - .5) * 3.2;
+      profileCard.style.setProperty("--card-x", `${x * 100}%`);
+      profileCard.style.setProperty("--card-y", `${y * 100}%`);
+      profileCard.style.transform = `perspective(1100px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`;
+    });
   });
-  
-  profileCard.addEventListener("mouseleave", () => {
-    profileCard.style.transform = `rotateX(0deg) rotateY(0deg)`;
+
+  profileCard.addEventListener("pointerleave", () => {
+    cancelAnimationFrame(profileFrame);
+    profileCard.style.setProperty("--card-x", "50%");
+    profileCard.style.setProperty("--card-y", "50%");
+    profileCard.style.transform = "perspective(1100px) rotateX(0) rotateY(0) translateY(0)";
   });
 }
-
