@@ -1,9 +1,9 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="hu">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mihály Bence IWI személyi edző, fitness instruktor és MES Trainer – történet, szemlélet és szakmai háttér." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Mihály Bence IWI személyi edző, fitness instruktor és MES Trainer – történet, személyes galéria, szemlélet és szakmai háttér." />
   <title>Rólam | Mihály Bence</title>
   <script>
     (function(){var d=document.documentElement;d.classList.add("has-js","preload");
@@ -16,8 +16,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="section-nav.css" />
+  <link rel="stylesheet" href="responsive.css" />
 </head>
 <body>
+<a class="skip-link" href="#main-content">Ugrás a tartalomra</a>
 <div class="ambient" aria-hidden="true"></div>
 
 <header class="site-header">
@@ -25,51 +28,63 @@
     <span class="brand-mark">MB</span>
     <span class="brand-name">Mihály Bence</span>
   </a>
-  <nav class="nav-links" aria-label="Fő navigáció">
-    <a href="index.html">Főoldal</a>
+  <nav class="nav-links" aria-label="Fő navigáció"><a href="index.html">Főoldal</a>
     <a href="services.html">Szolgáltatások</a>
     <a href="szemelyi-edzes.html">Személyi edzés</a>
-    <a href="about.html">Rólam</a>
+    <a href="online-coaching.html">Online coaching</a>
+    <a href="about.html" aria-current="page">Rólam</a>
     <a href="sikerek.html">Sikerek</a>
-    <a href="life.html">Életem</a>
-    <a href="contact.html">Kapcsolat</a>
-  </nav>
-  <a class="nav-cta" href="contact.html">Időpontot kérek
-  </a>
-  <button class="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+    <a href="contact.html">Kapcsolat</a></nav>
+  <a class="nav-cta" href="contact.html?service=consult">Beszélgessünk</a>
+  <button class="hamburger" type="button" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="mobile-navigation"><span></span><span></span><span></span></button>
 </header>
-<nav class="mobile-menu" aria-label="Mobil navigáció">
-  <a href="index.html">Főoldal</a>
-  <a href="services.html">Szolgáltatások</a>
-  <a href="szemelyi-edzes.html">Személyi edzés</a>
-  <a href="about.html">Rólam</a>
-  <a href="sikerek.html">Sikerek</a>
-  <a href="life.html">Életem</a>
-  <a href="contact.html">Kapcsolat</a>
-</nav>
+<nav class="mobile-menu" id="mobile-navigation" aria-label="Mobil navigáció"><a href="index.html">Főoldal</a>
+    <a href="services.html">Szolgáltatások</a>
+    <a href="szemelyi-edzes.html">Személyi edzés</a>
+    <a href="online-coaching.html">Online coaching</a>
+    <a href="about.html" aria-current="page">Rólam</a>
+    <a href="sikerek.html">Sikerek</a>
+    <a href="contact.html">Kapcsolat</a><a href="elso-alkalom.html">Az első alkalom</a><a href="about.html#galeria">Galéria</a></nav>
 
-<main>
+<main id="main-content" tabindex="-1">
+  <nav class="section-nav" aria-label="Oldal tartalma">
+    <button class="section-nav-toggle" type="button" aria-expanded="false" aria-controls="section-nav-list" hidden>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 6h12M9 12h12M9 18h12M3 6h1M3 12h1M3 18h1"/></svg>
+      Oldal tartalma <span class="section-nav-chevron" aria-hidden="true">⌃</span>
+    </button>
+    <p class="section-nav-heading">Ezen az oldalon</p>
+    <ol id="section-nav-list" class="section-nav-list">
+        <li><a href="#section-about"><span class="section-nav-marker" aria-hidden="true"></span><span>Rólam</span></a></li>
+        <li><a href="#section-story"><span class="section-nav-marker" aria-hidden="true"></span><span>A történetem</span></a></li>
+        <li><a href="#galeria"><span class="section-nav-marker" aria-hidden="true"></span><span>Galéria</span></a></li>
+        <li><a href="#section-values"><span class="section-nav-marker" aria-hidden="true"></span><span>Értékek</span></a></li>
+        <li><a href="#section-timeline"><span class="section-nav-marker" aria-hidden="true"></span><span>Szakmai utam</span></a></li>
+        <li><a href="#section-creds"><span class="section-nav-marker" aria-hidden="true"></span><span>Képesítések</span></a></li>
+        <li><a href="#section-about-cta"><span class="section-nav-marker" aria-hidden="true"></span><span>Közös munka</span></a></li>
+    </ol>
+  </nav>
+
 
   <!-- ── Page hero ── -->
-  <section class="page-hero" aria-labelledby="about-title">
+  <section class="page-hero" aria-labelledby="about-title" id="section-about" tabindex="-1">
     <div class="shell">
       <p class="eyebrow reveal">Rólam</p>
       <h1 id="about-title" class="reveal">
-        Mentor<br><em>Nem csak edző</em>
+        Én is az első<br><em>ismétléssel kezdtem.</em>
       </h1>
       <p class="page-hero-sub reveal">
-        Megismerni azt, aki mellé állsz, legalább annyira fontos, mint a program maga.
-        Ez az oldal azért van, hogy tudd, kivel dolgozol.
+        Mihály Bence vagyok. Az edzés először nekem segített elhinni, hogy képes vagyok valamire, ami addig lehetetlennek tűnt. Ma ezt az élményt szeretném továbbadni.
       </p>
+      <nav class="about-page-links reveal" aria-label="A Rólam oldal részei"><a href="#story-title">A történetem</a><a href="#galeria">Galéria ↓</a><a href="#creds-title">Végzettségeim</a></nav>
     </div>
   </section>
 
   <!-- ── Story ── -->
-  <section class="about-story" aria-labelledby="story-title">
+  <section class="about-story" aria-labelledby="story-title" id="section-story" tabindex="-1">
     <div class="about-story-grid shell">
 
       <div class="about-photo reveal">
-        <img src="assets/professional.png" alt="Mihály Bence" />
+        <img alt="Mihály Bence" width="1024" height="1536" src="assets/responsive/professional-640.webp" srcset="assets/responsive/professional-320.webp 320w, assets/responsive/professional-640.webp 640w, assets/responsive/professional-960.webp 960w, assets/responsive/professional-1024.webp 1024w" sizes="(max-width: 600px) calc(100vw - 72px), 520px" data-full-src="assets/responsive/professional-1024.webp" loading="lazy" decoding="async" />
       </div>
 
       <div class="about-copy reveal">
@@ -85,14 +100,10 @@
           </span>
         </h2>
         <p>
-          Tizenkét éves voltam, amikor először próbáltam edzeni. Nem volt edző, nem volt terv, még egy edzőterem sem – csak egy pár vasrúd. Ami elindult próbálkozásként,
-          hamarosan szenvedéllyé vált. A rengeteg sikertelenség motivált hogy még többet tanuljak.
+          Tizenkét évesen kezdtem edzeni. Nem volt edzőm, tervem vagy edzőtermi bérletem, csak néhány vasrúd és sok próbálkozás. Gyakran nem sikerült, amit szerettem volna. Ilyenkor utánanéztem, változtattam valamin, és újrapróbáltam.
         </p>
         <p>
-          Gyerekként nagyon nehezemre esett húzódzkodni. Már hetekkel a felelés előtt rettegtem. Mindig én voltam a leggyengébb, és e miatt nagyon sokat bántottak.
-          Sok idő kellett, de végül sikerült a húzódzkodás, és ezzel együtt jött egy érzés, ami soha nem múlik el. Nem csak a rettegésem múlt el, hanem egy büszkeség is jött az eredményekkel.
-          Ez az érzés ma is minden egyes húzódzkodásnál jelen van. <strong>Edzőként az a célom, hogy mások is megtapasztalják ezt az érzést.
-          Ez az igazi hivatásom.</strong>
+          Gyerekként féltem a húzódzkodástól. Már hetekkel az iskolai felmérés előtt szorongtam: én voltam a leggyengébb, és emiatt sokat bántottak. Amikor végül sikerült, nemcsak a gyakorlat ment. Először éreztem igazán, hogy képes vagyok változtatni azon, amit addig adottságnak hittem. <strong>Ma is eszembe jut ez az érzés. Edzőként azért dolgozom, hogy másoknak is lehessen egy ilyen pillanatuk.</strong>
         </p>
         <p>
           Évekig autodidakta módon tanultam: kutatás, kísérletezés, hibázás, újrakezdés.
@@ -111,8 +122,66 @@
     </div>
   </section>
 
+
+  <!-- Gallery: replace each .photo-slot with an image when the final photos are ready.
+       Use the suggested filenames below, supply meaningful alt text, and keep the frame classes.
+       Only completed photographs use .gallery-item and open in the existing photo viewer. -->
+  <section class="about-gallery experience-section" id="galeria" aria-labelledby="about-gallery-title" tabindex="-1">
+    <div class="shell">
+      <div class="about-gallery-heading reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Galéria</p>
+          <h2 id="about-gallery-title">A történetem<br>képekben is.</h2>
+        </div>
+        <p>A teremben dolgozom a céljaimon, azon kívül pedig jut idő utazásra, barátokra és kikapcsolódásra. Mindkettő hozzám tartozik.</p>
+      </div>
+
+      <div class="gallery-chapter reveal"><span>01</span><h3>A teremben</h3><span class="gallery-chapter-line" aria-hidden="true"></span></div>
+      <div class="about-photo-grid">
+        <!-- Future photo: assets/about-training.jpg — landscape, approximately 16:9. -->
+        <figure class="photo-slot photo-slot--wide reveal">
+          <div class="photo-slot-center"><span class="photo-slot-mark" aria-hidden="true">+</span><span class="photo-slot-label">Fotó helye</span></div>
+          <figcaption><span>01 / EDZÉS</span><strong>Ahol a munka történik.</strong><small>Edzés közben · fekvő kép</small></figcaption>
+        </figure>
+        <figure class="photo-slot photo-slot--portrait gallery-item reveal" data-note="Egy pillanat a saját edzéseim mellől. A történetemhez ez is hozzátartozik: én is dolgozom a céljaimon." aria-label="Saját edzés: a portré megnyitása">
+          <img alt="Bence saját edzésformáját megörökítő tükörfotója" width="1086" height="1448" src="assets/responsive/shirtless-640.webp" srcset="assets/responsive/shirtless-320.webp 320w, assets/responsive/shirtless-640.webp 640w, assets/responsive/shirtless-960.webp 960w, assets/responsive/shirtless-1086.webp 1086w" sizes="(max-width: 520px) calc(100vw - 72px), (max-width: 800px) 45vw, 380px" data-full-src="assets/responsive/shirtless-1086.webp" loading="lazy" decoding="async">
+          <figcaption><span>02 / SAJÁT EDZÉS</span><strong>Én is benne vagyok<br>a munkában.</strong><small>Kép megnyitása ↗</small></figcaption>
+        </figure>
+        <!-- Future photo: assets/about-movement.jpg — approximately square. -->
+        <figure class="photo-slot reveal">
+          <div class="photo-slot-center"><span class="photo-slot-mark" aria-hidden="true">+</span><span class="photo-slot-label">Fotó helye</span></div>
+          <figcaption><span>03 / MOZGÁS</span><strong>Egy jól ismert mozdulat.</strong><small>Húzódzkodás vagy gyűrűtorna</small></figcaption>
+        </figure>
+        <!-- Future photo: assets/about-coaching.jpg — approximately square; use a consented session photo. -->
+        <figure class="photo-slot reveal">
+          <div class="photo-slot-center"><span class="photo-slot-mark" aria-hidden="true">+</span><span class="photo-slot-label">Fotó helye</span></div>
+          <figcaption><span>04 / KÖZÖS MUNKA</span><strong>Figyelem a részletekre.</strong><small>Magyarázat, bemutatás, közös edzés</small></figcaption>
+        </figure>
+      </div>
+
+      <div class="gallery-chapter reveal"><span>02</span><h3>A terem után</h3><span class="gallery-chapter-line" aria-hidden="true"></span></div>
+      <div class="about-gallery-life-copy reveal">
+        <p>Jó hazautazni, időt tölteni a barátaimmal, vagy felvenni a fejhallgatót és elmerülni valamiben. Amikor a te edzésedet tervezzük, az is fontos, milyen életbe kell beleférnie.</p>
+      </div>
+      <div class="gallery-grid about-life-grid">
+<div class="gallery-item gallery-item-short" data-cat="life" data-note="A Beoplay H100 számomra nem csak egy tárgy: amikor felkerül a fejemre, a külvilág háttérzajjá válik, és marad a fókusz. Régen egy elérhetetlennek tűnő cél volt, ma pedig a mindennapjaim része.">
+          <img alt="Fejhallgató és fókuszált munka" width="1467" height="1072" src="assets/responsive/headphone-640.webp" srcset="assets/responsive/headphone-320.webp 320w, assets/responsive/headphone-640.webp 640w, assets/responsive/headphone-960.webp 960w, assets/responsive/headphone-1440.webp 1440w" sizes="(max-width: 520px) calc(100vw - 72px), (max-width: 800px) 45vw, 380px" data-full-src="assets/responsive/headphone-1440.webp" loading="lazy" decoding="async" />
+          <div class="gallery-caption">Fejhallgató</div>
+        </div>
+<div class="gallery-item gallery-item-short" data-cat="outdoor" data-note="Egy hazautazás során készült fotó a Fogarasi havasokról.">
+          <img alt="Hegyek" width="1448" height="1086" src="assets/responsive/mountains-640.webp" srcset="assets/responsive/mountains-320.webp 320w, assets/responsive/mountains-640.webp 640w, assets/responsive/mountains-960.webp 960w, assets/responsive/mountains-1440.webp 1440w" sizes="(max-width: 520px) calc(100vw - 72px), (max-width: 800px) 45vw, 380px" data-full-src="assets/responsive/mountains-1440.webp" loading="lazy" decoding="async" />
+          <div class="gallery-caption">Hegyekben</div>
+        </div>
+<div class="gallery-item gallery-item-short" data-cat="life" data-note="Szokásos utazás a legjobb barátommal. Valamint igen, a napszemüvegemnek is kellett egy napszemüveg.">
+          <img alt="Utazás" width="1448" height="1086" src="assets/responsive/brotrip-640.webp" srcset="assets/responsive/brotrip-320.webp 320w, assets/responsive/brotrip-640.webp 640w, assets/responsive/brotrip-960.webp 960w, assets/responsive/brotrip-1440.webp 1440w" sizes="(max-width: 520px) calc(100vw - 72px), (max-width: 800px) 45vw, 380px" data-full-src="assets/responsive/brotrip-1440.webp" loading="lazy" decoding="async" />
+          <div class="gallery-caption">Utazás</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Values ── -->
-  <section class="about-values" aria-labelledby="values-title">
+  <section class="about-values" aria-labelledby="values-title" id="section-values" tabindex="-1">
     <div class="shell">
       <div class="section-heading reveal">
         <p class="eyebrow">Értékek</p>
@@ -122,29 +191,29 @@
         <article class="value-card reveal">
           <div class="value-card-num">01</div>
           <h3>Rendszer</h3>
-          <p>A fejlődés nem szerencsén múlik. Strukturált terv, konzisztens végrehajtás, türelem – ez az alap.</p>
+          <p>Szeretném, hogy tudd, miért végzel egy gyakorlatot, és mi lesz a következő lépés. A terv segít akkor is, amikor épp kevésbé vagy motivált.</p>
         </article>
         <article class="value-card reveal">
           <div class="value-card-num">02</div>
           <h3>Személyre szabott</h3>
-          <p>Nincs két egyforma ember. Minden célhoz, testhez és élethelyzethez más megközelítés illik – ez a munkám lényege.</p>
+          <p>Megkérdezem, hogy vagy, mennyi időd van, és mi okoz nehézséget. Ezek az edzés tervezéséhez tartoznak, nem mellékes részletek.</p>
         </article>
         <article class="value-card reveal">
           <div class="value-card-num">03</div>
           <h3>Őszinte kommunikáció</h3>
-          <p>Nem azt mondom, amit hallani szeretnél, hanem amit tudnod kell. Tisztelettudóan, de egyenesen.</p>
+          <p>Elmondom, mit látok, te pedig szólj, ha valami nem világos vagy nem érzed jónak. A jó közös munkához mindkettőnk visszajelzése kell.</p>
         </article>
         <article class="value-card reveal">
           <div class="value-card-num">04</div>
           <h3>Folyamatos tanulás</h3>
-          <p>A sporttudomány fejlődik. Aki nem tanul, lemarad. Aktívan képzem magam, hogy a legjobbat adhassam.</p>
+          <p>A saját edzéseim, a képzések és a szakirodalom is új kérdéseket adnak. Szeretek utánajárni annak, amit még nem értek eléggé.</p>
         </article>
       </div>
     </div>
   </section>
 
   <!-- ── Timeline ── -->
-  <section class="about-timeline" aria-labelledby="timeline-title">
+  <section class="about-timeline" aria-labelledby="timeline-title" id="section-timeline" tabindex="-1">
     <div class="shell">
       <div class="section-heading reveal">
         <p class="eyebrow">Tapasztalataim</p>
@@ -204,7 +273,7 @@
   </section>
 
   <!-- ── Credentials ── -->
-  <section class="about-creds" aria-labelledby="creds-title">
+  <section class="about-creds" aria-labelledby="creds-title" id="section-creds" tabindex="-1">
     <div class="shell">
       <div class="section-heading reveal">
         <p class="eyebrow">Végzettségek</p>
@@ -226,7 +295,7 @@
         <article class="cred-card reveal">
           <svg class="lucide lucide-heart-pulse" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /> <path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27" /></svg>
           <h3>IWI MES Trainer</h3>
-          <p>Medical Exercise Specialist – speciális populációk, funkcionális rehab.</p>
+          <p>Az egyéni terhelhetőséghez igazodó edzés szakmai háttere. Nem orvosi vagy gyógytornászi képesítés.</p>
           <span class="cred-badge">Elvégezve</span>
         </article>
         <article class="cred-card reveal">
@@ -244,7 +313,7 @@
         <article class="cred-card reveal">
           <svg class="lucide lucide-book-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /> <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></svg>
           <h3>Folyamatos képzés</h3>
-          <p>FMFA Rehabilitációs Trainer, Menno Henselmans kurzus, NASM Elite Trainer és sok más</p>
+          <p>Képzések és szakirodalom: szeretném tovább mélyíteni az edzéstervezési és terhelésépítési tudásomat.</p>
           <span class="cred-badge in-progress">Várható</span>
         </article>
       </div>
@@ -252,21 +321,7 @@
   </section>
 
   <!-- ── CTA ── -->
-  <section class="home-cta" aria-labelledby="about-cta-title">
-    <div class="home-cta-card reveal">
-      <p class="eyebrow" style="justify-content:center;">Következő lépés</p>
-      <h2 id="about-cta-title" class="display" style="font-size:clamp(2.4rem,5vw,4.6rem);">
-        Ismersz, most <em style="font-style:normal;background:linear-gradient(95deg,#ffe89a,#d4a843);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic;">cselekedj.</em>
-      </h2>
-      <p>Nézd meg a szolgáltatásokat, vagy foglalj egyből időpontot egy ingyenes bevezető konzultációra.</p>
-      <div class="home-cta-actions">
-        <a class="btn btn-primary" href="contact.html">Időpontot foglalok
-        </a>
-        <a class="btn btn-ghost" href="services.html">Szolgáltatások
-        </a>
-      </div>
-    </div>
-  </section>
+  <section class="home-cta" aria-labelledby="about-cta-title" id="section-about-cta" tabindex="-1"><div class="home-cta-card reveal"><p class="eyebrow">Innen indulunk</p><h2 id="about-cta-title" class="experience-cta-title">Most szívesen meghallgatnálak téged.</h2><p>Mi az, amit szeretnél újra megpróbálni, megtanulni vagy végre rendszeressé tenni? Innen indulhat a közös munkánk.</p><div class="home-cta-actions"><a class="btn btn-primary" href="contact.html?service=consult">Beszélgessünk · díjmentesen</a></div><p class="cta-reassurance">Először megismerjük egymást. A folytatásról utána döntesz.</p></div></section>
 
 </main>
 
@@ -276,18 +331,13 @@
       <a class="brand" href="index.html"><span class="brand-mark">MB</span><span class="brand-name">Mihály Bence</span></a>
       <p>Victory Fitness Békásmegyer · 1039 Budapest, Hatvany Lajos utca 10.</p>
     </div>
-    <nav class="footer-links">
-      <a href="services.html">Szolgáltatások</a>
-      <a href="about.html">Rólam</a>
-      <a href="sikerek.html">Sikerek</a>
-      <a href="life.html">Életem</a>
-      <a href="contact.html">Kapcsolat</a>
-    </nav>
+    <nav class="footer-links" aria-label="Lábléc navigáció"><a href="services.html">Szolgáltatások</a><a href="online-coaching.html">Online coaching</a><a href="elso-alkalom.html">Az első alkalom</a><a href="about.html">Rólam</a><a href="sikerek.html">Sikerek</a><a href="about.html#galeria">Galéria</a><a href="contact.html">Kapcsolat</a></nav>
   </div>
   <div class="footer-bottom">
     <p>© <span id="year"></span> Mihály Bence</p>
   </div>
 </footer>
 <script src="script.js"></script>
+<script src="section-nav.js"></script>
 </body>
 </html>

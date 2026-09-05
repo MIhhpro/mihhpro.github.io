@@ -1,0 +1,91 @@
+/* Device refinements. Keep this after the shared layout and section navigation. */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+img { max-width: 100%; }
+.btn { max-width: 100%; white-space: normal; line-height: 1.4; padding-block: 12px; text-align: center; }
+.btn svg, .hamburger, .contact-availability i { flex-shrink: 0; }
+.nav-cta { min-height: 44px; height: auto; padding-block: 10px; }
+.nav-links a { display: inline-flex; align-items: center; min-height: 44px; white-space: nowrap; }
+.footer-links { gap: 4px 18px; }
+.footer-links a { display: inline-flex; align-items: center; min-height: 44px; }
+.service-detail-link { display: inline-block; padding-block: 10px; line-height: 1.5; }
+.service-row-body, .training-offer-facts dd, .me-body, .footer-brand { min-width: 0; }
+.service-card p, .home-cta-card p { font-size: 1rem; }
+.training-offer-price div { flex-wrap: wrap; }
+.training-offer-price small, .training-offer-facts dt, .training-offer-facts dd { font-size: .875rem; }
+.contact-quick-action small, .contact-profile-meta span { font-size: .875rem; }
+.training-hero-text-link { min-height: 44px; font-size: .875rem; }
+.form-input, .form-select { min-width: 0; scroll-margin-block: 120px; }
+.calendly-embed { min-height: 480px; }
+.mobile-menu { padding-bottom: max(32px, env(safe-area-inset-bottom)); overscroll-behavior: contain; }
+.mobile-menu a { flex-shrink: 0; min-height: 48px; }
+.scroll-top { z-index: 36; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); }
+.gallery-modal { padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); }
+.gallery-modal-panel { width: min(100%, 1480px); max-height: calc(100dvh - 32px); }
+.gallery-modal-note { overflow-wrap: anywhere; }
+
+/* Reserve screen space for typing; the chapter button returns on leaving a field. */
+@media (max-width: 800px), (max-height: 500px) {
+  body:has(input:focus, select:focus, textarea:focus) .section-nav.is-enhanced,
+  body:has(input:focus, select:focus, textarea:focus) .scroll-top { visibility: hidden; pointer-events: none; }
+}
+@media (max-width: 1040px) {
+  .about-photo { width: min(100%, 520px); margin-inline: auto; }
+  .hero, .services-hero { min-height: 0; }
+}
+@media (max-width: 800px) {
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions > * { flex: none; }
+  .hero-visual { height: clamp(280px, 75vw, 500px); }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-links { justify-content: flex-start; }
+  .me-body h2, .section-heading h2 { overflow-wrap: anywhere; }
+  .about-page-links { flex-wrap: wrap; }
+}
+@media (max-width: 600px) {
+  .training-hero-copy, .training-hero-dossier { padding: clamp(22px, 6vw, 36px); }
+  .training-page .training-title { font-size: clamp(2rem, 8vw, 3rem); line-height: 1.08; overflow-wrap: anywhere; }
+  .training-hero-actions { align-items: stretch; flex-direction: column; gap: 12px; }
+  .training-hero-actions > * { width: 100%; }
+  .training-offer-facts div { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .page-hero h1, .hero h1.hero-quote { overflow-wrap: anywhere; }
+  .service-row { grid-template-columns: 32px minmax(0, 1fr); padding: 24px 20px; }
+  .service-row-price { white-space: normal; }
+  .service-card h3 { font-size: 1.125rem; }
+  .section-heading .eyebrow { font-size: .875rem; }
+  .contact-grid { gap: 24px; }
+  .contact-form-wrap, .contact-profile-body { padding: 24px 20px; }
+  .contact-profile-media { padding: 24px 20px; }
+  .inquiry-card { padding: 28px 20px; }
+  .question summary { padding-right: 0; }
+  .question > div { padding-right: 0; }
+  .gallery-modal-note { padding: 24px 18px; text-align: left; }
+  .gallery-modal-panel { padding: 12px; border-radius: 18px; }
+}
+@media (max-width: 380px) {
+  .brand { min-width: 0; gap: 8px; }
+  .brand-name { white-space: normal; line-height: 1.3; }
+  .site-header { padding-inline: 10px; }
+  .contact-profile-media { grid-template-columns: 64px minmax(0, 1fr); gap: 12px; }
+  .contact-profile-caption > span { font-size: 1.5rem; }
+  .section-nav-toggle { padding-inline: 12px; gap: 8px; }
+}
+@media (max-width: 360px) {
+  .calendly-section { padding-inline: 0; }
+  .calendly-shell { border-inline: 0; border-radius: 0; }
+  .calendar-wrap > .section-heading, .booking-help, .calendly-footnote { padding-inline: 16px; }
+}
+/* Landscape phones and short windows: no tall fixed sections or trapped menus. */
+@media (max-height: 500px) and (max-width: 1180px) {
+  .site-header { position: relative; top: 0; }
+  .mobile-menu { padding-top: 100px; }
+  .hero, .page-hero { min-height: 0; padding-top: 36px; }
+  .section-nav.is-enhanced .section-nav-list { max-height: calc(100dvh - 100px); }
+  .gallery-modal-panel { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); height: calc(100dvh - 32px); overflow: hidden; }
+  .gallery-modal-media { height: 100%; min-height: 0; }
+  .gallery-modal-copy { overflow-y: auto; }
+  .gallery-modal-note { padding: 48px 16px 20px; min-height: 0; }
+}
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .gallery-item:hover, .gallery-item.is-open, .contact-quick-action:hover, .scroll-top:hover { transform: none; }
+  .ambient { display: none; }
+}

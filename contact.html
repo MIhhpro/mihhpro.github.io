@@ -1,8 +1,8 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="hu">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="Foglalj időpontot Mihály Bencéhez személyi edzésre a Victory Fitness Békásmegyer edzőterembe, vagy jelentkezz online coachingra." />
   <title>Kapcsolat | Mihály Bence</title>
   <script>
@@ -17,77 +17,104 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="section-nav.css" />
+  <link rel="stylesheet" href="responsive.css" />
 </head>
 <body>
+<a class="skip-link" href="#main-content">Ugrás a tartalomra</a>
 <div class="ambient" aria-hidden="true"></div>
 
 <header class="site-header">
   <a class="brand" href="index.html"><span class="brand-mark">MB</span><span class="brand-name">Mihály Bence</span></a>
-  <nav class="nav-links">
-    <a href="index.html">Főoldal</a><a href="services.html">Szolgáltatások</a><a href="szemelyi-edzes.html">Személyi edzés</a>
-    <a href="about.html">Rólam</a><a href="sikerek.html">Sikerek</a><a href="life.html">Életem</a>
-    <a href="contact.html">Kapcsolat</a>
-  </nav>
-  <a class="nav-cta" href="contact.html">Időpontot kérek</a>
-  <button class="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+  <nav class="nav-links" aria-label="Fő navigáció"><a href="index.html">Főoldal</a>
+    <a href="services.html">Szolgáltatások</a>
+    <a href="szemelyi-edzes.html">Személyi edzés</a>
+    <a href="online-coaching.html">Online coaching</a>
+    <a href="about.html">Rólam</a>
+    <a href="sikerek.html">Sikerek</a>
+    <a href="contact.html" aria-current="page">Kapcsolat</a></nav>
+  <a class="nav-cta" href="contact.html?service=consult">Beszélgessünk</a>
+  <button class="hamburger" type="button" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="mobile-navigation"><span></span><span></span><span></span></button>
 </header>
-<nav class="mobile-menu">
-  <a href="index.html">Főoldal</a><a href="services.html">Szolgáltatások</a><a href="szemelyi-edzes.html">Személyi edzés</a>
-  <a href="about.html">Rólam</a><a href="sikerek.html">Sikerek</a><a href="life.html">Életem</a>
-  <a href="contact.html">Kapcsolat</a>
-</nav>
+<nav class="mobile-menu" id="mobile-navigation" aria-label="Mobil navigáció"><a href="index.html">Főoldal</a>
+    <a href="services.html">Szolgáltatások</a>
+    <a href="szemelyi-edzes.html">Személyi edzés</a>
+    <a href="online-coaching.html">Online coaching</a>
+    <a href="about.html">Rólam</a>
+    <a href="sikerek.html">Sikerek</a>
+    <a href="contact.html" aria-current="page">Kapcsolat</a><a href="elso-alkalom.html">Az első alkalom</a><a href="about.html#galeria">Galéria</a></nav>
 
-<main>
+<main id="main-content" tabindex="-1">
+  <nav class="section-nav" aria-label="Oldal tartalma">
+    <button class="section-nav-toggle" type="button" aria-expanded="false" aria-controls="section-nav-list" hidden>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 6h12M9 12h12M9 18h12M3 6h1M3 12h1M3 18h1"/></svg>
+      Oldal tartalma <span class="section-nav-chevron" aria-hidden="true">⌃</span>
+    </button>
+    <p class="section-nav-heading">Ezen az oldalon</p>
+    <ol id="section-nav-list" class="section-nav-list">
+        <li><a href="#section-contact"><span class="section-nav-marker" aria-hidden="true"></span><span>Kapcsolat</span></a></li>
+        <li><a href="#section-contact-form"><span class="section-nav-marker" aria-hidden="true"></span><span>Jelentkezés</span></a></li>
+        <li hidden><a href="#inquiry"><span class="section-nav-marker" aria-hidden="true"></span><span>Üzenet küldése</span></a></li>
+        <li hidden><a href="#calendar"><span class="section-nav-marker" aria-hidden="true"></span><span>Időpontválasztás</span></a></li>
+        <li><a href="#section-after-booking"><span class="section-nav-marker" aria-hidden="true"></span><span>Foglalás után</span></a></li>
+    </ol>
+  </nav>
+
 
   <!-- ── Page hero ── -->
-  <section class="page-hero" aria-labelledby="contact-title">
+  <section class="page-hero" aria-labelledby="contact-title" id="section-contact" tabindex="-1">
     <div class="shell">
       <p class="eyebrow reveal">Kapcsolat</p>
       <h1 id="contact-title" class="reveal">
-        Írj. Hívj.<br><em>Kezdjük el.</em>
+        Mesélj magadról.<br><em>Innen kezdünk.</em>
       </h1>
       <p class="page-hero-sub reveal">
-        Válaszd ki, miben segíthetek, majd foglalj a valós, szabad időpontok közül.
-        A visszaigazolás azonnal megérkezik.
+        Nem kell pontosan tudnod, mire van szükséged. Válaszd az ingyenes konzultációt, ha először átbeszélnéd a lehetőségeket. Ha csak kérdésed van, üzenetet is írhatsz.
       </p>
     </div>
   </section>
 
   <!-- ── Contact layout ── -->
-  <section class="contact-layout" aria-labelledby="contact-form-title">
+  <section class="contact-layout" aria-labelledby="contact-form-title" id="section-contact-form" tabindex="-1">
     <div class="contact-grid shell">
 
       <!-- Left: Info -->
       <aside class="contact-info reveal" aria-label="Mihály Bence elérhetőségei">
         <div class="contact-profile-card">
           <div class="contact-profile-media">
-            <img src="assets/professional.png" alt="Mihály Bence személyi edző" />
-            <span class="contact-availability"><i aria-hidden="true"></i> Új klienseket vállalok</span>
+            <img alt="Mihály Bence személyi edző" width="1024" height="1536" src="assets/responsive/professional-640.webp" srcset="assets/responsive/professional-320.webp 320w, assets/responsive/professional-640.webp 640w, assets/responsive/professional-960.webp 960w, assets/responsive/professional-1024.webp 1024w" sizes="(max-width: 380px) 64px, (max-width: 420px) 80px, 112px" data-full-src="assets/responsive/professional-1024.webp" loading="lazy" decoding="async" />
             <div class="contact-profile-caption">
               <span>Mihály Bence</span>
-              <strong>Személyi edző · MES Trainer · Budapest</strong>
+              <strong>Személyi edző · MES Trainer<br>Budapest</strong>
+              <p class="contact-availability"><i aria-hidden="true"></i> Személyesen és online</p>
             </div>
           </div>
 
           <div class="contact-profile-body">
             <p class="eyebrow">Közvetlen kapcsolat</p>
             <h2 id="contact-form-title">Beszéljük át,<br>hol tartasz.</h2>
-            <p class="contact-profile-lead">Válassz szolgáltatást, és az oldal rögtön a megfelelő következő lépéshez irányít.</p>
+            <p class="contact-profile-lead">Ha könnyebb közvetlenül beszélni, hívj fel vagy írj emailt. Ha időpontot szeretnél, az űrlapon indulhatsz el.</p>
 
             <div class="contact-quick-actions">
               <a class="contact-quick-action" href="tel:+36708046341">
                 <svg class="lucide lucide-phone" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
                 <span><small>Telefon</small><strong>Hívj fel</strong></span>
               </a>
-              <button class="contact-quick-action js-copy-email" type="button" data-email="mihalybence.9@gmail.com" aria-label="Email cím másolása">
+              <a class="contact-quick-action" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mihaly.bence.fitness%40gmail.com" target="_blank" rel="noopener noreferrer">
                 <svg class="lucide lucide-mail" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2" /> <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
-                <span><small>Email</small><strong class="js-copy-email-label" aria-live="polite">Cím másolása</strong></span>
-              </button>
+                <span><small>Email</small><strong>Írj Gmailben ↗</strong></span>
+              </a>
+            </div>
+
+            <div class="contact-email">
+              <a class="contact-email-address" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mihaly.bence.fitness%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email írása Mihály Bencének Gmailben, új lapon">mihaly.bence.fitness@gmail.com</a>
+              <p class="contact-email-hint">Más levelezőt használsz? Másold ki a címet:</p>
+              <button class="contact-quick-action js-copy-email" type="button" data-email="mihaly.bence.fitness@gmail.com" aria-label="Email cím másolása"><span class="js-copy-email-label" aria-live="polite">Email cím másolása</span></button>
             </div>
 
             <div class="contact-profile-meta">
               <span><svg class="lucide lucide-map-pin" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /> <circle cx="12" cy="10" r="3" /></svg> Victory Fitness Békásmegyer · Hatvany Lajos u. 10.</span>
-              <span><svg class="lucide lucide-clock" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /> <polyline points="12 6 12 12 16 14" /></svg> Válasz 24 órán belül</span>
+              <span><svg class="lucide lucide-clock" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /> <polyline points="12 6 12 12 16 14" /></svg> Előre egyeztetett időpontban</span>
             </div>
           </div>
         </div>
@@ -120,21 +147,23 @@
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="service">Érdeklő szolgáltatás</label>
+            <label class="form-label" for="service">Miben segíthetek?</label>
             <select class="form-select" id="service" name="service" required>
               <option value="">Válassz...</option>
               <option value="consult">Ingyenes bevezető konzultáció</option>
               <option value="pt">Személyi edzés</option>
               <option value="online">Online coaching</option>
+              <option value="program">Training Program – 19&nbsp;900&nbsp;Ft / 4 hét</option>
               <option value="other">Egyéb kérdés</option>
             </select>
           </div>
 
-          <p class="form-note" id="route-note">A kiválasztott szolgáltatás alapján mutatjuk a következő lépést.</p>
+          <div class="form-group" id="online-package-group" hidden><label class="form-label" for="online-package">Melyik coachingcsomag érdekel?</label><select class="form-select" id="online-package" name="package" disabled><option value="">Még nem tudom, segíts választani</option><option value="basic">Basic – 29&nbsp;900&nbsp;Ft / hó</option><option value="plus">Plus – 39&nbsp;900&nbsp;Ft / hó</option><option value="premium">Premium – 49&nbsp;900&nbsp;Ft / hó</option></select></div>
+          <div class="form-group"><label class="form-label" for="message">Mit szeretnél elérni vagy megkérdezni? (opcionális)</label><textarea class="form-input" id="message" name="message" rows="4" maxlength="1500" placeholder="Például: régóta nem edzettem, és szeretnék újra rendszeresen mozogni." aria-describedby="message-hint"></textarea><p class="form-note" id="message-hint">Néhány mondat elég. Leletet vagy részletes egészségügyi adatot itt ne adj meg.</p></div><p class="form-note" id="route-note" aria-live="polite">A kiválasztott szolgáltatás alapján mutatjuk a következő lépést.</p>
 
           <button class="btn btn-primary form-submit" id="route-submit" type="submit">Tovább
           </button>
-        </form>
+        <p class="form-note">Az időpontfoglalást a következő lépésben, a Calendly naptárában erősíted meg. Emailes kérdésnél a levelet a saját leveleződből tudod elküldeni.</p></form><noscript><p>Az űrlaphoz JavaScript szükséges. Írj közvetlenül: <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mihaly.bence.fitness%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email írása Gmailben, új lapon">mihaly.bence.fitness@gmail.com</a>.</p></noscript>
 
       </div>
 
@@ -142,14 +171,14 @@
   </section>
 
   <!-- ── Non-calendar inquiry route ── -->
-  <section class="contact-calendar inquiry-section" aria-labelledby="inquiry-title" id="inquiry" hidden>
+  <section class="contact-calendar inquiry-section" aria-labelledby="inquiry-title" id="inquiry" hidden tabindex="-1">
     <div class="calendar-wrap">
       <div class="inquiry-card">
         <p class="eyebrow">Kapcsolatfelvétel</p>
         <h2 id="inquiry-title">Folytassuk emailben.</h2>
-        <p>A <strong id="inquiry-service-name">kiválasztott téma</strong> nem igényel azonnali időpontfoglalást. Az emailben már szerepelnek az elérhetőségeid; csak egészítsd ki a kérdéseddel, majd küldd el Bencének.</p>
+        <p>A <strong id="inquiry-service-name">kiválasztott téma</strong> nem igényel azonnali időpontfoglalást. Az emailben szerepelnek az elérhetőségeid és a megadott üzeneted. Nézd át, egészítsd ki, majd küldd el. Az oldal még nem küldött üzenetet.</p>
         <div class="inquiry-actions">
-          <a class="btn btn-primary" id="inquiry-email-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mihalybence.9%40gmail.com" target="_blank" rel="noopener">Megnyitás Gmailben</a>
+          <a class="btn btn-primary" id="inquiry-email-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mihaly.bence.fitness%40gmail.com" target="_blank" rel="noopener">Megnyitás Gmailben</a>
           <button class="btn btn-ghost" id="inquiry-copy-button" type="button"><span class="js-inquiry-copy-label" aria-live="polite">Megkeresés másolása</span></button>
         </div>
         <p class="inquiry-note">Nem Gmailt használsz? Másold ki a teljes megkeresést, majd illeszd be a saját leveleződbe.</p>
@@ -158,27 +187,29 @@
   </section>
 
   <!-- ── Calendly scheduling ── -->
-  <section class="contact-calendar calendly-section" aria-labelledby="cal-title" id="calendar" hidden>
+  <section class="contact-calendar calendly-section" aria-labelledby="cal-title" id="calendar" hidden tabindex="-1">
     <div class="calendar-wrap">
       <div class="section-heading" style="width:min(100%,var(--max));margin:0 auto clamp(28px,4vw,44px);">
         <p class="eyebrow">Időpontfoglalás</p>
         <h2 id="cal-title">2. Válassz egy szabad időpontot!</h2>
         <p class="selected-service-badge" id="selected-service-badge"></p>
-        <p class="calendly-intro">A naptár mindig a valós elérhetőséget mutatja. Válassz egy napot, majd egy kezdési időpontot.</p>
+        <p class="calendly-intro">Válassz egy napot, majd egy kezdési időpontot. A foglalás csak a naptárban történő megerősítés után kész.</p>
       </div>
 
       <div class="calendly-shell">
+        <div class="booking-heading"><div><p class="eyebrow">Mihály Bence</p><h3>Találjunk neked egy jó időpontot.</h3></div><span class="booking-secure">Foglalás a Calendlyvel</span></div>
         <div class="booking-guide" aria-label="A foglalás lépései">
           <span><strong>01</strong> Nap kiválasztása</span>
           <span><strong>02</strong> Időpont kiválasztása</span>
           <span><strong>03</strong> Foglalás megerősítése</span>
         </div>
-        <div id="calendly-embed" class="calendly-embed" aria-live="polite"></div>
+        <div id="calendly-loading" class="calendly-loading" role="status" hidden><span class="booking-loader" aria-hidden="true"></span><p>Betöltöm az elérhető időpontokat…</p></div>
+        <div id="calendly-embed" class="calendly-embed"></div>
         <div class="calendly-config-notice" id="calendly-config-notice" hidden>
-          <strong>A naptár előkészítve.</strong>
-          <span>A végleges Calendly eseménylink megadása után itt jelennek meg a szabad időpontok.</span>
+          <strong>Most nem sikerült megnyitni a naptárat.</strong><span>Próbáld újra az űrlap gombjával, nyisd meg külön ablakban, vagy írj közvetlenül: <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mihaly.bence.fitness%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email írása Gmailben, új lapon">mihaly.bence.fitness@gmail.com</a>.</span>
         </div>
       </div>
+      <div class="booking-help"><p>A naptárban ellenőrizd az időzónát, az időtartamot és a helyszínt. Az adataidat a véglegesítés előtt még át tudod nézni.</p><a id="calendly-direct-link" class="service-detail-link" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" hidden>Megnyitás külön ablakban ↗</a></div>
 
       <div class="form-success calendly-success" aria-live="polite">
         <svg class="lucide lucide-check-circle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /> <path d="m9 12 2 2 4-4" /></svg>
@@ -191,7 +222,7 @@
     </div>
   </section>
 
-</main>
+<section class="experience-section" aria-labelledby="after-booking" id="section-after-booking" tabindex="-1"><div class="shell"><div class="section-heading reveal"><p class="eyebrow">Mi történik ezután?</p><h2 id="after-booking">Tudd, mire számíthatsz.</h2></div><div class="fit-grid"><article class="editorial-panel"><h3>Ha időpontot foglaltál</h3><p>A foglalás megerősítése után emailben találod a részleteket. Ha nem érkezik meg, nézd meg a levélszemét mappát is, vagy keress közvetlenül.</p><a class="service-detail-link" href="elso-alkalom.html">Felkészülés az első alkalomra →</a></article><article class="editorial-panel"><h3>Ha üzenetet írtál</h3><p>A készülő levelet a Gmailben nézheted át, vagy kimásolhatod a saját leveleződbe. A küldést ott véglegesíted. Nem kell azonnal időpontot választanod.</p><a class="service-detail-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mihaly.bence.fitness%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email írása Gmailben, új lapon">mihaly.bence.fitness@gmail.com</a></article></div></div></section></main>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -199,18 +230,15 @@
       <a class="brand" href="index.html"><span class="brand-mark">MB</span><span class="brand-name">Mihály Bence</span></a>
       <p>Victory Fitness Békásmegyer · 1039 Budapest, Hatvany Lajos utca 10.</p>
     </div>
-    <nav class="footer-links">
-      <a href="services.html">Szolgáltatások</a><a href="about.html">Rólam</a>
-      <a href="sikerek.html">Sikerek</a>
-      <a href="life.html">Életem</a><a href="contact.html">Kapcsolat</a>
-    </nav>
+    <nav class="footer-links" aria-label="Lábléc navigáció"><a href="services.html">Szolgáltatások</a><a href="online-coaching.html">Online coaching</a><a href="elso-alkalom.html">Az első alkalom</a><a href="about.html">Rólam</a><a href="sikerek.html">Sikerek</a><a href="about.html#galeria">Galéria</a><a href="contact.html">Kapcsolat</a></nav>
   </div>
   <div class="footer-bottom">
     <p>© <span id="year"></span> Mihály Bence</p>
   </div>
 </footer>
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
 <script src="site-config.js"></script>
 <script src="script.js"></script>
+<script src="section-nav.js"></script>
 </body>
 </html>

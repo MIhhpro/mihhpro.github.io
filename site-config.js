@@ -1,10 +1,9 @@
 window.SITE_CONFIG = Object.freeze({
-  // Use a separate Calendly event type for each appointment-based service.
-  // The same test event is used for all three routes until the final links are ready.
+  // Client-management calendar: one event per service.
   calendlyEvents: Object.freeze({
-    consult: "https://calendly.com/mihalybence-9/szemelyi-edzes",
-    pt: "https://calendly.com/mihalybence-9/szemelyi-edzes",
-    online: "https://calendly.com/mihalybence-9/szemelyi-edzes"
+    consult: "https://calendly.com/mihaly-bence-fitness/konzultacio",
+    pt: "https://calendly.com/mihaly-bence-fitness/30min",
+    online: "https://calendly.com/mihaly-bence-fitness/online-coaching"
   }),
-  inquiryEmail: "mihalybence.9@gmail.com"
+  inquiryEmail: "mihaly.bence.fitness@gmail.com"
 });

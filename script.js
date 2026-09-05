@@ -1,9 +1,21 @@
 // ── Ambient pointer ──────────────────────────────────────────
 const root = document.documentElement;
-window.addEventListener("pointermove", (e) => {
-  root.style.setProperty("--mx", `${Math.round((e.clientX / innerWidth) * 100)}%`);
-  root.style.setProperty("--my", `${Math.round((e.clientY / innerHeight) * 100)}%`);
-}, { passive: true });
+const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+const scrollBehavior = () => reducedMotion.matches ? "auto" : "smooth";
+if (matchMedia("(hover: hover) and (pointer: fine)").matches) {
+  let ambientFrame = 0;
+  let pointerX = 0, pointerY = 0;
+  window.addEventListener("pointermove", (e) => {
+    if (reducedMotion.matches) return;
+    pointerX = e.clientX; pointerY = e.clientY;
+    if (ambientFrame) return;
+    ambientFrame = requestAnimationFrame(() => {
+      ambientFrame = 0;
+      root.style.setProperty("--mx", `${Math.round((pointerX / innerWidth) * 100)}%`);
+      root.style.setProperty("--my", `${Math.round((pointerY / innerHeight) * 100)}%`);
+    });
+  }, { passive: true });
+}
 
 // ── Header scroll ────────────────────────────────────────────
 const header = document.querySelector(".site-header");
@@ -22,17 +34,37 @@ requestAnimationFrame(() => {
 const burger = document.querySelector(".hamburger");
 const mobileMenu = document.querySelector(".mobile-menu");
 if (burger && mobileMenu) {
-  burger.addEventListener("click", () => {
-    const open = burger.classList.toggle("open");
+  const setMenu = (open, returnFocus = false) => {
+    burger.classList.toggle("open", open);
+    burger.setAttribute("aria-expanded", String(open));
+    burger.setAttribute("aria-label", open ? "Menü bezárása" : "Menü megnyitása");
     mobileMenu.classList.toggle("open", open);
     document.body.style.overflow = open ? "hidden" : "";
+    document.querySelectorAll("main, .site-footer").forEach(el => { el.inert = open; });
+    const scrollTop = document.querySelector(".scroll-top");
+    if (scrollTop) scrollTop.inert = open;
+    if (open) mobileMenu.querySelector("a")?.focus();
+    else if (returnFocus) burger.focus();
+  };
+  burger.addEventListener("click", () => {
+    setMenu(!burger.classList.contains("open"));
   });
   mobileMenu.querySelectorAll("a").forEach(a => {
     a.addEventListener("click", () => {
-      burger.classList.remove("open");
-      mobileMenu.classList.remove("open");
-      document.body.style.overflow = "";
+      setMenu(false);
     });
+  });
+  document.addEventListener("keydown", (event) => {
+    if (!burger.classList.contains("open")) return;
+    if (event.key === "Escape") { setMenu(false, true); return; }
+    if (event.key !== "Tab") return;
+    const stops = [burger, ...mobileMenu.querySelectorAll("a")];
+    const current = stops.indexOf(document.activeElement);
+    event.preventDefault();
+    stops[(current + (event.shiftKey ? -1 : 1) + stops.length) % stops.length].focus();
+  });
+  matchMedia("(min-width: 1181px)").addEventListener("change", (event) => {
+    if (event.matches) setMenu(false);
   });
 }
 
@@ -42,6 +74,7 @@ document.querySelectorAll(".nav-links a, .mobile-menu a").forEach(a => {
   const href = a.getAttribute("href") || "";
   if (href === page || (page === "" && href === "index.html")) {
     a.classList.add("active");
+    a.setAttribute("aria-current", "page");
   }
 });
 
@@ -73,7 +106,7 @@ if ("IntersectionObserver" in window) {
   const toggle = () => btn.classList.toggle("visible", scrollY > 400);
   toggle();
   addEventListener("scroll", toggle, { passive: true });
-  btn.addEventListener("click", () => scrollTo({ top: 0, behavior: "smooth" }));
+  btn.addEventListener("click", () => scrollTo({ top: 0, behavior: scrollBehavior() }));
 })();
 
 // ── Footer year ──────────────────────────────────────────────
@@ -82,17 +115,23 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // ── Reliable email copy action ──────────────────────────────
 const fallbackCopy = (value) => {
+  const previousFocus = document.activeElement;
   const helper = document.createElement("textarea");
   helper.value = value;
   helper.setAttribute("readonly", "");
   helper.style.position = "fixed";
   helper.style.opacity = "0";
   helper.style.pointerEvents = "none";
-  document.body.appendChild(helper);
-  helper.select();
-  const copied = document.execCommand("copy");
-  helper.remove();
-  return copied;
+  try {
+    document.body.appendChild(helper);
+    helper.select();
+    return document.execCommand("copy");
+  } catch {
+    return false;
+  } finally {
+    helper.remove();
+    previousFocus?.focus({ preventScroll: true });
+  }
 };
 
 const copyText = async (value) => {
@@ -117,7 +156,7 @@ if (copyEmailButton) {
     if (!email) return;
     const copied = await copyText(email);
 
-    if (copyEmailLabel) copyEmailLabel.textContent = copied ? "Email másolva" : email;
+    if (copyEmailLabel) copyEmailLabel.textContent = copied ? "Email cím másolva ✓" : "Jelöld ki és másold a fenti címet.";
     copyEmailButton.classList.toggle("is-copied", copied);
 
     window.setTimeout(() => {
@@ -148,12 +187,25 @@ if (inquiryCopyButton) {
 }
 
 // ── FAQ accordion ────────────────────────────────────────────
-document.querySelectorAll(".faq-q").forEach(btn => {
+document.querySelectorAll(".faq-q").forEach((btn, index) => {
+  const answer = btn.closest(".faq-item").querySelector(".faq-a");
+  answer.id = `faq-answer-${index}`;
+  answer.hidden = true;
+  btn.setAttribute("aria-controls", answer.id);
+  btn.setAttribute("aria-expanded", "false");
   btn.addEventListener("click", () => {
     const item = btn.closest(".faq-item");
     const isOpen = item.classList.contains("open");
-    document.querySelectorAll(".faq-item.open").forEach(i => i.classList.remove("open"));
-    if (!isOpen) item.classList.add("open");
+    document.querySelectorAll(".faq-item.open").forEach(i => {
+      i.classList.remove("open");
+      i.querySelector(".faq-q").setAttribute("aria-expanded", "false");
+      i.querySelector(".faq-a").hidden = true;
+    });
+    if (!isOpen) {
+      item.classList.add("open");
+      answer.hidden = false;
+      btn.setAttribute("aria-expanded", "true");
+    }
   });
 });
 
@@ -214,15 +266,64 @@ document.querySelectorAll(".faq-q").forEach(btn => {
 
 // ── Contact form + Calendly handoff ─────────────────────────
 const CALENDLY_EVENTS = window.SITE_CONFIG?.calendlyEvents || {};
-const INQUIRY_EMAIL = window.SITE_CONFIG?.inquiryEmail?.trim() || "mihalybence.9@gmail.com";
+const INQUIRY_EMAIL = window.SITE_CONFIG?.inquiryEmail?.trim() || "mihaly.bence.fitness@gmail.com";
 const APPOINTMENT_SERVICES = new Set(["consult", "pt", "online"]);
 const buildBrandedCalendlyUrl = (eventUrl) => {
   const url = new URL(eventUrl);
-  url.searchParams.set("hide_event_type_details", "1");
+  if (url.origin !== "https://calendly.com") throw new Error("Invalid scheduling URL");
+  url.searchParams.set("hide_event_type_details", "0");
+  // Preserve the owner's black/gold theme. Calendly exposes one text colour,
+  // not a separate input-text setting; do not recolour the entire widget to fix fields.
   url.searchParams.set("background_color", "100f0c");
   url.searchParams.set("text_color", "f5f0e8");
-  url.searchParams.set("primary_color", "f5c842");
+  url.searchParams.set("primary_color", "d4a843");
   return url.toString();
+};
+
+const buildCalendlyBookingUrl = (eventUrl, prefill) => {
+  const url = new URL(buildBrandedCalendlyUrl(eventUrl));
+  // Include both name layouts, so either Calendly invitee-form setting works.
+  const fields = {
+    name: prefill.name,
+    first_name: prefill.firstName,
+    last_name: prefill.lastName,
+    email: prefill.email,
+    a1: prefill.customAnswers.a1
+  };
+  Object.entries(fields).forEach(([key, value]) => url.searchParams.set(key, value));
+  // The widget parses its URL with decodeURIComponent, which leaves '+' literal.
+  // Encode spaces as %20 and email plus signs as %2B before it reads the URL.
+  url.search = [...url.searchParams].map(([key, value]) =>
+    `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+  ).join("&");
+  return url.toString();
+};
+
+// Load only when a visitor asks to see appointments. Failed loads can be retried.
+let calendlyLoad;
+const ensureCalendly = () => {
+  if (window.Calendly?.initInlineWidget) return Promise.resolve();
+  if (calendlyLoad) return calendlyLoad;
+  calendlyLoad = new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    const fail = () => {
+      clearTimeout(timer);
+      script.remove();
+      calendlyLoad = null;
+      reject(new Error("Calendar unavailable"));
+    };
+    const timer = setTimeout(fail, 12000);
+    script.onload = () => {
+      if (!window.Calendly?.initInlineWidget) { fail(); return; }
+      clearTimeout(timer);
+      resolve();
+    };
+    script.onerror = fail;
+    document.head.appendChild(script);
+  });
+  return calendlyLoad;
 };
 
 const contactForm = document.querySelector(".js-contact-form");
@@ -230,46 +331,87 @@ if (contactForm) {
   const serviceSelect = contactForm.querySelector("#service");
   const routeNote = contactForm.querySelector("#route-note");
   const routeSubmit = contactForm.querySelector("#route-submit");
+  const packageSelect = contactForm.querySelector("#online-package");
+  const packageGroup = contactForm.querySelector("#online-package-group");
+  const schedulingSection = document.querySelector(".calendly-section");
+  const inquirySection = document.querySelector(".inquiry-section");
+  const embed = document.querySelector("#calendly-embed");
+  const loading = document.querySelector("#calendly-loading");
+  const notice = document.querySelector("#calendly-config-notice");
+  const directLink = document.querySelector("#calendly-direct-link");
+  let bookingRequest = 0;
+  let readyTimer;
+  const invalidateBooking = () => {
+    bookingRequest += 1;
+    clearTimeout(readyTimer);
+    if (embed) { embed.innerHTML = ""; embed.hidden = true; }
+    if (loading) loading.hidden = true;
+    if (schedulingSection) schedulingSection.hidden = true;
+    if (inquirySection) inquirySection.hidden = true;
+    if (directLink) { directLink.hidden = true; directLink.removeAttribute("href"); }
+  };
 
   const requestedService = new URLSearchParams(window.location.search).get("service");
-  if (serviceSelect && ["consult", "pt", "online", "other"].includes(requestedService || "")) {
+  if (serviceSelect && ["consult", "pt", "online", "program", "other"].includes(requestedService || "")) {
     serviceSelect.value = requestedService;
+  }
+  const requestedPackage = new URLSearchParams(window.location.search).get("package");
+  if (packageSelect && ["basic", "plus", "premium"].includes(requestedPackage)) {
+    packageSelect.value = requestedPackage;
   }
 
   const updateRouteHint = () => {
     const serviceKey = serviceSelect?.value || "";
+    if (packageGroup) packageGroup.hidden = serviceKey !== "online";
+    if (packageSelect) packageSelect.disabled = serviceKey !== "online";
     const usesCalendar = APPOINTMENT_SERVICES.has(serviceKey);
+    if (routeNote) routeNote.hidden = Boolean(serviceKey) && !usesCalendar;
     if (!serviceKey) {
-      if (routeNote) routeNote.textContent = "A kiválasztott szolgáltatás alapján mutatjuk a következő lépést.";
+      if (routeNote) routeNote.textContent = "Válaszd az ingyenes konzultációt, ha még nem tudod, melyik edzésforma illene hozzád.";
       if (routeSubmit) routeSubmit.textContent = "Tovább";
       return;
     }
     if (routeNote) {
       routeNote.textContent = usesCalendar
-        ? "A következő lépésben a valós, szabad időpontok közül választhatsz."
-        : "A következő lépésben elkészítjük az emailes megkeresésedet.";
+        ? "A következő lépésben időpontot választasz és megerősíted a foglalást a Calendly naptárában."
+        : "";
     }
     if (routeSubmit) routeSubmit.textContent = usesCalendar ? "Tovább az időpontokhoz" : "Tovább az üzenethez";
   };
 
-  serviceSelect?.addEventListener("change", updateRouteHint);
+  serviceSelect?.addEventListener("change", () => { invalidateBooking(); updateRouteHint(); });
+  contactForm.addEventListener("input", invalidateBooking);
+  packageSelect?.addEventListener("change", invalidateBooking);
   updateRouteHint();
 
-  contactForm.addEventListener("submit", (e) => {
+  contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (!contactForm.reportValidity()) return;
+    invalidateBooking();
+    const requestId = bookingRequest;
 
     const schedulingSection = document.querySelector(".calendly-section");
     const inquirySection = document.querySelector(".inquiry-section");
     const embed = document.querySelector("#calendly-embed");
     const notice = document.querySelector("#calendly-config-notice");
     const selectedServiceBadge = document.querySelector("#selected-service-badge");
-    const serviceLabel = serviceSelect?.selectedOptions?.[0]?.textContent?.trim() || "";
     const serviceKey = serviceSelect?.value || "";
+    const baseServiceLabel = serviceSelect?.selectedOptions?.[0]?.textContent?.trim() || "";
+    const packageLabel = serviceKey === "online" && packageSelect?.value
+      ? packageSelect.selectedOptions?.[0]?.textContent?.trim() : "";
+    const serviceLabel = packageLabel ? `${baseServiceLabel} – ${packageLabel}` : baseServiceLabel;
     const firstName = contactForm.querySelector("#fname")?.value?.trim() || "";
     const lastName = contactForm.querySelector("#lname")?.value?.trim() || "";
     const email = contactForm.querySelector("#email")?.value?.trim() || "";
     const phone = contactForm.querySelector("#phone")?.value?.trim() || "";
+    const message = contactForm.querySelector("#message")?.value?.trim() || "";
+    const focusSection = (section) => {
+      if (!section) return;
+      const heading = section.querySelector("h2");
+      heading?.setAttribute("tabindex", "-1");
+      heading?.focus({ preventScroll: true });
+      section.scrollIntoView({ behavior: scrollBehavior(), block: "start" });
+    };
 
     if (!APPOINTMENT_SERVICES.has(serviceKey)) {
       if (schedulingSection) schedulingSection.hidden = true;
@@ -282,10 +424,12 @@ if (contactForm) {
       if (inquiryEmailLink) {
         const subject = `${serviceLabel} – weboldali érdeklődés`;
         const body = [
-          `Név: ${firstName} ${lastName}`.trim(),
+          `Név: ${lastName} ${firstName}`.trim(),
           `Email: ${email}`,
           `Telefon: ${phone || "nincs megadva"}`,
-          `Szolgáltatás: ${serviceLabel}`
+          `Szolgáltatás: ${serviceLabel}`,
+          "",
+          message || "Ide írhatod a kérdésedet."
         ].join("\n");
         const gmailUrl = new URL("https://mail.google.com/mail/");
         gmailUrl.searchParams.set("view", "cm");
@@ -305,7 +449,7 @@ if (contactForm) {
         }
       }
 
-      inquirySection?.scrollIntoView({ behavior: "smooth", block: "start" });
+      focusSection(inquirySection);
       return;
     }
 
@@ -313,50 +457,93 @@ if (contactForm) {
     if (inquirySection) inquirySection.hidden = true;
     if (schedulingSection) schedulingSection.hidden = false;
     if (selectedServiceBadge) selectedServiceBadge.textContent = serviceLabel;
+    if (embed) { embed.innerHTML = ""; embed.hidden = true; }
+    if (notice) notice.hidden = true;
 
     if (!eventUrl) {
       if (notice) notice.hidden = false;
-      schedulingSection?.scrollIntoView({ behavior: "smooth", block: "start" });
+      focusSection(schedulingSection);
       return;
     }
 
-    if (!window.Calendly || !embed) {
-      alert("A naptár még töltődik. Kérlek próbáld újra néhány másodperc múlva.");
-      return;
-    }
-
-    embed.innerHTML = "";
-    if (notice) notice.hidden = true;
-    window.Calendly.initInlineWidget({
-      url: buildBrandedCalendlyUrl(eventUrl),
-      parentElement: embed,
-      resize: true,
-      prefill: {
-        name: `${firstName} ${lastName}`.trim(),
+    try {
+      if (!embed) throw new Error("Missing calendar container");
+      // All three live events have one free-text invitee question (a1).
+      const bookingNotes = [
+        `Szolgáltatás: ${serviceLabel}`,
+        `Telefon: ${phone || "nincs megadva"}`,
+        "",
+        message ? `Üzenet: ${message}` : ""
+      ].join("\n").trim();
+      const prefill = {
+        name: `${lastName} ${firstName}`.trim(),
+        firstName,
+        lastName,
         email,
-        customAnswers: {
-          a1: serviceLabel,
-          a2: phone
-        }
-      },
+        customAnswers: { a1: bookingNotes }
+      };
+      // Pass the same fully prefilled URL to the inline widget and its fallback.
+      // This does not depend on the widget's deferred prefill message arriving.
+      const url = buildCalendlyBookingUrl(eventUrl, prefill);
+      if (directLink) { directLink.href = url; directLink.hidden = false; }
+      if (loading) loading.hidden = false;
+      focusSection(schedulingSection);
+      await ensureCalendly();
+      if (requestId !== bookingRequest) return;
+      embed.hidden = false;
+      embed.style.height = "780px";
+      window.Calendly.initInlineWidget({
+      url,
+      parentElement: embed,
+      // Handle height updates once below; the SDK otherwise adds a new global
+      // resize listener on every handoff and can scroll the page unexpectedly.
+      resize: false,
+      prefill,
       utm: {
         utmSource: "mihaly-bence-weboldal",
         utmMedium: "website",
         utmCampaign: serviceKey
       }
-    });
-
-    schedulingSection?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      embed.querySelector("iframe")?.setAttribute("title", `${serviceLabel} – időpontfoglalás`);
+      readyTimer = setTimeout(() => {
+        if (requestId !== bookingRequest) return;
+        if (loading) loading.hidden = true;
+        if (notice) notice.hidden = false;
+      }, 15000);
+    } catch {
+      if (requestId !== bookingRequest) return;
+      if (embed) embed.hidden = true;
+      if (loading) loading.hidden = true;
+      if (notice) notice.hidden = false;
+      focusSection(schedulingSection);
+    }
   });
 
   window.addEventListener("message", (event) => {
-    if (event.origin !== "https://calendly.com" || event.data?.event !== "calendly.event_scheduled") return;
+    const frame = embed?.querySelector("iframe");
+    if (event.origin !== "https://calendly.com" || !frame || event.source !== frame.contentWindow || schedulingSection?.hidden) return;
+    const name = event.data?.event;
+    if (name === "calendly.page_height") {
+      const heightValue = String(event.data?.payload?.height ?? "");
+      if (!/^\d+(?:\.\d+)?(?:px)?$/.test(heightValue)) return;
+      const height = Number.parseFloat(heightValue);
+      if (height > 0 && height <= 12000) embed.style.height = `${Math.ceil(height)}px`;
+      return;
+    }
+    if (!["calendly.event_type_viewed", "calendly.date_and_time_selected", "calendly.event_scheduled"].includes(name)) return;
+    clearTimeout(readyTimer);
+    if (loading) loading.hidden = true;
+    if (notice) notice.hidden = true;
+    if (name !== "calendly.event_scheduled") return;
     const success = document.querySelector(".form-success");
     const calendlyShell = document.querySelector(".calendly-shell");
     contactForm.style.display = "none";
     if (calendlyShell) calendlyShell.hidden = true;
     success?.classList.add("visible");
-    success?.scrollIntoView({ behavior: "smooth", block: "center" });
+    success?.setAttribute("tabindex", "-1");
+    success?.focus({ preventScroll: true });
+    success?.scrollIntoView({ behavior: scrollBehavior(), block: "center" });
   });
 }
 
@@ -382,9 +569,13 @@ if (contactForm) {
     if (itemToClose) itemToClose.classList.remove("is-open");
     if (cleanupHandlers) cleanupHandlers();
     document.body.style.overflow = previousBodyOverflow;
+    document.querySelectorAll(".site-header, main, .site-footer").forEach(el => { el.inert = false; });
+    const scrollTop = document.querySelector(".scroll-top");
+    if (scrollTop) scrollTop.inert = false;
+    if (itemToClose && !immediate) itemToClose.focus({ preventScroll: true });
 
     if (!overlayToClose) return;
-    if (immediate || overlayToClose.classList.contains("is-closing")) {
+    if (immediate || reducedMotion.matches || overlayToClose.classList.contains("is-closing")) {
       overlayToClose.remove();
       return;
     }
@@ -415,7 +606,7 @@ if (contactForm) {
     previousBodyOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
-    const customNote = item.getAttribute("data-note") || "Blank text";
+    const customNote = item.getAttribute("data-note") || item.querySelector(".gallery-caption")?.textContent || "Egy pillanat a mindennapokból.";
     const overlay = document.createElement("div");
     overlay.className = "gallery-modal";
     overlay.innerHTML = `
@@ -424,30 +615,44 @@ if (contactForm) {
         <button class="gallery-modal-close" type="button" aria-label="Bezárás">&times;</button>
         <div class="gallery-modal-media"></div>
         <div class="gallery-modal-copy">
-          <div class="gallery-modal-note">${customNote}</div>
+          <div class="gallery-modal-note"></div>
         </div>
       </div>
     `;
+    overlay.querySelector(".gallery-modal-note").textContent = customNote;
 
     const mediaSlot = overlay.querySelector(".gallery-modal-media");
     const sourceMedia = item.querySelector("img, .img-placeholder");
     if (sourceMedia && mediaSlot) {
       const clone = sourceMedia.cloneNode(true);
+      if (sourceMedia.dataset.fullSrc) {
+        clone.removeAttribute("srcset");
+        clone.removeAttribute("sizes");
+        clone.src = sourceMedia.dataset.fullSrc;
+        clone.loading = "eager";
+      }
       clone.classList.add("gallery-modal-media-item");
       mediaSlot.appendChild(clone);
     }
 
     document.body.appendChild(overlay);
+    document.querySelectorAll(".site-header, main, .site-footer").forEach(el => { el.inert = true; });
+    const scrollTop = document.querySelector(".scroll-top");
+    if (scrollTop) scrollTop.inert = true;
     requestAnimationFrame(() => overlay.classList.add("is-open"));
     activeOverlay = overlay;
 
-    overlay.querySelector(".gallery-modal-close")?.addEventListener("click", closePopover);
+    overlay.querySelector(".gallery-modal-close")?.addEventListener("click", () => closePopover());
 
     const onPointerDown = (event) => {
       if (overlay.contains(event.target) && !event.target.closest(".gallery-modal-panel")) closePopover();
     };
     const onKeyDown = (event) => {
       if (event.key === "Escape") closePopover();
+      if (event.key === "Tab") {
+        event.preventDefault();
+        overlay.querySelector(".gallery-modal-close")?.focus();
+      }
     };
     const onResize = () => {
       if (activeOverlay !== overlay) return;

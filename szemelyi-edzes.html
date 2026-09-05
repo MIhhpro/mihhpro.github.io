@@ -2,9 +2,9 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="Személyi edzés rehabilitációs szemlélettel a Victory Fitness Békásmegyer edzőteremben, Mihály Bence IWI MES Trainer vezetésével." />
-  <title>Személyi edzés és rehabilitáció | Mihály Bence</title>
+  <title>Személyi edzés Békásmegyeren | Mihály Bence</title>
   <script>
     (function(){var d=document.documentElement;d.classList.add("has-js","preload");
       function show(){d.classList.add("reveal-failsafe");}
@@ -15,45 +15,69 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="section-nav.css" />
+  <link rel="stylesheet" href="responsive.css" />
 </head>
 <body class="training-page">
+<a class="skip-link" href="#main-content">Ugrás a tartalomra</a>
 <div class="ambient" aria-hidden="true"></div>
 
 <header class="site-header">
   <a class="brand" href="index.html"><span class="brand-mark">MB</span><span class="brand-name">Mihály Bence</span></a>
-  <nav class="nav-links">
-    <a href="index.html">Főoldal</a><a href="services.html">Szolgáltatások</a><a href="szemelyi-edzes.html">Személyi edzés</a>
-    <a href="about.html">Rólam</a><a href="sikerek.html">Sikerek</a><a href="life.html">Életem</a>
-    <a href="contact.html">Kapcsolat</a>
-  </nav>
-  <a class="nav-cta" href="contact.html?service=pt">Időpontot kérek</a>
-  <button class="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+  <nav class="nav-links" aria-label="Fő navigáció"><a href="index.html">Főoldal</a>
+    <a href="services.html">Szolgáltatások</a>
+    <a href="szemelyi-edzes.html" aria-current="page">Személyi edzés</a>
+    <a href="online-coaching.html">Online coaching</a>
+    <a href="about.html">Rólam</a>
+    <a href="sikerek.html">Sikerek</a>
+    <a href="contact.html">Kapcsolat</a></nav>
+  <a class="nav-cta" href="contact.html?service=consult">Beszélgessünk</a>
+  <button class="hamburger" type="button" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="mobile-navigation"><span></span><span></span><span></span></button>
 </header>
-<nav class="mobile-menu">
-  <a href="index.html">Főoldal</a><a href="services.html">Szolgáltatások</a><a href="szemelyi-edzes.html">Személyi edzés</a>
-  <a href="about.html">Rólam</a><a href="sikerek.html">Sikerek</a><a href="life.html">Életem</a>
-  <a href="contact.html">Kapcsolat</a>
-</nav>
+<nav class="mobile-menu" id="mobile-navigation" aria-label="Mobil navigáció"><a href="index.html">Főoldal</a>
+    <a href="services.html">Szolgáltatások</a>
+    <a href="szemelyi-edzes.html" aria-current="page">Személyi edzés</a>
+    <a href="online-coaching.html">Online coaching</a>
+    <a href="about.html">Rólam</a>
+    <a href="sikerek.html">Sikerek</a>
+    <a href="contact.html">Kapcsolat</a><a href="elso-alkalom.html">Az első alkalom</a><a href="about.html#galeria">Galéria</a></nav>
 
-<main>
-  <section class="page-hero training-hero" aria-labelledby="training-title">
+<main id="main-content" tabindex="-1">
+  <nav class="section-nav" aria-label="Oldal tartalma">
+    <button class="section-nav-toggle" type="button" aria-expanded="false" aria-controls="section-nav-list" hidden>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 6h12M9 12h12M9 18h12M3 6h1M3 12h1M3 18h1"/></svg>
+      Oldal tartalma <span class="section-nav-chevron" aria-hidden="true">⌃</span>
+    </button>
+    <p class="section-nav-heading">Ezen az oldalon</p>
+    <ol id="section-nav-list" class="section-nav-list">
+        <li><a href="#section-training"><span class="section-nav-marker" aria-hidden="true"></span><span>Személyi edzés</span></a></li>
+        <li><a href="#section-pillars"><span class="section-nav-marker" aria-hidden="true"></span><span>Az alapok</span></a></li>
+        <li><a href="#szemlelet"><span class="section-nav-marker" aria-hidden="true"></span><span>Szemléletem</span></a></li>
+        <li><a href="#section-audience"><span class="section-nav-marker" aria-hidden="true"></span><span>Neked szól?</span></a></li>
+        <li><a href="#section-included"><span class="section-nav-marker" aria-hidden="true"></span><span>Amit kapsz</span></a></li>
+        <li><a href="#section-training-faq"><span class="section-nav-marker" aria-hidden="true"></span><span>Kérdések</span></a></li>
+        <li><a href="#section-training-cta"><span class="section-nav-marker" aria-hidden="true"></span><span>Kezdjük együtt</span></a></li>
+    </ol>
+  </nav>
+
+  <section class="page-hero training-hero" aria-labelledby="training-title" id="section-training" tabindex="-1">
     <div class="shell">
       <div class="training-hero-frame">
         <div class="training-hero-copy">
           <p class="eyebrow reveal">Személyi edzés · Békásmegyer</p>
           <h1 id="training-title" class="training-title reveal">
-            <span>A tested nem sablon.</span>
-            <em>Az edzésed se legyen az.</em>
+            <span>Itt nem maradsz</span>
+            <em>egyedül a kérdéseiddel.</em>
           </h1>
-          <p class="page-hero-sub reveal">A kiindulópontodhoz, a céljaidhoz és az aktuális terhelhetőségedhez igazított edzés — érthető rendszerben, személyes figyelemmel.</p>
+          <p class="page-hero-sub reveal">Mutatom, magyarázom, figyelem, hogyan megy. Olyan alapokat építünk, amelyekre a következő edzésen is támaszkodhatsz — akkor is, ha most kezded, és akkor is, ha régóta edzel.</p>
           <div class="training-hero-actions reveal">
-            <a class="btn btn-primary" href="contact.html?service=pt">Időpontot foglalok</a>
+            <a class="btn btn-primary" href="contact.html?service=consult">Ingyenes konzultációt kérek</a>
             <a class="training-hero-text-link" href="#szemlelet">Mit jelent a rehabilitációs szemlélet?<span aria-hidden="true">↓</span></a>
           </div>
         </div>
         <aside class="training-hero-dossier reveal" aria-label="A személyi edzés legfontosabb adatai">
           <div class="training-coach-strip">
-            <img src="assets/professional.png" alt="Mihály Bence személyi edző" />
+            <img alt="Mihály Bence személyi edző" width="1024" height="1536" src="assets/responsive/professional-640.webp" srcset="assets/responsive/professional-320.webp 320w, assets/responsive/professional-640.webp 640w, assets/responsive/professional-960.webp 960w, assets/responsive/professional-1024.webp 1024w" sizes="(max-width: 640px) calc(100vw - 72px), 520px" data-full-src="assets/responsive/professional-1024.webp" loading="lazy" decoding="async" />
             <div>
               <span>Személyi edző</span>
               <strong>Mihály Bence</strong>
@@ -62,23 +86,23 @@
           </div>
           <div class="training-offer-price">
             <span>Személyi edzés</span>
-            <div><strong>11 000 Ft</strong><small>/ alkalom</small></div>
+            <div><strong><span class="price-amount">11&nbsp;000&nbsp;Ft</span></strong><small>/ alkalom</small></div>
           </div>
           <dl class="training-offer-facts">
             <div><dt>Helyszín</dt><dd>Victory Fitness Békásmegyer</dd></div>
             <div><dt>Cím</dt><dd>1039 Budapest, Hatvany Lajos utca 10.</dd></div>
-            <div><dt>Fókusz</dt><dd>Biztonságos, mérhető fejlődés</dd></div>
+            <div><dt>10 alkalom</dt><dd><span class="price-amount">100&nbsp;000&nbsp;Ft</span> · <span class="price-amount">10&nbsp;000&nbsp;Ft</span> / edzés</dd></div>
           </dl>
         </aside>
       </div>
     </div>
   </section>
 
-  <section class="training-pillars" aria-labelledby="pillars-title">
+  <section class="training-pillars" aria-labelledby="pillars-title" id="section-pillars" tabindex="-1">
     <div class="shell">
       <div class="section-heading reveal">
         <p class="eyebrow">A közös munka alapja</p>
-        <h2 id="pillars-title">Nem sablon. Rendszer.</h2>
+        <h2 id="pillars-title">Tudd, mit csinálsz. Érezd, hogy haladsz.</h2>
       </div>
       <div class="training-pillar-grid">
         <article class="training-pillar reveal">
@@ -88,7 +112,7 @@
         </article>
         <article class="training-pillar reveal">
           <span>02</span>
-          <h3>Mérhető progresszió</h3>
+          <h3>Követhető fejlődés</h3>
           <p>Nem érzésre találgatunk: követjük a technikát, a terhelést, az ismétléseket és a közösen kijelölt mérföldköveket.</p>
         </article>
         <article class="training-pillar reveal">
@@ -100,7 +124,7 @@
     </div>
   </section>
 
-  <section class="training-scope" id="szemlelet" aria-labelledby="scope-title">
+  <section class="training-scope" id="szemlelet" aria-labelledby="scope-title" tabindex="-1">
     <div class="training-scope-grid shell">
       <div class="training-scope-copy reveal">
         <p class="eyebrow">Rehabilitációs szemlélet</p>
@@ -112,14 +136,14 @@
       <aside class="training-boundary reveal" aria-label="Szakmai határok">
         <svg class="lucide lucide-heart-pulse" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27" /></svg>
         <p class="eyebrow">Fontos különbség</p>
-        <h3>Mozgásterápia, nem egészségügyi kezelés.</h3>
+        <h3>Edzés, világos szakmai határokkal.</h3>
         <p>Nem állítok fel diagnózist, és a személyi edzés nem helyettesíti az orvosi vagy gyógytornászi ellátást. Akut fájdalom, friss sérülés vagy tisztázatlan panasz esetén először megfelelő egészségügyi szakember vizsgálata szükséges.</p>
         <p>Ha már rendelkezel orvosi vagy gyógytornászi javaslattal, az abban meghatározott kereteket figyelembe véve tudjuk felépíteni az edzéshez való visszatérést.</p>
       </aside>
     </div>
   </section>
 
-  <section class="training-audience" aria-labelledby="audience-title">
+  <section class="training-audience" aria-labelledby="audience-title" id="section-audience" tabindex="-1">
     <div class="shell">
       <div class="section-heading reveal">
         <p class="eyebrow">Kinek szól?</p>
@@ -134,7 +158,7 @@
     </div>
   </section>
 
-  <section class="training-included" aria-labelledby="included-title">
+  <section class="training-included" aria-labelledby="included-title" id="section-included" tabindex="-1">
     <div class="training-included-grid shell">
       <div class="training-included-copy reveal">
         <p class="eyebrow">Amit kapsz</p>
@@ -152,12 +176,12 @@
         <h3>Victory Fitness Békásmegyer</h3>
         <p>1039 Budapest<br>Hatvany Lajos utca 10.</p>
         <span>Jól felszerelt edzőtermi környezet személyi edzéshez és fokozatos terhelésépítéshez.</span>
-        <a class="btn btn-outline" href="contact.html?service=pt">Foglalás indítása</a>
+        <a class="btn btn-outline" href="elso-alkalom.html#erkezes">Az első látogatás előtt →</a>
       </aside>
     </div>
   </section>
 
-  <section class="services-faq" aria-labelledby="training-faq-title">
+  <section class="services-faq" aria-labelledby="training-faq-title" id="section-training-faq" tabindex="-1">
     <div class="faq-wrap shell">
       <div class="section-heading reveal">
         <p class="eyebrow">Gyakori kérdések</p>
@@ -174,7 +198,7 @@
         </article>
         <article class="faq-item reveal">
           <button class="faq-q" type="button"><span>Hetente hányszor érdemes edzeni?</span><span class="faq-plus" aria-hidden="true">+</span></button>
-          <div class="faq-a"><p>Ez a célodtól, időbeosztásodtól és regenerációdtól függ. A legtöbb esetben heti két-három jól felépített alkalom már stabil fejlődést adhat.</p></div>
+          <div class="faq-a"><p>A célod és a mostani időbeosztásod alapján közösen választunk tartható ritmust. Mondd el, hány alkalom férne bele egy átlagos hetedbe, és ehhez tervezünk.</p></div>
         </article>
         <article class="faq-item reveal">
           <button class="faq-q" type="button"><span>Hol zajlanak az edzések?</span><span class="faq-plus" aria-hidden="true">+</span></button>
@@ -184,14 +208,7 @@
     </div>
   </section>
 
-  <section class="home-cta" aria-labelledby="training-cta-title">
-    <div class="home-cta-card reveal">
-      <p class="eyebrow" style="justify-content:center;">Első lépés</p>
-      <h2 id="training-cta-title">Nézzük meg, honnan indulunk.</h2>
-      <p>Foglalj egy ingyenes bevezető konzultációt, és beszéljük át, milyen irány lenne számodra biztonságos és eredményes.</p>
-      <div class="home-cta-actions"><a class="btn btn-primary" href="contact.html?service=consult">Ingyenes konzultáció</a><a class="btn btn-ghost" href="services.html">Vissza a szolgáltatásokhoz</a></div>
-    </div>
-  </section>
+  <section class="home-cta" aria-labelledby="training-cta-title" id="section-training-cta" tabindex="-1"><div class="home-cta-card reveal"><p class="eyebrow">Innen indulunk</p><h2 id="training-cta-title" class="experience-cta-title">Az első edzés előtt is kérdezhetsz.</h2><p>Beszéljük át, mit szeretnél elérni, és mi tenne magabiztosabbá a teremben. Az első konzultáció díjmentes.</p><div class="home-cta-actions"><a class="btn btn-primary" href="contact.html?service=consult">Beszélgessünk · díjmentesen</a></div><p class="cta-reassurance">Először megismerjük egymást. A folytatásról utána döntesz.</p></div></section>
 </main>
 
 <footer class="site-footer">
@@ -200,10 +217,11 @@
       <a class="brand" href="index.html"><span class="brand-mark">MB</span><span class="brand-name">Mihály Bence</span></a>
       <p>Victory Fitness Békásmegyer · 1039 Budapest, Hatvany Lajos utca 10.</p>
     </div>
-    <nav class="footer-links"><a href="services.html">Szolgáltatások</a><a href="szemelyi-edzes.html">Személyi edzés</a><a href="about.html">Rólam</a><a href="sikerek.html">Sikerek</a><a href="life.html">Életem</a><a href="contact.html">Kapcsolat</a></nav>
+    <nav class="footer-links" aria-label="Lábléc navigáció"><a href="services.html">Szolgáltatások</a><a href="online-coaching.html">Online coaching</a><a href="elso-alkalom.html">Az első alkalom</a><a href="about.html">Rólam</a><a href="sikerek.html">Sikerek</a><a href="about.html#galeria">Galéria</a><a href="contact.html">Kapcsolat</a></nav>
   </div>
   <div class="footer-bottom"><p>© <span id="year"></span> Mihály Bence</p></div>
 </footer>
 <script src="script.js"></script>
+<script src="section-nav.js"></script>
 </body>
 </html>
