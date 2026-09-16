@@ -1,15 +1,17 @@
 # Terms: content, decisions and remaining work
 
-Prepared 2026-09-05. Active folder: V15. These are researched bilingual **review drafts**, not a certification of EU/Hungarian legal compliance. No live upload, client agreement, email, invoice or payment was performed.
+Prepared 2026-09-05; inherited unchanged from V15 into active folder V16 on 2026-09-08. These are researched bilingual **review drafts**, not a certification of EU/Hungarian legal compliance or a fresh legal review on the copy date. No live upload, client agreement, email, invoice or payment was performed.
 
 ## Delivered
 
+2026-09-12 update: separate privacy review pages now exist at `adatkezeles.html` / `privacy-en.html`, linked throughout all 22 pages. PRIVACY_REVIEW records the confirmed client apps and remaining retention/settings/provider checks; earlier references to creating a notice are superseded by finalising it. The site is now bilingual throughout. Terms content and its unresolved contract decisions have not been changed by this privacy work.
+
 - `aszf.html` (Hungarian), `terms.html` (English), with matching numbered sections, language switching and the existing section navigation.
 - `terms-hu.txt` / `terms-en.txt`: self-contained downloads, including version/draft status. Browser printing also supports saving a PDF.
-- Footer links on all ten HTML pages; separate quiet legal row. `legal.css` preserves the existing colours and adds readable mobile/print layouts.
+- Footer links on all 22 current HTML pages; separate quiet legal row. `legal.css` preserves the existing colours and adds readable mobile/print layouts.
 - Contact-page explanation that an enquiry/Calendly selection is not itself a paid training contract; link to the draft, without a false consent checkbox.
-- `tools/terms-content.json` is the paired content source. Run `python tools/build-terms.py` from V15 after updating it. Both languages and text downloads must stay aligned. The generator currently intentionally emits draft/noindex status. Do not silently remove the status while completion items remain.
-- English menu/back-to-top accessibility labels in `script.js`; the rest of the site's content remains Hungarian.
+- `tools/terms-content.json` is the paired content source. Run `python tools/build-terms.py` from V16 after updating it. Both languages and text downloads must stay aligned. The generator currently intentionally emits draft/noindex status. Do not silently remove the status while completion items remain.
+- Both languages now cover the complete site, including menu/back-to-top accessibility labels in `script.js`.
 
 ## Owner-supplied facts
 
@@ -36,7 +38,7 @@ Prepared 2026-09-05. Active folder: V15. These are researched bilingual **review
 - The standalone Training Program remains a separate product. If sold remotely, its actual transaction is covered by the applicable distance rules even though the owner's usual online contracting process is for coaching. A later handwritten signature cannot undo an already concluded distance contract.
 - A 24-hour cancellation rule cannot override statutory withdrawal, defective-performance remedies or the promised reply guarantee. Consumer-facing cancellation fees must be fair/proportionate; obtain review of the actual charge and session allocation.
 - Confidentiality is not a promise to disclose only on a search warrant. Binding lawful court/authority requirements, necessary lawful claims processing and technical providers require carefully limited exceptions. Do not promise that Gmail/Calendly providers have no access or that all content is end-to-end encrypted.
-- Health data require an Article 9 GDPR condition as well as an Article 6 basis. A TOS acceptance is not blanket consent for health data or promotional photo use. The separate privacy notice is still missing.
+- Health data require an Article 9 GDPR condition as well as an Article 6 basis. A TOS acceptance is not blanket consent for health data or promotional photo use. The separate privacy review notice now exists; operational completion remains in PRIVACY_REVIEW.
 - Online coaching is not automatically a digital download. Personalisation alone is not the custom-goods withdrawal exception. For early performance, collect explicit statements and retain the terms/offer/confirmation in a durable format before starting.
 
 ## Items that prevent treating the drafts as final

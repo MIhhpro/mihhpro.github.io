@@ -1,0 +1,92 @@
+Privacy notice
+2026-09-12
+Review copy — operational details to confirm
+This describes the website and the confirmed client communication channels. Deletion deadlines, app storage and recording settings, and provider arrangements still need confirmation before finalisation.
+
+1. Controller
+
+The controller is Mihály Bence Egyéni Vállalkozó (sole trader). Registered office: 2370 Dabas, Toldi Miklós utca 46., Hungary. Tax number: 91565958-1-33.
+For privacy questions and requests to exercise your rights, write to mihaly.bence.fitness@gmail.com. You can also write to the registered office.
+This notice covers the website, enquiries, scheduling and the basic processing involved in subsequent client communication. Detailed arrangements for health information, client photos, videos and separate messaging services used during subsequent coaching must also be specified before those data are requested.
+
+2. Visiting the website
+
+The website is hosted on GitHub Pages. Opening a page can transmit technical data to the host, including your IP address, browser and device details, requested page and request time. These support website delivery and security. Processing needed for secure operation relies on legitimate interests under GDPR Article 6(1)(f): keeping the site available, resolving errors and preventing abuse.
+The site downloads Google Fonts for its typography. This sends technical requests to Google servers, including an IP address and browser-supplied headers. The current implementation does not host these fonts locally. Google states that its Fonts service does not use cookies.
+The site's own code contains no Google Analytics, advertising pixel, newsletter sign-up or visitor account. Language selection is not stored in cookies or local storage. External providers have their own processing activities.
+
+3. Contacting me
+
+The form asks for your first name, surname, email address and selected service. You can also provide a phone number, package choice and short message; optional fields may be left blank. The booking form cannot continue without a name, email address and service, but you may contact me directly instead.
+The purpose is to answer your enquiry and prepare the service you requested. Service enquiries and bookings rely on GDPR Article 6(1)(b): steps taken at your request before entering a contract, or performance of a contract. Other general enquiries rely on Article 6(1)(f): the legitimate interest in responding to questions addressed to me.
+Typing alone does not send the form content to me or to the GitHub host. The site's own code does not save it in local storage; your browser's own autofill may operate independently.
+For a paid service, I request the information required for an invoice or receipt separately, such as name, billing address and a tax number where required. The basis is a legal obligation under GDPR Article 6(1)(c), arising from applicable Hungarian tax and documentation rules. Without legally required billing information, the paid service cannot be properly documented. The website has no card checkout or automatic invoicing.
+
+4. Calendly and email
+
+Booking: continuing to the available times passes your name, email, selected service/package, and any phone number and message to Calendly. This happens when the calendar opens, before a booking is finally confirmed. Calendly can also process technical device information; scheduling creates appointment, time-zone and booking-status data.
+Email enquiries: choosing Training Program or another question first creates a draft locally. “Open in Gmail” passes the recipient, subject and message to Google. The email reaches me only after you send it from your email service. The copy button places the prepared text on your clipboard so you can use another email service.
+Calendly and Gmail prefill links can contain personal information in URL parameters. Do not share these calendar or draft-message links with others; opening them in another tab may also leave them in browser history.
+The Calendly calendar may use its own cookies and similar technologies. Where required, its interface manages consent for non-essential purposes. Requesting a booking is not blanket consent to advertising tracking. You may request a time by direct email instead.
+Opening Contact also downloads a Calendly stylesheet. That sends a technical request with IP and browser information to the provider, but does not transmit the form contents at that stage.
+
+5. Confidential information
+
+Please do not send medical records, detailed health information, workplace information or confidential details about other people during the first enquiry. The website has no photo or video upload. A few sentences about your goal are enough to start.
+Information revealing health conditions is special-category personal data. Processing it for coaching needs an appropriate general legal basis and a condition under GDPR Article 9. Where I rely on explicit consent, it must be given separately for a specified purpose. Reading this notice or accepting the terms is not that consent.
+I treat messages and client information confidentially. I do not publish client photos, videos, stories or message extracts for marketing without separate, voluntary and specific permission. Binding lawful requests from authorities or courts, and necessary lawful handling of legal claims, can require disclosure; confidentiality exceptions are therefore not limited to search warrants.
+
+6. Video calls and chats
+
+I use Google Meet for video calls. Agreed messaging channels may include Messenger, WhatsApp, Telegram, Viber or Signal. You do not need accounts with all of them; we agree on a channel beforehand. These apps are not embedded in the website, so visiting the site alone does not start a chat or video call.
+During the service I can see identifying profile information, messages and photos/videos you send; Meet calls involve your voice and camera image. The purposes are communication, coaching support and requested technique feedback. Necessary ordinary client communication relies on contract preparation or performance under GDPR Article 6(1)(b). Health-related content additionally requires the conditions described for special-category data. Any recording or transcription of a call requires separate advance information and an appropriate legal basis; this notice is not blanket permission for it.
+I do not intentionally download client photos or training videos into my phone's photo library or keep a separate personal archive. I review them within the conversation while they remain available there. This does not mean they exist only on provider servers: apps can store data on devices, linked devices, in caches or in backups depending on settings. Signal, for example, stores message history on users' devices.
+If an app's delete-for-everyone function also removes the media from my copy of the conversation, I can no longer open it there. Deleting only your own copy may not do that. I cannot guarantee complete removal of backups or technical remnants across every provider and device. You may also ask me directly for deletion; responsibility for justified retention in my processing does not rest only with the sender.
+
+7. Retention
+
+Review point: the deletion schedule used in practice still needs confirmation. Before finalisation, the following purpose-based criteria must be checked against actual email, calendar and client-data practices.
+Unsent form data: the site's code keeps it only for the current page operation and does not save it when the page is refreshed or closed. Your browser, clipboard or an opened external draft may retain it separately.Enquiries that do not lead to a service: until the question and related discussion are resolved; further retention needs a specific, documented purpose.Bookings and correspondence needed for a contract: through scheduling and service delivery, then only the relevant data for as long as a statutory duty or an identifiable legal claim requires.Invoices, receipts and related tax records: until the legally required tax-record retention period for the particular document ends, including applicable extensions. This does not justify retaining all chats or health information for the same period.Chat media and messages: I keep no separate personal media archive; access currently lasts while they remain available in the conversation. A final policy still needs a deadline for deletion on my side after feedback or the coaching relationship ends. Mere technical availability does not justify indefinite retention. The website does not collect such uploads.
+Providers may apply separate retention rules to their technical logs and backups. Unnecessary data must be deleted or irreversibly anonymised; only relevant records should be retained for a dispute.
+
+8. External providers
+
+GitHub, Inc. / GitHub B.V.: website hosting and technical operation. GitHub privacy statement.Calendly, LLC: appointment scheduling. It can act as processor for booking data collected on my behalf and as an independent controller for its own service purposes. Calendly privacy notice and data processing terms.Google Ireland Limited / Google LLC: Google Fonts and messages opened or sent through Gmail. Roles and terms depend on the service and account type used. Google privacy policy; Google Fonts privacy information.
+https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement
+https://calendly.com/legal/privacy-notice
+https://calendly.com/legal/data-processing-addendum
+https://policies.google.com/privacy?hl=en
+https://developers.google.com/fonts/faq/privacy
+The map button is an external link to the gym's existing Google Maps listing, not an embedded map. Opening it brings the subsequent processing under Google's own terms. The gym's independent processing is outside this notice.
+Where necessary for a task and supported by an appropriate legal basis, data may also be received by a legally empowered authority or court, or a legal or accounting professional. Additional client-management applications must be identified before requesting data; the website alone does not establish that a verified processor agreement exists with every provider.
+Client communication services
+The agreed channel provider can process information needed for transmission and operation. Content access, encryption, local storage and retention vary by app and conversation type. I do not claim that every message on every platform has the same end-to-end encryption.
+Google MeetMessenger / MetaWhatsAppTelegramViberSignal
+https://policies.google.com/privacy?hl=en
+https://www.facebook.com/privacy/policy/
+https://www.whatsapp.com/legal/privacy-policy-eea
+https://telegram.org/privacy
+https://www.viber.com/en/terms/viber-privacy-policy/
+https://signal.org/legal/
+
+9. International transfers
+
+Using GitHub, Google, Calendly and the chosen chat apps can involve processing outside the European Economic Area, including in the United States. I do not claim that all data remain in Hungary or the EU.
+Such transfers require an applicable GDPR Chapter V mechanism: an adequacy decision where applicable—with appropriate certification of the actual recipient when relying on the EU–US Data Privacy Framework—or, for example, standard contractual clauses and any supplementary safeguards needed for the particular transfer. The terms for the actual account and service must be checked; linking a provider's privacy page is not a substitute.
+You can request information about the applicable safeguards and how to obtain a copy at the email address above. Google data transfer frameworks.
+https://policies.google.com/privacy/frameworks?hl=en
+
+10. Your rights
+
+Subject to the relevant legal conditions, you can request access and a copy, correction, erasure or restriction. For automated processing based on consent or a contract, you may also request data portability.
+You may object to processing based on legitimate interests on grounds relating to your particular situation. You can withdraw consent at any time without affecting earlier lawful processing. Erasure or withdrawal does not override compulsory record retention or processing needed for justified legal claims.
+Write to mihaly.bence.fitness@gmail.com. If there is doubt about identity, I will request only the additional information needed to verify it. Requests must be answered without undue delay, normally within one month. Complex or numerous requests may require up to two additional months, with reasons communicated within the first month. The coaching service's 24-hour reply promise is a separate commitment.
+The website does not make solely automated decisions, including profiling, that produce legal or similarly significant effects on you.
+
+11. Complaints and remedies
+
+If you believe your rights have been infringed, you may complain directly to a supervisory authority and seek a judicial remedy. You do not have to complain to me first.
+Hungarian National Authority for Data Protection and Freedom of Information (NAIH)1055 Budapest, Falk Miksa utca 9–11., HungaryPostal address: 1363 Budapest, Pf. 9., HungaryEmail: ugyfelszolgalat@naih.huNAIH contact information
+https://naih.hu/ugyfelszolgalat-kapcsolat
+In the EU, you may also complain to the supervisory authority for your habitual residence, workplace or the place of the alleged infringement. Legal source: GDPR, particularly Articles 12–22, 77 and 79.
+https://eur-lex.europa.eu/eli/reg/2016/679/oj

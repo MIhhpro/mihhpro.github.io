@@ -1,10 +1,14 @@
-# Calendly setup for V15
+# Calendly setup for V16
+
+## Current owner confirmation — 2026-09-12
+
+Calendly design is fixed, including the previously tracked field-contrast problem. Booking was already confirmed working. Treat appearance and prefill as completed; preserve the approved current design. The owner did not provide the implementation details, and this documentation update did not independently inspect the widget or alter account settings. English custom event copy/notifications are a separate unconfirmed content item. Earlier colour-investigation notes are historical and must not reappear as an open task.
 
 ## English website (2026-09-07)
 
 `contact-en.html` uses the same confirmed event URLs and preserved dark/gold widget configuration. Website instructions, booking notes and fallback messages are English; name prefill uses first name then surname. No Calendly account settings were changed. Calendly controls its own booking-view language and notifications, and custom event names/descriptions/questions need manual translations in that account: [Calendly's event-language instructions](https://calendly.com/help/how-to-change-your-event-type-language). If separate English events are created later, record their confirmed URLs here and add language-specific routing without disturbing existing Hungarian bookings.
 
-V15 started from the V14 integration and now includes the automatic-prefill fix described below. Configure `V15/site-config.js` for this version. The observations below were verified on 2026-09-05; they are not a live account-status check. See [README.md](README.md) for local tests and [PROJECT_NOTES.md](PROJECT_NOTES.md) for approved packages.
+V16 inherited the current V15 integration unchanged on 2026-09-08, including the prefill fix and bilingual website messages. Configure `V16/site-config.js`. Event observations below were verified on 2026-09-05; copying the version does not re-verify the live account. See [README.md](README.md) for tests and [PROJECT_NOTES.md](PROJECT_NOTES.md) for approved packages.
 
 ## Live client-management account
 
@@ -47,7 +51,7 @@ Direct contact email links open an addressed Gmail draft in a new tab, with a se
 
 - The Calendly script is loaded when the visitor requests appointments, with a 12-second loading limit and retry support.
 - The original theme is restored at the owner's explicit request: `background_color=100f0c`, `text_color=f5f0e8`, `primary_color=d4a843`. The owner rejected the bronze/beige whole-widget workaround; do not reapply it. The iframe background is black and retains `color-scheme: light` for browser-rendered surfaces. Event duration, location, timezone, cookie controls and Calendly attribution remain visible.
-- Unresolved: the owner reports pale text on light Calendly input boxes. Calendly's documented settings expose a single text colour, not a separate input-text colour. Parent-page CSS cannot target its cross-origin fields. Restoring the theme does not establish that field contrast is fixed. Do not claim the dark field text was preserved, use unsupported colour parameters, overlay controls, or filter the whole iframe. A field-specific fix requires a supported Calendly change; see the official references below. Prefill remains functional in both the inline widget and direct booking link.
+- Resolved by owner confirmation on 2026-09-12: the previously reported pale text on light input boxes / Calendly design issue. The mechanism is not documented; do not invent an account setting or claim independent verification. Preserve functional prefill and the current appearance; do not introduce iframe filters, overlay controls or another whole-widget recolour.
 - One auto-resizing embed is used per page. SDK `resize` is disabled; the site's existing message handler accepts `calendly.page_height` only from the current frame and exact Calendly origin, validates numeric heights (up to 12,000px), and updates the embed without scrolling the page. This avoids accumulated SDK resize listeners after repeated form handoffs. No overlay masks or brightness filters obscure the content.
 - A 15-second readiness fallback provides an alternative if the calendar frame is slow or blocked; late successful loads recover.
 - The separate-window link includes the same prefilled details as the embed and uses no-referrer handling.
@@ -57,7 +61,7 @@ Direct contact email links open an addressed Gmail draft in a new tab, with a se
 
 The fix was tested against the downloaded public Calendly widget using a local DOM test harness. All three services produced an initial iframe URL containing correct full/split names, email, notes and theme parameters without firing deferred load messages. Tests include accents, spaces, plus-addressed emails and changed form values. The downloaded widget was temporary and is not bundled into the site. This verifies transport to the iframe, not a completed live booking or a browser inspection of the final invitee fields.
 
-Check the connected calendar, availability, buffers, cancellation rules and email notifications in the new Calendly account. Complete a booking for each event when ready, verifying confirmations, cancellation/rescheduling and conferencing details. No live appointments or email messages were created during development verification.
+Booking and appearance are owner-confirmed working. Do not repeat complete bookings solely to satisfy older notes. Check English event copy and notifications if not already reviewed; verify availability, buffers, cancellation/rescheduling or meeting-link settings when those settings change or a specific gap is reported. No live appointments or email messages were created during development verification.
 
 ## Official references
 

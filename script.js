@@ -89,11 +89,24 @@ if ("IntersectionObserver" in window) {
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add("is-visible"); obs.unobserve(e.target); }
     });
-  }, { threshold: 0.12, rootMargin: "0px 0px -50px 0px" });
-  document.querySelectorAll(".reveal").forEach((el, i) => {
-    const isPhoneLike = window.matchMedia("(max-width: 768px)").matches;
-    el.style.transitionDelay = isPhoneLike ? "0ms" : `${Math.min(i % 6 * 80, 320)}ms`;
+  }, { threshold: 0.08, rootMargin: "0px 0px -24px 0px" });
+  const siblingOrder = new Map();
+  const isPhoneLike = window.matchMedia("(max-width: 768px)").matches;
+  document.querySelectorAll(".reveal").forEach(el => {
+    const order = siblingOrder.get(el.parentElement) || 0;
+    siblingOrder.set(el.parentElement, order + 1);
+    el.style.setProperty("--reveal-delay", isPhoneLike ? "0ms" : `${Math.min(order * 45, 135)}ms`);
     obs.observe(el);
+  });
+  // Keyboard navigation must never land in content still waiting to appear.
+  document.addEventListener("focusin", (event) => {
+    let container = event.target.closest(".reveal");
+    while (container) {
+      container.classList.add("is-visible");
+      container.style.setProperty("--reveal-delay", "0ms");
+      obs.unobserve(container);
+      container = container.parentElement?.closest(".reveal");
+    }
   });
 } else {
   document.querySelectorAll(".reveal").forEach(el => el.classList.add("is-visible"));
@@ -211,6 +224,53 @@ document.querySelectorAll(".faq-q").forEach((btn, index) => {
       btn.setAttribute("aria-expanded", "true");
     }
   });
+});
+
+// ── Native questions: interruptible expansion, natural final height ──
+document.querySelectorAll("details.question").forEach(details => {
+  const summary = details.querySelector("summary");
+  const content = details.querySelector("summary + div");
+  if (!summary || !content || typeof details.animate !== "function") return;
+  let animation = null;
+  let desiredOpen = details.open;
+
+  const settle = () => {
+    if (animation) {
+      animation.onfinish = null;
+      animation.cancel();
+      animation = null;
+    }
+    details.open = desiredOpen;
+    details.style.overflow = "";
+    details.classList.remove("is-closing");
+    content.inert = false;
+  };
+
+  summary.addEventListener("click", event => {
+    if (reducedMotion.matches) return; // Keep native keyboard/click behavior.
+    event.preventDefault();
+    const start = details.getBoundingClientRect().height;
+    desiredOpen = animation ? !desiredOpen : !details.open;
+    if (animation) {
+      animation.onfinish = null;
+      animation.cancel();
+    }
+    // Measure the real open/closed size; no fixed cap on translated answers.
+    details.open = desiredOpen;
+    const end = details.getBoundingClientRect().height;
+    details.open = true;
+    details.style.overflow = "hidden";
+    details.classList.toggle("is-closing", !desiredOpen);
+    content.inert = !desiredOpen;
+    animation = details.animate(
+      [{ height: `${start}px` }, { height: `${end}px` }],
+      { duration: desiredOpen ? 280 : 220, easing: "cubic-bezier(.22, 1, .36, 1)" }
+    );
+    animation.onfinish = settle;
+  });
+  // Resizing / changing accessibility settings must not leave clipped content.
+  window.addEventListener("resize", () => { if (animation) settle(); }, { passive: true });
+  reducedMotion.addEventListener("change", () => { if (animation) settle(); });
 });
 
 // ── Count-up stats ───────────────────────────────────────────

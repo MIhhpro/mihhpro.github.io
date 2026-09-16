@@ -1,8 +1,10 @@
-# V15 — start here
+# V16 — start here
 
 ## Working version
 
-V15 is the active version, copied from V14 on 2026-09-05 after the gallery, pricing layout, contact portrait and email-action fixes. Site code and assets were copied unchanged; documentation was refreshed for future work. Keep V14 as the prior snapshot.
+Latest owner confirmation (2026-09-12): Calendly design/field contrast is fixed, and booking already works. This is recorded as owner-confirmed, not a new independent widget test. See NEXT_STEPS for remaining work; do not reopen the old colour issue. V16 publication has not been confirmed.
+
+V16 is the active version, copied from V15 on 2026-09-08 after the bilingual site, navigation, 404 and circular-logo updates. Site code and assets were copied unchanged; documentation was refreshed. Keep V15 and earlier versions as snapshots. Start with [HANDOFF.md](HANDOFF.md) for current status, editing entry points and unresolved items.
 
 Read these files before changing content or integrations:
 
@@ -11,8 +13,12 @@ Read these files before changing content or integrations:
 - [CALENDLY_SETUP.md](CALENDLY_SETUP.md): event links, field mapping and verification limits.
 - [PUBLISHING_CHECKLIST.md](PUBLISHING_CHECKLIST.md): remaining launch checks, the already-owned domain and the measured image improvements.
 - [LEGAL_REVIEW.md](LEGAL_REVIEW.md): bilingual terms drafts, confirmed business policies, unanswered questions and required legal/process follow-up. Do not treat the draft as an effective agreement.
+- [PRIVACY_REVIEW.md](PRIVACY_REVIEW.md): bilingual privacy notice, actual website/client data flows, confirmed chat apps, remaining retention/settings checks and GitHub policy findings.
+- [MOTION_NOTES.md](MOTION_NOTES.md): animation references, restrained refinements, accessibility fallbacks and cache-version maintenance.
 
 ## Site map
+
+2026-09-12: **22 public HTML files**. Added `adatkezeles.html` / `privacy-en.html`, footer links throughout and a contact-form disclosure. Privacy text downloads and printing are available. The notices remain review copies until the operational details in PRIVACY_REVIEW are resolved. Google Business/listing/search-promotion tasks were declined; the existing gym map and necessary provider privacy disclosures remain.
 
 2026-09-08 logo refinement: the MB logo and all favicon sizes now have transparent corners, a black circular centre and the original gold ring. The outer square background has been removed, and the circle fills the image more closely. The same asset filenames are retained.
 
@@ -33,6 +39,7 @@ The complete site is available in Hungarian and English. Every header has a Hung
 | `elso-alkalom.html` | First consultation/session, preparation and location |
 | `contact.html` | Contact details, inquiry preparation and Calendly booking |
 | `aszf.html` / `terms.html` | Hungarian / English terms drafts, matching sections, text downloads and printing |
+| `adatkezeles.html` / `privacy-en.html` | Hungarian / English privacy review pages, with matching sections, text downloads and printing |
 
 The former `life.html` page is intentionally absent. Its gallery is at `about.html#galeria`. Sikerek is intentionally visible in the primary navigation.
 
@@ -49,31 +56,31 @@ The former `life.html` page is intentionally absent. Its gallery is at `about.ht
 - `tools/optimize-images.py`: regenerate responsive copies with Pillow. `tools/connect-responsive-images.py` wires newly added PNG image tags and the device stylesheet without reformatting the pages; already-optimized tags are left alone. Both helpers run locally, not in the visitor's browser.
 - `tests/`: local structural and interaction checks; they do not book appointments or send messages.
 
-Headers and footers repeat across eighteen HTML files. Apply navigation edits to the Hungarian originals and regenerate English. `legal.css` adds shared footer links and legal layouts. `tools/terms-content.json` holds matching HU/EN legal content; run `python tools/build-terms.py` after updating it to rebuild the legal pages and text downloads, then automatically refresh the English site and language links. Keep the terms' draft status until LEGAL_REVIEW.md is resolved. Do not restore a separate gallery page, hide Sikerek, add a blog, invent testimonials, or change the bronze/copper/gold/black palette.
+Headers and footers repeat across 22 HTML files. Apply navigation edits to the Hungarian originals and regenerate English, privacy and error pages. `legal.css` adds shared footer links and legal layouts. `tools/terms-content.json` holds matching HU/EN terms content; run `python tools/build-terms.py` after updating it to rebuild legal pages and text downloads, then refresh the English site, privacy and 404 pages. Keep the terms' draft status until LEGAL_REVIEW.md is resolved. Do not restore a separate gallery page, hide Sikerek, add a blog, invent testimonials, or change the bronze/copper/gold/black palette.
 
 ## Maintaining both languages
 
 1. Edit the Hungarian source pages for structure, content or prices. Preserve matching section IDs.
 2. Run `python tools/extract-translations.py` to append new text to `tools/translation-inventory.json`. Existing IDs are retained; never renumber them.
 3. Add or revise the matching ID in `tools/english-translations.json`, including visible text, accessibility labels and gallery `data-note` captions.
-4. Run `python tools/build-languages.py`. It checks translation coverage before writing the eighteen pages. Avoid directly editing generated English pages: regeneration replaces them.
+4. Run `python tools/build-languages.py`. It checks translation coverage before writing the eighteen content/terms pages, then regenerates both privacy and both error pages. Privacy copy lives in `tools/privacy-content.json`; `tools/build-privacy.py` builds its pages and text downloads. Avoid directly editing generated English, privacy or error pages: regeneration replaces them.
 5. Run the checks below. Dynamic contact, gallery and clipboard messages have both translations in `script.js`.
 
 Upload all public HTML, CSS and JS together with assets and text downloads. `tools/` and `tests/` are local maintenance helpers. Local edits do not publish themselves. Calendly event names, questions and notifications are managed in the Calendly account, separately from website copy.
 
 ## Local preview
 
-Serve this directory itself, not the workspace root or V14. In a terminal opened in V15:
+Serve this directory itself, not the workspace root or an earlier version. In a terminal opened in V16:
 
 ```powershell
 python -m http.server 8150 --bind 127.0.0.1
 ```
 
-Then visit `http://127.0.0.1:8150/`. Port 8150 is a suggested example, not a claim that a server is running. Reuse an existing V15 server when available and verify its directory; a previous V14 preview does not automatically switch to V15.
+Then visit `http://127.0.0.1:8150/`. Port 8150 is a suggested example, not a claim that a server is running. Reuse an existing V16 server when available and verify its directory; a previous V15 preview does not automatically switch to V16.
 
 ## Verification
 
-From V15, use Python with `lxml` and Node.js:
+From V16, use Python with `lxml` and Node.js:
 
 ```powershell
 python tests/validate.py
@@ -82,6 +89,7 @@ node tests/languages.cjs
 node tests/contact-flow.cjs
 node tests/section-nav.cjs
 node tests/email-copy.cjs
+node tests/motion.cjs
 node --check script.js
 node --check section-nav.js
 node --check site-config.js
