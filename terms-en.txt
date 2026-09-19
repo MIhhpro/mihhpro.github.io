@@ -1,5 +1,5 @@
 Terms of Service
-2026-09-05-draft-1
+2026-09-18-draft-7
 Review draft — not yet in force
 This version contains points still to be finalised and must not be used as the final contracting terms. You will receive the final terms before entering into a paid agreement.
 
@@ -34,7 +34,7 @@ Under the intended process, online contracting is used for online coaching. Gym 
 
 The standalone Training Program is available through a separate offer. If it or any other service is actually sold through a distance agreement, such as an email exchange, the applicable distance-contract rules still apply. Legal classification depends on how the contract is actually concluded; a later paper signature or the payment method does not override this.
 
-A minor may participate only with the involvement of their legal representative required by law and with suitable, age-appropriate arrangements agreed in advance.
+The service is available from age 14. A Client aged 14–17 and their parent or legal guardian must sign the participation agreement together. The parent or guardian's signature is also required for online coaching. For online coaching, a returned scan or photograph of the hand-signed agreement, or an electronically signed agreement, is acceptable subject to appropriate verification of the signers’ identities and parental or guardianship authority. Age-appropriate participation arrangements must be agreed in advance; the precise verification process and arrangements for handling signed documents remain to be defined before this draft is finalised. Any additional legal-representative requirements under applicable law must also be met.
 
 
 3. How an agreement is concluded
@@ -102,7 +102,9 @@ Respectful communication is expected. Bence considers the context of an isolated
 
 Private conversations and client information are confidential. This includes names, facial and other photographs, addresses, contact details, workplaces, information about health and physical condition, training videos and message content.
 
-Bence does not publish, sell or use this material for advertising, client stories or social media without the Client's separate, specific and voluntary request or appropriate consent. Taking part in coaching does not authorise publication of photographs or conversations. Refusal of such use does not disadvantage the Client.
+Bence asks for the Client’s separate, specific and voluntary permission before publishing their material. Without permission, he publishes no client content; consent covers only the approved content and use. The intended channels are the website and social media; each request identifies the relevant channels and content. The Client gives approval by email, which Bence retains with the request as evidence of permission. A chat message alone is not sufficient approval for this purpose. He always masks faces in published client photos and videos, even if the Client would allow their face to be shown. Taking part in coaching or permitting review of health information does not authorise publication. Publication consent can be withdrawn; refusal does not disadvantage the Client. Bence does not sell client material.
+
+Approved content may remain published for the purpose and channels specified by email, with no preset expiry, until consent is withdrawn. The Client may withdraw consent at any time by emailing mihaly.bence.fitness@gmail.com. Bence will then stop further use and remove the affected content from channels he controls without undue delay. Complete removal of copies or reposts made by others cannot be guaranteed. A change in the purpose or scope of use requires fresh permission; the continued need for publication and applicability of consent must be reviewed from time to time.
 
 Confidentiality continues after the contract ends. It does not restrict the Client's rights, including access to their own data or lawful pursuit of a claim.
 
@@ -119,7 +121,11 @@ This confidentiality section is not a complete privacy notice. Separate informat
 
 The service is fitness coaching and training planning, not medical diagnosis, treatment or physiotherapy. Bence provides the agreed service with care appropriate to his qualifications. A particular physique, weight loss or performance result cannot be guaranteed.
 
+Scope of online coaching: the service provides remote fitness guidance and training planning, with feedback according to the chosen package. Bence is not at the training location and cannot provide physical assistance, fully inspect the environment or continuously supervise every repetition. The Client follows the agreed programme independently and asks for clarification before continuing an exercise if unsure. Providing guidance remotely does not remove the obligation to perform the agreed service with appropriate care and is not a blanket exclusion of liability. A parent or guardian's signature does not override liability that cannot lawfully be excluded.
+
 Through the agreed, appropriately protected channel, the Client communicates circumstances and changes necessary for safe exercise, follows reasonable coaching instructions and complies with gym rules. Exercise must stop if pain, illness or injury occurs, with appropriate medical help sought when needed. Messaging is not an emergency service.
+
+Information needed for training: to the best of their knowledge, the Client truthfully provides their age, body weight and known injuries, medical conditions and medication relevant to safe exercise, and reports material changes. If there are no such known circumstances, the Client can say so. Body measurements other than weight and personal training goals are optional. Health information may only be requested to the extent necessary and under privacy arrangements clarified in advance; a complete medical history is not required. If information genuinely necessary for safe exercise is missing, the affected training must be postponed until the situation is clarified. Missing or inaccurate information does not automatically exclude liability: any incident must be assessed in light of its circumstances, causal connection and applicable law. Bence retains his own duty of care and any liability that cannot lawfully be excluded.
 
 The Client's duty to cooperate does not excuse Bence's own failings. Liability for intentional breach, harm to life, physical integrity or health, or other liability that cannot lawfully be excluded is not excluded.
 

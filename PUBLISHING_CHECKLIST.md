@@ -1,6 +1,12 @@
-# V16 publishing checklist
+# V18 publishing checklist
 
-**Latest status: the owner has published V15 with the recent changes.** V16 is the active development copy. The historical upload notes below are superseded by that confirmation. Use [NEXT_STEPS.md](NEXT_STEPS.md) for the current priorities; do not list completed language, favicon or 404 implementation as unfinished work.
+Version context: maintained in V18 from 2026-09-18, copied from V16. Dated V16/V15 references below describe inherited history, not the active editing folder. No V18 deployment is implied.
+
+## Current status — 2026-09-18
+
+All 19 privacy intake questions are answered. The incident/data-request procedure is prepared in INCIDENT_RESPONSE.md; it has not been rehearsed. Terms and privacy notices remain review drafts. Next work: missing terms/business/refund decisions; separate online agreement and health consent with guardian verification and applicable withdrawal process; provider/privacy implementation and accountant details; unresolved GitHub hosting suitability; final bilingual legal publication. Photography and sharing previews remain optional owner work. Calendly design, booking, English account content and V16 live checks are owner-confirmed complete. Do not repeat completed intake or reopen fixed issues without new evidence. No new deployment or independent live audit is implied.
+
+**Latest status (2026-09-17): the owner confirmed V16 publication/live checks and English Calendly content complete, with no problems observed.** V16 remains the active working copy. Sharing previews/photography are in progress with the owner; privacy finalisation is now active. Historical pending-upload and English-check notes below are superseded by this confirmation. Use NEXT_STEPS for current priorities. No assistant deployment or independent live inspection occurred; future privacy revisions need their own publication.
 
 2026-09-12 owner update: Calendly design/field contrast is fixed; booking was already confirmed working. Closed as owner-confirmed, without a new independent widget inspection or account change. V16 now also contains local privacy review pages and motion refinements; its publication has not been confirmed. Selected local browser checks are recorded in MOTION_NOTES, distinct from physical-device/live checks.
 
@@ -24,7 +30,7 @@ The checklist below is retained as a reference, subject to that status update. T
 
 ## Deployment follow-up
 
-- Publish the active V16 public files, not the workspace with old version folders. Keep project notes, tests, build helpers and original working photographs out of the deployment if no public file references them.
+- Publish the active V18 public files, not the workspace with old version folders. Keep project notes, tests, build helpers and original working photographs out of the deployment if no public file references them.
 - Circular favicons are complete. Social-sharing image/title/description and real-domain metadata remain separate follow-up work.
 - Check asset caching/compression with the actual host, measure mobile performance on the deployed URL, and confirm all relative page/image links work at the chosen hosting path. Keep a rollback copy.
 - Spot-check changed booking/email handoffs from the real domain; development checks do not cover host policies or third-party browser restrictions. Previously confirmed successful full bookings do not need routine repetition.

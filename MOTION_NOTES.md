@@ -1,4 +1,6 @@
-# V16 motion refinements
+# V18 motion refinements
+
+Version context: maintained in V18 from 2026-09-18, copied from V16. Dated V16/V15 references below describe inherited history, not the active editing folder. No V18 deployment is implied.
 
 Updated 2026-09-12. Restrained refinement requested by the owner; keep the existing colours, layout, text, images and static-site architecture. No downloaded components, new image assets, dependencies or external scripts were added.
 

@@ -1,6 +1,8 @@
-# V16 content roadmap
+# V18 content roadmap
 
-V16 is the active version as of 2026-09-08, copied from V15 with its completed changes. This is a backlog for future owner-approved work, not an instruction to implement every suggestion. Read [README.md](README.md) and [PROJECT_NOTES.md](PROJECT_NOTES.md) before editing.
+Version context: maintained in V18 from 2026-09-18, copied from V16. Dated V16/V15 references below describe inherited history, not the active editing folder. No V18 deployment is implied.
+
+V18 is the active version as of 2026-09-18, copied from the current V16. This is a backlog for future owner-approved work, not an instruction to implement every suggestion. Read [README.md](README.md) and [PROJECT_NOTES.md](PROJECT_NOTES.md) before editing.
 
 ## Completed baseline — do not redo
 

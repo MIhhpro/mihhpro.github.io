@@ -1,5 +1,5 @@
 Általános szerződési feltételek
-2026-09-05-draft-1
+2026-09-18-draft-7
 Egyeztetési tervezet — még nem hatályos
 Ez a változat még véglegesítendő pontokat tartalmaz, ezért végleges szerződéses feltételként nem használható. A fizetős megállapodás előtt megkapod a végleges feltételeket.
 
@@ -34,7 +34,7 @@ A tervezett működés szerint online szerződéskötés az online coachinghoz t
 
 Az önálló Training Program külön ajánlat alapján igényelhető. Ha ezt vagy bármely más szolgáltatást ténylegesen távolról, például emailben kötött megállapodással értékesítjük, a rá irányadó távollévők közötti szerződési szabályok akkor is alkalmazandók. A jogi minősítést a szerződéskötés tényleges módja határozza meg; az utólagos papíraláírás vagy a fizetés módja ezt nem írja felül.
 
-Kiskorú részvétele csak a jogszabályok szerint szükséges törvényes képviselői közreműködéssel és előzetesen tisztázott, életkorának megfelelő feltételekkel lehetséges.
+A szolgáltatás 14 éves kortól vehető igénybe. A 14–17 éves Ügyfél részvételéhez az Ügyfél és szülője vagy törvényes gyámja együttes aláírása szükséges. A szülői vagy gyámi aláírás az online coachingnál is követelmény. Online coachingnál elfogadható a kézzel aláírt megállapodás visszaküldött szkennelt másolata vagy fényképe, illetve az elektronikusan aláírt megállapodás is, az aláírók személyazonosságának és a szülői vagy gyámi jogosultságnak a megfelelő ellenőrzése mellett. Az életkornak megfelelő részvételi feltételeket előre tisztázni kell; az ellenőrzés pontos menete és az aláírt dokumentumok kezelésének részletei e tervezet véglegesítése előtt meghatározandók. Az alkalmazandó jog szerinti további törvényes képviselői követelményeket is teljesíteni kell.
 
 
 3. Hogyan jön létre a megállapodás?
@@ -102,7 +102,9 @@ Tiszteletteljes kommunikációt kérünk. Egy indulatos vagy trágár kifejezés
 
 A személyes beszélgetések és az ügyféladatok bizalmasak. Ide tartozik különösen a név, az arckép és más fénykép, a lakcím, az elérhetőség, a munkahely, az egészségi és fizikai állapotra vonatkozó információ, az edzésvideó és az üzenetek tartalma.
 
-Bence ezeket nem teszi közzé, nem értékesíti, és nem használja reklámhoz, ügyféltörténethez vagy közösségi médiában az Ügyfél külön, konkrét és önkéntes kérésén, illetve megfelelő hozzájárulásán kívül. A coaching igénybevétele nem jelent hozzájárulást fénykép vagy beszélgetés nyilvánosságra hozatalához. Az ilyen felhasználás megtagadása nem jár hátránnyal.
+Bence az Ügyfél anyagainak közzététele előtt külön, konkrét és önkéntes engedélyt kér. Engedély nélkül nem publikál ügyféltartalmat; a hozzájárulás kizárólag a jóváhagyott tartalomra és felhasználásra szól. A felhasználás tervezett helye a weboldal és a közösségi média; az engedélykérés mindig megjelöli az adott felületeket és tartalmat. Az Ügyfél emailben adja meg a jóváhagyást, amelyet Bence az engedélykéréssel együtt megőriz az engedély igazolására. Chatüzenet önmagában nem elegendő ehhez a jóváhagyáshoz. A közzétett ügyfélfotókon és videókon az arcot minden esetben kitakarja, akkor is, ha az Ügyfél engedné annak megmutatását. A coaching igénybevétele és az egészségügyi adatok áttekintésére adott engedély nem jogosít közzétételre. A közzétételi hozzájárulás visszavonható; annak megtagadása nem jár hátránnyal. Bence az ügyfélanyagokat nem értékesíti.
+
+Az engedélyezett tartalom az emailben megjelölt célra és felületeken előre rögzített lejárat nélkül, a hozzájárulás visszavonásáig maradhat közzétéve. Az Ügyfél a mihaly.bence.fitness@gmail.com címen bármikor visszavonhatja a hozzájárulását. Bence ekkor megszünteti a további felhasználást, és indokolatlan késedelem nélkül eltávolítja az érintett tartalmat az általa kezelt felületekről. Mások másolatainak vagy megosztásainak teljes eltűnése nem garantálható. A felhasználás céljának vagy körének változásához új engedély szükséges; a további közzététel szükségességét és az engedély alkalmazhatóságát időről időre felül kell vizsgálni.
 
 A titoktartás a szerződés megszűnése után is fennmarad. Az Ügyfél jogait, például a saját adataihoz való hozzáférést vagy jogszerű igényérvényesítést nem korlátozza.
 
@@ -119,7 +121,11 @@ Ez a titoktartási fejezet nem teljes adatkezelési tájékoztató. Az adatkezel
 
 A szolgáltatás edzéstervezés és fitness coaching, nem orvosi diagnózis, gyógykezelés vagy gyógytorna. Bence a vállalt szolgáltatást a szakképzettségének megfelelő gondossággal végzi. Konkrét testalkat, fogyás vagy teljesítményeredmény nem garantálható.
 
+Az online coaching keretei: a szolgáltatás távolról nyújtott fitness útmutatás és edzéstervezés, a választott csomag szerinti visszajelzéssel. Bence nincs jelen az edzés helyszínén, ezért nem tud fizikailag segítséget nyújtani, a környezetet teljeskörűen ellenőrizni vagy minden ismétlést folyamatosan felügyelni. Az Ügyfél az egyeztetett programot önállóan végzi; bizonytalanság esetén a gyakorlat folytatása előtt tisztázást kér. A távoli jelleg és a tanácsadó forma nem szünteti meg a vállalt szolgáltatás gondos teljesítésének kötelezettségét, és nem jelent általános felelősségkizárást. A szülő vagy gyám aláírása sem írja felül a jogszabály alapján ki nem zárható felelősséget.
+
 Az Ügyfél az egyeztetett, megfelelően védett csatornán jelzi a biztonságos edzés szempontjából szükséges körülményeket és változásokat, betartja az ésszerű edzői utasításokat és a terem szabályait. Fájdalom, rosszullét vagy sérülés esetén az edzést meg kell szakítani; szükség esetén megfelelő egészségügyi segítséget kell kérni. Az üzenetküldés nem sürgősségi csatorna.
+
+Az edzéshez szükséges tájékoztatás: az Ügyfél legjobb tudása szerint, valósághűen közli életkorát, testsúlyát és a biztonságos edzés szempontjából releváns, ismert sérüléseit, betegségeit és gyógyszerszedését, továbbá jelzi ezek lényeges változásait. Ha nincs ilyen ismert körülmény, ezt jelezheti. A testsúlyon felüli testméretek és a személyes edzéscélok megadása opcionális. Az egészségügyi adatokat csak a szükséges körben, az előzetesen tisztázott adatvédelmi feltételek mellett lehet bekérni; nem szükséges teljes kórtörténet közlése. Ha a biztonságos edzéshez ténylegesen szükséges információ hiányzik, az érintett edzést a helyzet tisztázásáig el kell halasztani. A hiányos vagy valótlan tájékoztatás nem jelent automatikus felelősségkizárást: egy esetleges káreseménynél a konkrét körülményeket, az okozati összefüggést és az alkalmazandó jogot kell figyelembe venni. Bence saját gondossági kötelezettsége és a jogszabály alapján ki nem zárható felelőssége fennmarad.
 
 Az Ügyfél együttműködési kötelezettsége nem mentesíti Bencét saját hibájának következményei alól. Nem zárható ki a szándékos szerződésszegésért, az élet, testi épség vagy egészség megsértéséért fennálló felelősség, illetve más, jogszabály szerint ki nem zárható felelősség.
 

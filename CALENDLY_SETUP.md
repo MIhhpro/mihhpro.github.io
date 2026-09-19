@@ -1,4 +1,10 @@
-# Calendly setup for V16
+# Calendly setup for V18
+
+Version context: maintained in V18 from 2026-09-18, copied from V16. Dated V16/V15 references below describe inherited history, not the active editing folder. No V18 deployment is implied.
+
+2026-09-17 question 6 follow-up: owner confirms Calendly Free and automatic booking sync to Google Calendar associated with the business email. Question 6 account/plan/integration facts are now answered; do not re-ask. Google account remains standard (no Workspace); no other connected apps/automations. Updated HU/EN privacy booking/provider sections and downloads with Google Calendar data flow. Exact transferred event fields, OAuth permissions, calendar sharing and provider terms remain unverified; no unsupported account-specific claim or compliance conclusion. Next intake question is 7 (devices, auto-save and backups). This supersedes earlier plan/calendar-pending notes. No account changes, independent sync test or deployment.
+
+2026-09-17 update: owner confirmed NEXT_STEPS item 4 (English Calendly content, including the wording/notification check) complete with no problems observed. This supersedes the pending-English-content statements below. Design and booking were already confirmed complete. No new account changes or independent inspection were performed by the assistant.
 
 ## Current owner confirmation — 2026-09-12
 
@@ -8,7 +14,7 @@ Calendly design is fixed, including the previously tracked field-contrast proble
 
 `contact-en.html` uses the same confirmed event URLs and preserved dark/gold widget configuration. Website instructions, booking notes and fallback messages are English; name prefill uses first name then surname. No Calendly account settings were changed. Calendly controls its own booking-view language and notifications, and custom event names/descriptions/questions need manual translations in that account: [Calendly's event-language instructions](https://calendly.com/help/how-to-change-your-event-type-language). If separate English events are created later, record their confirmed URLs here and add language-specific routing without disturbing existing Hungarian bookings.
 
-V16 inherited the current V15 integration unchanged on 2026-09-08, including the prefill fix and bilingual website messages. Configure `V16/site-config.js`. Event observations below were verified on 2026-09-05; copying the version does not re-verify the live account. See [README.md](README.md) for tests and [PROJECT_NOTES.md](PROJECT_NOTES.md) for approved packages.
+V16 inherited the current V15 integration unchanged on 2026-09-08, including the prefill fix and bilingual website messages. Configure `V18/site-config.js`. Event observations below were verified on 2026-09-05; copying the version does not re-verify the live account. See [README.md](README.md) for tests and [PROJECT_NOTES.md](PROJECT_NOTES.md) for approved packages.
 
 ## Live client-management account
 

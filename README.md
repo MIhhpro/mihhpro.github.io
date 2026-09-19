@@ -1,10 +1,14 @@
-# V16 — start here
+# V18 — start here
 
 ## Working version
 
-Latest owner confirmation (2026-09-12): Calendly design/field contrast is fixed, and booking already works. This is recorded as owner-confirmed, not a new independent widget test. See NEXT_STEPS for remaining work; do not reopen the old colour issue. V16 publication has not been confirmed.
+**V18 is active from 2026-09-18**, copied from V16 at the owner's request after updating the project notes. V16, the existing V17 and older folders are preserved snapshots. Use assets inside V18. No website code, appearance, prices or booking behavior changed during this copy.
 
-V16 is the active version, copied from V15 on 2026-09-08 after the bilingual site, navigation, 404 and circular-logo updates. Site code and assets were copied unchanged; documentation was refreshed. Keep V15 and earlier versions as snapshots. Start with [HANDOFF.md](HANDOFF.md) for current status, editing entry points and unresolved items.
+Live domain: https://mihalybence.com/. V16 publication, live checks and English Calendly content were owner-confirmed on 2026-09-17; this does not establish publication of later legal edits or V18. No V18 preview server was started. Start with [HANDOFF.md](HANDOFF.md) and [NEXT_STEPS.md](NEXT_STEPS.md).
+
+## Current status — 2026-09-18
+
+All 19 privacy intake questions are answered. The incident/data-request procedure is prepared in INCIDENT_RESPONSE.md; it has not been rehearsed. Terms and privacy notices remain review drafts. Next work: missing terms/business/refund decisions; separate online agreement and health consent with guardian verification and applicable withdrawal process; provider/privacy implementation and accountant details; unresolved GitHub hosting suitability; final bilingual legal publication. Photography and sharing previews remain optional owner work. Calendly design, booking, English account content and V16 live checks are owner-confirmed complete. Do not repeat completed intake or reopen fixed issues without new evidence. No new deployment or independent live audit is implied.
 
 Read these files before changing content or integrations:
 
@@ -14,6 +18,7 @@ Read these files before changing content or integrations:
 - [PUBLISHING_CHECKLIST.md](PUBLISHING_CHECKLIST.md): remaining launch checks, the already-owned domain and the measured image improvements.
 - [LEGAL_REVIEW.md](LEGAL_REVIEW.md): bilingual terms drafts, confirmed business policies, unanswered questions and required legal/process follow-up. Do not treat the draft as an effective agreement.
 - [PRIVACY_REVIEW.md](PRIVACY_REVIEW.md): bilingual privacy notice, actual website/client data flows, confirmed chat apps, remaining retention/settings checks and GitHub policy findings.
+- [INCIDENT_RESPONSE.md](INCIDENT_RESPONSE.md): internal incident/data-request procedure, blank log and HU/EN notification templates; keep out of public uploads and keep completed logs outside the site.
 - [MOTION_NOTES.md](MOTION_NOTES.md): animation references, restrained refinements, accessibility fallbacks and cache-version maintenance.
 
 ## Site map
@@ -70,17 +75,17 @@ Upload all public HTML, CSS and JS together with assets and text downloads. `too
 
 ## Local preview
 
-Serve this directory itself, not the workspace root or an earlier version. In a terminal opened in V16:
+Serve this directory itself, not the workspace root or an earlier version. In a terminal opened in V18:
 
 ```powershell
-python -m http.server 8150 --bind 127.0.0.1
+python -m http.server 8180 --bind 127.0.0.1
 ```
 
-Then visit `http://127.0.0.1:8150/`. Port 8150 is a suggested example, not a claim that a server is running. Reuse an existing V16 server when available and verify its directory; a previous V15 preview does not automatically switch to V16.
+Then visit `http://127.0.0.1:8180/`. Port 8180 is a suggested example, not a claim that a server is running. Verify the served directory before reusing a preview. A V16 or V17 server does not automatically switch to V18.
 
 ## Verification
 
-From V16, use Python with `lxml` and Node.js:
+From V18, use Python with `lxml` and Node.js:
 
 ```powershell
 python tests/validate.py
