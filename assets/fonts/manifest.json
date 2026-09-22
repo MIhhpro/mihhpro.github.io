@@ -1,0 +1,62 @@
+[
+  {
+    "file": "barlow-condensed-500-latin-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B4-Lwz3jWuZEC.woff2",
+    "bytes": 14180
+  },
+  {
+    "file": "barlow-condensed-500-latin.woff2",
+    "source": "https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B4-Lwz3bWuQ.woff2",
+    "bytes": 21424
+  },
+  {
+    "file": "barlow-condensed-600-latin-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B4873z3jWuZEC.woff2",
+    "bytes": 14516
+  },
+  {
+    "file": "barlow-condensed-600-latin.woff2",
+    "source": "https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B4873z3bWuQ.woff2",
+    "bytes": 22308
+  },
+  {
+    "file": "barlow-condensed-700-latin-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3jWuZEC.woff2",
+    "bytes": 14640
+  },
+  {
+    "file": "barlow-condensed-700-latin.woff2",
+    "source": "https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuQ.woff2",
+    "bytes": 22444
+  },
+  {
+    "file": "barlow-condensed-800-latin-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B47b1z3jWuZEC.woff2",
+    "bytes": 14548
+  },
+  {
+    "file": "barlow-condensed-800-latin.woff2",
+    "source": "https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B47b1z3bWuQ.woff2",
+    "bytes": 22464
+  },
+  {
+    "file": "barlow-condensed-900-latin-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B45L0z3jWuZEC.woff2",
+    "bytes": 14568
+  },
+  {
+    "file": "barlow-condensed-900-latin.woff2",
+    "source": "https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B45L0z3bWuQ.woff2",
+    "bytes": 21968
+  },
+  {
+    "file": "inter-100-900-latin-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2",
+    "bytes": 85068
+  },
+  {
+    "file": "inter-100-900-latin.woff2",
+    "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+    "bytes": 48256
+  }
+]
