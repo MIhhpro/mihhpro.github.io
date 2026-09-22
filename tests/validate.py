@@ -31,6 +31,8 @@ for name, doc in pages.items():
     assert len(doc.xpath('//main')) == 1, name
     assert doc.get('lang') == ('en' if name.endswith('-en.html') or name == 'terms.html' else 'hu'), name
     assert doc.xpath('//title/text()') and doc.xpath('//meta[@name="description"]/@content'), name
+    assert doc.xpath('//link[starts-with(@href,"fonts.css")]/@href'), (name, 'local font stylesheet')
+    assert not doc.xpath('//link[contains(@href,"fonts.googleapis.com") or contains(@href,"fonts.gstatic.com")]'), (name, 'remote font connection')
     assert doc.xpath('//footer//a[@href="aszf.html"]') and doc.xpath('//footer//a[@href="terms.html"]'), (name, 'bilingual terms links')
     for el in doc.xpath('//*[@aria-labelledby or @aria-describedby or @aria-controls]'):
         for attr in ('aria-labelledby', 'aria-describedby', 'aria-controls'):
@@ -69,13 +71,13 @@ for name, doc in pages.items():
     for item, section in zip(index[0].xpath('.//li'), sections):
         assert ('hidden' in item.attrib) == ('hidden' in section.attrib), (name, 'conditional section visibility')
         assert section.get('tabindex') == '-1', (name, 'anchor focus target')
-    assert doc.xpath('//script[@src="section-nav.js"]') and doc.xpath('//link[@href="section-nav.css"]'), name
+    assert doc.xpath('//script[@src="section-nav.js"]') and doc.xpath('//link[starts-with(@href,"section-nav.css")]'), name
     for pattern in ('Blank text', 'fejlődést garantálok', 'Kovács Anna', 'Napi üzenetváltás'):
         assert pattern not in source, (name, pattern)
 
 contact = pages['contact.html']
 email_links = contact.xpath('//a[contains(@href,"mail.google.com")]')
-assert len(email_links) == 6, 'contact email routes'
+assert len(email_links) == 7, 'contact email routes, including parent/guardian enquiries'
 assert not contact.xpath('//a[starts-with(@href,"mailto:")]'), 'contact must not depend on a desktop mail handler'
 for link in email_links:
     assert parse_qs(urlsplit(link.get('href')).query).get('to') == ['mihaly.bence.fitness@gmail.com']

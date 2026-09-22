@@ -1,10 +1,29 @@
-# V18 publishing checklist
+# V19 publishing checklist
+
+## Active working copy — V19
+
+Selected by the owner on 2026-09-22 after the V18 loading/privacy review. All new website changes belong in V19; V18 and older versions are snapshots. The copied V18 history below is context, not an instruction to return to that folder. Local V19 changes are not deployed. See [HANDOFF.md](HANDOFF.md), [NEXT_STEPS.md](NEXT_STEPS.md) and [AUDIT_2026-09-22.md](AUDIT_2026-09-22.md). Preview: http://127.0.0.1:8190/.
+
+## Review checkpoint — 2026-09-22
+
+This V18 review is complete and is the source for the requested V19 working copy. The owner confirms the Cal.com booking and dark canvas work. Local fonts and stable navigation startup are implemented; HU/EN privacy and terms draft 9/downloads are synchronized. All 19 privacy intake questions remain complete. [AUDIT_2026-09-22.md](AUDIT_2026-09-22.md) is the current measurement, source and outstanding-work record; it supersedes earlier remote-font and pending-calendar-render statements. Other dated entries below remain historical.
+
+Priority publication cleanup: live HANDOFF.md and PRIVACY_QUESTIONS.md were verified publicly readable. Remove internal notes from the publishing output/source, keep local working notes, and verify public URLs return 404. No deployment or external deletion was performed. Legal documents remain review drafts; successful page/booking checks do not establish legal approval.
+
+## Latest owner update — 2026-09-21
+
+- **Hosting resolved (owner-confirmed).** The owner reports that the current site is permitted provided it does not process payments or collect sensitive payment information such as bank-card numbers. The owner confirms those functions are not planned. Close the GitHub hosting task for the current setup; do not re-raise it without a material change or new evidence. No provider correspondence was supplied or independently reviewed, and this is not a general interpretation of GitHub policy or a statement that all client data is non-sensitive.
+- **V18 published (owner-confirmed)** at https://mihalybence.com/. The assistant did not deploy or independently audit this publication. Future local changes require their own upload; publication does not finalise legal drafts.
+- **Photography partially complete.** The two colleague-training images are included; more photographs may be added later. The owner rejected the two seated welcoming-portrait candidates and plans a new photograph. Sharing-preview completion was not separately confirmed.
+- **Remaining active work:** checklist items 1–3: terms/service details, the separate online agreement and privacy implementation/review. All 19 privacy intake answers remain complete. Do not reopen completed booking/design/language work.
+
+This update supersedes earlier pending-hosting and unpublished-V18 statements below; dated implementation records remain historical.
 
 Version context: maintained in V18 from 2026-09-18, copied from V16. Dated V16/V15 references below describe inherited history, not the active editing folder. No V18 deployment is implied.
 
 ## Current status — 2026-09-18
 
-All 19 privacy intake questions are answered. The incident/data-request procedure is prepared in INCIDENT_RESPONSE.md; it has not been rehearsed. Terms and privacy notices remain review drafts. Next work: missing terms/business/refund decisions; separate online agreement and health consent with guardian verification and applicable withdrawal process; provider/privacy implementation and accountant details; unresolved GitHub hosting suitability; final bilingual legal publication. Photography and sharing previews remain optional owner work. Calendly design, booking, English account content and V16 live checks are owner-confirmed complete. Do not repeat completed intake or reopen fixed issues without new evidence. No new deployment or independent live audit is implied.
+All 19 privacy intake questions are answered. The incident/data-request procedure is prepared in INCIDENT_RESPONSE.md; it has not been rehearsed. Terms and privacy notices remain review drafts. Next work: missing terms/business/refund decisions; separate online agreement and health consent with guardian verification and applicable withdrawal process; provider/privacy implementation and accountant details; final bilingual legal text and publication of subsequent revisions. Hosting is closed and V18 publication is owner-confirmed on 2026-09-21. Photography and sharing previews remain optional owner work. Calendly design, booking, English account content and V16 live checks are owner-confirmed complete. Do not repeat completed intake or reopen fixed issues without new evidence. No new deployment or independent live audit is implied.
 
 **Latest status (2026-09-17): the owner confirmed V16 publication/live checks and English Calendly content complete, with no problems observed.** V16 remains the active working copy. Sharing previews/photography are in progress with the owner; privacy finalisation is now active. Historical pending-upload and English-check notes below are superseded by this confirmation. Use NEXT_STEPS for current priorities. No assistant deployment or independent live inspection occurred; future privacy revisions need their own publication.
 

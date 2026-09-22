@@ -1,4 +1,4 @@
-// Bilingual behavior without live browser sessions, email or Calendly requests.
+// Bilingual behavior without live browser sessions, email or Cal.com requests.
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -48,12 +48,12 @@ async function run() {
   const calendar = setup('online', true, 'en');
   assert.equal(calendar.form.children['#route-submit'].textContent, 'Choose a time');
   await calendar.form.fire('submit');
-  const prefill = calendar.calls[0].prefill;
+  const prefill = calendar.calls[0].config;
   assert.equal(prefill.name, 'Árvíz Tűrő');
-  assert.equal(new URL(calendar.calls[0].url).searchParams.get('name'), 'Árvíz Tűrő');
-  assert.ok(prefill.customAnswers.a1.includes('Phone: not provided'));
-  assert.ok(prefill.customAnswers.a1.includes('Message: Erősödnék. & Kérdés?\nMásodik sor.'));
-  assert.equal(calendar.nodes['#calendly-embed'].children.iframe.attrs.title, 'online – appointment booking');
+  assert.equal(new URL(calendar.nodes['#booking-direct-link'].href).searchParams.get('name'), 'Árvíz Tűrő');
+  assert.ok(prefill.notes.includes('Phone: not provided'));
+  assert.ok(prefill.notes.includes('Message: Erősödnék. & Kérdés?\nMásodik sor.'));
+  assert.equal(calendar.nodes['#booking-embed'].children.iframe.attrs.title, 'online – appointment booking');
   calendar.burger.fire('click');
   assert.equal(calendar.burger.attrs['aria-label'], 'Close menu');
 

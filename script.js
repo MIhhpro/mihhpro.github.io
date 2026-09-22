@@ -328,66 +328,59 @@ document.querySelectorAll("details.question").forEach(details => {
   }
 })();
 
-// ── Contact form + Calendly handoff ─────────────────────────
-const CALENDLY_EVENTS = window.SITE_CONFIG?.calendlyEvents || {};
+// ── Contact form + Cal.com handoff ─────────────────────────
+const CAL_EVENTS = window.SITE_CONFIG?.calEvents || {};
 const INQUIRY_EMAIL = window.SITE_CONFIG?.inquiryEmail?.trim() || "mihaly.bence.fitness@gmail.com";
 const APPOINTMENT_SERVICES = new Set(["consult", "pt", "online"]);
-const buildBrandedCalendlyUrl = (eventUrl) => {
-  const url = new URL(eventUrl);
-  if (url.origin !== "https://calendly.com") throw new Error("Invalid scheduling URL");
-  url.searchParams.set("hide_event_type_details", "0");
-  // Preserve the owner's black/gold theme. Calendly exposes one text colour,
-  // not a separate input-text setting; do not recolour the entire widget to fix fields.
-  url.searchParams.set("background_color", "100f0c");
-  url.searchParams.set("text_color", "f5f0e8");
-  url.searchParams.set("primary_color", "d4a843");
-  return url.toString();
+const calEventUrl = (service) => {
+  try {
+    const url = new URL(String(CAL_EVENTS[service] || "").trim());
+    // Only public event links; never send form details to an arbitrary host.
+    if (url.origin !== "https://cal.com" || url.username || url.password ||
+        !/^\/(?:team\/)?[a-zA-Z0-9_-]+\/[a-zA-Z0-9_-]+\/?$/.test(url.pathname)) return null;
+    url.search = "";
+    url.hash = "";
+    return url;
+  } catch { return null; }
 };
 
-const buildCalendlyBookingUrl = (eventUrl, prefill) => {
-  const url = new URL(buildBrandedCalendlyUrl(eventUrl));
-  // Include both name layouts, so either Calendly invitee-form setting works.
-  const fields = {
-    name: prefill.name,
-    first_name: prefill.firstName,
-    last_name: prefill.lastName,
-    email: prefill.email,
-    a1: prefill.customAnswers.a1
-  };
-  Object.entries(fields).forEach(([key, value]) => url.searchParams.set(key, value));
-  // The widget parses its URL with decodeURIComponent, which leaves '+' literal.
-  // Encode spaces as %20 and email plus signs as %2B before it reads the URL.
-  url.search = [...url.searchParams].map(([key, value]) =>
-    `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
-  ).join("&");
-  return url.toString();
-};
-
-// Load only when a visitor asks to see appointments. Failed loads can be retried.
-let calendlyLoad;
-const ensureCalendly = () => {
-  if (window.Calendly?.initInlineWidget) return Promise.resolve();
-  if (calendlyLoad) return calendlyLoad;
-  calendlyLoad = new Promise((resolve, reject) => {
+// No third-party request until a configured calendar is explicitly requested.
+let calLoad;
+const ensureCal = () => {
+  if (window.Cal?.instance) return Promise.resolve();
+  if (calLoad) return calLoad;
+  if (!window.Cal) {
+    const queue = function (...args) { queue.q.push(args); };
+    queue.q = [];
+    queue.ns = {};
+    window.Cal = queue;
+  }
+  calLoad = new Promise((resolve, reject) => {
     const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.src = "https://app.cal.com/embed/embed.js";
     script.async = true;
+    script.referrerPolicy = "no-referrer";
+    let settled = false;
     const fail = () => {
+      if (settled) return;
+      settled = true;
       clearTimeout(timer);
       script.remove();
-      calendlyLoad = null;
+      calLoad = null;
       reject(new Error("Calendar unavailable"));
     };
     const timer = setTimeout(fail, 12000);
     script.onload = () => {
-      if (!window.Calendly?.initInlineWidget) { fail(); return; }
+      if (settled) return;
+      if (!window.Cal?.instance) { fail(); return; }
+      settled = true;
       clearTimeout(timer);
       resolve();
     };
     script.onerror = fail;
     document.head.appendChild(script);
   });
-  return calendlyLoad;
+  return calLoad;
 };
 
 const contactForm = document.querySelector(".js-contact-form");
@@ -397,17 +390,19 @@ if (contactForm) {
   const routeSubmit = contactForm.querySelector("#route-submit");
   const packageSelect = contactForm.querySelector("#online-package");
   const packageGroup = contactForm.querySelector("#online-package-group");
-  const schedulingSection = document.querySelector(".calendly-section");
+  const schedulingSection = document.querySelector(".booking-section");
   const inquirySection = document.querySelector(".inquiry-section");
-  const embed = document.querySelector("#calendly-embed");
-  const loading = document.querySelector("#calendly-loading");
-  const notice = document.querySelector("#calendly-config-notice");
-  const directLink = document.querySelector("#calendly-direct-link");
+  const embed = document.querySelector("#booking-embed");
+  const loading = document.querySelector("#booking-loading");
+  const notice = document.querySelector("#booking-config-notice");
+  const directLink = document.querySelector("#booking-direct-link");
   let bookingRequest = 0;
   let readyTimer;
+  let detachCalendarEvents = () => {};
   const invalidateBooking = () => {
     bookingRequest += 1;
     clearTimeout(readyTimer);
+    detachCalendarEvents();
     if (embed) { embed.innerHTML = ""; embed.hidden = true; }
     if (loading) loading.hidden = true;
     if (schedulingSection) schedulingSection.hidden = true;
@@ -428,8 +423,9 @@ if (contactForm) {
     const serviceKey = serviceSelect?.value || "";
     if (packageGroup) packageGroup.hidden = serviceKey !== "online";
     if (packageSelect) packageSelect.disabled = serviceKey !== "online";
-    const usesCalendar = APPOINTMENT_SERVICES.has(serviceKey);
-    if (routeNote) routeNote.hidden = Boolean(serviceKey) && !usesCalendar;
+    const wantsAppointment = APPOINTMENT_SERVICES.has(serviceKey);
+    const usesCalendar = wantsAppointment && Boolean(calEventUrl(serviceKey));
+    if (routeNote) routeNote.hidden = Boolean(serviceKey) && !wantsAppointment;
     if (!serviceKey) {
       if (routeNote) routeNote.textContent = localText("Válaszd az ingyenes konzultációt, ha még nem tudod, melyik edzésforma illene hozzád.", "Choose the free consultation if you’re not sure which training option would suit you.");
       if (routeSubmit) routeSubmit.textContent = localText("Tovább", "Continue");
@@ -437,8 +433,10 @@ if (contactForm) {
     }
     if (routeNote) {
       routeNote.textContent = usesCalendar
-        ? localText("A következő lépésben időpontot választasz és megerősíted a foglalást a Calendly naptárában.", "Next, choose a time and confirm your booking in the Calendly calendar.")
-        : "";
+        ? localText("A következő lépésben időpontot választasz a Cal.com naptárában. Ott ellenőrizheted és véglegesítheted a foglalást.", "Next, choose a time in the Cal.com calendar. You can review and complete your booking there.")
+        : wantsAppointment
+          ? localText("Most emailben egyeztetünk időpontot. A következő lépésben átnézheted és elküldheted az érdeklődésedet.", "We’re arranging appointments by email at the moment. Next, review and send your request.")
+          : "";
     }
     if (routeSubmit) routeSubmit.textContent = usesCalendar ? localText("Tovább az időpontokhoz", "Choose a time") : localText("Tovább az üzenethez", "Prepare enquiry");
   };
@@ -454,10 +452,10 @@ if (contactForm) {
     invalidateBooking();
     const requestId = bookingRequest;
 
-    const schedulingSection = document.querySelector(".calendly-section");
+    const schedulingSection = document.querySelector(".booking-section");
     const inquirySection = document.querySelector(".inquiry-section");
-    const embed = document.querySelector("#calendly-embed");
-    const notice = document.querySelector("#calendly-config-notice");
+    const embed = document.querySelector("#booking-embed");
+    const notice = document.querySelector("#booking-config-notice");
     const selectedServiceBadge = document.querySelector("#selected-service-badge");
     const serviceKey = serviceSelect?.value || "";
     const baseServiceLabel = serviceSelect?.selectedOptions?.[0]?.textContent?.trim() || "";
@@ -478,137 +476,126 @@ if (contactForm) {
       section.scrollIntoView({ behavior: scrollBehavior(), block: "start" });
     };
 
-    if (!APPOINTMENT_SERVICES.has(serviceKey)) {
+    const eventUrl = APPOINTMENT_SERVICES.has(serviceKey) ? calEventUrl(serviceKey) : null;
+    const inquiryServiceName = document.querySelector("#inquiry-service-name");
+    const inquiryEmailLink = document.querySelector("#inquiry-email-link");
+    const inquiryCopyButton = document.querySelector("#inquiry-copy-button");
+    if (inquiryServiceName) inquiryServiceName.textContent = serviceLabel;
+    if (inquiryEmailLink) {
+      const subject = `${serviceLabel} – ${localText("weboldali érdeklődés", "website enquiry")}`;
+      const body = [
+        `${localText("Név", "Name")}: ${fullName}`.trim(),
+        `Email: ${email}`,
+        `${localText("Telefon", "Phone")}: ${phone || localText("nincs megadva", "not provided")}`,
+        `${localText("Szolgáltatás", "Service")}: ${serviceLabel}`,
+        "",
+        message || localText("Ide írhatod a kérdésedet.", "Write your question here.")
+      ].join("\n");
+      const gmailUrl = new URL("https://mail.google.com/mail/");
+      gmailUrl.searchParams.set("view", "cm");
+      gmailUrl.searchParams.set("fs", "1");
+      gmailUrl.searchParams.set("to", INQUIRY_EMAIL);
+      gmailUrl.searchParams.set("su", subject);
+      gmailUrl.searchParams.set("body", body);
+      inquiryEmailLink.href = gmailUrl.toString();
+
+      if (inquiryCopyButton) {
+        inquiryCopyButton.dataset.copyText = [
+          `${localText("Címzett", "To")}: ${INQUIRY_EMAIL}`,
+          `${localText("Tárgy", "Subject")}: ${subject}`,
+          "",
+          body
+        ].join("\n");
+      }
+    }
+
+    const bookingEmailLink = document.querySelector("#booking-email-link");
+    if (bookingEmailLink && inquiryEmailLink) bookingEmailLink.href = inquiryEmailLink.href;
+
+    if (!eventUrl) {
       if (schedulingSection) schedulingSection.hidden = true;
       if (inquirySection) inquirySection.hidden = false;
-
-      const inquiryServiceName = document.querySelector("#inquiry-service-name");
-      const inquiryEmailLink = document.querySelector("#inquiry-email-link");
-      const inquiryCopyButton = document.querySelector("#inquiry-copy-button");
-      if (inquiryServiceName) inquiryServiceName.textContent = serviceLabel;
-      if (inquiryEmailLink) {
-        const subject = `${serviceLabel} – ${localText("weboldali érdeklődés", "website enquiry")}`;
-        const body = [
-          `${localText("Név", "Name")}: ${fullName}`.trim(),
-          `Email: ${email}`,
-          `${localText("Telefon", "Phone")}: ${phone || localText("nincs megadva", "not provided")}`,
-          `${localText("Szolgáltatás", "Service")}: ${serviceLabel}`,
-          "",
-          message || localText("Ide írhatod a kérdésedet.", "Write your question here.")
-        ].join("\n");
-        const gmailUrl = new URL("https://mail.google.com/mail/");
-        gmailUrl.searchParams.set("view", "cm");
-        gmailUrl.searchParams.set("fs", "1");
-        gmailUrl.searchParams.set("to", INQUIRY_EMAIL);
-        gmailUrl.searchParams.set("su", subject);
-        gmailUrl.searchParams.set("body", body);
-        inquiryEmailLink.href = gmailUrl.toString();
-
-        if (inquiryCopyButton) {
-          inquiryCopyButton.dataset.copyText = [
-            `${localText("Címzett", "To")}: ${INQUIRY_EMAIL}`,
-            `${localText("Tárgy", "Subject")}: ${subject}`,
-            "",
-            body
-          ].join("\n");
-        }
-      }
 
       focusSection(inquirySection);
       return;
     }
 
-    const eventUrl = String(CALENDLY_EVENTS[serviceKey] || "").trim();
     if (inquirySection) inquirySection.hidden = true;
     if (schedulingSection) schedulingSection.hidden = false;
     if (selectedServiceBadge) selectedServiceBadge.textContent = serviceLabel;
-    if (embed) { embed.innerHTML = ""; embed.hidden = true; }
     if (notice) notice.hidden = true;
+    if (loading) loading.hidden = false;
+    focusSection(schedulingSection);
 
-    if (!eventUrl) {
+    const showCalendarFailure = () => {
+      if (requestId !== bookingRequest) return;
+      clearTimeout(readyTimer);
+      if (embed) embed.hidden = true;
+      if (loading) loading.hidden = true;
       if (notice) notice.hidden = false;
-      focusSection(schedulingSection);
-      return;
-    }
-
+    };
     try {
       if (!embed) throw new Error("Missing calendar container");
-      // All three live events have one free-text invitee question (a1).
-      const bookingNotes = [
+      const notes = [
         `${localText("Szolgáltatás", "Service")}: ${serviceLabel}`,
         `${localText("Telefon", "Phone")}: ${phone || localText("nincs megadva", "not provided")}`,
         "",
         message ? `${localText("Üzenet", "Message")}: ${message}` : ""
       ].join("\n").trim();
-      const prefill = {
-        name: fullName,
-        firstName,
-        lastName,
-        email,
-        customAnswers: { a1: bookingNotes }
-      };
-      // Pass the same fully prefilled URL to the inline widget and its fallback.
-      // This does not depend on the widget's deferred prefill message arriving.
-      const url = buildCalendlyBookingUrl(eventUrl, prefill);
-      if (directLink) { directLink.href = url; directLink.hidden = false; }
-      if (loading) loading.hidden = false;
-      focusSection(schedulingSection);
-      await ensureCalendly();
+      // Use Cal's standard full-name, email and additional-notes fields.
+      const config = { name: fullName, email, notes, theme: "dark", layout: "month_view" };
+      if (phone) config.attendeePhoneNumber = phone;
+      const directUrl = new URL(eventUrl);
+      Object.entries(config).forEach(([key, value]) => directUrl.searchParams.set(key, value));
+      if (directLink) { directLink.href = directUrl.toString(); directLink.hidden = false; }
+      await ensureCal();
       if (requestId !== bookingRequest) return;
-      embed.hidden = false;
-      embed.style.height = "780px";
-      window.Calendly.initInlineWidget({
-      url,
-      parentElement: embed,
-      // Handle height updates once below; the SDK otherwise adds a new global
-      // resize listener on every handoff and can scroll the page unexpectedly.
-      resize: false,
-      prefill,
-      utm: {
-        utmSource: "mihaly-bence-weboldal",
-        utmMedium: "website",
-        utmCampaign: serviceKey
-      }
-      });
-      embed.querySelector("iframe")?.setAttribute("title", `${serviceLabel} – ${localText("időpontfoglalás", "appointment booking")}`);
-      readyTimer = setTimeout(() => {
+      window.Cal("init", { origin: "https://cal.com" });
+      const ready = () => {
         if (requestId !== bookingRequest) return;
+        clearTimeout(readyTimer);
+        if (embed) embed.hidden = false;
         if (loading) loading.hidden = true;
-        if (notice) notice.hidden = false;
-      }, 15000);
+        if (notice) notice.hidden = true;
+      };
+      window.Cal("on", { action: "linkReady", callback: ready });
+      window.Cal("on", { action: "linkFailed", callback: showCalendarFailure });
+      detachCalendarEvents = () => {
+        window.Cal("off", { action: "linkReady", callback: ready });
+        window.Cal("off", { action: "linkFailed", callback: showCalendarFailure });
+        detachCalendarEvents = () => {};
+      };
+      embed.hidden = false;
+      readyTimer = setTimeout(showCalendarFailure, 15000);
+      window.Cal("inline", {
+        elementOrSelector: embed,
+        calLink: eventUrl.pathname.replace(/^\/|\/$/g, ""),
+        config
+      });
+      window.Cal("ui", {
+        theme: "dark", layout: "month_view", hideEventTypeDetails: false,
+        // Cal's outer document is separate from its themed booking card.
+        // Keep this supported body override until CSS variables cover that canvas.
+        styles: { body: { background: "#100f0c" } },
+        cssVarsPerTheme: { dark: {
+          "cal-brand": "#d4a843", "cal-brand-emphasis": "#c69a36",
+          "cal-brand-text": "#100f0c", "cal-text": "#f5f0e8",
+          "cal-text-emphasis": "#fff8e8", "cal-text-subtle": "#cec4b4",
+          "cal-bg": "#100f0c", "cal-bg-subtle": "#1c1913",
+          "cal-bg-emphasis": "#282218", "cal-border": "#514127",
+          "cal-border-subtle": "#352d20"
+        } }
+      });
+      const frame = embed.querySelector("iframe");
+      frame?.setAttribute("title", `${serviceLabel} – ${localText("időpontfoglalás", "appointment booking")}`);
+      frame?.setAttribute("referrerpolicy", "no-referrer");
+      // Cal controls sizing and its own confirmation/pending-approval screen.
+      // A created booking must not be mistaken for a confirmed appointment.
     } catch {
       if (requestId !== bookingRequest) return;
       if (embed) embed.hidden = true;
-      if (loading) loading.hidden = true;
-      if (notice) notice.hidden = false;
-      focusSection(schedulingSection);
+      showCalendarFailure();
     }
-  });
-
-  window.addEventListener("message", (event) => {
-    const frame = embed?.querySelector("iframe");
-    if (event.origin !== "https://calendly.com" || !frame || event.source !== frame.contentWindow || schedulingSection?.hidden) return;
-    const name = event.data?.event;
-    if (name === "calendly.page_height") {
-      const heightValue = String(event.data?.payload?.height ?? "");
-      if (!/^\d+(?:\.\d+)?(?:px)?$/.test(heightValue)) return;
-      const height = Number.parseFloat(heightValue);
-      if (height > 0 && height <= 12000) embed.style.height = `${Math.ceil(height)}px`;
-      return;
-    }
-    if (!["calendly.event_type_viewed", "calendly.date_and_time_selected", "calendly.event_scheduled"].includes(name)) return;
-    clearTimeout(readyTimer);
-    if (loading) loading.hidden = true;
-    if (notice) notice.hidden = true;
-    if (name !== "calendly.event_scheduled") return;
-    const success = document.querySelector(".form-success");
-    const calendlyShell = document.querySelector(".calendly-shell");
-    contactForm.style.display = "none";
-    if (calendlyShell) calendlyShell.hidden = true;
-    success?.classList.add("visible");
-    success?.setAttribute("tabindex", "-1");
-    success?.focus({ preventScroll: true });
-    success?.scrollIntoView({ behavior: scrollBehavior(), block: "center" });
   });
 }
 

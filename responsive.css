@@ -42,7 +42,7 @@ img { max-width: 100%; }
 .contact-quick-action small, .contact-profile-meta span { font-size: .875rem; }
 .training-hero-text-link { min-height: 44px; font-size: .875rem; }
 .form-input, .form-select { min-width: 0; scroll-margin-block: 120px; }
-.calendly-embed { min-height: 480px; }
+.booking-embed { min-height: 480px; }
 .mobile-menu { padding-bottom: max(32px, env(safe-area-inset-bottom)); overscroll-behavior: contain; }
 .mobile-menu a { flex-shrink: 0; min-height: 48px; }
 .scroll-top { z-index: 36; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); }
@@ -97,9 +97,9 @@ img { max-width: 100%; }
   .section-nav-toggle { padding-inline: 12px; gap: 8px; }
 }
 @media (max-width: 360px) {
-  .calendly-section { padding-inline: 0; }
-  .calendly-shell { border-inline: 0; border-radius: 0; }
-  .calendar-wrap > .section-heading, .booking-help, .calendly-footnote { padding-inline: 16px; }
+  .booking-section { padding-inline: 0; }
+  .booking-shell { border-inline: 0; border-radius: 0; }
+  .calendar-wrap > .section-heading, .booking-help, .booking-footnote { padding-inline: 16px; }
 }
 /* Landscape phones and short windows: no tall fixed sections or trapped menus. */
 @media (max-height: 500px) and (max-width: 1180px) {

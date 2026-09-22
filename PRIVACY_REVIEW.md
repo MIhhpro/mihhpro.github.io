@@ -1,10 +1,31 @@
 # Privacy notice — implementation and confirmation notes
 
+## Active working copy — V19
+
+Selected by the owner on 2026-09-22 after the V18 loading/privacy review. All new website changes belong in V19; V18 and older versions are snapshots. The copied V18 history below is context, not an instruction to return to that folder. Local V19 changes are not deployed. See [HANDOFF.md](HANDOFF.md), [NEXT_STEPS.md](NEXT_STEPS.md) and [AUDIT_2026-09-22.md](AUDIT_2026-09-22.md). Preview: http://127.0.0.1:8190/.
+
+## Review checkpoint — 2026-09-22
+
+This V18 review is complete and is the source for the requested V19 working copy. The owner confirms the Cal.com booking and dark canvas work. Local fonts and stable navigation startup are implemented; HU/EN privacy and terms draft 9/downloads are synchronized. All 19 privacy intake questions remain complete. [AUDIT_2026-09-22.md](AUDIT_2026-09-22.md) is the current measurement, source and outstanding-work record; it supersedes earlier remote-font and pending-calendar-render statements. Other dated entries below remain historical.
+
+Priority publication cleanup: live HANDOFF.md and PRIVACY_QUESTIONS.md were verified publicly readable. Remove internal notes from the publishing output/source, keep local working notes, and verify public URLs return 404. No deployment or external deletion was performed. Legal documents remain review drafts; successful page/booking checks do not establish legal approval.
+
+2026-09-22 provider migration: the owner requests Cal.com instead of Calendly; all three owner-supplied links are now configured locally. Public source/drafts describe active Cal.com routing and prefill data transfer; direct email remains available. The public online event lists Google Meet, but calendar sync/account settings are not verified. Inline rendering in a normal browser remains a verification item. The old Calendly Free / Google Calendar answers remain historical and must not be assumed for Cal.com. Read CAL_SETUP.md for provider/account, minors/guardian and activation checks. Existing records were not moved or deleted; no account setup, terms acceptance or deployment was performed. The 19-question intake remains complete.
+
+## Latest owner update — 2026-09-21
+
+- **Hosting resolved (owner-confirmed).** The owner reports that the current site is permitted provided it does not process payments or collect sensitive payment information such as bank-card numbers. The owner confirms those functions are not planned. Close the GitHub hosting task for the current setup; do not re-raise it without a material change or new evidence. No provider correspondence was supplied or independently reviewed, and this is not a general interpretation of GitHub policy or a statement that all client data is non-sensitive.
+- **V18 published (owner-confirmed)** at https://mihalybence.com/. The assistant did not deploy or independently audit this publication. Future local changes require their own upload; publication does not finalise legal drafts.
+- **Photography partially complete.** The two colleague-training images are included; more photographs may be added later. The owner rejected the two seated welcoming-portrait candidates and plans a new photograph. Sharing-preview completion was not separately confirmed.
+- **Remaining active work:** checklist items 1–3: terms/service details, the separate online agreement and privacy implementation/review. All 19 privacy intake answers remain complete. Do not reopen completed booking/design/language work.
+
+This update supersedes earlier pending-hosting and unpublished-V18 statements below; dated implementation records remain historical.
+
 Version context: maintained in V18 from 2026-09-18, copied from V16. Dated V16/V15 references below describe inherited history, not the active editing folder. No V18 deployment is implied.
 
 ## Current status — 2026-09-18
 
-All 19 privacy intake questions are answered. The incident/data-request procedure is prepared in INCIDENT_RESPONSE.md; it has not been rehearsed. Terms and privacy notices remain review drafts. Next work: missing terms/business/refund decisions; separate online agreement and health consent with guardian verification and applicable withdrawal process; provider/privacy implementation and accountant details; unresolved GitHub hosting suitability; final bilingual legal publication. Photography and sharing previews remain optional owner work. Calendly design, booking, English account content and V16 live checks are owner-confirmed complete. Do not repeat completed intake or reopen fixed issues without new evidence. No new deployment or independent live audit is implied.
+All 19 privacy intake questions are answered. The incident/data-request procedure is prepared in INCIDENT_RESPONSE.md; it has not been rehearsed. Terms and privacy notices remain review drafts. Next work: missing terms/business/refund decisions; separate online agreement and health consent with guardian verification and applicable withdrawal process; provider/privacy implementation and accountant details; final bilingual legal text and publication of subsequent revisions. Hosting is closed and V18 publication is owner-confirmed on 2026-09-21. Photography and sharing previews remain optional owner work. Calendly design, booking, English account content and V16 live checks are owner-confirmed complete. Do not repeat completed intake or reopen fixed issues without new evidence. No new deployment or independent live audit is implied.
 
 2026-09-18 question 19 complete: owner confirms he can locate a client's records across the services used and asks for an incident procedure. [INCIDENT_RESPONSE.md](INCIDENT_RESPONSE.md) is now prepared: tailored containment/recovery, conditional 72-hour authority reporting, high-risk client notification without undue delay, blank incident log, HU/EN client-notification templates and data-request handling. NAIH and EDPB sources checked. This finishes the numbered owner intake; it does not prove implementation, complete the legal review or finalise the notices. Rehearse with fictional data, verify actual account/deletion/sharing/recovery controls and store completed records privately outside this site. No incident alleged, real client records accessed, accounts changed, messages sent or site deployment performed. Public pages and existing review status remain unchanged. This entry supersedes earlier next-question-19 instructions.
 
@@ -98,7 +119,7 @@ Owner confirmed on 2026-09-12: Google Meet for video calls; Messenger, WhatsApp,
 - Identify the applicable sole-trader tax-record retention rule; do not automatically apply the Accounting Act's eight-year period to all records or chats. Add exact periods once verified for the documents actually used.
 - Make the real deletion, access-request, security and health-data intake practices match the final notice. Keep legal review proportionate to the actual workflow; merely uploading the notice is not proof of compliance.
 
-## GitHub policy finding (2026-09-12)
+## Historical GitHub policy finding (2026-09-12) — owner closed task on 2026-09-21
 
 Local validation: 22-page structure/link/anchor/label checks passed; all ten language pairs, privacy footer/contact links and the six named communication services in both pages/downloads passed. Simulated language and contact-flow checks passed, including booking prefill and prepared email routes. No browser/device appearance test or live deployment was performed.
 

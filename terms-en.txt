@@ -1,5 +1,5 @@
 Terms of Service
-2026-09-18-draft-7
+2026-09-22-draft-9
 Review draft — not yet in force
 This version contains points still to be finalised and must not be used as the final contracting terms. You will receive the final terms before entering into a paid agreement.
 
@@ -28,7 +28,7 @@ Below, “Provider” or “Bence” means the sole trader, and “Client” mea
 
 These terms describe the framework for personal training, online coaching and the standalone training programme. The individual offer identifies the selected service and its details. Neither these terms nor an individual agreement may restrict mandatory consumer rights.
 
-The website is for enquiries and appointment scheduling. It has no online payment or automatic ordering process that creates an obligation to pay. Submitting the form or selecting a Calendly appointment does not, by itself, create a paid training contract or a cancellation charge.
+The website is for enquiries and appointment scheduling. It has no online payment or automatic ordering process that creates an obligation to pay. Submitting the form or selecting a Cal.com appointment does not, by itself, create a paid training contract or a cancellation charge.
 
 Under the intended process, online contracting is used for online coaching. Gym clients sign a separate paper training agreement by hand, in person, before training begins and receive a copy. The website does not replace that agreement.
 
@@ -49,7 +49,7 @@ The Client can correct their details and clarify the offer by email before accep
 
 4. Services and fees
 
-- Free consultation: an introductory conversation at no charge.
+- Free consultation: a 20-minute introductory conversation at no charge.
 - Personal training: 11 000 Ft per session; ten-session package: 100 000 Ft.
 - Training Program: a one-off fee of 19 900 Ft. A personalised four-week programme, exercise selection, sets, repetitions, repetitions in reserve (RIR), progression and exercise substitutions.
 - Online Coaching – Basic: 29 900 Ft per month. Training programme, one coaching call per week and programme adjustments.
@@ -58,7 +58,7 @@ The Client can correct their details and clarify the offer by email before accep
 
 Amounts are total consumer prices in Hungarian forints. No extra fee is charged without prior information and express agreement. Any separate gym admission charge is clarified before the contract is concluded.
 
-The individual offer specifies session and call lengths, the validity of the ten-session package, programme delivery deadline and format, and the extent of revisions. Online services require an appropriate internet connection and a device supporting the agreed call, messaging and file formats; specific requirements are disclosed before acceptance.
+Each personal training session lasts 60 minutes. The ten-session personal training package is valid for three months from payment. This does not limit statutory rights or the accounting required when the Provider cancels. The individual offer specifies coaching-call lengths, programme delivery deadline and format, and the extent of revisions. Online services require an appropriate internet connection and a device supporting the agreed call, messaging and file formats; specific requirements are disclosed before acceptance.
 
 The start and end dates of each monthly coaching period are agreed in advance. A further paid period requires express agreement; there is no automatic charge or renewal based solely on silence. A price change does not retrospectively change an already agreed period's fee.
 
@@ -108,7 +108,7 @@ Approved content may remain published for the purpose and channels specified by 
 
 Confidentiality continues after the contract ends. It does not restrict the Client's rights, including access to their own data or lawful pursuit of a claim.
 
-Technical providers necessary for the service, such as Calendly, email and the agreed communication provider, may process data needed for their role under an appropriate legal basis and data-protection safeguards. Website hosting is not, by itself, a client chat archive. Billing-related disclosures must also be limited to their purpose.
+Technical providers necessary for the service, such as Cal.com, email and the agreed communication provider, may process data needed for their role under an appropriate legal basis and data-protection safeguards. Website hosting is not, by itself, a client chat archive. Billing-related disclosures must also be limited to their purpose.
 
 Disclosure may be required by law or a binding court or authority order; a search warrant is not required in every case. Data may also be processed where lawful, necessary and proportionate to establish, exercise or defend legal claims. Bence checks the legal basis of a request, discloses only what is necessary, and informs the Client where legally permitted.
 
@@ -146,7 +146,7 @@ To meet the deadline, it is sufficient to send a clear withdrawal or termination
 
 Any amount due is refunded no later than 14 days after notice of withdrawal is received, normally using the original payment method. A different method requires the Client's express agreement and must not create extra costs for them. Any lawful proportionate performance charge is transparently accounted for.
 
-Online withdrawal function: where applicable, the electronic withdrawal function required by section 22 of Hungarian Government Decree 45/2014 must be provided in the contracting process. The current website's email-draft and Calendly cancellation options are not that function. The necessary function and durable acknowledgement remain to be implemented, which is why this document is a review draft.
+Online withdrawal function: where applicable, the electronic withdrawal function required by section 22 of Hungarian Government Decree 45/2014 must be provided in the contracting process. The current website's email-draft and Cal.com cancellation options are not that function. The necessary function and durable acknowledgement remain to be implemented, which is why this document is a review draft.
 
 A training agreement concluded in person at the Provider's usual business premises does not automatically carry the 14-day distance-contract right. Off-premises or actual distance agreements remain subject to their applicable rules. The exception for leisure services on specific dates is not used as a blanket exclusion covering every package.
 

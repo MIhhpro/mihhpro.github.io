@@ -1,5 +1,15 @@
 # Supplied contract reference review
 
+## Active working copy — V19
+
+Selected by the owner on 2026-09-22 after the V18 loading/privacy review. All new website changes belong in V19; V18 and older versions are snapshots. The copied V18 history below is context, not an instruction to return to that folder. Local V19 changes are not deployed. See [HANDOFF.md](HANDOFF.md), [NEXT_STEPS.md](NEXT_STEPS.md) and [AUDIT_2026-09-22.md](AUDIT_2026-09-22.md). Preview: http://127.0.0.1:8190/.
+
+## Review checkpoint — 2026-09-22
+
+This V18 review is complete and is the source for the requested V19 working copy. The owner confirms the Cal.com booking and dark canvas work. Local fonts and stable navigation startup are implemented; HU/EN privacy and terms draft 9/downloads are synchronized. All 19 privacy intake questions remain complete. [AUDIT_2026-09-22.md](AUDIT_2026-09-22.md) is the current measurement, source and outstanding-work record; it supersedes earlier remote-font and pending-calendar-render statements. Other dated entries below remain historical.
+
+Priority publication cleanup: live HANDOFF.md and PRIVACY_QUESTIONS.md were verified publicly readable. Remove internal notes from the publishing output/source, keep local working notes, and verify public URLs return 404. No deployment or external deletion was performed. Legal documents remain review drafts; successful page/booking checks do not establish legal approval.
+
 Version context: maintained in V18 from 2026-09-18, copied from V16. Dated V16/V15 references below describe inherited history, not the active editing folder. No V18 deployment is implied.
 
 2026-09-18 question 15 final workflow answers: clients present medical documents by attachment or link and sign the separate online agreement containing health-data permission BEFORE sharing/review. Timing emphatically confirmed; do not ask again. Both privacy languages/downloads now state presentation method and prior signing; removed resolved workflow gaps and fixed a missing space in English source attribution text. Preserve no retained medical-document archive, necessary notes through coaching only, separate gym agreement, and qualified Meet chat behavior. Exact online consent wording/evidence and technical configuration are uninspected; do not treat this owner confirmation as a legal certification, a verified native Meet attachment feature, or proof of erasure of shared files. Move owner intake to question 16 (publication channels and permission for client photos/testimonials); retain implementation follow-ups without blocking the numbered intake. Original DOCX/terms/prices and external accounts unchanged; no deployment.

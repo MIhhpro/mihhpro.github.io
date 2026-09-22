@@ -1,4 +1,54 @@
-# V18 project notes
+# V19 project notes
+
+## Active working copy — V19
+
+Selected by the owner on 2026-09-22 after the V18 loading/privacy review. All new website changes belong in V19; V18 and older versions are snapshots. The copied V18 history below is context, not an instruction to return to that folder. Local V19 changes are not deployed. See [HANDOFF.md](HANDOFF.md), [NEXT_STEPS.md](NEXT_STEPS.md) and [AUDIT_2026-09-22.md](AUDIT_2026-09-22.md). Preview: http://127.0.0.1:8190/.
+
+## Review checkpoint — 2026-09-22
+
+This V18 review is complete and is the source for the requested V19 working copy. The owner confirms the Cal.com booking and dark canvas work. Local fonts and stable navigation startup are implemented; HU/EN privacy and terms draft 9/downloads are synchronized. All 19 privacy intake questions remain complete. [AUDIT_2026-09-22.md](AUDIT_2026-09-22.md) is the current measurement, source and outstanding-work record; it supersedes earlier remote-font and pending-calendar-render statements. Other dated entries below remain historical.
+
+Priority publication cleanup: live HANDOFF.md and PRIVACY_QUESTIONS.md were verified publicly readable. Remove internal notes from the publishing output/source, keep local working notes, and verify public URLs return 404. No deployment or external deletion was performed. Legal documents remain review drafts; successful page/booking checks do not establish legal approval.
+
+## Booking canvas correction — 2026-09-22 (local)
+
+Owner now confirms the Cal.com embed works and supplied a screenshot of the rendered personal-training calendar. This supersedes the earlier unresolved-loading report for the owner's tested browser; the specific browser was not named. A white canvas remained around the dark card and Cal.com footer.
+
+Added `styles.body.background: "#100f0c"` to the existing Cal UI call, targeting the provider document rather than changing card/input colours or cropping the iframe. Cal's source still applies this explicit body override separately from theme variables, although the general styles API is deprecated; retain the narrow compatibility override until there is an equivalent supported outer-canvas variable. Source: https://raw.githubusercontent.com/calcom/cal.diy/main/packages/embeds/embed-core/src/embed-iframe.ts (ui handler). Both languages use the same script. Script cache revision is 18.5; styles remain 18.4 and configuration 18.3.
+
+Contact-flow, 22-page structural and 10 language-pair checks pass. Visual confirmation of this background correction is still needed in the owner's working browser; prior in-app preview loading limitations remain. No deployment or real booking performed.
+
+## Preview failure follow-up — 2026-09-22 (local)
+
+The owner explicitly confirmed that the timeout screenshot was taken **inside Codex’s preview**, not a separate browser. All reported failures so far are therefore in the same in-app environment; there is still no regular-browser result. The official unmodified SDK snippet, plain Cal embed and plain public Cal page also stayed blank in isolated iframes there. A same-origin control iframe loaded and sent its message. Direct Cal pages load; an HTTP GET of the embed returned actual booking HTML (200, no CSP/X-Frame-Options restriction). This does not establish the exact cause or prove the embed works for visitors. Do not call the iframe fixed.
+
+The HU/EN timeout copy now distinguishes the embedded calendar from direct booking, with a prominent gold Cal.com button inside the booking panel. It retains the existing selected-event/name/email/notes prefill and is available during loading, success and failure. Email remains an alternative. No production JavaScript/integration behavior was changed in this follow-up. Styles revision is 18.4; script/config remain 18.3. Earlier 18.2 stylesheet references in dated notes are historical.
+
+Checked locally: the updated Hungarian fallback and correct prefilled consultation URL in the browser; contact-flow tests, 22-page validation and 10 language-pair checks pass. Next necessary check: open http://127.0.0.1:8180/contact.html?service=consult in a separate regular browser, submit fictional details, and check whether the calendar renders. No real booking, account change or publication performed. Temporary diagnostic HTML was moved out of V18 into the private workspace .review folder.
+
+## Cal.com links connected — 2026-09-22 (local)
+
+The owner supplied all three links, now configured in `site-config.js`: consultation `/bence-mihaly-gjfcyz/konz`, personal training `/bence-mihaly-gjfcyz/edzes`, online coaching `/bence-mihaly-gjfcyz/online`, all on `https://cal.com`. All appointment routes now attempt the inline calendar; standalone programme/other questions still prepare email. The temporary email-only privacy text was removed in HU/EN and downloads. Missing-link and unavailable-calendar fallbacks remain. A failed/slow calendar hides the empty SDK loader, shows fallback options, and restores the iframe if a late ready event arrives. Script/config cache revision is `18.3`; CSS remains `18.2`.
+
+Public-event checks: consultation 20 minutes, personal training one hour, both at Budapest, Hatvany Lajos utca 10; online coaching one hour on Google Meet. Europe/Budapest timezone was displayed. Consultation direct-link prefill visually preserved the fictional accented name, plus-addressed email and notes, with readable dark inputs. Online form also exposes the standard name/email/Additional notes fields. No Confirm button was pressed; no booking, notification, payment, cancellation or account change was performed.
+
+**Outstanding verification:** the inline calendar remained hidden/loading in the in-app browser. The same happened with Cal.com's unmodified official snippet and a plain iframe on an isolated local page, while the provider pages loaded directly. This narrows the issue but does not prove a browser-only cause. Native inline styling, resizing and HU/EN language behavior still require verification in the owner's normal browser; an asynchronous check was requested. Direct fallback works. Do not describe the inline calendar as verified or publish without checking this. Account email, provider arrangements, calendar sync and guardian booking handling remain separate setup follow-ups. See CAL_SETUP.md. No deployment.
+
+
+
+
+## Latest owner update — 2026-09-21
+
+- **Hosting resolved (owner-confirmed).** The owner reports that the current site is permitted provided it does not process payments or collect sensitive payment information such as bank-card numbers. The owner confirms those functions are not planned. Close the GitHub hosting task for the current setup; do not re-raise it without a material change or new evidence. No provider correspondence was supplied or independently reviewed, and this is not a general interpretation of GitHub policy or a statement that all client data is non-sensitive.
+- **V18 published (owner-confirmed)** at https://mihalybence.com/. The assistant did not deploy or independently audit this publication. Future local changes require their own upload; publication does not finalise legal drafts.
+- **Photography partially complete.** The two colleague-training images are included; more photographs may be added later. The owner rejected the two seated welcoming-portrait candidates and plans a new photograph. Sharing-preview completion was not separately confirmed.
+- **Remaining active work:** checklist items 1–3: terms/service details, the separate online agreement and privacy implementation/review. All 19 privacy intake answers remain complete. Do not reopen completed booking/design/language work.
+
+This update supersedes earlier pending-hosting and unpublished-V18 statements below; dated implementation records remain historical.
+
+2026-09-20 training photographs: added owner-supplied trainingbobi.png and trainingbobi2.png unchanged under assets/, with 320/640/960/1440px WebP delivery copies. The owner explicitly confirms the person pictured is a colleague, not a client, and authorises these images as supplied; client-face masking remains the rule for other client photos. Both images appear in Personal Training below the three principles and in the About/Rólam gym gallery, in HU/EN. Replaced the empty training-photo area with two landscape photos plus the existing personal portrait; no gym-photo placeholders remain. Captions stay below the new photos, preserving the full landscape composition. Each opens in the existing accessible viewer. training-photos.css?v=18.1 controls these two pages only; mobile uses a single column. Images are lazy-loaded, sized explicitly and use srcset/sizes. The two largest WebPs total 459,442 bytes versus 5,093,723 source bytes (about 91% smaller). Full source originals remain unchanged.
+
+Verification: 22-page structural and ten-pair language checks pass. Local browser checks at 320, 390, 768, 1024 and 1440 CSS pixels found no About-gallery overflow; training-page checks at 320, 390, 768 and 1440 confirmed single/two-column behavior. Both new images load, and the HU/EN viewer opens/closes; mobile enlargement uses contain, without stretching. These are desktop-browser viewport simulations, not physical iPhone/Android tests. V18 preview started at http://127.0.0.1:8180/; no live deployment, client-document edits or older-version edits.
 
 2026-09-18 brochure clarification: owner describes the personal-training journey as consultation, observation/assessment, the first four sessions learning foam rolling (SMR), warm-up, basic movement patterns and cardio-machine use, then further sessions increasingly focused on individual goals. Recorded in the Hungarian digital brochure's first-page map; the second page explains individual workout phases. English brochure and website content remain unchanged at the owner's request to revise Hungarian only for now.
 

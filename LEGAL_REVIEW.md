@@ -1,12 +1,31 @@
 # Terms: content, decisions and remaining work
 
+## Active working copy — V19
+
+Selected by the owner on 2026-09-22 after the V18 loading/privacy review. All new website changes belong in V19; V18 and older versions are snapshots. The copied V18 history below is context, not an instruction to return to that folder. Local V19 changes are not deployed. See [HANDOFF.md](HANDOFF.md), [NEXT_STEPS.md](NEXT_STEPS.md) and [AUDIT_2026-09-22.md](AUDIT_2026-09-22.md). Preview: http://127.0.0.1:8190/.
+
+## Review checkpoint — 2026-09-22
+
+This V18 review is complete and is the source for the requested V19 working copy. The owner confirms the Cal.com booking and dark canvas work. Local fonts and stable navigation startup are implemented; HU/EN privacy and terms draft 9/downloads are synchronized. All 19 privacy intake questions remain complete. [AUDIT_2026-09-22.md](AUDIT_2026-09-22.md) is the current measurement, source and outstanding-work record; it supersedes earlier remote-font and pending-calendar-render statements. Other dated entries below remain historical.
+
+Priority publication cleanup: live HANDOFF.md and PRIVACY_QUESTIONS.md were verified publicly readable. Remove internal notes from the publishing output/source, keep local working notes, and verify public URLs return 404. No deployment or external deletion was performed. Legal documents remain review drafts; successful page/booking checks do not establish legal approval.
+
+## Latest owner update — 2026-09-21
+
+- **Hosting resolved (owner-confirmed).** The owner reports that the current site is permitted provided it does not process payments or collect sensitive payment information such as bank-card numbers. The owner confirms those functions are not planned. Close the GitHub hosting task for the current setup; do not re-raise it without a material change or new evidence. No provider correspondence was supplied or independently reviewed, and this is not a general interpretation of GitHub policy or a statement that all client data is non-sensitive.
+- **V18 published (owner-confirmed)** at https://mihalybence.com/. The assistant did not deploy or independently audit this publication. Future local changes require their own upload; publication does not finalise legal drafts.
+- **Photography partially complete.** The two colleague-training images are included; more photographs may be added later. The owner rejected the two seated welcoming-portrait candidates and plans a new photograph. Sharing-preview completion was not separately confirmed.
+- **Remaining active work:** checklist items 1–3: terms/service details, the separate online agreement and privacy implementation/review. All 19 privacy intake answers remain complete. Do not reopen completed booking/design/language work.
+
+This update supersedes earlier pending-hosting and unpublished-V18 statements below; dated implementation records remain historical.
+
 Version context: maintained in V18 from 2026-09-18, copied from V16. Dated V16/V15 references below describe inherited history, not the active editing folder. No V18 deployment is implied.
 
 ## Current status — 2026-09-18
 
 Later owner-supplied client email confirms personal-training package validity: ten sessions are usable for three months from payment. It also confirms 20-minute free consultation and 60-minute individual training at 11,000 Ft. The Hungarian print guide includes these facts; synchronizing the website/terms sources remains a follow-up, not part of this print-document task. Do not ask these questions again. Other open terms and review status remain unchanged.
 
-All 19 privacy intake questions are answered. The incident/data-request procedure is prepared in INCIDENT_RESPONSE.md; it has not been rehearsed. Terms and privacy notices remain review drafts. Next work: missing terms/business/refund decisions; separate online agreement and health consent with guardian verification and applicable withdrawal process; provider/privacy implementation and accountant details; unresolved GitHub hosting suitability; final bilingual legal publication. Photography and sharing previews remain optional owner work. Calendly design, booking, English account content and V16 live checks are owner-confirmed complete. Do not repeat completed intake or reopen fixed issues without new evidence. No new deployment or independent live audit is implied.
+All 19 privacy intake questions are answered. The incident/data-request procedure is prepared in INCIDENT_RESPONSE.md; it has not been rehearsed. Terms and privacy notices remain review drafts. Next work: missing terms/business/refund decisions; separate online agreement and health consent with guardian verification and applicable withdrawal process; provider/privacy implementation and accountant details; final bilingual legal text and publication of subsequent revisions. Hosting is closed and V18 publication is owner-confirmed on 2026-09-21. Photography and sharing previews remain optional owner work. Calendly design, booking, English account content and V16 live checks are owner-confirmed complete. Do not repeat completed intake or reopen fixed issues without new evidence. No new deployment or independent live audit is implied.
 
 2026-09-18 question 16 duration confirmed: owner chooses ongoing approved publication until client withdrawal, with no preset expiry. Updated both privacy and terms languages/downloads (terms 2026-09-18-draft-7) within the content/purpose/channels approved by email; preserve mandatory face masking and voluntary consent. Added business-email withdrawal and cessation/removal from owner-controlled channels without undue delay; no promise to erase all third-party reposts. Purpose/scope changes require fresh permission and continuing need/applicability should be reviewed; do not label consent irrevocable or guaranteed forever. Permission-email retention after use stops remains a separate necessity decision, not an assumed indefinite archive. Practical withdrawal records, guardian permission for minors and actual platforms remain implementation follow-ups. Move numbered intake to question 17 (promotional contact). No actual content or accounts changed outside local site; no deployment. EDPB consent guidance reviewed: https://www.edpb.europa.eu/sites/default/files/files/file1/edpb_guidelines_202005_consent_en.pdf .
 
@@ -77,7 +96,7 @@ Prepared 2026-09-05; inherited unchanged from V15 into active folder V16 on 2026
 4. Finish and align the paper gym agreement, the online offer/acceptance/confirmation documents and the early-start declarations. Use the agreed terms as an attachment or in the actual email body, not merely a changeable website link. Preserve the accepted version.
 5. Have the final Hungarian terms and actual contracting/refund workflow reviewed by a Hungarian legal professional. This task did not establish the entire business's legal compliance.
 
-## Hosting point to check separately
+## Historical hosting review — closed by owner on 2026-09-21
 
 GitHub's Pages policy restricts use as hosting for running an online business or primarily facilitating commercial transactions. This site's paid-service offers and booking handoff merit checking with GitHub, even without checkout. Do not assume a violation is conclusively established, change hosts, or deploy elsewhere without instruction. See the official Pages limits below.
 

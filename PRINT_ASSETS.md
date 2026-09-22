@@ -1,5 +1,47 @@
 # Print and digital assets
 
+## Active working copy — V19
+
+Selected by the owner on 2026-09-22 after the V18 loading/privacy review. All new website changes belong in V19; V18 and older versions are snapshots. The copied V18 history below is context, not an instruction to return to that folder. Local V19 changes are not deployed. See [HANDOFF.md](HANDOFF.md), [NEXT_STEPS.md](NEXT_STEPS.md) and [AUDIT_2026-09-22.md](AUDIT_2026-09-22.md). Preview: http://127.0.0.1:8190/.
+
+## Review checkpoint — 2026-09-22
+
+This V18 review is complete and is the source for the requested V19 working copy. The owner confirms the Cal.com booking and dark canvas work. Local fonts and stable navigation startup are implemented; HU/EN privacy and terms draft 9/downloads are synchronized. All 19 privacy intake questions remain complete. [AUDIT_2026-09-22.md](AUDIT_2026-09-22.md) is the current measurement, source and outstanding-work record; it supersedes earlier remote-font and pending-calendar-render statements. Other dated entries below remain historical.
+
+Priority publication cleanup: live HANDOFF.md and PRIVACY_QUESTIONS.md were verified publicly readable. Remove internal notes from the publishing output/source, keep local working notes, and verify public URLs return 404. No deployment or external deletion was performed. Legal documents remain review drafts; successful page/booking checks do not establish legal approval.
+
+## Portrait enhancement and sunglasses removal — 2026-09-21
+
+Updated the existing root `Mihaly-Bence-Nevjegy-uj-portreval` PDF/SVG/PNG at the owner's request. Sunglasses removed with built-in image editing; white linen shirt reconstructed, photographic detail enhanced, and portrait reframed to preserve continuous shoulders. Selected image: `assets/business-card-portrait-hd-no-sunglasses.png`, also provided as root `Mihaly-Bence-Portre-napszemuveg-nelkul-HD.png`. Actual selected resolution: 1024 × 1536 RGBA, versus the previous landscape cutout's 1672 × 941 with substantial empty canvas. At its card placement, effective source resolution is 508 ppi. This is AI-enhanced detail, not recovered original-camera detail. Do not claim a 3K/4K portrait.
+
+The card preview is now 2400 × 1334 px. Text and SVG base layout are verified identical to earlier cards; print trim/bleed unchanged. Final card visually checked for sunglasses removal, portrait edge continuity, clear text and positioning. Earlier portrait assets retained. No website edits or publication.
+
+## Business card with new supplied portrait — 2026-09-21
+
+Root `Mihaly-Bence-Nevjegy-uj-portreval.pdf`, `.svg` and `.png` now use the owner's `Timeline 1_00086400.png` portrait. Existing red/white vector layout, flags, copy, approved contact and print dimensions are unchanged. The prior portrait and no-portrait deliverables remain available. Build with `tools/build-business-card.py --new-photo`.
+
+The original large PNG initially failed the image tool's file reader. A PNG copy with identical decoded RGB pixels and compact encoding is stored as `assets/business-card-new-portrait-source.png`. Built-in image generation removed the black background; its transparent output is `assets/business-card-new-portrait-cutout.png`. The cutout is sized/positioned in the card without further photo retouching. This is an image-tool edit, not a claim of pixel-identical preservation of the subject. The prompt is recorded in `tools/business-card-portrait-prompt.txt`.
+
+Final PDF rendered and visually checked. Confirmed unchanged PDF text, identical SVG base-layout group, one embedded portrait, one PDF page, 90 × 50 mm trim and 3 mm bleed. No website edits or publishing.
+
+## Business card templates — 2026-09-21
+
+Created root `Mihaly-Bence-Nevjegy-portreval` and `Mihaly-Bence-Nevjegy-portre-nelkul` in SVG, PDF and PNG formats from the supplied red/white photographed card. This specific reference overrides the website palette for these cards only. Both variants share identical editable vector layout/text; only the portrait layer is removed in the second. Uses the approved business email, both reference flags, original service labels, italic heading and angular red/contact banners. No website changes.
+
+Builder: `tools/build-business-card.py`. Source photo archived unchanged at `assets/business-card-reference.png`; the real portrait is retained using a native vector clip and affine placement. A built-in image-generation extraction was tried but rejected because it altered facial/shirt details; no generated portrait is used in the deliverables. Owner notes in root `Mihaly-Bence-Nevjegy-olvasd-el.md` explain editing, print dimensions and the reference-photo grain limitation.
+
+Assumed 90 × 50 mm trim size, with 3 mm bleed in both PDF exports (96 × 56 mm MediaBox, explicit TrimBox/BleedBox). SVGs and preview PNGs show trim size. PDFs embed fonts; editable SVGs use Arial. RGB output, no asserted printer-profile certification or physical print proof. Both final trim previews visually inspected; PDF page sizes, equal text, business contact, SVG XML and identical base-layout groups verified.
+
+## Expanded Hungarian training rules — 2026-09-20
+
+Follow-up alignment correction: centered all 14 numbered circle labels and the MB initials horizontally and vertically using measured text width and font cap height. Regenerated the same root PDF; all four rendered pages visually checked and extracted text verified unchanged.
+
+Created [four-page rules review PDF](../Mihaly-Bence-Szabalyzat-kiegeszitett.pdf) from the owner's Desktop `Mihaly-Bence-Szabalyzat.pdf`, preserving its black/bronze/gold panels, circular MB mark and typography style. Original file unchanged. New builder: `tools/build-training-rules.py`; root [owner-only change and decision notes](../Mihaly-Bence-Szabalyzat-valtozasok.md) document researched sources and unresolved contract details. Keep the owner notes out of public uploads.
+
+Adds pain-masking/medication safeguards without a blanket medication ban, acute illness and stop/emergency signals, safe equipment use, hygiene, respect, filming consent, physical-touch consent, client rights and trainer responsibilities. Replaces the blanket liability waiver, unrestricted equipment right, fixed two-hour sedative rule and universal pre-exercise food ban. Carries the previously confirmed under-24-hour cancellation principle only for the affected prepaid appointment; other unconfirmed penalties/exceptions are not invented. The PDF is visibly an **egyeztetési változat**, not legally approved or automatically in force; detailed terms and health-data consent remain separate.
+
+All four pages rendered and visually inspected; revised page 1 rendered and inspected again after the cancellation clarification. Verified four pages, the sole approved business contact, emergency number, cancellation clause and no website footer. No website edits, sending or publication performed.
+
 ## Current synchronized Hungarian and English brochures
 
 2026-09-18: the owner approved the new Hungarian journey map and requested its English translation. [English training guide](../mihaly-bence-training-guide-en.pdf) now matches the approved four-stage journey: consultation, observation/assessment, first four sessions learning fundamentals, and ongoing goal-focused training. Both languages use the same layout function and matching text sources. English page 2 was retained unchanged; the Hungarian PDF was not regenerated. Both English pages visually checked, journey content and business contact verified. This supersedes the earlier English-not-yet-updated status below. Approximately 415 kB, saved in the Page workspace root. No publication or sending performed.

@@ -1,5 +1,5 @@
 Adatkezelési tájékoztató
-2026-09-18
+2026-09-22
 Egyeztetési változat — pontosítandó működési részletekkel
 Ez a tájékoztató a weboldalt és a megerősített ügyfélkommunikációs csatornákat mutatja be. A törlési határidők, az alkalmazások tárolási és rögzítési beállításai, valamint a szolgáltatói feltételek megerősítése még szükséges a véglegesítéshez.
 
@@ -16,7 +16,7 @@ https://mihalybence.com/
 2. Az oldal megnyitása
 
 A weboldal tárhelyét a GitHub Pages biztosítja. Az oldal megnyitásakor a tárhelyszolgáltató technikai adatokat, például IP-címet, böngésző- és eszközadatokat, a kért oldal címét és a kérés idejét kaphatja meg. Ezek a weboldal kiszolgálásához és biztonságához szükségesek. A biztonságos működéshez szükséges adatkezelés jogalapja a GDPR 6. cikk (1) bekezdés f) pontja szerinti jogos érdek: az oldal elérhetősége, a hibák kezelése és a visszaélések megelőzése.
-A megjelenéshez az oldal Google Fonts betűtípusokat tölt le. Ez technikai kérést küld a Google szervereinek, például az IP-címmel és a böngésző által továbbított fejlécekkel. A jelenlegi megoldás nem helyben tárolt betűtípusokat használ. A Google Fonts saját tájékoztatása szerint a betűtípus-szolgáltatás nem használ sütiket.
+A weboldal betűtípusai a weboldal saját tárhelyéről töltődnek be. A megjelenítésükhöz a látogató böngészője nem kapcsolódik a Google Fonts szervereihez.
 A weboldal saját kódjában nincs Google Analytics, hirdetési képpont, hírlevél-feliratkozás vagy látogatói fiók. A nyelvválasztást nem tárolja sütiben vagy helyi tárolóban. Külső szolgáltatók saját adatkezelése ettől különbözik.
 
 3. Kapcsolatfelvétel
@@ -28,14 +28,14 @@ A gépelés önmagában nem küldi el az űrlap tartalmát nekem vagy a GitHub t
 Fizetős szolgáltatás esetén a számlához vagy nyugtához szükséges adatokat külön kérem be: például nevet, számlázási címet és – ahol szükséges – adószámot. A jogalap a GDPR 6. cikk (1) c) pontja szerinti jogi kötelezettség, az alkalmazandó magyar adó- és bizonylatolási szabályok alapján. A kötelező számlázási adatok hiányában a fizetős szolgáltatás szabályszerű elszámolása nem lehetséges. A weboldalon nincs bankkártyás fizetés vagy automatikus számlakiállítás.
 Számlázás és könyvelés: a számlákat a Számlázz.hu szolgáltatásával állítom ki, a weboldaltól külön. A könyvelőm meghatalmazással, a NAV Online Számla rendszerén keresztül fér hozzá a számlázási adataimhoz a könyvelési és adóügyintézési feladatokhoz; ehhez nem használja az eszközeimet. Ez a hozzáférés nem jelent hozzáférést az edzésfeljegyzésekhez, chatbeszélgetésekhez vagy egészségügyi dokumentumokhoz. A számlaadatok jogszabályban meghatározott köre a NAV részére is továbbítandó; ez nem jelenti az összes ügyféladat vagy minden számlamező továbbítását.
 
-4. Calendly és email
+4. Cal.com és email
 
-Időpontfoglalás: az időpontokhoz továbblépve a weboldal átadja a nevet, emailcímet, a választott szolgáltatást/csomagot, valamint a megadott telefonszámot és üzenetet a Calendly részére. Ez már a naptár megnyitásakor megtörténik, nem csak a végleges foglaláskor. A Calendly technikai eszközadatokat is kezelhet; a foglalásnál időpont, időzóna és a foglalás állapota is keletkezik.
-Google Naptár: a Calendly-foglalások automatikusan bekerülnek az üzleti kapcsolattartásra használt Google-fiókom naptárába. A naptárbejegyzéshez továbbított foglalási adatokat így a Google is kezeli, az időpontok nyilvántartása céljából. A naptárba kerülő részletes adattartalom és a hozzáférési beállítások ellenőrzése még szükséges.
-Emailes érdeklődés: a Training Program vagy más kérdés választásakor először helyben készül el az üzenettervezet. A „Megnyitás Gmailben” használatakor a címzett, tárgy és üzenettartalom átkerül a Google részére; az emailt nekem csak a saját leveleződben véglegesített küldés után továbbítod. A másolás gomb a vágólapra teszi az adatokat, hogy más levelezőt is használhass.
-Az automatikus kitöltéshez a Calendly- és Gmail-hivatkozások URL-paraméterekben is tartalmazhatnak személyes adatokat. A naptár vagy levéltervezet ilyen hivatkozását ne oszd meg másokkal; külső lapon megnyitva a böngésző előzményeiben is megmaradhat.
-A Calendly naptár saját sütiket és hasonló technológiákat használhat. Ahol szükséges, a nem alapvető célokhoz a Calendly felületén kezelheted a hozzájárulást. Az időpontfoglalás kérése nem általános hozzájárulás reklámcélú követéshez. Naptár helyett közvetlen emailben is kérhetsz időpontot.
-A Kapcsolat oldal már megnyitáskor letölti a Calendly megjelenéséhez használt stíluslapot. Ez technikai kérést küld a szolgáltatónak az IP-címmel és böngészőadatokkal, de ekkor az űrlap tartalma még nem kerül átadásra.
+Időpont-egyeztetés: az ingyenes konzultációra, személyi edzésre és online coachingra a Cal.com naptárában választhatsz időpontot. Közvetlen emailben is kérhetsz időpontot.
+Az online naptár használatakor: az időpontokhoz továbblépve a név, emailcím, választott szolgáltatás/csomag, valamint a megadott telefonszám és üzenet a Cal.com részére kerül, már a naptár megnyitásakor, a végleges foglalás előtt. Technikai eszközadatokat is kezelhet; foglaláskor időpont-, időzóna- és állapotadatok is keletkeznek. A Cal.com tájékoztatója megkülönbözteti a termék működéséhez, beállításaihoz és biztonságához használt sütiket a marketingoldal követési megoldásaitól. A tényleges foglalási környezet ellenőrzése még szükséges; az időpontkérés nem általános hozzájárulás reklámcélú követéshez. A Kapcsolat oldal puszta megnyitása nem tölt be külső naptárkódot vagy naptárstíluslapot.
+Emailes érdeklődés: a naptár nélkül intézett időpontkéréseknél, a Training Program és más kérdés választásakor először helyben készül el az üzenettervezet. A „Megnyitás Gmailben” használatakor a címzett, tárgy és üzenettartalom átkerül a Google részére; az emailt nekem csak a saját leveleződben véglegesített küldés után továbbítod. A másolás gomb a vágólapra teszi az adatokat, hogy más levelezőt is használhass.
+Az automatikus kitöltéshez a Cal.com- és Gmail-hivatkozások URL-paraméterekben is tartalmazhatnak személyes adatokat. Ezeket ne oszd meg másokkal; külső lapon megnyitva a böngésző előzményeiben is megmaradhatnak. Naptár helyett közvetlen emailben is kérhetsz időpontot.
+Naptárkapcsolatok: az online coaching nyilvános foglalási oldala Google Meet helyszínt jelez. A Cal.com-fiókhoz kapcsolt Google-fiók, a naptárszinkronizálás részletei és más integrációk nincsenek ellenőrizve. A tényleges adattovábbításokat és jogosultságokat pontosítani kell.
+14–17 éves résztvevők: a Cal.com feltételei a szolgáltatás használatát nagykorúaknak engedik. Fiatal résztvevő időpontját ezért a szülő vagy törvényes képviselő közvetlenül emailben egyeztesse velem; a gyermek adatait ne írja a Cal.com naptárába. Ez nem változtatja meg az edzés korhatárát vagy a közös aláírás követelményét.
 
 5. Bizalmas információk
 
@@ -71,16 +71,14 @@ A szolgáltatók saját technikai naplóira és biztonsági mentéseire külön 
 
 8. Külső szolgáltatók
 
-GitHub, Inc. / GitHub B.V.: weboldal-tárhely és technikai működés. GitHub adatvédelem.Calendly, LLC: időpontfoglalás. A foglalás során a részemre gyűjtött adatoknál adatfeldolgozói, saját szolgáltatási céljainál önálló adatkezelői szerepe is lehet. Calendly adatvédelem és adatfeldolgozási feltételek.Google Ireland Limited / Google LLC: Google Fonts, a Gmailben megnyitott és elküldött levelek, Google Meet, Google Naptár, valamint a tervezett Google Drive-dokumentumtárolás és ügyfélhozzáférés. A szerepek és feltételek az igénybe vett szolgáltatástól és fióktípustól függnek. Google adatvédelem; Google Fonts adatvédelem.KBOSS.hu Kft. (Számlázz.hu): számlázási szolgáltató; a számla kiállításához és kezeléséhez megadott számlázási adatokat kezeli a szolgáltatás feltételei szerint. A weboldal nem továbbít automatikusan űrlapadatot a Számlázz.hu részére. Számlázz.hu adatvédelmi tájékoztató.
+GitHub, Inc. / GitHub B.V.: weboldal-tárhely és technikai működés. GitHub adatvédelem.Cal.com: az időpontfoglalási adatoknál a szolgáltató tájékoztatója szerint én vagyok az adatkezelő, a Cal.com pedig az utasításaim szerint eljáró adatfeldolgozó. A tényleges fiókra alkalmazandó adatfeldolgozási megállapodást és adattovábbítási garanciákat még ellenőrizni kell. Cal.com adatvédelem.Google Ireland Limited / Google LLC: a Gmailben megnyitott és elküldött levelek, Google Meet, Google Naptár, valamint a tervezett Google Drive-dokumentumtárolás és ügyfélhozzáférés. A szerepek és feltételek az igénybe vett szolgáltatástól és fióktípustól függnek. Google adatvédelem.KBOSS.hu Kft. (Számlázz.hu): számlázási szolgáltató; a számla kiállításához és kezeléséhez megadott számlázási adatokat kezeli a szolgáltatás feltételei szerint. A weboldal nem továbbít automatikusan űrlapadatot a Számlázz.hu részére. Számlázz.hu adatvédelmi tájékoztató.
 https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement
-https://calendly.com/legal/privacy-notice
-https://calendly.com/legal/data-processing-addendum
+https://cal.com/privacy
 https://policies.google.com/privacy?hl=hu
-https://developers.google.com/fonts/faq/privacy
 https://www.szamlazz.hu/adatvedelem/
 Könyvelő és adóhatóság
 A könyvelőm ténylegesen hozzáfér a számlázási adatokhoz meghatalmazás alapján, a NAV Online Számla rendszerében elérhető adatkörben. A NAV a jogszabály szerinti adatszolgáltatás címzettje. Pontosítandó: a könyvelő szolgáltatói adatai, a jogosultságok pontos köre és a hozzáférhető adatok, valamint a könyvelési adatkezelés szerződéses feltételei még egyeztetés alatt állnak. A számlázási iratok pontos megőrzési idejét az alkalmazandó adójogi szabályok és a tényleges iratok alapján kell véglegesíteni.
-Jelenlegi fiókhasználat: az üzleti kapcsolattartásra használt mihaly.bence.fitness@gmail.com cím jelenleg normál Google-fiókhoz tartozik, nem Google Workspace-előfizetéshez. Jelenleg a Calendly ingyenes csomagját használom ezzel az emailcímmel, és a foglalások automatikusan bekerülnek a kapcsolódó Google Naptárba. A felsorolt szolgáltatásokon felül jelenleg nincs más csatlakoztatott alkalmazás vagy automatizmus. Pontosítandó: a naptárkapcsolat részletes jogosultságainak, a naptár megosztási beállításainak és az adott fiókokra vonatkozó adatkezelési feltételeknek az ellenőrzése még szükséges.
+Jelenlegi fiókhasználat: az üzleti kapcsolattartásra használt mihaly.bence.fitness@gmail.com cím jelenleg normál Google-fiókhoz tartozik, nem Google Workspace-előfizetéshez. Az új Cal.com-fiók csomagja, emailcíme és integrációi még ellenőrzésre várnak. A korábbi Calendly-fiókban és az ahhoz kapcsolt Google Naptárban kezelt foglalásokat a weboldal módosítása önmagában nem törli vagy költözteti át. Pontosítandó: a naptárkapcsolat részletes jogosultságainak, a naptár megosztási beállításainak és az adott fiókokra vonatkozó adatkezelési feltételeknek az ellenőrzése még szükséges.
 A térképgomb a terem meglévő Google Maps oldalára vezető külső hivatkozás, nem beágyazott térkép. A térképszolgáltatás megnyitásakor a Google saját feltételei vonatkoznak a további adatkezelésre. A terem önálló adatkezelése nem része ennek a tájékoztatónak.
 Személyes adatot a feladat teljesítéséhez szükséges körben, megfelelő jogalappal kaphat még jogszabály alapján eljáró hatóság, bíróság, illetve szükség esetén jogi szakember. A könyvelő tényleges hozzáférését külön ismertetem fent. A további tényleges ügyfélkezelő alkalmazásokat az adatbekérés előtt meg kell nevezni; a weboldalból nem következik, hogy minden külső szolgáltatóval már ellenőrzött adatfeldolgozói megállapodás áll fenn.
 Ügyfélkommunikációs szolgáltatások
@@ -95,7 +93,7 @@ https://signal.org/legal/
 
 9. EU-n kívüli adatkezelés
 
-A GitHub, Google, Calendly és a választott chatalkalmazások szolgáltatásai révén adatok az Európai Gazdasági Térségen kívülre, így az Egyesült Államokba is kerülhetnek. Nem állítom, hogy minden adat kizárólag Magyarországon vagy az EU-ban marad.
+A GitHub, Google, Cal.com és a választott chatalkalmazások szolgáltatásai révén adatok az Európai Gazdasági Térségen kívülre, így az Egyesült Államokba is kerülhetnek. Nem állítom, hogy minden adat kizárólag Magyarországon vagy az EU-ban marad.
 Ilyen továbbításhoz a GDPR V. fejezete szerinti megfelelő feltétel szükséges: alkalmazható megfelelőségi határozat – az EU–USA adatvédelmi keretnél a tényleges címzett megfelelő tanúsításával –, vagy például általános szerződési feltételek és az adott továbbításhoz szükséges kiegészítő garanciák. Az adott fiókra és szolgáltatásra vonatkozó feltételeket ellenőrizni kell; egy szolgáltató adatvédelmi oldalának belinkelése nem helyettesíti ezt.
 Az alkalmazott garanciákról és másolatuk elérhetőségéről a fenti emailcímen kérhetsz tájékoztatást. Google adattovábbítási keretek.
 https://policies.google.com/privacy/frameworks?hl=hu

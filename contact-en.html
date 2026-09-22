@@ -13,13 +13,12 @@
       window.addEventListener("load",function(){setTimeout(function(){if(!window.__revealInit)show();},1000);});
       setTimeout(function(){if(!window.__revealInit)show();},4000);})();
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
-  <link rel="stylesheet" href="styles.css?v=16.1">
-  <link rel="stylesheet" href="section-nav.css">
-  <link rel="stylesheet" href="responsive.css?v=15.1">
+  <link rel="stylesheet" href="fonts.css?v=18.6">
+<link rel="preload" href="assets/fonts/inter-100-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/barlow-condensed-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css?v=18.4">
+  <link rel="stylesheet" href="section-nav.css?v=18.6">
+  <link rel="stylesheet" href="responsive.css?v=18.2">
   <link rel="stylesheet" href="legal.css?v=15.2">
 <link rel="alternate" hreflang="hu" href="contact.html">
 <link rel="alternate" hreflang="en" href="contact-en.html">
@@ -171,10 +170,11 @@
           <div class="form-group"><label class="form-label" for="message">What would you like to achieve or ask? (optional)</label><textarea class="form-input" id="message" name="message" rows="4" maxlength="1500" placeholder="For example: I haven’t trained in a while and would like to start exercising regularly again." aria-describedby="message-hint"></textarea><p class="form-note" id="message-hint">A few sentences are enough. Please don’t include medical records or detailed health information here.</p></div><p class="form-note" id="route-note" aria-live="polite">Your selected service determines the next step.</p>
 
           <p class="form-note">Getting in touch or choosing a time does not, by itself, create a paid training contract. <a href="terms.html">Terms of Service (draft)</a></p>
-          <p class="form-note">Opening the calendar passes your entered details to Calendly. Email enquiries first create a message draft. <a href="privacy-en.html">Privacy notice</a></p>
+          <p class="form-note">When an online calendar is available, opening it passes your details to Cal.com. Email enquiries first create a draft. <a href="privacy-en.html">Privacy notice</a></p>
+          <p class="form-note"><strong>Arranging a time for someone aged 14–17?</strong> As their parent or legal guardian, <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mihaly.bence.fitness%40gmail.com" target="_blank" rel="noopener noreferrer">contact me by email</a>. Please do not enter the young person’s details in Cal.com; its provider restricts use to adults.</p>
           <button class="btn btn-primary form-submit" id="route-submit" type="submit">Continue
           </button>
-        <p class="form-note">In the next step, you’ll confirm your appointment in Calendly. For an email enquiry, you send the message from your own email service.</p></form><noscript><p>This form needs JavaScript. You can email me directly: <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mihaly.bence.fitness%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Write an email in Gmail, opens in a new tab">mihaly.bence.fitness@gmail.com</a>.</p></noscript>
+        <p class="form-note">Complete your booking in the calendar, or arrange a time with me by email. Send email enquiries from your own email service.</p></form><noscript><p>This form needs JavaScript. You can email me directly: <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mihaly.bence.fitness%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Write an email in Gmail, opens in a new tab">mihaly.bence.fitness@gmail.com</a>.</p></noscript>
 
       </div>
 
@@ -187,7 +187,7 @@
       <div class="inquiry-card">
         <p class="eyebrow">Get in touch</p>
         <h2 id="inquiry-title">Let’s continue by email.</h2>
-        <p>The <strong id="inquiry-service-name">selected topic</strong> doesn’t require an immediate appointment. Your draft includes your contact details and message. Review it, add anything you’d like and send it. The website has not sent a message.</p>
+        <p><strong id="inquiry-service-name">selected topic</strong> can be discussed by email. The draft includes your contact details and message. Review it, add anything you need, then send it. This website has not sent a message.</p>
         <div class="inquiry-actions">
           <a class="btn btn-primary" id="inquiry-email-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mihaly.bence.fitness%40gmail.com" target="_blank" rel="noopener">Open in Gmail</a>
           <button class="btn btn-ghost" id="inquiry-copy-button" type="button"><span class="js-inquiry-copy-label" aria-live="polite">Copy enquiry</span></button>
@@ -197,39 +197,33 @@
     </div>
   </section>
 
-  <!-- ── Calendly scheduling ── -->
-  <section class="contact-calendar calendly-section" aria-labelledby="cal-title" id="calendar" hidden tabindex="-1">
+  <!-- ── Cal.com scheduling ── -->
+  <section class="contact-calendar booking-section" aria-labelledby="cal-title" id="calendar" hidden tabindex="-1">
     <div class="calendar-wrap">
       <div class="section-heading" style="width:min(100%,var(--max));margin:0 auto clamp(28px,4vw,44px);">
         <p class="eyebrow">Book an appointment</p>
         <h2 id="cal-title">2. Choose an available time</h2>
         <p class="selected-service-badge" id="selected-service-badge"></p>
-        <p class="calendly-intro">Choose a day, then a start time. Your booking is only complete once you confirm it in the calendar.</p>
+        <p class="booking-intro">Choose a day, then a start time. Your booking is only complete once you confirm it in the calendar.</p>
       </div>
 
-      <div class="calendly-shell">
-        <div class="booking-heading"><div><p class="eyebrow">Mihály Bence</p><h3>Let’s find a time that works for you.</h3></div><span class="booking-secure">Booking with Calendly</span></div>
+      <div class="booking-shell">
+        <div class="booking-heading"><div><p class="eyebrow">Mihály Bence</p><h3>Let’s find a time that works for you.</h3></div><span class="booking-secure">Booking with Cal.com</span></div>
         <div class="booking-guide" aria-label="Booking steps">
           <span><strong>01</strong> Choose a day</span>
           <span><strong>02</strong> Choose a time</span>
           <span><strong>03</strong> Confirm your booking</span>
         </div>
-        <div id="calendly-loading" class="calendly-loading" role="status" hidden><span class="booking-loader" aria-hidden="true"></span><p>Loading available times…</p></div>
-        <div id="calendly-embed" class="calendly-embed"></div>
-        <div class="calendly-config-notice" id="calendly-config-notice" hidden>
-          <strong>The calendar couldn’t be opened.</strong><span>Try again using the form button, open it in a separate window, or email me directly: <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mihaly.bence.fitness%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Write an email in Gmail, opens in a new tab">mihaly.bence.fitness@gmail.com</a>.</span>
+        <div id="booking-loading" class="booking-loading" role="status" hidden><span class="booking-loader" aria-hidden="true"></span><p>Loading available times…</p></div>
+        <div id="booking-embed" class="booking-embed"></div>
+        <div class="booking-config-notice" id="booking-config-notice" hidden>
+          <strong>The embedded calendar hasn’t loaded.</strong><span>Use the button below to choose a time directly on Cal.com. Your details will carry over, so you won’t need to enter them again.</span><span>If you’d prefer to arrange a time by email: <a id="booking-email-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mihaly.bence.fitness%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Write an email in Gmail, opens in a new tab">mihaly.bence.fitness@gmail.com</a>.</span>
         </div>
+        <div class="booking-actions"><a id="booking-direct-link" class="btn btn-primary" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" hidden>Open available times on Cal.com ↗</a></div>
       </div>
-      <div class="booking-help"><p>Check the time zone, duration and location in the calendar. You can review your details before confirming.</p><a id="calendly-direct-link" class="service-detail-link" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" hidden>Open in a separate window ↗</a></div>
+      <div class="booking-help"><p>Check the time zone, duration and location in the calendar. You can review your details before confirming.</p></div>
 
-      <div class="form-success calendly-success" aria-live="polite">
-        <svg class="lucide lucide-check-circle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle> <path d="m9 12 2 2 4-4"></path></svg>
-        <p class="calendly-success-title">You’re booked!</p>
-        <p>You’ll receive the details and options to reschedule or cancel by email.</p>
-        <a class="btn btn-outline" href="index-en.html">Back to home</a>
-      </div>
-
-      <p class="calendly-footnote">Appointments are managed through Calendly’s booking system.</p>
+<p class="booking-footnote">The calendar is provided by Cal.com.</p>
     </div>
   </section>
 
@@ -249,8 +243,8 @@
   </div>
 </footer>
 
-<script src="site-config.js"></script>
-<script src="script.js?v=16.1"></script>
+<script src="site-config.js?v=18.3"></script>
+<script src="script.js?v=18.5"></script>
 <script src="section-nav.js"></script>
 <script src="language.js?v=15.4"></script>
 </body>

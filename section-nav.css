@@ -1,5 +1,8 @@
 /* A quiet chapter index: native in-page links, enhanced into a side rail. */
 .section-nav { max-width: var(--max); margin: 24px auto; padding: 0 24px; }
+/* Avoid inserting an in-flow index before JavaScript turns it into a fixed rail.
+   With JavaScript disabled, the native anchor index still remains visible. */
+.has-js .section-nav:not(.is-enhanced) { display: none; }
 .section-nav-heading { margin: 0 0 12px; color: var(--soft); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; }
 .section-nav-list { display: flex; flex-wrap: wrap; gap: 4px 20px; margin: 0; padding: 0; list-style: none; }
 .section-nav-list li[hidden] { display: none; }

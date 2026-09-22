@@ -80,7 +80,7 @@ for lang, filename in [('hu', 'aszf.html'), ('en', 'terms.html')]:
     page += '</section>\n'
     for sid, _, heading, content in data[lang]:
         page += '<section class="legal-section" id="' + sid + '" tabindex="-1" aria-labelledby="' + sid + '-title"><h2 id="' + sid + '-title">' + heading + '</h2>\n' + content + '\n</section>\n'
-    page += '</main>\n' + page_footer + '\n<script src="script.js?v=15.2"></script>\n<script src="section-nav.js"></script>\n<script src="legal.js?v=15.2"></script>\n</body>\n</html>\n'
+    page += '</main>\n' + page_footer + '\n<script src="script.js?v=18.2"></script>\n<script src="section-nav.js"></script>\n<script src="legal.js?v=15.2"></script>\n</body>\n</html>\n'
     (ROOT / filename).write_text(add_footer_links(page), encoding='utf-8')
     # A self-contained text copy for saving and attaching to the pre-contract email.
     text = [title, data['version'], draft, draft_note]

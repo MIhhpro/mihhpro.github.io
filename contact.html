@@ -13,13 +13,12 @@
       window.addEventListener("load",function(){setTimeout(function(){if(!window.__revealInit)show();},1000);});
       setTimeout(function(){if(!window.__revealInit)show();},4000);})();
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
-  <link rel="stylesheet" href="styles.css?v=16.1" />
-  <link rel="stylesheet" href="section-nav.css" />
-  <link rel="stylesheet" href="responsive.css?v=15.1" />
+  <link rel="stylesheet" href="fonts.css?v=18.6">
+<link rel="preload" href="assets/fonts/inter-100-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/barlow-condensed-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css?v=18.4" />
+  <link rel="stylesheet" href="section-nav.css?v=18.6" />
+  <link rel="stylesheet" href="responsive.css?v=18.2" />
   <link rel="stylesheet" href="legal.css?v=15.2" />
 <link rel="alternate" hreflang="hu" href="contact.html">
 <link rel="alternate" hreflang="en" href="contact-en.html">
@@ -171,10 +170,11 @@
           <div class="form-group"><label class="form-label" for="message">Mit szeretnél elérni vagy megkérdezni? (opcionális)</label><textarea class="form-input" id="message" name="message" rows="4" maxlength="1500" placeholder="Például: régóta nem edzettem, és szeretnék újra rendszeresen mozogni." aria-describedby="message-hint"></textarea><p class="form-note" id="message-hint">Néhány mondat elég. Leletet vagy részletes egészségügyi adatot itt ne adj meg.</p></div><p class="form-note" id="route-note" aria-live="polite">A kiválasztott szolgáltatás alapján mutatjuk a következő lépést.</p>
 
           <p class="form-note">A kapcsolatfelvétel és az időpont kiválasztása önmagában nem hoz létre fizetős edzési szerződést. <a href="aszf.html">Szerződési feltételek (tervezet)</a></p>
-          <p class="form-note">A naptár megnyitásakor a megadott adatok a Calendlyhez kerülnek. Emailes érdeklődésnél először üzenettervezet készül. <a href="adatkezeles.html">Adatkezelési tájékoztató</a></p>
+          <p class="form-note">Ha elérhető az online naptár, megnyitásakor a megadott adatok a Cal.com részére kerülnek. Emailes érdeklődésnél először üzenettervezet készül. <a href="adatkezeles.html">Adatkezelési tájékoztató</a></p>
+          <p class="form-note"><strong>14–17 éves résztvevőnek kérsz időpontot?</strong> Szülőként vagy törvényes képviselőként <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mihaly.bence.fitness%40gmail.com" target="_blank" rel="noopener noreferrer">egyeztess velem emailben</a>. A fiatal adatait ne írd a Cal.com naptárába; annak használatát a szolgáltató nagykorúaknak engedi.</p>
           <button class="btn btn-primary form-submit" id="route-submit" type="submit">Tovább
           </button>
-        <p class="form-note">Az időpontfoglalást a következő lépésben, a Calendly naptárában erősíted meg. Emailes kérdésnél a levelet a saját leveleződből tudod elküldeni.</p></form><noscript><p>Az űrlaphoz JavaScript szükséges. Írj közvetlenül: <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mihaly.bence.fitness%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email írása Gmailben, új lapon">mihaly.bence.fitness@gmail.com</a>.</p></noscript>
+        <p class="form-note">Az időpontot a naptárban véglegesíted, vagy emailben egyeztetjük. Az emailes érdeklődést a saját leveleződből tudod elküldeni.</p></form><noscript><p>Az űrlaphoz JavaScript szükséges. Írj közvetlenül: <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mihaly.bence.fitness%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email írása Gmailben, új lapon">mihaly.bence.fitness@gmail.com</a>.</p></noscript>
 
       </div>
 
@@ -187,7 +187,7 @@
       <div class="inquiry-card">
         <p class="eyebrow">Kapcsolatfelvétel</p>
         <h2 id="inquiry-title">Folytassuk emailben.</h2>
-        <p>A <strong id="inquiry-service-name">kiválasztott téma</strong> nem igényel azonnali időpontfoglalást. Az emailben szerepelnek az elérhetőségeid és a megadott üzeneted. Nézd át, egészítsd ki, majd küldd el. Az oldal még nem küldött üzenetet.</p>
+        <p><strong id="inquiry-service-name">kiválasztott téma</strong> kapcsán emailben egyeztetünk. Az emailben szerepelnek az elérhetőségeid és a megadott üzeneted. Nézd át, egészítsd ki, majd küldd el. Az oldal még nem küldött üzenetet.</p>
         <div class="inquiry-actions">
           <a class="btn btn-primary" id="inquiry-email-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mihaly.bence.fitness%40gmail.com" target="_blank" rel="noopener">Megnyitás Gmailben</a>
           <button class="btn btn-ghost" id="inquiry-copy-button" type="button"><span class="js-inquiry-copy-label" aria-live="polite">Megkeresés másolása</span></button>
@@ -197,39 +197,33 @@
     </div>
   </section>
 
-  <!-- ── Calendly scheduling ── -->
-  <section class="contact-calendar calendly-section" aria-labelledby="cal-title" id="calendar" hidden tabindex="-1">
+  <!-- ── Cal.com scheduling ── -->
+  <section class="contact-calendar booking-section" aria-labelledby="cal-title" id="calendar" hidden tabindex="-1">
     <div class="calendar-wrap">
       <div class="section-heading" style="width:min(100%,var(--max));margin:0 auto clamp(28px,4vw,44px);">
         <p class="eyebrow">Időpontfoglalás</p>
         <h2 id="cal-title">2. Válassz egy szabad időpontot!</h2>
         <p class="selected-service-badge" id="selected-service-badge"></p>
-        <p class="calendly-intro">Válassz egy napot, majd egy kezdési időpontot. A foglalás csak a naptárban történő megerősítés után kész.</p>
+        <p class="booking-intro">Válassz egy napot, majd egy kezdési időpontot. A foglalás csak a naptárban történő megerősítés után kész.</p>
       </div>
 
-      <div class="calendly-shell">
-        <div class="booking-heading"><div><p class="eyebrow">Mihály Bence</p><h3>Találjunk neked egy jó időpontot.</h3></div><span class="booking-secure">Foglalás a Calendlyvel</span></div>
+      <div class="booking-shell">
+        <div class="booking-heading"><div><p class="eyebrow">Mihály Bence</p><h3>Találjunk neked egy jó időpontot.</h3></div><span class="booking-secure">Foglalás a Cal.com rendszerében</span></div>
         <div class="booking-guide" aria-label="A foglalás lépései">
           <span><strong>01</strong> Nap kiválasztása</span>
           <span><strong>02</strong> Időpont kiválasztása</span>
           <span><strong>03</strong> Foglalás megerősítése</span>
         </div>
-        <div id="calendly-loading" class="calendly-loading" role="status" hidden><span class="booking-loader" aria-hidden="true"></span><p>Betöltöm az elérhető időpontokat…</p></div>
-        <div id="calendly-embed" class="calendly-embed"></div>
-        <div class="calendly-config-notice" id="calendly-config-notice" hidden>
-          <strong>Most nem sikerült megnyitni a naptárat.</strong><span>Próbáld újra az űrlap gombjával, nyisd meg külön ablakban, vagy írj közvetlenül: <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mihaly.bence.fitness%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email írása Gmailben, új lapon">mihaly.bence.fitness@gmail.com</a>.</span>
+        <div id="booking-loading" class="booking-loading" role="status" hidden><span class="booking-loader" aria-hidden="true"></span><p>Betöltöm az elérhető időpontokat…</p></div>
+        <div id="booking-embed" class="booking-embed"></div>
+        <div class="booking-config-notice" id="booking-config-notice" hidden>
+          <strong>A beágyazott naptár most nem töltődött be.</strong><span>Az alábbi gombbal közvetlenül a Cal.com-on választhatsz időpontot. A megadott adataidat átvisszük, így nem kell újra beírnod őket.</span><span>Ha inkább emailben egyeztetnél: <a id="booking-email-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mihaly.bence.fitness%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email írása Gmailben, új lapon">mihaly.bence.fitness@gmail.com</a>.</span>
         </div>
+        <div class="booking-actions"><a id="booking-direct-link" class="btn btn-primary" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" hidden>Időpontok megnyitása a Cal.com-on ↗</a></div>
       </div>
-      <div class="booking-help"><p>A naptárban ellenőrizd az időzónát, az időtartamot és a helyszínt. Az adataidat a véglegesítés előtt még át tudod nézni.</p><a id="calendly-direct-link" class="service-detail-link" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" hidden>Megnyitás külön ablakban ↗</a></div>
+      <div class="booking-help"><p>A naptárban ellenőrizd az időzónát, az időtartamot és a helyszínt. Az adataidat a véglegesítés előtt még át tudod nézni.</p></div>
 
-      <div class="form-success calendly-success" aria-live="polite">
-        <svg class="lucide lucide-check-circle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /> <path d="m9 12 2 2 4-4" /></svg>
-        <p class="calendly-success-title">Sikeres foglalás!</p>
-        <p>A részleteket, valamint a módosítási és lemondási lehetőségeket emailben is megkapod.</p>
-        <a class="btn btn-outline" href="index.html">Vissza a főoldalra</a>
-      </div>
-
-      <p class="calendly-footnote">A naptárat a Calendly biztonságos időpontfoglaló rendszere működteti.</p>
+<p class="booking-footnote">A naptárat a Cal.com biztonságos időpontfoglaló rendszere működteti.</p>
     </div>
   </section>
 
@@ -249,8 +243,8 @@
   </div>
 </footer>
 
-<script src="site-config.js"></script>
-<script src="script.js?v=16.1"></script>
+<script src="site-config.js?v=18.3"></script>
+<script src="script.js?v=18.5"></script>
 <script src="section-nav.js"></script>
 <script src="language.js?v=15.4"></script>
 </body>

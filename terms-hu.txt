@@ -1,5 +1,5 @@
 Általános szerződési feltételek
-2026-09-18-draft-7
+2026-09-22-draft-9
 Egyeztetési tervezet — még nem hatályos
 Ez a változat még véglegesítendő pontokat tartalmaz, ezért végleges szerződéses feltételként nem használható. A fizetős megállapodás előtt megkapod a végleges feltételeket.
 
@@ -28,7 +28,7 @@ A továbbiakban: „Szolgáltató” vagy „Bence”; a szolgáltatást igényb
 
 Ezek a feltételek a személyi edzés, az online coaching és az önálló edzésprogram igénybevételének kereteit írják le. A felek az egyéni ajánlatban rögzítik a választott szolgáltatást és annak részleteit. A kötelező fogyasztóvédelmi szabályokat az egyedi megállapodás sem korlátozhatja.
 
-A honlap kapcsolatfelvételre és időpont-egyeztetésre szolgál. Nincs rajta online fizetés vagy automatikus, fizetési kötelezettséget létrehozó rendelés. Az űrlap elküldése vagy egy Calendly-időpont kiválasztása önmagában nem jelent fizetős edzési szerződést és nem keletkeztet lemondási díjat.
+A honlap kapcsolatfelvételre és időpont-egyeztetésre szolgál. Nincs rajta online fizetés vagy automatikus, fizetési kötelezettséget létrehozó rendelés. Az űrlap elküldése vagy egy online időpont kiválasztása önmagában nem jelent fizetős edzési szerződést és nem keletkeztet lemondási díjat.
 
 A tervezett működés szerint online szerződéskötés az online coachinghoz tartozik. A teremben edző ügyfelek az edzésfolyamat megkezdése előtt személyesen, kézzel írják alá a külön edzési szerződést, és annak másolatát megkapják. A honlap ezt nem helyettesíti.
 
@@ -49,7 +49,7 @@ Az adatokat és az ajánlatot az elfogadás előtt emailben lehet javítani. Mag
 
 4. Szolgáltatások és díjak
 
-- Ingyenes konzultáció: díjmentes ismerkedő beszélgetés.
+- Ingyenes konzultáció: 20 perces, díjmentes ismerkedő beszélgetés.
 - Személyi edzés: 11 000 Ft / alkalom; tízalkalmas csomag: 100 000 Ft.
 - Training Program: 19 900 Ft, egyszeri díj. Személyre szabott négyhetes program, gyakorlatválasztás, sorozatok, ismétlések, tartalék ismétlésszám (RIR), terhelésnövelés és helyettesítő gyakorlatok.
 - Online Coaching – Basic: 29 900 Ft / hónap. Edzésprogram, heti egy coachinghívás és programmódosítás.
@@ -58,7 +58,7 @@ Az adatokat és az ajánlatot az elfogadás előtt emailben lehet javítani. Mag
 
 A feltüntetett összegek forintban értendő, fogyasztó által fizetendő teljes díjak. Előzetes tájékoztatás és kifejezett megállapodás nélkül további díj nem számítható fel. A terem belépőjének esetleges külön díját még a szerződéskötés előtt tisztázzuk.
 
-A személyi edzés és a coachinghívások időtartamát, a tízalkalmas csomag felhasználhatóságát, az edzésprogram átadási határidejét és formátumát, valamint a módosítások körét az egyéni ajánlat tartalmazza. Online munkához megfelelő internetkapcsolat és az egyeztetett hívás-, üzenet- és fájlformátumot kezelő eszköz szükséges; a konkrét követelményeket elfogadás előtt közöljük.
+Egy személyi edzés 60 perc. A tízalkalmas személyi edzéscsomag a fizetéstől számított három hónapig használható fel. Ez nem korlátozza a jogszabályon alapuló jogokat vagy a Szolgáltató lemondásával kapcsolatos elszámolást. A coachinghívások időtartamát, az edzésprogram átadási határidejét és formátumát, valamint a módosítások körét az egyéni ajánlat tartalmazza. Online munkához megfelelő internetkapcsolat és az egyeztetett hívás-, üzenet- és fájlformátumot kezelő eszköz szükséges; a konkrét követelményeket elfogadás előtt közöljük.
 
 A havi coaching kezdő és záró dátumát előre rögzítjük. Újabb fizetős időszak csak kifejezett megállapodással indul; nincs automatikus terhelés vagy pusztán a hallgatáson alapuló megújítás. A díjváltozás nem módosítja utólag a már elfogadott időszak díját.
 
@@ -108,7 +108,7 @@ Az engedélyezett tartalom az emailben megjelölt célra és felületeken előre
 
 A titoktartás a szerződés megszűnése után is fennmarad. Az Ügyfél jogait, például a saját adataihoz való hozzáférést vagy jogszerű igényérvényesítést nem korlátozza.
 
-A szolgáltatás működtetéséhez szükséges technikai szolgáltatók — például a Calendly, a levelezési és a választott kommunikációs szolgáltató — a feladatukhoz szükséges adatokat kezelhetik, megfelelő jogalap és adatvédelmi garanciák mellett. A webtárhely önmagában nem ügyfélchat-archívum. A számlázáshoz szükséges adattovábbításra is csak annak céljához igazodva kerülhet sor.
+A szolgáltatás működtetéséhez szükséges technikai szolgáltatók — például a Cal.com, a levelezési és a választott kommunikációs szolgáltató — a feladatukhoz szükséges adatokat kezelhetik, megfelelő jogalap és adatvédelmi garanciák mellett. A webtárhely önmagában nem ügyfélchat-archívum. A számlázáshoz szükséges adattovábbításra is csak annak céljához igazodva kerülhet sor.
 
 Jogszabály, kötelező bírósági vagy hatósági rendelkezés alapján adatkiadásra kerülhet sor; ennek nem minden esetben feltétele házkutatási engedély. A jogszabály által megengedett, szükséges és arányos körben jogi igények előterjesztéséhez vagy védelméhez is kezelhetők adatok. Bence ellenőrzi a megkeresés jogalapját, csak a szükséges adatot adja át, és az Ügyfelet tájékoztatja, ha ezt a jogszabály lehetővé teszi.
 
@@ -146,7 +146,7 @@ A határidő megtartásához elegendő az egyértelmű elállási vagy felmondá
 
 A visszajáró összeget az elállásról való tudomásszerzéstől számított legkésőbb 14 napon belül, főszabály szerint az eredeti fizetési móddal térítjük vissza. Más módról csak az Ügyfél kifejezett beleegyezésével és számára többletköltség nélkül állapodunk meg. Jogszabály szerint levonható, arányos teljesítési díjat átláthatóan elszámolunk.
 
-Online elállási funkció: a 45/2014. (II. 26.) Korm. rendelet 22. § szerinti, alkalmazandó elektronikus elállási funkciót a szerződéskötési folyamatban biztosítani kell. A jelenlegi honlap email-előkészítő és Calendly-lemondási lehetősége nem ilyen funkció. A szükséges funkció és tartós visszaigazolás még megvalósítandó; ez a dokumentum ezért egyeztetési tervezet.
+Online elállási funkció: a 45/2014. (II. 26.) Korm. rendelet 22. § szerinti, alkalmazandó elektronikus elállási funkciót a szerződéskötési folyamatban biztosítani kell. A jelenlegi honlap email-előkészítő és naptári lemondási lehetősége nem ilyen funkció. A szükséges funkció és tartós visszaigazolás még megvalósítandó; ez a dokumentum ezért egyeztetési tervezet.
 
 A személyesen, a szolgáltató szokásos üzlethelyiségében kötött edzési szerződéshez nem jár automatikusan a távollévők közötti szerződések 14 napos joga. Üzlethelyiségen kívüli vagy ténylegesen távolról történő szerződéskötésnél azonban annak szabályai alkalmazandók. A meghatározott időpontú szabadidős szolgáltatások kivételére nem hivatkozunk általános, minden csomagra kiterjedő kizárásként.
 

@@ -1,108 +1,28 @@
-# V18 — start here
+# V19 — reviewed website source
 
-## Working version
+## Active working copy — V19
 
-**V18 is active from 2026-09-18**, copied from V16 at the owner's request after updating the project notes. V16, the existing V17 and older folders are preserved snapshots. Use assets inside V18. No website code, appearance, prices or booking behavior changed during this copy.
+Selected by the owner on 2026-09-22 after the V18 loading/privacy review. All new website changes belong in V19; V18 and older versions are snapshots. The copied V18 history below is context, not an instruction to return to that folder. Local V19 changes are not deployed. See [HANDOFF.md](HANDOFF.md), [NEXT_STEPS.md](NEXT_STEPS.md) and [AUDIT_2026-09-22.md](AUDIT_2026-09-22.md). Preview: http://127.0.0.1:8190/.
 
-Live domain: https://mihalybence.com/. V16 publication, live checks and English Calendly content were owner-confirmed on 2026-09-17; this does not establish publication of later legal edits or V18. No V18 preview server was started. Start with [HANDOFF.md](HANDOFF.md) and [NEXT_STEPS.md](NEXT_STEPS.md).
+Reviewed 2026-09-22 before the owner-requested V19 copy. Start with [HANDOFF.md](HANDOFF.md) and the [loading/privacy audit](AUDIT_2026-09-22.md). V18 becomes a snapshot once V19 exists.
 
-## Current status — 2026-09-18
+Static HTML/CSS/JavaScript; 22 public pages in Hungarian and English. No build server, visitor account, on-site payment or website email backend. Booking uses Cal.com after the visitor requests times. Email enquiries use Gmail drafts or copyable text. The owner confirms booking/design work. Fonts are self-hosted and photos use responsive WebP files.
 
-All 19 privacy intake questions are answered. The incident/data-request procedure is prepared in INCIDENT_RESPONSE.md; it has not been rehearsed. Terms and privacy notices remain review drafts. Next work: missing terms/business/refund decisions; separate online agreement and health consent with guardian verification and applicable withdrawal process; provider/privacy implementation and accountant details; unresolved GitHub hosting suitability; final bilingual legal publication. Photography and sharing previews remain optional owner work. Calendly design, booking, English account content and V16 live checks are owner-confirmed complete. Do not repeat completed intake or reopen fixed issues without new evidence. No new deployment or independent live audit is implied.
+## Documentation
 
-Read these files before changing content or integrations:
+- [NEXT_STEPS.md](NEXT_STEPS.md): remaining owner/legal/operational work.
+- [CAL_SETUP.md](CAL_SETUP.md): current booking configuration and verification limits. CALENDLY_SETUP is archived context.
+- [PRIVACY_REVIEW.md](PRIVACY_REVIEW.md), [PRIVACY_QUESTIONS.md](PRIVACY_QUESTIONS.md), [LEGAL_REVIEW.md](LEGAL_REVIEW.md): drafts and completed intake. Do not treat them as final legal approval.
+- [INCIDENT_RESPONSE.md](INCIDENT_RESPONSE.md): prepared private operating procedure.
+- [PUBLISHING_CHECKLIST.md](PUBLISHING_CHECKLIST.md): deployment safeguards; exclude internal files and remove already exposed Markdown from the live site.
+- [PROJECT_NOTES.md](PROJECT_NOTES.md), [CONTENT_ROADMAP.md](CONTENT_ROADMAP.md), [MOTION_NOTES.md](MOTION_NOTES.md): established design/content and history, not authority for unrelated changes.
+- [PRINT_ASSETS.md](PRINT_ASSETS.md), [CONTRACT_REFERENCE_REVIEW.md](CONTRACT_REFERENCE_REVIEW.md): client-document/print references. Deliver revised client documents in the Page root.
+- [Font sources](assets/fonts/SOURCES.md): font provenance and required public licences.
 
-- [PROJECT_NOTES.md](PROJECT_NOTES.md): approved facts, prices, design preferences and current behavior.
-- [CONTENT_ROADMAP.md](CONTENT_ROADMAP.md): completed work and remaining decisions. Ideas are a backlog, not instructions to implement everything.
-- [CALENDLY_SETUP.md](CALENDLY_SETUP.md): event links, field mapping and verification limits.
-- [PUBLISHING_CHECKLIST.md](PUBLISHING_CHECKLIST.md): remaining launch checks, the already-owned domain and the measured image improvements.
-- [LEGAL_REVIEW.md](LEGAL_REVIEW.md): bilingual terms drafts, confirmed business policies, unanswered questions and required legal/process follow-up. Do not treat the draft as an effective agreement.
-- [PRIVACY_REVIEW.md](PRIVACY_REVIEW.md): bilingual privacy notice, actual website/client data flows, confirmed chat apps, remaining retention/settings checks and GitHub policy findings.
-- [INCIDENT_RESPONSE.md](INCIDENT_RESPONSE.md): internal incident/data-request procedure, blank log and HU/EN notification templates; keep out of public uploads and keep completed logs outside the site.
-- [MOTION_NOTES.md](MOTION_NOTES.md): animation references, restrained refinements, accessibility fallbacks and cache-version maintenance.
+## Build and check
 
-## Site map
+Run Python tools/build-terms.py after terms changes, or tools/build-languages.py after ordinary page changes. Add new normal-page translations through tools/extract-translations.py and tools/english-translations.json first. Privacy source is tools/privacy-content.json. Build scripts work relative to their version directory.
 
-2026-09-12: **22 public HTML files**. Added `adatkezeles.html` / `privacy-en.html`, footer links throughout and a contact-form disclosure. Privacy text downloads and printing are available. The notices remain review copies until the operational details in PRIVACY_REVIEW are resolved. Google Business/listing/search-promotion tasks were declined; the existing gym map and necessary provider privacy disclosures remain.
+Run Python tests/validate.py and tests/languages.py; Node tests/contact-flow.cjs, tests/email-copy.cjs, tests/languages.cjs, tests/motion.cjs and tests/section-nav.cjs. tests/loading-audit.html is an internal, unthrottled same-origin browser measurement harness, not production analytics or a field performance score.
 
-2026-09-08 logo refinement: the MB logo and all favicon sizes now have transparent corners, a black circular centre and the original gold ring. The outer square background has been removed, and the circle fills the image more closely. The same asset filenames are retained.
-
-2026-09-08 refinements: there are now **20 public HTML files**, including `404.html` and `404-en.html`. Page menu labels are centered. The HU/UK language control slides before navigation (instant with reduced motion) and restores itself on browser Back. The 404 pages use a `/` URL base for the owner's custom domain, so deep missing paths can still load assets and return home. If switching to GitHub project hosting at `/repository/`, update the base in `tools/build-404.py` first. `tools/build-languages.py` rebuilds these error pages too.
-
-Brand assets: `assets/mb-logo-1024.png` is the larger black-background MB circle. `favicon.ico`, `assets/favicon-32.png` and `assets/apple-touch-icon.png` are linked in every page. Regenerate them with `python tools/build-brand.py` (Pillow; the existing Barlow Condensed ExtraBold font and its OFL licence are retained in `tools/fonts/`). The logo is rendered from the existing design, not enlarged from the screenshot.
-
-The complete site is available in Hungarian and English. Every header has a Hungarian / UK flag selector with HU / EN labels. The English pages are `index-en.html`, `services-en.html`, `personal-training-en.html`, `online-coaching-en.html`, `about-en.html`, `progress-en.html`, `first-visit-en.html` and `contact-en.html`. `terms.html` is the existing English terms draft. Normal content pages use relative links; see the 404 base setting above when deploying to a project subdirectory.
-
-| File | Visitor experience |
-| --- | --- |
-| `index.html` | Homepage, introduction, services and starting points |
-| `services.html` | Service comparison, prices and collaboration process |
-| `szemelyi-edzes.html` | Personal training, approach, audience and FAQ |
-| `online-coaching.html` | Four packages, prices, support levels and FAQ |
-| `about.html` | Rólam: story, gallery, values, experience and qualifications |
-| `sikerek.html` | Personal milestones and how progress is followed |
-| `elso-alkalom.html` | First consultation/session, preparation and location |
-| `contact.html` | Contact details, inquiry preparation and Calendly booking |
-| `aszf.html` / `terms.html` | Hungarian / English terms drafts, matching sections, text downloads and printing |
-| `adatkezeles.html` / `privacy-en.html` | Hungarian / English privacy review pages, with matching sections, text downloads and printing |
-
-The former `life.html` page is intentionally absent. Its gallery is at `about.html#galeria`. Sikerek is intentionally visible in the primary navigation.
-
-## Implementation map
-
-- Plain HTML, CSS and JavaScript; no package installation or hosting build step. A local translation generator produces the English HTML before uploading.
-- `styles.css`: visual system, page layouts, photo viewer, contact card and booking shell.
-- `responsive.css`: final device refinements; load after `styles.css` and `section-nav.css` so the narrow/short viewport and touch rules win.
-- `script.js`: mobile menu, reveal effects, gallery dialog, clipboard actions and contact/Calendly behavior.
-- `language.css` / `language.js`: header flag selector and counterpart links. Switching carries the section hash and service/package choices, without copying personal information or storing preferences. Native language links work without JavaScript.
-- `section-nav.css` / `section-nav.js`: section index, responsive side rail and active position tracking. Each HTML page owns its anchor list and section IDs; update both when changing sections.
-- `site-config.js`: Calendly event URLs and inquiry email. Public email links, copy-button data and package copy also exist in HTML; keep them consistent when changing configuration.
-- `assets/`: six original PNG photos, retained unchanged. Pages now serve `assets/responsive/*.webp` in four sizes per photo with `srcset`/`sizes`. The gallery uses `data-full-src` for its large view. Three training/session placeholders remain.
-- `tools/optimize-images.py`: regenerate responsive copies with Pillow. `tools/connect-responsive-images.py` wires newly added PNG image tags and the device stylesheet without reformatting the pages; already-optimized tags are left alone. Both helpers run locally, not in the visitor's browser.
-- `tests/`: local structural and interaction checks; they do not book appointments or send messages.
-
-Headers and footers repeat across 22 HTML files. Apply navigation edits to the Hungarian originals and regenerate English, privacy and error pages. `legal.css` adds shared footer links and legal layouts. `tools/terms-content.json` holds matching HU/EN terms content; run `python tools/build-terms.py` after updating it to rebuild legal pages and text downloads, then refresh the English site, privacy and 404 pages. Keep the terms' draft status until LEGAL_REVIEW.md is resolved. Do not restore a separate gallery page, hide Sikerek, add a blog, invent testimonials, or change the bronze/copper/gold/black palette.
-
-## Maintaining both languages
-
-1. Edit the Hungarian source pages for structure, content or prices. Preserve matching section IDs.
-2. Run `python tools/extract-translations.py` to append new text to `tools/translation-inventory.json`. Existing IDs are retained; never renumber them.
-3. Add or revise the matching ID in `tools/english-translations.json`, including visible text, accessibility labels and gallery `data-note` captions.
-4. Run `python tools/build-languages.py`. It checks translation coverage before writing the eighteen content/terms pages, then regenerates both privacy and both error pages. Privacy copy lives in `tools/privacy-content.json`; `tools/build-privacy.py` builds its pages and text downloads. Avoid directly editing generated English, privacy or error pages: regeneration replaces them.
-5. Run the checks below. Dynamic contact, gallery and clipboard messages have both translations in `script.js`.
-
-Upload all public HTML, CSS and JS together with assets and text downloads. `tools/` and `tests/` are local maintenance helpers. Local edits do not publish themselves. Calendly event names, questions and notifications are managed in the Calendly account, separately from website copy.
-
-## Local preview
-
-Serve this directory itself, not the workspace root or an earlier version. In a terminal opened in V18:
-
-```powershell
-python -m http.server 8180 --bind 127.0.0.1
-```
-
-Then visit `http://127.0.0.1:8180/`. Port 8180 is a suggested example, not a claim that a server is running. Verify the served directory before reusing a preview. A V16 or V17 server does not automatically switch to V18.
-
-## Verification
-
-From V18, use Python with `lxml` and Node.js:
-
-```powershell
-python tests/validate.py
-python tests/languages.py
-node tests/languages.cjs
-node tests/contact-flow.cjs
-node tests/section-nav.cjs
-node tests/email-copy.cjs
-node tests/motion.cjs
-node --check script.js
-node --check section-nav.js
-node --check site-config.js
-node --check language.js
-```
-
-For a Calendly integration change, download its public `https://assets.calendly.com/assets/external/widget.js` to a temporary file and run `node tests/calendly-prefill.cjs <path-to-widget.js>`. This optional test exercises the actual SDK's iframe URL construction without a browser or booking. The normal tests also check updated names/emails, accents, spaces and plus-addressing. Do not bundle the downloaded SDK into the site.
-
-On this machine, Python with `lxml` is available at `C:/Users/Ben/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe`. Use it if the default Python lacks that library; this is a local convenience, not a site dependency.
-
-These checks cover markup, links/anchors, navigation, form routing and clipboard behavior. They do not prove browser appearance or complete a live booking. The recent layout fixes have not had a full responsive browser pass. See the roadmap and Calendly notes for remaining verification.
+Client email: mihaly.bence.fitness@gmail.com. Live domain: https://mihalybence.com/. Never upload the entire workspace or active source directory indiscriminately. Preserve licences for all public fonts.

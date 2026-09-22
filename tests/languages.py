@@ -49,4 +49,18 @@ for file in ROOT.glob('*.html'):
     doc = html.fromstring(file.read_text(encoding='utf-8'))
     assert doc.xpath('//link[@rel="icon"]/@href') == ['favicon.ico', 'assets/favicon-32.png'], file.name
     assert doc.xpath('//link[@rel="apple-touch-icon"]/@href') == ['assets/apple-touch-icon.png'], file.name
-print('PASS: nine language pairs, translated copy, prices, navigation, nested 404 recovery and favicon links on every page.')
+    assert doc.xpath('//link[starts-with(@href,"styles.css")]/@href') == ['styles.css?v=18.4'], file.name
+    assert doc.xpath('//script[starts-with(@src,"script.js")]/@src') == ['script.js?v=18.5'], file.name
+    privacy = 'privacy-en.html' if doc.get('lang') == 'en' else 'adatkezeles.html'
+    assert doc.xpath('//nav[@class="footer-legal"]/a[@href=$target]/@href', target=privacy) == [privacy], file.name
+for contact, privacy in [('contact.html', 'adatkezeles.html'), ('contact-en.html', 'privacy-en.html')]:
+    doc = html.fromstring((ROOT / contact).read_text(encoding='utf-8'))
+    assert doc.xpath('//form//a[@href=$target]', target=privacy), contact
+for name, download in [('adatkezeles.html', 'privacy-hu.txt'), ('privacy-en.html', 'privacy-en.txt')]:
+    doc = html.fromstring((ROOT / name).read_text(encoding='utf-8'))
+    assert len(doc.xpath('//section[@class="legal-section"]')) == 11, name
+    assert doc.xpath('//a[@download and @href=$target]', target=download), name
+    chat = doc.get_element_by_id('client-chat').text_content()
+    for app in ['Google Meet', 'Messenger', 'WhatsApp', 'Telegram', 'Viber', 'Signal']:
+        assert app in chat and app in (ROOT / download).read_text(encoding='utf-8'), (name, app)
+print(f'PASS: {len(builder.PAIRS)} language pairs, translated copy, prices, navigation, nested 404 recovery, favicon and privacy links, and bilingual client-channel disclosures.')

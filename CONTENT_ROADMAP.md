@@ -1,4 +1,27 @@
-# V18 content roadmap
+# V19 content roadmap
+
+## Active working copy — V19
+
+Selected by the owner on 2026-09-22 after the V18 loading/privacy review. All new website changes belong in V19; V18 and older versions are snapshots. The copied V18 history below is context, not an instruction to return to that folder. Local V19 changes are not deployed. See [HANDOFF.md](HANDOFF.md), [NEXT_STEPS.md](NEXT_STEPS.md) and [AUDIT_2026-09-22.md](AUDIT_2026-09-22.md). Preview: http://127.0.0.1:8190/.
+
+## Review checkpoint — 2026-09-22
+
+This V18 review is complete and is the source for the requested V19 working copy. The owner confirms the Cal.com booking and dark canvas work. Local fonts and stable navigation startup are implemented; HU/EN privacy and terms draft 9/downloads are synchronized. All 19 privacy intake questions remain complete. [AUDIT_2026-09-22.md](AUDIT_2026-09-22.md) is the current measurement, source and outstanding-work record; it supersedes earlier remote-font and pending-calendar-render statements. Other dated entries below remain historical.
+
+Priority publication cleanup: live HANDOFF.md and PRIVACY_QUESTIONS.md were verified publicly readable. Remove internal notes from the publishing output/source, keep local working notes, and verify public URLs return 404. No deployment or external deletion was performed. Legal documents remain review drafts; successful page/booking checks do not establish legal approval.
+
+## Latest owner update — 2026-09-21
+
+- **Hosting resolved (owner-confirmed).** The owner reports that the current site is permitted provided it does not process payments or collect sensitive payment information such as bank-card numbers. The owner confirms those functions are not planned. Close the GitHub hosting task for the current setup; do not re-raise it without a material change or new evidence. No provider correspondence was supplied or independently reviewed, and this is not a general interpretation of GitHub policy or a statement that all client data is non-sensitive.
+- **V18 published (owner-confirmed)** at https://mihalybence.com/. The assistant did not deploy or independently audit this publication. Future local changes require their own upload; publication does not finalise legal drafts.
+- **Photography partially complete.** The two colleague-training images are included; more photographs may be added later. The owner rejected the two seated welcoming-portrait candidates and plans a new photograph. Sharing-preview completion was not separately confirmed.
+- **Remaining active work:** checklist items 1–3: terms/service details, the separate online agreement and privacy implementation/review. All 19 privacy intake answers remain complete. Do not reopen completed booking/design/language work.
+
+This update supersedes earlier pending-hosting and unpublished-V18 statements below; dated implementation records remain historical.
+
+2026-09-20 training photographs: added owner-supplied trainingbobi.png and trainingbobi2.png unchanged under assets/, with 320/640/960/1440px WebP delivery copies. The owner explicitly confirms the person pictured is a colleague, not a client, and authorises these images as supplied; client-face masking remains the rule for other client photos. Both images appear in Personal Training below the three principles and in the About/Rólam gym gallery, in HU/EN. Replaced the empty training-photo area with two landscape photos plus the existing personal portrait; no gym-photo placeholders remain. Captions stay below the new photos, preserving the full landscape composition. Each opens in the existing accessible viewer. training-photos.css?v=18.1 controls these two pages only; mobile uses a single column. Images are lazy-loaded, sized explicitly and use srcset/sizes. The two largest WebPs total 459,442 bytes versus 5,093,723 source bytes (about 91% smaller). Full source originals remain unchanged.
+
+Verification: 22-page structural and ten-pair language checks pass. Local browser checks at 320, 390, 768, 1024 and 1440 CSS pixels found no About-gallery overflow; training-page checks at 320, 390, 768 and 1440 confirmed single/two-column behavior. Both new images load, and the HU/EN viewer opens/closes; mobile enlargement uses contain, without stretching. These are desktop-browser viewport simulations, not physical iPhone/Android tests. V18 preview started at http://127.0.0.1:8180/; no live deployment, client-document edits or older-version edits.
 
 Version context: maintained in V18 from 2026-09-18, copied from V16. Dated V16/V15 references below describe inherited history, not the active editing folder. No V18 deployment is implied.
 

@@ -13,6 +13,7 @@ PAIRS = dict(zip(
     ['index.html', 'services.html', 'szemelyi-edzes.html', 'online-coaching.html', 'about.html', 'sikerek.html', 'elso-alkalom.html', 'contact.html', 'aszf.html'],
     ['index-en.html', 'services-en.html', 'personal-training-en.html', 'online-coaching-en.html', 'about-en.html', 'progress-en.html', 'first-visit-en.html', 'contact-en.html', 'terms.html']))
 ATTRS = ['alt', 'title', 'aria-label', 'placeholder', 'data-note', 'data-label']
+PAIRS['adatkezeles.html'] = 'privacy-en.html'
 inventory = json.loads((ROOT / 'tools/translation-inventory.json').read_text(encoding='utf-8'))
 translations = json.loads((ROOT / 'tools/english-translations.json').read_text(encoding='utf-8'))
 LOOKUP = {entry['hu']: translations[str(entry['id'])] for entry in inventory}
@@ -32,6 +33,19 @@ def strip_language_ui(source):
 
 def decorate(source, hu, en, lang):
     source = strip_language_ui(source)
+    # Local fonts avoid a blocking Google stylesheet and font-server connections.
+    source = re.sub(r'<link\b[^>]*href="https://fonts\.(?:googleapis|gstatic)\.com[^\"]*"[^>]*>\s*', '', source)
+    source = re.sub(r'<link\b[^>]*href="(?:fonts\.css[^\"]*|assets/fonts/[^\"]*)"[^>]*>\s*', '', source)
+    font_links = ('<link rel="stylesheet" href="fonts.css?v=18.6">\n'
+                  '<link rel="preload" href="assets/fonts/inter-100-900-latin.woff2" as="font" type="font/woff2" crossorigin>\n'
+                  '<link rel="preload" href="assets/fonts/barlow-condensed-900-latin.woff2" as="font" type="font/woff2" crossorigin>\n')
+    source = source.replace('<link rel="stylesheet" href="styles.css', font_links + '<link rel="stylesheet" href="styles.css', 1)
+    # Keep a relevant privacy link on every page, including regenerated terms/404s.
+    def privacy_footer(match):
+        footer = re.sub(r'<a[^>]+href="(?:adatkezeles|privacy-en)\.html"[^>]*>.*?</a>', '', match.group(), flags=re.S)
+        link = '<a href="' + ('privacy-en.html' if lang == 'en' else 'adatkezeles.html') + '">' + ('Privacy notice' if lang == 'en' else 'Adatkezelési tájékoztató') + '</a>'
+        return footer.replace('</nav>', link + '</nav>')
+    source = re.sub(r'<nav class="footer-legal".*?</nav>', privacy_footer, source, flags=re.S)
     flags = {
         'hu': '<svg viewBox="0 0 30 20" aria-hidden="true" focusable="false"><path fill="#ce2939" d="M0 0h30v7H0z"></path><path fill="#fff" d="M0 7h30v6H0z"></path><path fill="#477050" d="M0 13h30v7H0z"></path></svg>',
         'en': '<svg viewBox="0 0 60 30" aria-hidden="true" focusable="false"><path fill="#012169" d="M0 0h60v30H0z"></path><path stroke="#fff" stroke-width="6" d="m0 0 60 30M60 0 0 30"></path><path fill="#c8102e" d="M0 0v2.2L25.6 15H30zM60 0h-4.4L30 12.8V15zM60 30v-2.2L34.4 15H30zM0 30h4.4L30 17.2V15z"></path><path stroke="#fff" stroke-width="10" d="M30 0v30M0 15h60"></path><path stroke="#c8102e" stroke-width="6" d="M30 0v30M0 15h60"></path></svg>'}
@@ -42,10 +56,12 @@ def decorate(source, hu, en, lang):
     switch += '</nav>\n  '
     source = source.replace('<button class="hamburger"', switch + '<button class="hamburger"', 1)
     source = source.replace('</head>', f'<link rel="alternate" hreflang="hu" href="{hu}">\n<link rel="alternate" hreflang="en" href="{en}">\n<link rel="stylesheet" href="language.css?v=15.4">\n</head>')
-    source = re.sub(r'href="styles\.css(?:\?[^\"]*)?"', 'href="styles.css?v=15.4"', source)
+    source = re.sub(r'href="styles\.css(?:\?[^\"]*)?"', 'href="styles.css?v=18.4"', source)
+    source = re.sub(r'href="section-nav\.css(?:\?[^\"]*)?"', 'href="section-nav.css?v=18.6"', source)
     source = re.sub(r'<link[^>]+rel="(?:icon|apple-touch-icon)"[^>]*>\s*', '', source)
     source = source.replace('</head>', '<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">\n<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">\n<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">\n</head>')
-    source = re.sub(r'src="script\.js(?:\?[^\"]*)?"', 'src="script.js?v=15.3"', source)
+    source = re.sub(r'src="script\.js(?:\?[^\"]*)?"', 'src="script.js?v=18.5"', source)
+    source = re.sub(r'src="site-config\.js(?:\?[^\"]*)?"', 'src="site-config.js?v=18.3"', source)
     return source.replace('</body>', '<script src="language.js?v=15.4"></script>\n</body>')
 
 def remap_links(doc):
@@ -62,6 +78,8 @@ def serialise(doc):
 def build():
     output = {}
     for hu, en in PAIRS.items():
+        if hu == 'adatkezeles.html':
+            continue  # Bilingual legal copy is built from its own reviewed source below.
         source = strip_language_ui((ROOT / hu).read_text(encoding='utf-8'))
         output[hu] = decorate(source, hu, en, 'hu')
         if hu == 'aszf.html':
@@ -109,6 +127,7 @@ def build():
     print(f'Built {len(output)} bilingual pages with matching language links.')
     import subprocess
     import sys
+    subprocess.run([sys.executable, str(ROOT / 'tools/build-privacy.py')], check=True)
     subprocess.run([sys.executable, str(ROOT / 'tools/build-404.py')], check=True)
 
 if __name__ == '__main__':

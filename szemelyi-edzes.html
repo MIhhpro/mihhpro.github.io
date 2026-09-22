@@ -12,13 +12,14 @@
       window.addEventListener("load",function(){setTimeout(function(){if(!window.__revealInit)show();},1000);});
       setTimeout(function(){if(!window.__revealInit)show();},4000);})();
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=16.1" />
-  <link rel="stylesheet" href="section-nav.css" />
-  <link rel="stylesheet" href="responsive.css?v=15.1" />
+  <link rel="stylesheet" href="fonts.css?v=18.6">
+<link rel="preload" href="assets/fonts/inter-100-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/barlow-condensed-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css?v=18.4" />
+  <link rel="stylesheet" href="section-nav.css?v=18.6" />
+  <link rel="stylesheet" href="responsive.css?v=18.2" />
   <link rel="stylesheet" href="legal.css?v=15.2" />
+<link rel="stylesheet" href="training-photos.css?v=18.1">
 <link rel="alternate" hreflang="hu" href="szemelyi-edzes.html">
 <link rel="alternate" hreflang="en" href="personal-training-en.html">
 <link rel="stylesheet" href="language.css?v=15.4">
@@ -130,6 +131,16 @@
           <p>Minden edzésen jelen vagyok: korrigálok, magyarázok, és az aznapi állapotodhoz igazítom a munkát.</p>
         </article>
       </div>
+      <div class="training-session-photos">
+        <figure class="session-photo gallery-item reveal" data-note="A beállítástól az utolsó ismétlésig figyelem, hogyan mozogsz." aria-label="Lábtolás edzői figyelemmel: kép megnyitása">
+          <img src="assets/responsive/trainingbobi-640.webp" srcset="assets/responsive/trainingbobi-320.webp 320w, assets/responsive/trainingbobi-640.webp 640w, assets/responsive/trainingbobi-960.webp 960w, assets/responsive/trainingbobi-1440.webp 1440w" sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 1000px) 45vw, 600px" width="1672" height="941" alt="Edzői segítség lábtolás közben az edzőteremben" data-full-src="assets/responsive/trainingbobi-1440.webp" loading="lazy" decoding="async">
+          <figcaption><span>01 / KÖZÖS MUNKA</span><strong>A mozdulat a te tempódban.</strong><small>Kép megnyitása ↗</small></figcaption>
+        </figure>
+        <figure class="session-photo gallery-item reveal" data-note="Megbeszéljük a technikát, és együtt dolgozunk a biztosabb kivitelezésen." aria-label="Gépes mellnyomás személyi edzésen: kép megnyitása">
+          <img src="assets/responsive/trainingbobi2-640.webp" srcset="assets/responsive/trainingbobi2-320.webp 320w, assets/responsive/trainingbobi2-640.webp 640w, assets/responsive/trainingbobi2-960.webp 960w, assets/responsive/trainingbobi2-1440.webp 1440w" sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 1000px) 45vw, 600px" width="1672" height="941" alt="Edzői segítség gépes mellnyomás közben" data-full-src="assets/responsive/trainingbobi2-1440.webp" loading="lazy" decoding="async">
+          <figcaption><span>02 / KÖZÖS MUNKA</span><strong>Van kire támaszkodnod.</strong><small>Kép megnyitása ↗</small></figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -231,7 +242,7 @@
   <nav class="footer-legal" aria-label="ÁSZF / Terms"><a href="aszf.html" lang="hu" hreflang="hu">Általános szerződési feltételek</a><a href="terms.html" lang="en" hreflang="en">Terms of Service</a><a href="adatkezeles.html">Adatkezelési tájékoztató</a></nav>
   <div class="footer-bottom"><p>© <span id="year"></span> Mihály Bence</p></div>
 </footer>
-<script src="script.js?v=16.1"></script>
+<script src="script.js?v=18.5"></script>
 <script src="section-nav.js"></script>
 <script src="language.js?v=15.4"></script>
 </body>

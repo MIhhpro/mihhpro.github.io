@@ -13,13 +13,14 @@
       window.addEventListener("load",function(){setTimeout(function(){if(!window.__revealInit)show();},1000);});
       setTimeout(function(){if(!window.__revealInit)show();},4000);})();
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=16.1" />
-  <link rel="stylesheet" href="section-nav.css" />
-  <link rel="stylesheet" href="responsive.css?v=15.1" />
+  <link rel="stylesheet" href="fonts.css?v=18.6">
+<link rel="preload" href="assets/fonts/inter-100-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/barlow-condensed-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css?v=18.4" />
+  <link rel="stylesheet" href="section-nav.css?v=18.6" />
+  <link rel="stylesheet" href="responsive.css?v=18.2" />
   <link rel="stylesheet" href="legal.css?v=15.2" />
+<link rel="stylesheet" href="training-photos.css?v=18.1">
 <link rel="alternate" hreflang="hu" href="about.html">
 <link rel="alternate" hreflang="en" href="about-en.html">
 <link rel="stylesheet" href="language.css?v=15.4">
@@ -132,9 +133,7 @@
   </section>
 
 
-  <!-- Gallery: replace each .photo-slot with an image when the final photos are ready.
-       Use the suggested filenames below, supply meaningful alt text, and keep the frame classes.
-       Only completed photographs use .gallery-item and open in the existing photo viewer. -->
+  <!-- Training photographs and the existing personal portrait share the accessible photo viewer. -->
   <section class="about-gallery experience-section" id="galeria" aria-labelledby="about-gallery-title" tabindex="-1">
     <div class="shell">
       <div class="about-gallery-heading reveal">
@@ -146,25 +145,18 @@
       </div>
 
       <div class="gallery-chapter reveal"><span>01</span><h3>A teremben</h3><span class="gallery-chapter-line" aria-hidden="true"></span></div>
-      <div class="about-photo-grid">
-        <!-- Future photo: assets/about-training.jpg — landscape, approximately 16:9. -->
-        <figure class="photo-slot photo-slot--wide reveal">
-          <div class="photo-slot-center"><span class="photo-slot-mark" aria-hidden="true">+</span><span class="photo-slot-label">Fotó helye</span></div>
-          <figcaption><span>01 / EDZÉS</span><strong>Ahol a munka történik.</strong><small>Edzés közben · fekvő kép</small></figcaption>
+      <div class="about-photo-grid about-photo-grid--sessions">
+        <figure class="session-photo gallery-item reveal" data-note="A beállítástól az utolsó ismétlésig figyelem, hogyan mozogsz." aria-label="Lábtolás edzői figyelemmel: kép megnyitása">
+          <img src="assets/responsive/trainingbobi-640.webp" srcset="assets/responsive/trainingbobi-320.webp 320w, assets/responsive/trainingbobi-640.webp 640w, assets/responsive/trainingbobi-960.webp 960w, assets/responsive/trainingbobi-1440.webp 1440w" sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 1000px) 55vw, 740px" width="1672" height="941" alt="Edzői segítség lábtolás közben az edzőteremben" data-full-src="assets/responsive/trainingbobi-1440.webp" loading="lazy" decoding="async">
+          <figcaption><span>01 / KÖZÖS MUNKA</span><strong>A mozdulat a te tempódban.</strong><small>Kép megnyitása ↗</small></figcaption>
+        </figure>
+        <figure class="session-photo gallery-item reveal" data-note="Megbeszéljük a technikát, és együtt dolgozunk a biztosabb kivitelezésen." aria-label="Gépes mellnyomás személyi edzésen: kép megnyitása">
+          <img src="assets/responsive/trainingbobi2-640.webp" srcset="assets/responsive/trainingbobi2-320.webp 320w, assets/responsive/trainingbobi2-640.webp 640w, assets/responsive/trainingbobi2-960.webp 960w, assets/responsive/trainingbobi2-1440.webp 1440w" sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 1000px) 55vw, 740px" width="1672" height="941" alt="Edzői segítség gépes mellnyomás közben" data-full-src="assets/responsive/trainingbobi2-1440.webp" loading="lazy" decoding="async">
+          <figcaption><span>02 / KÖZÖS MUNKA</span><strong>Van kire támaszkodnod.</strong><small>Kép megnyitása ↗</small></figcaption>
         </figure>
         <figure class="photo-slot photo-slot--portrait gallery-item reveal" data-note="Egy pillanat a saját edzéseimből. A történetemhez ez is hozzátartozik: én is dolgozom a céljaimon." aria-label="Saját edzés: a portré megnyitása">
           <img alt="Bence saját edzésformáját megörökítő tükörfotója" width="1086" height="1448" src="assets/responsive/shirtless-640.webp" srcset="assets/responsive/shirtless-320.webp 320w, assets/responsive/shirtless-640.webp 640w, assets/responsive/shirtless-960.webp 960w, assets/responsive/shirtless-1086.webp 1086w" sizes="(max-width: 520px) calc(100vw - 72px), (max-width: 800px) 45vw, 380px" data-full-src="assets/responsive/shirtless-1086.webp" loading="lazy" decoding="async">
-          <figcaption><span>02 / SAJÁT EDZÉS</span><strong>Én is benne vagyok<br>a munkában.</strong><small>Kép megnyitása ↗</small></figcaption>
-        </figure>
-        <!-- Future photo: assets/about-movement.jpg — approximately square. -->
-        <figure class="photo-slot reveal">
-          <div class="photo-slot-center"><span class="photo-slot-mark" aria-hidden="true">+</span><span class="photo-slot-label">Fotó helye</span></div>
-          <figcaption><span>03 / MOZGÁS</span><strong>Egy jól ismert mozdulat.</strong><small>Húzódzkodás vagy gyűrűtorna</small></figcaption>
-        </figure>
-        <!-- Future photo: assets/about-coaching.jpg — approximately square; use a consented session photo. -->
-        <figure class="photo-slot reveal">
-          <div class="photo-slot-center"><span class="photo-slot-mark" aria-hidden="true">+</span><span class="photo-slot-label">Fotó helye</span></div>
-          <figcaption><span>04 / KÖZÖS MUNKA</span><strong>Figyelem a részletekre.</strong><small>Magyarázat, bemutatás, közös edzés</small></figcaption>
+          <figcaption><span>03 / SAJÁT EDZÉS</span><strong>Én is benne vagyok<br>a munkában.</strong><small>Kép megnyitása ↗</small></figcaption>
         </figure>
       </div>
 
@@ -347,7 +339,7 @@
     <p>© <span id="year"></span> Mihály Bence</p>
   </div>
 </footer>
-<script src="script.js?v=16.1"></script>
+<script src="script.js?v=18.5"></script>
 <script src="section-nav.js"></script>
 <script src="language.js?v=15.4"></script>
 </body>

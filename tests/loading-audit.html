@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Local loading audit</title>
+<style>body{font:14px system-ui;margin:16px}iframe{width:1280px;height:800px;border:1px solid #888}pre{white-space:pre-wrap}</style>
+<h1>Local loading audit</h1><p>Unthrottled local measurements, ordinary browser cache. Not Lighthouse or field Core Web Vitals.</p>
+<label>Viewport <select id="width"><option value="1280">Desktop 1280</option><option value="390">Phone 390</option></select></label><button id="run">Run audit</button><pre id="results">Ready</pre><div id="frame"></div>
+<script>
+document.querySelector('#run').onclick=async()=>{
+ const results=[];const output=document.querySelector('#results');output.textContent='Running';
+ for(const page of ['index.html','about.html','contact.html','privacy-en.html']){
+  const f=document.createElement('iframe');f.title='Measured page';f.style.width=document.querySelector('#width').value+'px';f.src='../'+page+'?loading-audit='+Date.now();
+  const loaded=new Promise(resolve=>f.onload=resolve);document.querySelector('#frame').replaceChildren(f);await loaded;
+  const w=f.contentWindow;let lcp=null,cls=0;const shifts=[];const observers=[];
+  for(const type of ['largest-contentful-paint','layout-shift'])try{const observer=new w.PerformanceObserver(list=>{for(const e of list.getEntries()){if(type==='largest-contentful-paint')lcp=Math.round(e.startTime);else if(!e.hadRecentInput){cls+=e.value;shifts.push({value:e.value,sources:e.sources?.map(s=>({node:s.node?.id||s.node?.className||s.node?.nodeName,before:s.previousRect.toJSON(),after:s.currentRect.toJSON()}))});}}});observer.observe({type,buffered:true});observers.push(observer)}catch{}
+  await Promise.race([f.contentDocument.fonts.ready,new Promise(r=>setTimeout(r,10000))]);await new Promise(r=>setTimeout(r,1500));
+  const p=w.performance;const nav=p.getEntriesByType('navigation')[0];const resources=p.getEntriesByType('resource');
+  results.push({page,viewport:[f.clientWidth,f.clientHeight],domContentLoaded:Math.round(nav.domContentLoadedEventEnd),load:Math.round(nav.loadEventEnd),firstContentfulPaint:Math.round(p.getEntriesByName('first-contentful-paint')[0]?.startTime||0),lcpObserved:lcp,clsObserved:Number(cls.toFixed(4)),shifts,requests:resources.length,localEncodedBytes:resources.filter(r=>new URL(r.name).origin===location.origin).reduce((n,r)=>n+r.encodedBodySize,0),externalOrigins:[...new Set(resources.filter(r=>new URL(r.name).origin!==location.origin).map(r=>new URL(r.name).origin))],fonts:[...f.contentDocument.fonts].filter(x=>x.status==='loaded').map(x=>x.family+' '+x.weight),images:[...f.contentDocument.images].filter(i=>i.complete&&i.naturalWidth).map(i=>i.currentSrc.split('/').pop())});
+  observers.forEach(o=>o.disconnect());output.textContent=JSON.stringify(results,null,2);
+ }
+ output.dataset.complete='true';
+};
+</script></html>
