@@ -1,5 +1,23 @@
 # Privacy notice — implementation and confirmation notes
 
+## Immediate calendar — 2026-09-23 (latest)
+
+Supersedes the earlier time-first implementation below. The owner requested fewer steps: Contact now automatically loads the free-consultation calendar (or the valid linked appointment service). A compact service/package selector sits beside the calendar above 1050px and directly above it on smaller screens. Changes refresh the calendar without a submit button, scroll jump or focus transfer. Only enquiry routes show the name/email form and submit action. Failed calendars have Reload calendar and direct-link options; stale asynchronous responses cannot restore an abandoned service. Name/email/phone are still entered in Cal after slot selection. No PII is copied from an enquiry into Cal.
+
+HU/EN privacy pages/downloads now disclose the automatic connection on Contact; other pages and initial direct enquiry routes do not load Cal. Earlier no-third-party-before-interaction measurements apply to the earlier build only. The header is shorter and booking/guardian/privacy information remains in an expandable panel. Native event details and dark/gold theme remain. CSS/script cache version: 19.3.
+
+Verified locally: automatic consultation rendering, personal-training service switching and English online Plus route; aligned desktop panels at 1440px; no page overflow at 390px; email routing, retry/timeout/stale-load tests, 22-page structure and ten language pairs pass. No real booking, message, provider-account change or publication. Latest clean upload folder: `../output/V19-public-instant-booking/` (90 files, 3,707,547 bytes); previous exports are superseded.
+
+
+## Earlier time-first booking — 2026-09-23 (superseded)
+
+The owner requested availability before contact details. HU/EN Contact now starts with a compact service/package selector and an explicit Choose a time action. Name, email, phone and message are hidden and disabled for configured calendar routes; Cal asks for its contact details after a slot is selected. Only service/package notes are sent by the website to Cal, including the direct-link fallback. Details from an abandoned email enquiry are never prefilled into Cal. Training Program, other questions and missing-calendar routes retain required contact fields and local email drafts. Calendar loading is still explicit, not automatic on page load. Prices, theme, guardian-email route and native confirmation remain unchanged.
+
+The contact profile is below booking, the mobile step guide is compact, and the HU/EN privacy pages/downloads describe the new transfer timing. CSS/script cache revision is 19.1. Local browser: consultation calendar rendered without personal details; selecting a slot showed native name/email/phone fields, with no confirmation submitted. HU 390px and EN 1440px checks showed no horizontal overflow; English Plus package and switching to email enquiry verified. Five JavaScript suites, 22-page validation and ten language-pair checks passed. No booking, message, account change or deployment occurred. This is a usability change, not evidence of a doubled conversion rate.
+
+Fresh public export: `../output/V19-public-time-first/` (90 files, 3,703,429 bytes). Earlier `V19-public/` export is superseded. Internal Markdown remains excluded. Historical prefill/load-failure descriptions below are superseded by this entry.
+
+
 ## Active working copy — V19
 
 Selected by the owner on 2026-09-22 after the V18 loading/privacy review. All new website changes belong in V19; V18 and older versions are snapshots. The copied V18 history below is context, not an instruction to return to that folder. Local V19 changes are not deployed. See [HANDOFF.md](HANDOFF.md), [NEXT_STEPS.md](NEXT_STEPS.md) and [AUDIT_2026-09-22.md](AUDIT_2026-09-22.md). Preview: http://127.0.0.1:8190/.

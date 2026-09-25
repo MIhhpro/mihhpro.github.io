@@ -1,5 +1,21 @@
 # Print and digital assets
 
+2026-09-25 English page added: root `mihaly-bence-prices-a4-hu-en.pdf` now has two A4 pages. Page 1 is the existing bilingual sheet, verified pixel-for-pixel and text-identical to the prior PDF. Page 2 is English-only, with matching page geometry, colours, logo, prices, left-aligned personal-training amounts, centered remaining price blocks and approved email. Both pages visually checked; all six prices and email links checked on each. New temporary files are under the project-root `tmp/pdfs/` only, per the owner's request; do not create new document temporary folders inside V19.
+
+2026-09-25 targeted alignment follow-up: only the two personal-training card amounts and their billing labels are left-aligned with their headings again, per the owner's screenshot. All other prices retain centered column/row alignment. Rebuilt root PDF and visually verified the complete page; price/contact checks pass.
+
+2026-09-25 owner-requested centering: personal-training amounts and billing labels are centered within their cards. Consultation, training-program and coaching prices share a centered right-side column; the program/coaching amount-plus-unit blocks are also vertically centered within their rows, including the taller Premium row. This supersedes the earlier top-aligned price layout. Final A4 PDF visually checked; amounts and approved contact verified unchanged.
+
+2026-09-25 price numeral correction: all six monetary amounts now use the same 24pt Arial Bold with equal-width digits. Retained the existing shared top-alignment helper, aligned right column and matched personal-training card baselines; headings remain in the brand display font. Values and corrected contact unchanged. Final one-page A4 render visually verified and generator content checks passed.
+
+2026-09-25 footer clarification: replaced the screenshot-highlighted bottom-left website label/link in the bilingual price list with the approved business email in gold. Removed the duplicate right-hand email, leaving one clear bottom-left contact and its mailto link. Final page rendered and visually checked; one email occurrence and no website label verified. This supersedes the website-footer retention described below.
+
+## Recreated bilingual price list — 2026-09-25
+
+Recreated root `mihaly-bence-prices-a4-hu-en.pdf` from the owner's supplied screenshot using the matching V19 builder `tools/build-price-sheet.py`. One A4 page, black/gold/copper style, HU/EN descriptions, free consultation and all six reference prices retained. Visible email and mailto target use only `mihaly.bence.fitness@gmail.com`; automated checks now enforce both. Website footer retained as shown in the price-list reference (brochure-specific footer exclusions do not apply).
+
+Rendered final PDF with Poppler and visually checked the complete page against the reference. A4 size, one page, all amounts, sole approved email and email link verified. Print at actual size/100%; existing white margin preserved. No website changes, publication, or edits to older snapshots.
+
 ## Active working copy — V19
 
 Selected by the owner on 2026-09-22 after the V18 loading/privacy review. All new website changes belong in V19; V18 and older versions are snapshots. The copied V18 history below is context, not an instruction to return to that folder. Local V19 changes are not deployed. See [HANDOFF.md](HANDOFF.md), [NEXT_STEPS.md](NEXT_STEPS.md) and [AUDIT_2026-09-22.md](AUDIT_2026-09-22.md). Preview: http://127.0.0.1:8190/.

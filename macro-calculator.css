@@ -1,0 +1,59 @@
+.macro-dashboard { padding-block: 50px 80px; }
+.macro-dashboard .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.macro-dashboard .section-heading { max-width: 800px; }
+.macro-workspace { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: stretch; }
+.macro-controls, .macro-results { min-width: 0; border: 1px solid var(--line); border-radius: 28px; padding: clamp(22px, 3vw, 32px); }
+.macro-controls { background: linear-gradient(135deg,rgba(212,168,67,.11),rgba(16,15,12,.9)); border-top: 2px solid var(--gold); }
+.macro-controls fieldset { border: 0; padding: 0; margin: 0 0 24px; min-width: 0; }
+.macro-controls > fieldset { margin: 0; }
+.macro-controls legend, .macro-weight-label { font-weight: 700; margin-bottom: 12px; color: var(--ink); }
+.macro-choice-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+.macro-body-grid { grid-template-columns: minmax(0,1fr); }
+.macro-choice { display: flex; gap: 12px; align-items: center; padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: rgba(8,8,6,.55); cursor: pointer; min-height: 60px; }
+.macro-choice:has(input:checked) { border-color: var(--gold); background: rgba(212,168,67,.13); }
+.macro-choice:has(input:focus-visible) { outline: 2px solid var(--gold-pale); outline-offset: 3px; }
+.macro-choice { transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease; }
+@media (hover: hover) and (pointer: fine) { .macro-choice:hover { border-color: var(--gold); transform: translateY(-2px); } .macro-choice:active { transform: translateY(0); } }
+.macro-choice input { width: 18px; height: 18px; margin: 0; accent-color: var(--gold); flex-shrink: 0; }
+.macro-choice strong { display: block; font-size: .88rem; line-height: 1.4; }
+.macro-choice small { display: block; color: var(--muted); margin-top: 3px; font-size: .76rem; }
+.macro-unit-row { display: flex; align-items: end; gap: 12px; margin-bottom: 24px; }
+.macro-weight-field { flex: 1; min-width: 0; }
+.macro-weight-label { display: block; font-size: .95rem; }
+.macro-weight-field input { width: 100%; min-height: 54px; border: 1px solid var(--gold); border-radius: 12px; background: var(--night-2); color: var(--ink); padding: 12px 16px; font: inherit; font-size: 1.25rem; }
+.macro-weight-field input:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 3px; }
+.macro-unit-row fieldset { margin: 0; }
+.macro-unit-row legend { font-size: .75rem; }
+.macro-units { display: flex; gap: 6px; }
+.macro-units .macro-choice { padding: 12px 9px; min-height: 54px; gap: 6px; }
+.macro-hint, .macro-local-note { font-size: .8rem; color: var(--muted); line-height: 1.65; }
+.macro-local-note { margin: 0; }
+.macro-results { background: var(--night-2); border-top: 2px solid var(--copper); }
+.macro-results h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.8rem; margin-bottom: 10px; }
+.macro-ring { width: 220px; height: 220px; max-width: 100%; margin: 26px auto; border-radius: 50%; display: grid; place-items: center; background: var(--line); }
+.has-estimate .macro-ring { background: conic-gradient(var(--gold) 0 var(--protein-end,0%),var(--copper) var(--protein-end,0%) var(--fat-end,0%),var(--gold-pale) var(--fat-end,0%) var(--chart-end,0%),var(--line) var(--chart-end,0%) 100%); }
+.macro-ring-center { width: calc(100% - 22px); height: calc(100% - 22px); background: var(--night-2); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+#macro-calories { font-family: 'Barlow Condensed', sans-serif; font-size: 3.3rem; font-weight: 700; line-height: 1; }
+.macro-ring-center span:last-child { color: var(--muted); font-size: .8rem; margin-top: 8px; }
+.macro-summary-note { color: var(--gold-pale); font-size: .84rem; }
+.macro-breakdown { display: grid; gap: 12px; }
+.macro-metric { padding: 16px; background: rgba(255,242,200,.035); border: 1px solid var(--line); border-radius: 14px; border-left: 3px solid var(--gold); }
+.macro-metric-fat { border-left-color: var(--copper); }
+.macro-metric-carbs { border-left-color: var(--gold-pale); }
+.macro-metric h4 { margin: 0; font-size: 1rem; }
+.macro-metric-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.macro-grams { margin: 0; font-size: 1.3rem; font-weight: 700; white-space: nowrap; }
+.macro-grams small { font-weight: 400; font-size: .75rem; color: var(--muted); }
+.macro-metric dl { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 8px; margin: 14px 0 0; }
+.macro-metric dt { color: var(--muted); font-size: .7rem; }
+.macro-metric dd { margin: 3px 0 0; font-size: .8rem; font-variant-numeric: tabular-nums; }
+.macro-status { color: var(--muted); font-size: .82rem; margin: 22px 0 0; min-height: 1.6em; }
+.macro-method { border: 1px solid var(--line); border-radius: 18px; margin-top: 22px; padding: 20px 24px; color: var(--muted); font-size: .88rem; }
+.macro-method summary { color: var(--gold-pale); cursor: pointer; font-weight: 600; }
+.macro-method p { margin: 16px 0 0; }
+.macro-method a { text-decoration: underline; text-underline-offset: 4px; }
+.macro-coaching-link { display: inline-block; margin-top: 18px; }
+.macro-dashboard .service-detail-link::after { content: none; }
+@media (max-width: 1050px) { .macro-workspace { grid-template-columns: minmax(0,1fr); } .macro-body-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+@media (max-width: 680px) { .macro-body-grid { grid-template-columns: minmax(0,1fr); } .macro-controls, .macro-results { border-radius: 20px; padding: 20px; } .macro-metric dl { grid-template-columns: repeat(2,minmax(0,1fr)); } .macro-unit-row { flex-wrap: wrap; } .macro-weight-field { flex-basis: 100%; } .macro-ring { width: 200px; height: 200px; } }
+@media (prefers-reduced-motion: reduce) { .macro-dashboard * { scroll-behavior: auto; } .macro-choice { transition: none; } .macro-choice:hover, .macro-choice:active { transform: none; } }

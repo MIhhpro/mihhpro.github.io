@@ -1,0 +1,3 @@
+/* These two related cards share one gap instead of two section paddings. */
+#section-your-start { padding-bottom: 0; }
+#section-free-resources { padding-top: 32px; }

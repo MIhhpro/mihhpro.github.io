@@ -1,5 +1,13 @@
 # V19 motion refinements
 
+## BMI calculator — 2026-09-25 (latest)
+
+Added the owner-requested BMI calculator immediately after the macro calculator on HU/EN Free Resources pages (#bmi), with matching cards, metric/imperial selection, animated scale, textual categories and adult-use/muscle-mass limitations. Inputs remain local; privacy disclosures now include BMI and height. Existing macro behavior unchanged. New BMI assets v19.1. Formula/boundary and existing macro/page/language tests pass; HU/EN desktop, tablet and phone layouts checked locally. See BMI_CALCULATOR.md. Current clean export: ../output/V19-public-bmi/ (100 files), superseding previous exports. Not deployed. Earlier references to BMI being undecided are historical.
+
+## Macro dashboard — 2026-09-24
+
+Macro-only assets v19.2: decorative ring draws in 650ms, then eases between ratios in 420ms. A single requestAnimationFrame loop resumes from the current position when interrupted; no loop remains after settling. Text values update immediately. Result rows use a 4px lift/warm highlight (360ms, 45ms stagger); native selection cards transition colour in 180ms and lift 2px only for fine-pointer hover. Invalid inputs cancel/reset. Reduced-motion preference skips all effects and changes during playback settle/cancel immediately. No new dependency, layout changes or data submission. Calculation and motion lifecycle tests pass; HU/EN transitions checked in browser. Details: MACRO_CALCULATOR.md.
+
 ## Active working copy — V19
 
 Selected by the owner on 2026-09-22 after the V18 loading/privacy review. All new website changes belong in V19; V18 and older versions are snapshots. The copied V18 history below is context, not an instruction to return to that folder. Local V19 changes are not deployed. See [HANDOFF.md](HANDOFF.md), [NEXT_STEPS.md](NEXT_STEPS.md) and [AUDIT_2026-09-22.md](AUDIT_2026-09-22.md). Preview: http://127.0.0.1:8190/.

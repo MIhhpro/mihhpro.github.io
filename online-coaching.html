@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="fonts.css?v=18.6">
 <link rel="preload" href="assets/fonts/inter-100-900-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/barlow-condensed-900-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=18.4" />
+<link rel="stylesheet" href="styles.css?v=19.9" />
   <link rel="stylesheet" href="section-nav.css?v=18.6" />
   <link rel="stylesheet" href="responsive.css?v=18.2" />
   <link rel="stylesheet" href="legal.css?v=15.2" />
@@ -26,6 +26,7 @@
 <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="navigation.css?v=19.1">
 </head>
 <body>
 <a class="skip-link" href="#main-content">Ugrás a tartalomra</a>
@@ -33,24 +34,12 @@
 
 <header class="site-header">
   <a class="brand" href="index.html"><span class="brand-mark">MB</span><span class="brand-name">Mihály Bence</span></a>
-  <nav class="nav-links" aria-label="Fő navigáció"><a href="index.html">Főoldal</a>
-    <a href="services.html">Szolgáltatások</a>
-    <a href="szemelyi-edzes.html">Személyi edzés</a>
-    <a href="online-coaching.html" aria-current="page">Online coaching</a>
-    <a href="about.html">Rólam</a>
-    <a href="sikerek.html">Sikerek</a>
-    <a href="contact.html">Kapcsolat</a></nav>
+  <nav class="nav-links" aria-label="Fő navigáció"><a href="index.html">Főoldal</a><a href="szemelyi-edzes.html">Személyi edzés</a><a href="online-coaching.html" aria-current="page">Online coaching</a><details class="nav-dropdown"><summary>Szolgáltatások<span class="nav-chevron" aria-hidden="true">⌄</span></summary><div class="nav-dropdown-panel"><a href="services.html">Összes szolgáltatás és árak</a><a href="services.html#osszehasonlitas">Online csomagok összehasonlítása</a><a href="elso-alkalom.html">Az első alkalom</a></div></details><details class="nav-dropdown"><summary>Rólam<span class="nav-chevron" aria-hidden="true">⌄</span></summary><div class="nav-dropdown-panel"><a href="about.html">Történetem és szakmai hátterem</a><a href="about.html#galeria">Galéria</a><a href="sikerek.html">Sikerek</a></div></details><a href="segedletek.html">Segédletek</a><a href="contact.html">Kapcsolat</a></nav>
   <a class="nav-cta" href="contact.html?service=consult">Beszélgessünk</a>
   <nav class="language-switch" data-selected="hu" aria-label="Nyelvválasztás"><a href="online-coaching.html" data-language="hu" lang="hu" hreflang="hu" aria-label="Magyar" title="Magyar" aria-current="page"><svg viewBox="0 0 30 20" aria-hidden="true" focusable="false"><path fill="#ce2939" d="M0 0h30v7H0z"></path><path fill="#fff" d="M0 7h30v6H0z"></path><path fill="#477050" d="M0 13h30v7H0z"></path></svg><span>HU</span></a><a href="online-coaching-en.html" data-language="en" lang="en" hreflang="en" aria-label="English" title="English"><svg viewBox="0 0 60 30" aria-hidden="true" focusable="false"><path fill="#012169" d="M0 0h60v30H0z"></path><path stroke="#fff" stroke-width="6" d="m0 0 60 30M60 0 0 30"></path><path fill="#c8102e" d="M0 0v2.2L25.6 15H30zM60 0h-4.4L30 12.8V15zM60 30v-2.2L34.4 15H30zM0 30h4.4L30 17.2V15z"></path><path stroke="#fff" stroke-width="10" d="M30 0v30M0 15h60"></path><path stroke="#c8102e" stroke-width="6" d="M30 0v30M0 15h60"></path></svg><span>EN</span></a></nav>
   <button class="hamburger" type="button" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="mobile-navigation"><span></span><span></span><span></span></button>
 </header>
-<nav class="mobile-menu" id="mobile-navigation" aria-label="Mobil navigáció"><a href="index.html">Főoldal</a>
-    <a href="services.html">Szolgáltatások</a>
-    <a href="szemelyi-edzes.html">Személyi edzés</a>
-    <a href="online-coaching.html" aria-current="page">Online coaching</a>
-    <a href="about.html">Rólam</a>
-    <a href="sikerek.html">Sikerek</a>
-    <a href="contact.html">Kapcsolat</a><a href="elso-alkalom.html">Az első alkalom</a><a href="about.html#galeria">Galéria</a></nav>
+<nav class="mobile-menu" id="mobile-navigation" aria-label="Mobil navigáció"><a href="index.html">Főoldal</a><a href="szemelyi-edzes.html">Személyi edzés</a><a href="online-coaching.html" aria-current="page">Online coaching</a><div class="mobile-nav-group"><p>Szolgáltatások</p><a href="services.html">Összes szolgáltatás és árak</a><a href="services.html#osszehasonlitas">Online csomagok összehasonlítása</a><a href="elso-alkalom.html">Az első alkalom</a></div><div class="mobile-nav-group"><p>Rólam</p><a href="about.html">Történetem és szakmai hátterem</a><a href="about.html#galeria">Galéria</a><a href="sikerek.html">Sikerek</a></div><a href="segedletek.html">Segédletek</a><a href="contact.html">Kapcsolat</a></nav>
 
 <main id="main-content" tabindex="-1">
   <nav class="section-nav" aria-label="Oldal tartalma">
@@ -102,7 +91,7 @@
 <section class="experience-section" aria-labelledby="online-fit" id="section-online-fit" tabindex="-1"><div class="shell"><div class="section-heading reveal"><p class="eyebrow">Neked szólhat</p><h2 id="online-fit">Önálló edzés. Elérhető segítség.</h2></div><div class="fit-grid"><article class="editorial-panel reveal"><h3>Jó választás lehet, ha…</h3><ul class="plain-checks"><li>Máshol laksz, vagy változó időpontokban tudsz edzeni.</li><li>Önállóan végzed a gyakorlatokat, és szívesen vezetsz edzésnaplót.</li><li>Elmondod, ha valami nehéz, nem érthető, vagy nem fér bele a hetedbe.</li><li>Szeretnél visszajelzést kapni a technikádról és a haladásodról.</li></ul></article><article class="editorial-panel reveal"><h3>Ha inkább azt szeretnéd, hogy ott legyek…</h3><p>Teljesen rendben van, ha most az adna biztonságot, hogy valaki melletted álljon minden gyakorlatnál. Erre a személyi edzés lehet jobb kiindulópont.</p><a class="service-detail-link" href="szemelyi-edzes.html">Megnézem a személyi edzést →</a><p>Ha bizonytalan vagy, az ingyenes konzultáción közösen választunk.</p></article></div></div></section>
 <section class="experience-section" aria-labelledby="online-work" id="section-online-work" tabindex="-1"><div class="shell"><div class="section-heading reveal"><p class="eyebrow">A gyakorlatban</p><h2 id="online-work">A terv az edzéseiddel együtt alakul.</h2></div><ol class="journey-steps"><li class="reveal"><span class="journey-number" aria-hidden="true">01</span><div><h3>Megismerem a kiindulópontodat</h3><p>Átbeszéljük, milyen edzésmúltad van, mi a célod, milyen eszközökhöz férsz hozzá, és mennyi időd van egy átlagos héten.</p></div></li><li class="reveal"><span class="journey-number" aria-hidden="true">02</span><div><h3>Megbeszéljük a kereteket</h3><p>Kiválasztod a neked megfelelő csomagot. Basic esetén heti egy, Plus és Premium esetén heti két coachinghívással dolgozunk. A hívások időpontját indulás előtt egyeztetjük.</p></div></li><li class="reveal"><span class="journey-number" aria-hidden="true">03</span><div><h3>Edzel, és feljegyzed a tapasztalataidat</h3><p>A súlyok és ismétlések mellett az is hasznos, ha leírod, mi ment könnyen, hol akadtál el, és milyen volt a közérzeted.</p></div></li><li class="reveal"><span class="journey-number" aria-hidden="true">04</span><div><h3>Visszajelzek, és igazítunk a terven</h3><p>A coachinghívásokon átbeszéljük az edzéseidet, és módosítjuk a programot. Premium csomagban videós technikaellenőrzést, korlátlan üzenetváltást és folyamatos igazítást is kapsz. Az önálló Training Program a 4 hetes tervet tartalmazza.</p></div></li></ol></div></section>
 <section class="experience-section" aria-labelledby="online-questions" id="section-online-questions" tabindex="-1"><div class="shell"><div class="section-heading reveal"><p class="eyebrow">Mielőtt belevágsz</p><h2 id="online-questions">Ami még felmerülhet benned.</h2></div><div class="questions-list"><details class="question"><summary>Ez élő videós edzés?<span aria-hidden="true">+</span></summary><div><p>Az edzéseket önállóan végzed. A Basic csomag heti 1, a Plus és a Premium heti 2 coachinghívást tartalmaz a haladásod átbeszélésére. A videós technikaellenőrzés a Premium része.</p></div></details><details class="question"><summary>Otthon is végezhetem?<span aria-hidden="true">+</span></summary><div><p>Mondd el, mennyi helyed van és milyen eszközeid vannak. Ez alapján nézzük meg, hogy a célodhoz összeállítható-e otthon végezhető program.</p></div></details><details class="question"><summary>Miben különbözik az edzésprogram a coachingtól?<span aria-hidden="true">+</span></summary><div><p>A Training Program egyszeri <span class="price-amount">19&nbsp;900&nbsp;Ft-ért</span> egy személyre szabott, 4 hetes tervet ad. A havidíjas coaching rendszeres hívásokat és programmódosítást is tartalmaz: Basic <span class="price-amount">29&nbsp;900&nbsp;Ft</span> / hó, Plus <span class="price-amount">39&nbsp;900&nbsp;Ft</span> / hó, Premium <span class="price-amount">49&nbsp;900&nbsp;Ft</span> / hó. Korlátlan üzenetváltás és videós technikaellenőrzés a Premium csomagban van.</p></div></details><details class="question"><summary>Mi van, ha kimarad egy edzés?<span aria-hidden="true">+</span></summary><div><p>Coaching esetén a következő híváson átbeszéljük, mi változott, és ehhez igazítjuk a programot. Premium csomagban a hívások között üzenetben is egyeztethetünk. Az önálló Training Program nem tartalmaz coachinghívást vagy folyamatos programmódosítást.</p></div></details></div></div></section>
-<section class="home-cta" aria-labelledby="online-cta" id="section-online-cta" tabindex="-1"><div class="home-cta-card reveal"><p class="eyebrow">Innen indulunk</p><h2 id="online-cta" class="experience-cta-title">Mondd el, hogyan edzel most.</h2><p>Hol szoktál edzeni? Miben akadtál el? Mi az, amit szeretnél megtanulni? Ezekből már el tudunk indulni.</p><div class="home-cta-actions"><a class="btn btn-primary" href="contact.html?service=online">Beszéljük át az online coachingot</a></div><p class="cta-reassurance">Először megismerjük egymást. A folytatásról utána döntesz.</p></div></section></main>
+<section class="home-cta" aria-labelledby="online-cta" id="section-online-cta" tabindex="-1"><div class="home-cta-card reveal"><p class="eyebrow">Innen indulunk</p><h2 id="online-cta" class="experience-cta-title">Mondd el, hogyan edzel most.</h2><p>Hol szoktál edzeni? Miben akadtál el? Mi az, amit szeretnél megtanulni? Ezekből már el tudunk indulni.</p><div class="home-cta-actions"><a class="btn btn-primary" href="contact.html?service=online">Beszéljük át az online coachingot</a></div><p class="cta-reassurance">Először megismerjük egymást. A folytatásról utána döntesz.</p></div><aside class="resource-context shell" aria-label="Ingyenes segédlet"><div><p class="eyebrow">Ingyenes makrókalkulátor</p><p>Nézd meg a szintentartó kalóriabecslést és a napi makrók megoszlását közvetlenül a böngészőben.</p></div><a class="service-detail-link" href="segedletek.html#macro">Kipróbálom a kalkulátort →</a></aside></section></main>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -110,15 +99,17 @@
       <a class="brand" href="index.html"><span class="brand-mark">MB</span><span class="brand-name">Mihály Bence</span></a>
       <p>Victory Fitness Békásmegyer · 1039 Budapest, Hatvany Lajos utca 10.</p>
     </div>
-    <nav class="footer-links" aria-label="Lábléc navigáció"><a href="services.html">Szolgáltatások</a><a href="online-coaching.html">Online coaching</a><a href="elso-alkalom.html">Az első alkalom</a><a href="about.html">Rólam</a><a href="sikerek.html">Sikerek</a><a href="about.html#galeria">Galéria</a><a href="contact.html">Kapcsolat</a></nav>
+    <nav class="footer-links" aria-label="Lábléc navigáció"><a href="services.html">Szolgáltatások</a><a href="online-coaching.html">Online coaching</a><a href="elso-alkalom.html">Az első alkalom</a><a href="about.html">Rólam</a><a href="sikerek.html">Sikerek</a><a href="about.html#galeria">Galéria</a><a href="contact.html">Kapcsolat</a><a href="segedletek.html">Ingyenes segédletek</a></nav>
   </div>
   <nav class="footer-legal" aria-label="ÁSZF / Terms"><a href="aszf.html" lang="hu" hreflang="hu">Általános szerződési feltételek</a><a href="terms.html" lang="en" hreflang="en">Terms of Service</a><a href="adatkezeles.html">Adatkezelési tájékoztató</a></nav>
   <div class="footer-bottom">
     <p>© <span id="year"></span> Mihály Bence</p>
   </div>
 </footer>
-<script src="script.js?v=18.5"></script>
+<script src="script.js?v=19.6"></script>
 <script src="section-nav.js"></script>
+<script src="language-position.js?v=19.1"></script>
 <script src="language.js?v=15.4"></script>
+<script src="navigation.js?v=19.1"></script>
 </body>
 </html>

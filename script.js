@@ -344,7 +344,7 @@ const calEventUrl = (service) => {
   } catch { return null; }
 };
 
-// No third-party request until a configured calendar is explicitly requested.
+// Only Contact initialises a configured calendar; other pages never load the SDK.
 let calLoad;
 const ensureCal = () => {
   if (window.Cal?.instance) return Promise.resolve();
@@ -386,16 +386,20 @@ const ensureCal = () => {
 const contactForm = document.querySelector(".js-contact-form");
 if (contactForm) {
   const serviceSelect = contactForm.querySelector("#service");
+  const serviceOptions = contactForm.querySelector(".booking-service-options");
+  const serviceRadios = [];
   const routeNote = contactForm.querySelector("#route-note");
   const routeSubmit = contactForm.querySelector("#route-submit");
   const packageSelect = contactForm.querySelector("#online-package");
   const packageGroup = contactForm.querySelector("#online-package-group");
+  const inquiryFields = contactForm.querySelector("#inquiry-fields");
   const schedulingSection = document.querySelector(".booking-section");
   const inquirySection = document.querySelector(".inquiry-section");
   const embed = document.querySelector("#booking-embed");
   const loading = document.querySelector("#booking-loading");
   const notice = document.querySelector("#booking-config-notice");
   const directLink = document.querySelector("#booking-direct-link");
+  const retryCalendar = document.querySelector("#booking-retry");
   let bookingRequest = 0;
   let readyTimer;
   let detachCalendarEvents = () => {};
@@ -413,6 +417,8 @@ if (contactForm) {
   const requestedService = new URLSearchParams(window.location.search).get("service");
   if (serviceSelect && ["consult", "pt", "online", "program", "other"].includes(requestedService || "")) {
     serviceSelect.value = requestedService;
+  } else if (serviceSelect) {
+    serviceSelect.value = "consult";
   }
   const requestedPackage = new URLSearchParams(window.location.search).get("package");
   if (packageSelect && ["basic", "plus", "premium"].includes(requestedPackage)) {
@@ -421,11 +427,18 @@ if (contactForm) {
 
   const updateRouteHint = () => {
     const serviceKey = serviceSelect?.value || "";
+    serviceRadios.forEach(radio => { radio.checked = radio.value === serviceKey; });
     if (packageGroup) packageGroup.hidden = serviceKey !== "online";
     if (packageSelect) packageSelect.disabled = serviceKey !== "online";
     const wantsAppointment = APPOINTMENT_SERVICES.has(serviceKey);
     const usesCalendar = wantsAppointment && Boolean(calEventUrl(serviceKey));
-    if (routeNote) routeNote.hidden = Boolean(serviceKey) && !wantsAppointment;
+    if (routeSubmit) routeSubmit.hidden = usesCalendar;
+    // Contact details belong to Cal's final step, not the availability search.
+    if (inquiryFields) {
+      inquiryFields.hidden = !serviceKey || usesCalendar;
+      inquiryFields.disabled = !serviceKey || usesCalendar;
+    }
+    if (routeNote) routeNote.hidden = usesCalendar || (Boolean(serviceKey) && !wantsAppointment);
     if (!serviceKey) {
       if (routeNote) routeNote.textContent = localText("Válaszd az ingyenes konzultációt, ha még nem tudod, melyik edzésforma illene hozzád.", "Choose the free consultation if you’re not sure which training option would suit you.");
       if (routeSubmit) routeSubmit.textContent = localText("Tovább", "Continue");
@@ -433,7 +446,7 @@ if (contactForm) {
     }
     if (routeNote) {
       routeNote.textContent = usesCalendar
-        ? localText("A következő lépésben időpontot választasz a Cal.com naptárában. Ott ellenőrizheted és véglegesítheted a foglalást.", "Next, choose a time in the Cal.com calendar. You can review and complete your booking there.")
+        ? localText("Először válassz egy időpontot. A nevedet és elérhetőségeidet csak ezután kéri a naptár, a foglalás véglegesítéséhez.", "Choose a time first. The calendar asks for your name and contact details afterwards, to complete your booking.")
         : wantsAppointment
           ? localText("Most emailben egyeztetünk időpontot. A következő lépésben átnézheted és elküldheted az érdeklődésedet.", "We’re arranging appointments by email at the moment. Next, review and send your request.")
           : "";
@@ -441,13 +454,8 @@ if (contactForm) {
     if (routeSubmit) routeSubmit.textContent = usesCalendar ? localText("Tovább az időpontokhoz", "Choose a time") : localText("Tovább az üzenethez", "Prepare enquiry");
   };
 
-  serviceSelect?.addEventListener("change", () => { invalidateBooking(); updateRouteHint(); });
-  contactForm.addEventListener("input", invalidateBooking);
-  packageSelect?.addEventListener("change", invalidateBooking);
-  updateRouteHint();
-
-  contactForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
+  const runRoute = async ({ focus = false } = {}) => {
+    updateRouteHint();
     if (!contactForm.reportValidity()) return;
     invalidateBooking();
     const requestId = bookingRequest;
@@ -525,7 +533,8 @@ if (contactForm) {
     if (selectedServiceBadge) selectedServiceBadge.textContent = serviceLabel;
     if (notice) notice.hidden = true;
     if (loading) loading.hidden = false;
-    focusSection(schedulingSection);
+    // Automatic loading and service changes must not steal focus or move the page.
+    if (focus) focusSection(schedulingSection);
 
     const showCalendarFailure = () => {
       if (requestId !== bookingRequest) return;
@@ -536,15 +545,10 @@ if (contactForm) {
     };
     try {
       if (!embed) throw new Error("Missing calendar container");
-      const notes = [
-        `${localText("Szolgáltatás", "Service")}: ${serviceLabel}`,
-        `${localText("Telefon", "Phone")}: ${phone || localText("nincs megadva", "not provided")}`,
-        "",
-        message ? `${localText("Üzenet", "Message")}: ${message}` : ""
-      ].join("\n").trim();
-      // Use Cal's standard full-name, email and additional-notes fields.
-      const config = { name: fullName, email, notes, theme: "dark", layout: "month_view" };
-      if (phone) config.attendeePhoneNumber = phone;
+      // Never carry personal details from an abandoned email enquiry into Cal.
+      // Only the chosen service/package is passed before a time is selected.
+      const notes = `${localText("Szolgáltatás", "Service")}: ${serviceLabel}`;
+      const config = { notes, theme: "dark", layout: "month_view" };
       const directUrl = new URL(eventUrl);
       Object.entries(config).forEach(([key, value]) => directUrl.searchParams.set(key, value));
       if (directLink) { directLink.href = directUrl.toString(); directLink.hidden = false; }
@@ -596,7 +600,59 @@ if (contactForm) {
       if (embed) embed.hidden = true;
       showCalendarFailure();
     }
+  };
+
+  const refreshCalendar = () => {
+    invalidateBooking();
+    updateRouteHint();
+    if (APPOINTMENT_SERVICES.has(serviceSelect?.value) && calEventUrl(serviceSelect.value)) {
+      return runRoute();
+    }
+  };
+  serviceSelect?.addEventListener("change", refreshCalendar);
+  packageSelect?.addEventListener("change", refreshCalendar);
+  contactForm.addEventListener("input", (event) => {
+    if (event.target === serviceSelect || event.target === packageSelect) return;
+    if (!inquiryFields?.disabled) invalidateBooking();
   });
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    return runRoute({ focus: true });
+  });
+  retryCalendar?.addEventListener("click", () => runRoute());
+  // Tablet/desktop exposes the same choices as large native radio cards; mobile keeps
+  // the select. Both controls share a single value and existing booking routes.
+  if (serviceOptions && serviceSelect) {
+    Array.from(serviceSelect.options).forEach(option => {
+      const label = document.createElement("label");
+      label.className = "booking-service-card";
+      const radio = document.createElement("input");
+      radio.type = "radio";
+      radio.name = "desktop-service";
+      radio.value = option.value;
+      const title = document.createElement("span");
+      title.textContent = option.textContent;
+      label.append(radio, title);
+      serviceOptions.appendChild(label);
+      serviceRadios.push(radio);
+      radio.addEventListener("change", () => {
+        if (!radio.checked || serviceSelect.value === radio.value) return;
+        serviceSelect.value = radio.value;
+        refreshCalendar();
+      });
+    });
+    contactForm.classList.add("has-service-cards");
+    // Preserve keyboard focus when crossing the desktop/mobile breakpoint.
+    const desktopChoices = matchMedia("(min-width: 768px)");
+    desktopChoices.addEventListener("change", () => {
+      if (desktopChoices.matches && document.activeElement === serviceSelect) {
+        serviceRadios.find(radio => radio.checked)?.focus();
+      } else if (!desktopChoices.matches && serviceRadios.includes(document.activeElement)) {
+        serviceSelect.focus();
+      }
+    });
+  }
+  refreshCalendar();
 }
 
 // ── Gallery popout ───────────────────────────────────────────
