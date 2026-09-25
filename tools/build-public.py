@@ -13,7 +13,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = (Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT.parent / 'output' / 'V19-public').resolve()
-ALLOWED = {'.html', '.css', '.js', '.webp', '.woff2', '.ico', '.png', '.jpg', '.jpeg', '.svg', '.txt', '.pdf'}
+ALLOWED = {'.html', '.css', '.js', '.webp', '.woff2', '.ico', '.png', '.jpg', '.jpeg', '.svg', '.txt', '.pdf', '.xlsx'}
 assert not OUT.exists(), f'Use a fresh output directory: {OUT}'
 assert OUT != ROOT and not OUT.is_relative_to(ROOT), 'Keep output outside website sources'
 assert OUT.is_relative_to(ROOT.parent), 'Keep output inside the Page workspace'

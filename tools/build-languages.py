@@ -7,13 +7,25 @@ from urllib.parse import urlsplit, urlunsplit
 from lxml import html
 import json
 import re
+import importlib.util
 
 ROOT = Path(__file__).resolve().parents[1]
+nav_spec = importlib.util.spec_from_file_location('site_navigation', ROOT / 'tools/site_navigation.py')
+navigation = importlib.util.module_from_spec(nav_spec)
+nav_spec.loader.exec_module(navigation)
 PAIRS = dict(zip(
     ['index.html', 'services.html', 'szemelyi-edzes.html', 'online-coaching.html', 'about.html', 'sikerek.html', 'elso-alkalom.html', 'contact.html', 'aszf.html'],
     ['index-en.html', 'services-en.html', 'personal-training-en.html', 'online-coaching-en.html', 'about-en.html', 'progress-en.html', 'first-visit-en.html', 'contact-en.html', 'terms.html']))
 ATTRS = ['alt', 'title', 'aria-label', 'placeholder', 'data-note', 'data-label']
 PAIRS['adatkezeles.html'] = 'privacy-en.html'
+PAIRS['segedletek.html'] = 'resources-en.html'
+LOCALIZED_ASSETS = {
+    'https://docs.google.com/spreadsheets/d/1XR7rYVhGnF5nFFdM5xmBaUG0yHBMBiSWWe5gH-W1J5U/edit?usp=drivesdk': 'https://docs.google.com/spreadsheets/d/1CF4-7t-95jRZJAScxxNvXQ7Gdw_feC_AVhcDQAdPzY0/edit?usp=drivesdk',
+    'assets/resources/training-log-hu.svg': 'assets/resources/training-log-en.svg',
+    'assets/downloads/training-log-hu.xlsx': 'assets/downloads/training-log-en.xlsx',
+    'assets/downloads/training-guide-hu.pdf': 'assets/downloads/training-guide-en.pdf',
+    'assets/resources/training-guide-hu.webp': 'assets/resources/training-guide-en.webp',
+}
 inventory = json.loads((ROOT / 'tools/translation-inventory.json').read_text(encoding='utf-8'))
 translations = json.loads((ROOT / 'tools/english-translations.json').read_text(encoding='utf-8'))
 LOOKUP = {entry['hu']: translations[str(entry['id'])] for entry in inventory}
@@ -29,7 +41,7 @@ def translate(value):
 def strip_language_ui(source):
     source = re.sub(r'<nav class="language-switch".*?</nav>\s*', '', source, flags=re.S)
     source = re.sub(r'<link[^>]+(?:href="language\.css[^\"]*"|rel="alternate")[^>]*>\s*', '', source)
-    return re.sub(r'<script src="language\.js[^\"]*"[^>]*></script>\s*', '', source)
+    return re.sub(r'<script src="language(?:-position)?\.js[^\"]*"[^>]*></script>\s*', '', source)
 
 def decorate(source, hu, en, lang):
     source = strip_language_ui(source)
@@ -46,6 +58,11 @@ def decorate(source, hu, en, lang):
         link = '<a href="' + ('privacy-en.html' if lang == 'en' else 'adatkezeles.html') + '">' + ('Privacy notice' if lang == 'en' else 'Adatkezelési tájékoztató') + '</a>'
         return footer.replace('</nav>', link + '</nav>')
     source = re.sub(r'<nav class="footer-legal".*?</nav>', privacy_footer, source, flags=re.S)
+    def resources_footer(match):
+        footer = re.sub(r'<a[^>]+href="(?:segedletek|resources-en)\.html"[^>]*>.*?</a>', '', match.group(), flags=re.S)
+        link = '<a href="' + ('resources-en.html' if lang == 'en' else 'segedletek.html') + '">' + ('Free resources' if lang == 'en' else 'Ingyenes segédletek') + '</a>'
+        return footer.replace('</nav>', link + '</nav>')
+    source = re.sub(r'<nav class="footer-links".*?</nav>', resources_footer, source, flags=re.S)
     flags = {
         'hu': '<svg viewBox="0 0 30 20" aria-hidden="true" focusable="false"><path fill="#ce2939" d="M0 0h30v7H0z"></path><path fill="#fff" d="M0 7h30v6H0z"></path><path fill="#477050" d="M0 13h30v7H0z"></path></svg>',
         'en': '<svg viewBox="0 0 60 30" aria-hidden="true" focusable="false"><path fill="#012169" d="M0 0h60v30H0z"></path><path stroke="#fff" stroke-width="6" d="m0 0 60 30M60 0 0 30"></path><path fill="#c8102e" d="M0 0v2.2L25.6 15H30zM60 0h-4.4L30 12.8V15zM60 30v-2.2L34.4 15H30zM0 30h4.4L30 17.2V15z"></path><path stroke="#fff" stroke-width="10" d="M30 0v30M0 15h60"></path><path stroke="#c8102e" stroke-width="6" d="M30 0v30M0 15h60"></path></svg>'}
@@ -56,15 +73,23 @@ def decorate(source, hu, en, lang):
     switch += '</nav>\n  '
     source = source.replace('<button class="hamburger"', switch + '<button class="hamburger"', 1)
     source = source.replace('</head>', f'<link rel="alternate" hreflang="hu" href="{hu}">\n<link rel="alternate" hreflang="en" href="{en}">\n<link rel="stylesheet" href="language.css?v=15.4">\n</head>')
-    source = re.sub(r'href="styles\.css(?:\?[^\"]*)?"', 'href="styles.css?v=18.4"', source)
+    source = re.sub(r'href="styles\.css(?:\?[^\"]*)?"', 'href="styles.css?v=19.9"', source)
     source = re.sub(r'href="section-nav\.css(?:\?[^\"]*)?"', 'href="section-nav.css?v=18.6"', source)
     source = re.sub(r'<link[^>]+rel="(?:icon|apple-touch-icon)"[^>]*>\s*', '', source)
     source = source.replace('</head>', '<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">\n<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">\n<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">\n</head>')
-    source = re.sub(r'src="script\.js(?:\?[^\"]*)?"', 'src="script.js?v=18.5"', source)
+    source = re.sub(r'src="script\.js(?:\?[^\"]*)?"', 'src="script.js?v=19.6"', source)
     source = re.sub(r'src="site-config\.js(?:\?[^\"]*)?"', 'src="site-config.js?v=18.3"', source)
-    return source.replace('</body>', '<script src="language.js?v=15.4"></script>\n</body>')
+    source = source.replace('</body>', '<script src="language-position.js?v=19.1"></script>\n<script src="language.js?v=15.4"></script>\n</body>')
+    return navigation.render_navigation(source, hu if lang == 'hu' else en, lang)
 
 def remap_links(doc):
+    for el in doc.xpath('//*[@href or @src or @srcset or @data-full-src]'):
+        for attr in ('href', 'src', 'srcset', 'data-full-src'):
+            value = el.get(attr)
+            if value:
+                for hu_asset, en_asset in LOCALIZED_ASSETS.items():
+                    value = value.replace(hu_asset, en_asset)
+                el.set(attr, value)
     for link in doc.xpath('//a[@href]'):
         if link.get('hreflang') or link.xpath('ancestor::nav[@class="footer-legal"]'):
             continue

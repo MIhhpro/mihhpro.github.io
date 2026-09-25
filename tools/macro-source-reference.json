@@ -1,0 +1,171 @@
+{
+  "source": "Macro-Calculator.xlsx",
+  "sha256": "42ebfccf6845b366c8c4245befa6d8c5a6b3612c875d3225074274d7af64de89",
+  "inspected": "2026-09-24",
+  "cells": {
+    "Kilograms": {
+      "C5": {
+        "formula_or_value": "Mesomorph / neutral",
+        "cached": "Mesomorph / neutral"
+      },
+      "C6": {
+        "formula_or_value": "General fitness",
+        "cached": "General fitness"
+      },
+      "C7": {
+        "formula_or_value": 80,
+        "cached": 80
+      },
+      "C8": {
+        "formula_or_value": "=IF(OR(NOT(ISNUMBER(C31)),NOT(ISNUMBER(C34))),\"\",ROUND(C31*$J$30+C34,0))",
+        "cached": 2400
+      },
+      "C13": {
+        "formula_or_value": "=IF(OR(C31=\"\",C32=\"\"),\"\",C31*C32)",
+        "cached": 96
+      },
+      "C14": {
+        "formula_or_value": "=IF(C31=\"\",\"\",C31*$J$28)",
+        "cached": 64
+      },
+      "C15": {
+        "formula_or_value": "=IF(OR(NOT(ISNUMBER(C8)),C8<=0,C33=\"\",C8<C33),\"\",(C8-C33)/$J$27)",
+        "cached": 360
+      },
+      "C25": {
+        "formula_or_value": 2.2,
+        "cached": 2.2
+      },
+      "C26": {
+        "formula_or_value": 1.6,
+        "cached": 1.6
+      },
+      "C27": {
+        "formula_or_value": 1.2,
+        "cached": 1.2
+      },
+      "C28": {
+        "formula_or_value": 1,
+        "cached": 1
+      },
+      "J25": {
+        "formula_or_value": 4,
+        "cached": 4
+      },
+      "J26": {
+        "formula_or_value": 9,
+        "cached": 9
+      },
+      "J27": {
+        "formula_or_value": 4,
+        "cached": 4
+      },
+      "J28": {
+        "formula_or_value": 0.8,
+        "cached": 0.8
+      },
+      "J29": {
+        "formula_or_value": 0.45359237,
+        "cached": 0.45359237
+      },
+      "J30": {
+        "formula_or_value": 30,
+        "cached": 30
+      },
+      "J37": {
+        "formula_or_value": 0,
+        "cached": 0
+      },
+      "J38": {
+        "formula_or_value": 200,
+        "cached": 200
+      },
+      "J39": {
+        "formula_or_value": -200,
+        "cached": -200
+      }
+    },
+    "Pounds": {
+      "C5": {
+        "formula_or_value": "Mesomorph / neutral",
+        "cached": "Mesomorph / neutral"
+      },
+      "C6": {
+        "formula_or_value": "General fitness",
+        "cached": "General fitness"
+      },
+      "C7": {
+        "formula_or_value": 176.3698097479,
+        "cached": 176.3698097479
+      },
+      "C8": {
+        "formula_or_value": "=IF(OR(NOT(ISNUMBER(C31)),NOT(ISNUMBER(C34))),\"\",ROUND(C31*$J$30+C34,0))",
+        "cached": 2400
+      },
+      "C13": {
+        "formula_or_value": "=IF(OR(C31=\"\",C32=\"\"),\"\",C31*C32)",
+        "cached": 95.99999999999889
+      },
+      "C14": {
+        "formula_or_value": "=IF(C31=\"\",\"\",C31*$J$28)",
+        "cached": 63.99999999999926
+      },
+      "C15": {
+        "formula_or_value": "=IF(OR(NOT(ISNUMBER(C8)),C8<=0,C33=\"\",C8<C33),\"\",(C8-C33)/$J$27)",
+        "cached": 360.00000000000273
+      },
+      "C25": {
+        "formula_or_value": "='Kilograms'!C25",
+        "cached": 2.2
+      },
+      "C26": {
+        "formula_or_value": "='Kilograms'!C26",
+        "cached": 1.6
+      },
+      "C27": {
+        "formula_or_value": "='Kilograms'!C27",
+        "cached": 1.2
+      },
+      "C28": {
+        "formula_or_value": "='Kilograms'!C28",
+        "cached": 1
+      },
+      "J25": {
+        "formula_or_value": "='Kilograms'!J25",
+        "cached": 4
+      },
+      "J26": {
+        "formula_or_value": "='Kilograms'!J26",
+        "cached": 9
+      },
+      "J27": {
+        "formula_or_value": "='Kilograms'!J27",
+        "cached": 4
+      },
+      "J28": {
+        "formula_or_value": "='Kilograms'!J28",
+        "cached": 0.8
+      },
+      "J29": {
+        "formula_or_value": "='Kilograms'!J29",
+        "cached": 0.45359237
+      },
+      "J30": {
+        "formula_or_value": "='Kilograms'!J30",
+        "cached": 30
+      },
+      "J37": {
+        "formula_or_value": "='Kilograms'!J37",
+        "cached": 0
+      },
+      "J38": {
+        "formula_or_value": "='Kilograms'!J38",
+        "cached": 200
+      },
+      "J39": {
+        "formula_or_value": "='Kilograms'!J39",
+        "cached": -200
+      }
+    }
+  }
+}

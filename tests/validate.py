@@ -66,7 +66,7 @@ for name, doc in pages.items():
         continue
     assert len(index) == 1, (name, 'missing section index inside main')
     indexed = index[0].xpath('.//a/@href')
-    sections = doc.xpath('//main/section')
+    sections = doc.xpath('//main//section[not(ancestor::section)]')
     assert indexed == ['#' + section.get('id') for section in sections], (name, 'section index order or coverage')
     for item, section in zip(index[0].xpath('.//li'), sections):
         assert ('hidden' in item.attrib) == ('hidden' in section.attrib), (name, 'conditional section visibility')

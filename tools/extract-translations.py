@@ -6,6 +6,7 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = ['index.html', 'services.html', 'szemelyi-edzes.html', 'online-coaching.html', 'about.html', 'sikerek.html', 'elso-alkalom.html', 'contact.html']
 ATTRS = ['alt', 'title', 'aria-label', 'placeholder', 'data-note', 'data-label']
+PAGES.append('segedletek.html')
 def normal(value):
     return re.sub(r'\s+', ' ', value).strip()
 inventory_path = ROOT / 'tools/translation-inventory.json'

@@ -46,13 +46,13 @@ async function run() {
   assert.equal(links[1].href, '/404-en.html');
 
   const calendar = setup('online', true, 'en');
-  assert.equal(calendar.form.children['#route-submit'].textContent, 'Choose a time');
-  await calendar.form.fire('submit');
+  assert.equal(calendar.form.children['#route-submit'].hidden, true);
+  await Promise.resolve();
   const prefill = calendar.calls[0].config;
-  assert.equal(prefill.name, 'Árvíz Tűrő');
-  assert.equal(new URL(calendar.nodes['#booking-direct-link'].href).searchParams.get('name'), 'Árvíz Tűrő');
-  assert.ok(prefill.notes.includes('Phone: not provided'));
-  assert.ok(prefill.notes.includes('Message: Erősödnék. & Kérdés?\nMásodik sor.'));
+  assert.equal(prefill.name, undefined);
+  assert.equal(new URL(calendar.nodes['#booking-direct-link'].href).searchParams.has('name'), false);
+  assert.equal(prefill.notes, 'Service: online');
+  assert.equal(calendar.form.children['#inquiry-fields'].disabled, true);
   assert.equal(calendar.nodes['#booking-embed'].children.iframe.attrs.title, 'online – appointment booking');
   calendar.burger.fire('click');
   assert.equal(calendar.burger.attrs['aria-label'], 'Close menu');
@@ -66,8 +66,8 @@ async function run() {
   assert.ok(gmail.searchParams.get('body').includes('Name: Árvíz Tűrő'));
   assert.ok(inquiry.nodes['#inquiry-copy-button'].dataset.copyText.startsWith('To: coach@example.test\nSubject:'));
   const empty = setup('', true, 'en');
-  assert.equal(empty.form.children['#route-submit'].textContent, 'Continue');
-  assert.ok(empty.form.children['#route-note'].textContent.startsWith('Choose the free consultation'));
+  assert.equal(empty.select.value, 'consult');
+  assert.equal(empty.form.children['#route-submit'].hidden, true);
   console.log('PASS: language counterpart links, section/package retention, no personal-data copying, English booking prefill, enquiry and menu labels.');
 }
 run().catch(error => { console.error(error); process.exitCode = 1; });
