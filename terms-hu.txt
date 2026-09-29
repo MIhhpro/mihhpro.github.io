@@ -1,5 +1,5 @@
 Általános szerződési feltételek
-2026-09-22-draft-9
+2026-09-28-draft-22
 Egyeztetési tervezet — még nem hatályos
 Ez a változat még véglegesítendő pontokat tartalmaz, ezért végleges szerződéses feltételként nem használható. A fizetős megállapodás előtt megkapod a végleges feltételeket.
 
@@ -11,6 +11,8 @@ Székhely és levelezési cím
 2370 Dabas, Toldi Miklós utca 46., Magyarország
 Adószám
 91565958-1-33
+Egyéni vállalkozói nyilvántartási szám
+61425976
 Nyilvántartó hatóság
 Nemzeti Adó- és Vámhivatal (NAV), egyéni vállalkozók nyilvántartása
 Kapcsolattartás, panasz
@@ -19,9 +21,11 @@ Személyi edzés helyszíne
 Victory Fitness Békásmegyer, 1039 Budapest, Hatvany Lajos utca 10. A terem címe nem a vállalkozás székhelye.
 Webtárhely
 GitHub Pages. GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA. GitHub ügyfélszolgálat; adatvédelmi kapcsolat: dpo@github.com. A GitHub EGT-beli adatvédelmi kapcsolata: GitHub B.V., Prins Bernhardplein 200, 1097JB Amsterdam, Hollandia.
+Üzleti telefonszám
++36 70 804 6341
 GitHub ügyfélszolgálat: https://support.github.com/
 
-A továbbiakban: „Szolgáltató” vagy „Bence”; a szolgáltatást igénybe vevő személy: „Ügyfél”. A nyilvántartási szám és az üzleti telefonszám a véglegesítés előtt kiegészítendő; az adószám nem helyettesíti a nyilvántartási számot.
+A továbbiakban: „Szolgáltató” vagy „Bence”; a szolgáltatást igénybe vevő személy: „Ügyfél”.
 
 
 2. A feltételek hatálya
@@ -56,16 +60,16 @@ Az adatokat és az ajánlatot az elfogadás előtt emailben lehet javítani. Mag
 - Online Coaching – Plus: 39 900 Ft / hónap. Edzésprogram, heti két coachinghívás és programmódosítás.
 - Online Coaching – Premium: 49 900 Ft / hónap. Edzésprogram, heti két hívás, korlátlan üzenetváltás, videós technikaellenőrzés és folyamatos módosítások.
 
-A feltüntetett összegek forintban értendő, fogyasztó által fizetendő teljes díjak. Előzetes tájékoztatás és kifejezett megállapodás nélkül további díj nem számítható fel. A terem belépőjének esetleges külön díját még a szerződéskötés előtt tisztázzuk.
+A feltüntetett összegek forintban értendő, fogyasztó által fizetendő teljes díjak. Előzetes tájékoztatás és kifejezett megállapodás nélkül további díj nem számítható fel. A személyi edzés és a tízalkalmas edzéscsomag díja nem tartalmazza a terembelépőt; azt az Ügyfél külön fizeti. A belépés feltételeit és díját még a szerződéskötés előtt tisztázzuk.
 
-Egy személyi edzés 60 perc. A tízalkalmas személyi edzéscsomag a fizetéstől számított három hónapig használható fel. Ez nem korlátozza a jogszabályon alapuló jogokat vagy a Szolgáltató lemondásával kapcsolatos elszámolást. A coachinghívások időtartamát, az edzésprogram átadási határidejét és formátumát, valamint a módosítások körét az egyéni ajánlat tartalmazza. Online munkához megfelelő internetkapcsolat és az egyeztetett hívás-, üzenet- és fájlformátumot kezelő eszköz szükséges; a konkrét követelményeket elfogadás előtt közöljük.
+Egy személyi edzés 60 perc. A tízalkalmas személyi edzéscsomag a fizetéstől számított három hónapig használható fel. Ez nem korlátozza a jogszabályon alapuló jogokat vagy a Szolgáltató lemondásával kapcsolatos elszámolást. A Basic, Plus és Premium online coachingcsomagokban minden coachinghívás 60 percig tart. Az önálló Training Programot PDF-formátumban, emailben kapja meg az Ügyfél, a fizetés és a program elkészítéséhez szükséges összes ügyfélinformáció beérkezése közül a későbbi időponttól számított 3 napon belül. Ha a szükséges információk a fizetéskor már rendelkezésre állnak, a határidő a fizetéstől indul; ha később érkeznek meg, akkor azok beérkezésétől. Az önálló Training Program díja egy, az Ügyfél által kért programmódosítást is tartalmaz, amely az eredeti program átadásától számított egy héten belül kérhető. Ez az egyszeri, választható módosítás nem jelent folyamatos coachingot, és nem korlátozza az Ügyfél jogszabályon alapuló igényeit. Az egyéni ajánlat rögzíti az átadási határidőt és az itt meghatározott módosítási lehetőséget. Online munkához megfelelő internetkapcsolat és az egyeztetett hívás-, üzenet- és fájlformátumot kezelő eszköz szükséges; a konkrét követelményeket elfogadás előtt közöljük.
 
 A havi coaching kezdő és záró dátumát előre rögzítjük. Újabb fizetős időszak csak kifejezett megállapodással indul; nincs automatikus terhelés vagy pusztán a hallgatáson alapuló megújítás. A díjváltozás nem módosítja utólag a már elfogadott időszak díját.
 
 
 5. Fizetés és bizonylatok
 
-A fizetés a honlapon kívül, az egyéni ajánlatban előre megadott módon és határidővel történik. A weboldal nem kér bankkártyaadatot, nem von le díjat, és nem állít ki automatikus számlát vagy nyugtát.
+A személyi edzés és a tízalkalmas személyi edzési csomag díja készpénzzel vagy banki átutalással fizethető. Az online szolgáltatások, köztük az önálló Edzésprogram és a havi online coaching díja kizárólag banki átutalással fizethető. A díjat a megállapodott szolgáltatás megkezdése előtt kell megfizetni, személyi edzés és online szolgáltatások esetén egyaránt. A fizetés a honlapon kívül történik; a pontos fizetési határidőt az egyéni ajánlat előre tartalmazza. A weboldal nem kér bankkártyaadatot, nem von le díjat, és nem állít ki automatikus számlát vagy nyugtát.
 
 Bence közvetlenül kéri el a jogszabály szerint szükséges számlázási adatokat. Bankkártyaadatot, jelszót vagy más szükségtelen pénzügyi adatot üzenetben sem kell megadni. A számlák, nyugták és kapcsolódó nyilvántartások kezelésére a kötelező adózási és megőrzési szabályok vonatkoznak.
 
@@ -80,7 +84,7 @@ Az Ügyfél a visszaigazoló email lemondási lehetőségével, a megállapodott
 
 Az alkalom kezdete előtt kevesebb mint 24 órával közölt lemondásnál az adott alkalom előre megállapított díja főszabály szerint nem jár vissza. Tízalkalmas személyi edzési csomagnál ez egy alkalom felhasználását jelenti. Egy online coachinghívás lemondása nem teszi automatikusan elveszíthetővé az egész havi csomagot: legfeljebb az érintett, előre azonosított hívás marad pótlás nélkül; új büntetődíj nem keletkezik.
 
-A legalább 24 órával korábbi lemondás és az átfoglalás részletes szabálya a tervezet véglegesítése előtt pontosítandó. Méltányolható körülmények esetén Bence az Ügyfél javára eltérhet a lemondási szabálytól.
+Legalább 24 órával korábbi lemondás esetén az alkalom díjmentesen átfoglalható, és nem számít felhasznált alkalomnak. Ez a személyi edzésre és az online coachinghívásra is vonatkozik. Külön, egy alkalomra befizetett díj esetén az Ügyfél az átfoglalás helyett az adott alkalom teljes díjának visszatérítését is választhatja. Csomagon belüli egyetlen alkalom átfoglalása nem jelenti a teljes csomag megszüntetését. Méltányolható körülmények esetén Bence az Ügyfél javára eltérhet a lemondási szabálytól.
 
 Ha Bence mondja le az alkalmat, az Ügyfél pótidőpontot vagy az érintett, nem teljesített alkalom díjának visszatérítését választhatja. Bence hibájából elmaradt alkalom nem vonható le a csomagból.
 
@@ -93,7 +97,7 @@ A szolgáltatáshoz tartozó, választ igénylő ügyfélüzenetekre Bence 24 ó
 
 A Premium csomag korlátlan üzenetváltása az üzenetek számára vonatkozik, nem folyamatos, azonnali vagy sürgősségi elérhetőségre. A Basic és Plus csomag nem tartalmaz automatikusan korlátlan coachingot üzenetben, de a szerződéshez tartozó kapcsolattartási kérdések megválaszolása ezeknél is biztosított.
 
-Ha Bence elmulasztja a 24 órás határidőt, az Ügyfél visszatérítésre jogosult. A garancia pontos pénzügyi mértéke még egyeztetés alatt áll; ez a tervezet ezért nem tekinthető végleges ajánlatnak. Az igény jelezhető a szolgáltató email-címén az érintett üzenet azonosításával. Nincs szükség a teljes magánbeszélgetés újbóli továbbítására. A jogos visszatérítést indokolatlan késedelem nélkül, legkésőbb 14 napon belül teljesítjük. A garancia nem váltja ki az Ügyfél törvényes igényeit.
+Ha Bence elmulasztja a 24 órás határidőt, az Ügyfél visszatérítésre jogosult. A válaszgarancia szerinti visszatérítés összege a befizetett díj hátralévő, fel nem használt coachingidőszakra jutó időarányos részének 40%-a, nem a teljes eredeti díj 40%-a. Például 20 000 Ft fennmaradó, fel nem használt díjérték esetén a visszatérítés 8 000 Ft. A garancia szerinti visszatérítés igénybevételével a coaching és az arra vonatkozó szerződés megszűnik. A visszatérítés alapjául szolgáló hátralévő időszakot az elmulasztott 24 órás válaszadási határidő lejártától a már kifizetett coachingidőszak végéig számítjuk, nem a visszatérítési kérelem időpontjától. Az írásos elszámolás rögzíti az érintett üzenet beérkezését, a válaszadási határidő lejártát, a kifizetett időszak végét és az időarányos díj 40%-ának számítását. A rendelkezés jogi felülvizsgálatra vár; a tervezet nem végleges ajánlat. Az igény jelezhető a szolgáltató email-címén az érintett üzenet azonosításával. Nincs szükség a teljes magánbeszélgetés újbóli továbbítására. A jogos visszatérítést indokolatlan késedelem nélkül, legkésőbb 14 napon belül teljesítjük. A garancia nem váltja ki az Ügyfél törvényes igényeit.
 
 Tiszteletteljes kommunikációt kérünk. Egy indulatos vagy trágár kifejezésnél Bence figyelembe veszi a helyzetet; ez önmagában nem jelent automatikus kizárást vagy pénzvesztést. Zaklatás, fenyegetés, gyűlöletkeltés vagy ismétlődő személyeskedés nem elfogadható. Általában először figyelmeztetés és rendezési lehetőség következik. Súlyos fenyegetésnél a kapcsolat azonnali felfüggesztése is indokolt lehet, írásos indoklással és a fel nem használt díj tisztességes elszámolásával. Panasz, kritika vagy visszatérítési igény önmagában nem szabálysértés.
 
@@ -102,7 +106,7 @@ Tiszteletteljes kommunikációt kérünk. Egy indulatos vagy trágár kifejezés
 
 A személyes beszélgetések és az ügyféladatok bizalmasak. Ide tartozik különösen a név, az arckép és más fénykép, a lakcím, az elérhetőség, a munkahely, az egészségi és fizikai állapotra vonatkozó információ, az edzésvideó és az üzenetek tartalma.
 
-Bence az Ügyfél anyagainak közzététele előtt külön, konkrét és önkéntes engedélyt kér. Engedély nélkül nem publikál ügyféltartalmat; a hozzájárulás kizárólag a jóváhagyott tartalomra és felhasználásra szól. A felhasználás tervezett helye a weboldal és a közösségi média; az engedélykérés mindig megjelöli az adott felületeket és tartalmat. Az Ügyfél emailben adja meg a jóváhagyást, amelyet Bence az engedélykéréssel együtt megőriz az engedély igazolására. Chatüzenet önmagában nem elegendő ehhez a jóváhagyáshoz. A közzétett ügyfélfotókon és videókon az arcot minden esetben kitakarja, akkor is, ha az Ügyfél engedné annak megmutatását. A coaching igénybevétele és az egészségügyi adatok áttekintésére adott engedély nem jogosít közzétételre. A közzétételi hozzájárulás visszavonható; annak megtagadása nem jár hátránnyal. Bence az ügyfélanyagokat nem értékesíti.
+Bence az Ügyfél anyagainak közzététele előtt külön, konkrét és önkéntes engedélyt kér. Engedély nélkül nem publikál ügyféltartalmat; a hozzájárulás kizárólag a jóváhagyott tartalomra és felhasználásra szól. A felhasználás tervezett helye a weboldal, az Instagram, a Facebook és a TikTok; az engedélykérés mindig megjelöli az adott felületeket és tartalmat. Az Ügyfél emailben adja meg a jóváhagyást, amelyet Bence az engedélykéréssel együtt megőriz az engedély igazolására. Chatüzenet önmagában nem elegendő ehhez a jóváhagyáshoz. A közzétett ügyfélfotókon és videókon az arcot minden esetben kitakarja, akkor is, ha az Ügyfél engedné annak megmutatását. A coaching igénybevétele és az egészségügyi adatok áttekintésére adott engedély nem jogosít közzétételre. A közzétételi hozzájárulás visszavonható; annak megtagadása nem jár hátránnyal. Bence az ügyfélanyagokat nem értékesíti.
 
 Az engedélyezett tartalom az emailben megjelölt célra és felületeken előre rögzített lejárat nélkül, a hozzájárulás visszavonásáig maradhat közzétéve. Az Ügyfél a mihaly.bence.fitness@gmail.com címen bármikor visszavonhatja a hozzájárulását. Bence ekkor megszünteti a további felhasználást, és indokolatlan késedelem nélkül eltávolítja az érintett tartalmat az általa kezelt felületekről. Mások másolatainak vagy megosztásainak teljes eltűnése nem garantálható. A felhasználás céljának vagy körének változásához új engedély szükséges; a további közzététel szükségességét és az engedély alkalmazhatóságát időről időre felül kell vizsgálni.
 
@@ -158,6 +162,17 @@ A szerződés az elfogadott időszakra vagy alkalomszámra szól. A további id�
 Szerződésszegés esetén a jogszabály szerinti megszüntetési és egyéb jogok érvényesíthetők. A szolgáltató a kapcsolattartás megszüntetésével vagy egy chat blokkolásával nem tüntetheti el a visszatérítési, panaszkezelési és adatvédelmi kötelezettségeit; az emailes és postai ügyintézés elérhető marad.
 
 Ha a szolgáltatás tartósan nem teljesíthető, az el nem végzett rész díjával el kell számolni. Külső üzemzavar vagy betegség önmagában nem teszi megtarthatóvá a teljes, meg nem szolgált díjat. A kötelező fogyasztói jogok minden esetben fennmaradnak.
+
+Az Ügyfél által kért idő előtti lezárás
+
+A tervezett üzleti szabály szerint, ha az Ügyfél a szerződés lejárta előtt saját döntéséből megszünteti a tízalkalmas személyi edzési bérletét vagy havi online coachingját, a befizetett díj fel nem használt részének 40%-át kapja vissza; a fennmaradó 60%-ot a Szolgáltató megtartja. A számítás alapja nem a teljes eredeti díj, hanem annak még fel nem használt része.
+
+- Tízalkalmas bérlet: a ténylegesen befizetett csomagdíj tizede szorozva a fel nem használt alkalmak számával, majd ennek 40%-a. Példa: 100 000 Ft befizetés és 6 fel nem használt alkalom esetén a fennmaradó érték 60 000 Ft, a visszatérítés 24 000 Ft. A teljesített alkalmakat nem árazzuk át utólag az egyalkalmas díjra.
+- Online coaching: a befizetett coachingidőszak díjának a megszüntetési közléstől hátralévő, fel nem használt időszakra jutó időarányos része képezi az alapot; ennek 40%-a térül vissza. Az elszámolás tartalmazza az időszak kezdő és záró időpontját, a fel nem használt időt és a számítást.
+
+A kérelmet a szolgáltatói email-címen is jelezheted. Az elszámolást írásban rögzítjük. A személyes edzés külön papírszerződésének feltételeit külön kell összehangolni ezzel a tervezettel.
+
+Ez a 40%-os szabály nem alkalmazható a törvényes elállási vagy felmondási jog, a szolgáltató szerződésszegése, a nem teljesített szolgáltatás miatti igény vagy a 24 órás válaszgarancia korlátozására. Ezekben az esetekben az adott jogcím szerinti elszámolás irányadó. Jogi felülvizsgálatra vár: a fel nem használt díj 60%-ának megtartása arányossági és tisztességességi vizsgálatot igényel; a rendelkezés e tervezetben nem jelent végleges, jogilag jóváhagyott feltételt.
 
 
 12. Panaszkezelés és vitarendezés

@@ -1,0 +1,69 @@
+/* Static profile links: shared brand palette, no social embeds or remote assets. */
+.home-social { padding: clamp(40px, 6vw, 80px) clamp(20px, 5vw, 48px); }
+.social-panel {
+  padding: clamp(24px, 4vw, 48px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: radial-gradient(ellipse at 0 0, rgba(196,97,42,.10), transparent 65%), var(--night-2);
+}
+.social-heading { max-width: 680px; margin-bottom: 28px; }
+.social-heading .eyebrow { margin-bottom: 12px; }
+.social-heading h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(2.25rem, 4.5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 16px;
+  color: var(--gold-pale);
+}
+.social-heading > p:last-child { margin-bottom: 0; color: var(--muted); }
+.social-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.social-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: clamp(20px, 2.5vw, 28px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(255,242,200,.035);
+  transition: border-color 180ms, background 180ms, transform 180ms;
+}
+.social-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+.social-icon { display: grid; place-items: center; width: 44px; height: 44px; color: var(--gold); }
+.social-icon svg { width: 28px; height: 28px; }
+.social-arrow { font-size: 1.3rem; color: var(--soft); }
+.social-name { font-family: "Barlow Condensed", sans-serif; font-size: 1.9rem; font-weight: 700; line-height: 1.2; }
+.social-profile { margin-top: 8px; color: var(--muted); font-size: .8rem; line-height: 1.6; overflow-wrap: anywhere; }
+.social-card[aria-disabled="true"], .social-button[aria-disabled="true"] { cursor: default; }
+.social-card[aria-disabled="true"] .social-arrow { opacity: .35; }
+.footer-social { display: flex; flex-wrap: wrap; gap: 10px; width: min(100%, var(--max)); margin: 24px auto; }
+.social-button {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(255,242,200,.035);
+  color: var(--gold);
+  transition: border-color 180ms, background 180ms, transform 180ms;
+}
+.social-button svg { width: 19px; height: 19px; }
+.social-card:focus-visible, .social-button:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 5px; }
+@media (hover: hover) and (pointer: fine) {
+  a.social-card:hover, a.social-button:hover { border-color: rgba(212,168,67,.55); background: rgba(255,242,200,.075); transform: translateY(-3px); }
+}
+@media (max-width: 640px) {
+  .social-grid { grid-template-columns: 1fr; gap: 12px; }
+  .social-card { display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 16px; padding: 20px; }
+  .social-card-top { grid-row: 1 / 3; margin: 0; align-self: center; }
+  .social-arrow { display: none; }
+  .social-name { font-size: 1.65rem; }
+  .social-profile { margin-top: 3px; }
+  .footer-social { justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .social-card, .social-button { transition: none; }
+  a.social-card:hover, a.social-button:hover { transform: none; }
+}

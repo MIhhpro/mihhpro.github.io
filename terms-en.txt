@@ -1,5 +1,5 @@
 Terms of Service
-2026-09-22-draft-9
+2026-09-28-draft-22
 Review draft — not yet in force
 This version contains points still to be finalised and must not be used as the final contracting terms. You will receive the final terms before entering into a paid agreement.
 
@@ -11,6 +11,8 @@ Registered office and postal address
 2370 Dabas, Toldi Miklós utca 46., Hungary
 Hungarian tax number
 91565958-1-33
+Sole-trader registration number
+61425976
 Registration authority
 National Tax and Customs Administration of Hungary (NAV), register of sole traders
 Contact and complaints
@@ -19,9 +21,11 @@ Personal training location
 Victory Fitness Békásmegyer, 1039 Budapest, Hatvany Lajos utca 10., Hungary. The gym is not the business's registered office.
 Website hosting
 GitHub Pages. GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA. GitHub support; privacy contact: dpo@github.com. GitHub's EEA privacy contact: GitHub B.V., Prins Bernhardplein 200, 1097JB Amsterdam, Netherlands.
+Business telephone
++36 70 804 6341
 GitHub support: https://support.github.com/
 
-Below, “Provider” or “Bence” means the sole trader, and “Client” means the person using the service. The sole-trader registration number and business telephone number must be added before finalisation; the tax number does not replace the registration number.
+Below, “Provider” or “Bence” means the sole trader, and “Client” means the person using the service.
 
 
 2. Scope of these terms
@@ -56,16 +60,16 @@ The Client can correct their details and clarify the offer by email before accep
 - Online Coaching – Plus: 39 900 Ft per month. Training programme, two coaching calls per week and programme adjustments.
 - Online Coaching – Premium: 49 900 Ft per month. Training programme, two calls per week, unlimited messaging, video/form checks and ongoing adjustments.
 
-Amounts are total consumer prices in Hungarian forints. No extra fee is charged without prior information and express agreement. Any separate gym admission charge is clarified before the contract is concluded.
+Amounts are total consumer prices in Hungarian forints. No extra fee is charged without prior information and express agreement. Personal training and the ten-session training package do not include gym admission; the Client pays for admission separately. Admission conditions and charges are clarified before the contract is concluded.
 
-Each personal training session lasts 60 minutes. The ten-session personal training package is valid for three months from payment. This does not limit statutory rights or the accounting required when the Provider cancels. The individual offer specifies coaching-call lengths, programme delivery deadline and format, and the extent of revisions. Online services require an appropriate internet connection and a device supporting the agreed call, messaging and file formats; specific requirements are disclosed before acceptance.
+Each personal training session lasts 60 minutes. The ten-session personal training package is valid for three months from payment. This does not limit statutory rights or the accounting required when the Provider cancels. Each coaching call in the Basic, Plus and Premium online coaching plans lasts 60 minutes. The standalone Training Program is delivered to the Client as a PDF by email within 3 days of payment or receipt of all client information needed to prepare the programme, whichever occurs later. If the necessary information is already available when payment is made, the period starts from payment; if it arrives later, the period starts when it is received. The standalone Training Program price includes one adjustment requested by the Client within one week of delivery of the original programme. This one-off optional adjustment does not provide ongoing coaching or restrict the Client's statutory remedies. The individual offer records the delivery deadline and this included adjustment. Online services require an appropriate internet connection and a device supporting the agreed call, messaging and file formats; specific requirements are disclosed before acceptance.
 
 The start and end dates of each monthly coaching period are agreed in advance. A further paid period requires express agreement; there is no automatic charge or renewal based solely on silence. A price change does not retrospectively change an already agreed period's fee.
 
 
 5. Payment and receipts
 
-Payment takes place outside the website using the method and deadline disclosed in the individual offer. The website does not request card details, collect payments or automatically issue invoices or receipts.
+Personal training and the ten-session personal training package can be paid for in cash or by bank transfer. Online services, including the standalone Training Program and monthly online coaching, are payable by bank transfer only. Payment is due before the agreed service begins, for both personal training and online services. Payment takes place outside the website; the exact payment deadline is disclosed in advance in the individual offer. The website does not request card details, collect payments or automatically issue invoices or receipts.
 
 Bence requests the billing details required by law directly. Clients should not send card details, passwords or unnecessary financial information through messages. Invoices, receipts and associated records are subject to applicable tax and retention requirements.
 
@@ -80,7 +84,7 @@ The Client may cancel through the cancellation option in the confirmation email,
 
 If the Client cancels less than 24 hours before the appointment, the fee agreed in advance for that appointment is normally non-refundable. For a ten-session personal training package, one session is used. Cancelling one online coaching call does not automatically forfeit the entire monthly package: at most, the affected, previously identified call is not replaced; no new penalty fee is added.
 
-The arrangements for cancellations at least 24 hours in advance and rescheduling must be clarified before this draft is finalised. Bence may make exceptions in the Client's favour where circumstances justify them.
+With at least 24 hours’ notice, the appointment can be rescheduled free of charge and does not count as used. This applies to personal training sessions and online coaching calls. For a separately paid single appointment, the Client may choose a full refund of that appointment’s fee instead. Rescheduling an individual package appointment does not end the entire package. Bence may make exceptions in the Client's favour where circumstances justify them.
 
 If Bence cancels, the Client may choose a replacement appointment or a refund for the affected, unperformed session. A session missed due to Bence cannot be deducted from a package.
 
@@ -93,7 +97,7 @@ Bence provides a substantive reply within 24 hours to service-related client mes
 
 Unlimited messaging in Premium refers to the number of messages, not continuous, immediate or emergency availability. Basic and Plus do not automatically include unlimited coaching by message, but replies to questions about the agreement and its administration remain available.
 
-If Bence misses the 24-hour deadline, the Client is entitled to a refund. The precise financial amount of this guarantee is still being agreed, so this draft is not a final offer. A claim may be made to the Provider's email address, identifying the affected message. The Client does not need to resend their entire private conversation. A valid refund is paid without undue delay and no later than 14 days. This guarantee does not replace statutory remedies.
+If Bence misses the 24-hour deadline, the Client is entitled to a refund. The reply-guarantee refund is 40% of the prepaid fee prorated to the remaining, unused coaching period, not 40% of the entire original fee. For example, HUF 20,000 of remaining unused value gives a HUF 8,000 refund. Claiming this guarantee refund ends coaching and the coaching contract. The remaining period used to calculate the refund runs from expiry of the missed 24-hour reply deadline to the end of the prepaid coaching period, not from the date of the refund request. The written settlement records receipt of the affected message, expiry of the reply deadline, the end of the prepaid period and the calculation of 40% of the prorated fee. This provision remains subject to legal review; the draft is not a final offer. A claim may be made to the Provider's email address, identifying the affected message. The Client does not need to resend their entire private conversation. A valid refund is paid without undue delay and no later than 14 days. This guarantee does not replace statutory remedies.
 
 Respectful communication is expected. Bence considers the context of an isolated angry or profane expression; it does not automatically lead to exclusion or loss of payment. Harassment, threats, hate speech and repeated personal abuse are unacceptable. Normally, a warning and opportunity to resolve the situation come first. A serious threat may justify immediate suspension, with written reasons and a fair accounting of unused fees. A complaint, criticism or refund request is not itself misconduct.
 
@@ -102,7 +106,7 @@ Respectful communication is expected. Bence considers the context of an isolated
 
 Private conversations and client information are confidential. This includes names, facial and other photographs, addresses, contact details, workplaces, information about health and physical condition, training videos and message content.
 
-Bence asks for the Client’s separate, specific and voluntary permission before publishing their material. Without permission, he publishes no client content; consent covers only the approved content and use. The intended channels are the website and social media; each request identifies the relevant channels and content. The Client gives approval by email, which Bence retains with the request as evidence of permission. A chat message alone is not sufficient approval for this purpose. He always masks faces in published client photos and videos, even if the Client would allow their face to be shown. Taking part in coaching or permitting review of health information does not authorise publication. Publication consent can be withdrawn; refusal does not disadvantage the Client. Bence does not sell client material.
+Bence asks for the Client’s separate, specific and voluntary permission before publishing their material. Without permission, he publishes no client content; consent covers only the approved content and use. The intended channels are the website, Instagram, Facebook and TikTok; each request identifies the relevant channels and content. The Client gives approval by email, which Bence retains with the request as evidence of permission. A chat message alone is not sufficient approval for this purpose. He always masks faces in published client photos and videos, even if the Client would allow their face to be shown. Taking part in coaching or permitting review of health information does not authorise publication. Publication consent can be withdrawn; refusal does not disadvantage the Client. Bence does not sell client material.
 
 Approved content may remain published for the purpose and channels specified by email, with no preset expiry, until consent is withdrawn. The Client may withdraw consent at any time by emailing mihaly.bence.fitness@gmail.com. Bence will then stop further use and remove the affected content from channels he controls without undue delay. Complete removal of copies or reposts made by others cannot be guaranteed. A change in the purpose or scope of use requires fresh permission; the continued need for publication and applicability of consent must be reviewed from time to time.
 
@@ -158,6 +162,17 @@ The contract covers the agreed period or number of sessions. Further periods are
 Statutory termination and other remedies remain available in the event of breach. Ending contact or blocking a chat does not remove the Provider's refund, complaint-handling or data-protection duties; email and postal contact remain available.
 
 If the service cannot be performed on an ongoing basis, fees for the unperformed portion must be accounted for. An external outage or illness does not by itself justify retaining the entire unearned fee. Mandatory consumer rights remain in place.
+
+Early cancellation requested by the Client
+
+Under the proposed business policy, if the Client chooses to end a ten-session personal training pass or monthly online coaching before the contract expires, 40% of the unused portion of the fee paid is refunded; the Provider retains the remaining 60%. The calculation uses the unused value, not the entire original price.
+
+- Ten-session pass: one tenth of the actual package payment multiplied by the unused sessions, then multiplied by 40%. Example: HUF 100,000 paid with 6 unused sessions leaves HUF 60,000 unused value and a HUF 24,000 refund. Completed sessions are not retrospectively repriced at the single-session rate.
+- Online coaching: the calculation uses the prepaid coaching fee prorated to the unused time remaining from notice of cancellation; 40% of that amount is refunded. The written settlement identifies the period’s start and end, unused time and calculation.
+
+The request can be sent to the Provider’s email address. The settlement is recorded in writing. The separate paper contract for personal training must be aligned separately with this draft.
+
+The 40% rule does not limit statutory withdrawal or termination rights, remedies for the Provider’s breach or non-performance, or the 24-hour reply guarantee. Those cases follow the settlement applicable to the relevant right. Pending legal review: retaining 60% of unused fees requires an assessment of proportionality and fairness; inclusion in this draft does not make this a final, legally approved term.
 
 
 12. Complaints and dispute resolution
