@@ -13,6 +13,12 @@ ROOT = Path(__file__).resolve().parents[1]
 nav_spec = importlib.util.spec_from_file_location('site_navigation', ROOT / 'tools/site_navigation.py')
 navigation = importlib.util.module_from_spec(nav_spec)
 nav_spec.loader.exec_module(navigation)
+social_spec = importlib.util.spec_from_file_location('site_social', ROOT / 'tools/site_social.py')
+social = importlib.util.module_from_spec(social_spec)
+social_spec.loader.exec_module(social)
+sharing_spec = importlib.util.spec_from_file_location('site_sharing', ROOT / 'tools/site_sharing.py')
+sharing = importlib.util.module_from_spec(sharing_spec)
+sharing_spec.loader.exec_module(sharing)
 PAIRS = dict(zip(
     ['index.html', 'services.html', 'szemelyi-edzes.html', 'online-coaching.html', 'about.html', 'sikerek.html', 'elso-alkalom.html', 'contact.html', 'aszf.html'],
     ['index-en.html', 'services-en.html', 'personal-training-en.html', 'online-coaching-en.html', 'about-en.html', 'progress-en.html', 'first-visit-en.html', 'contact-en.html', 'terms.html']))
@@ -39,6 +45,7 @@ def translate(value):
     return re.match(r'^\s*', value).group() + LOOKUP[key] + re.search(r'\s*$', value).group()
 
 def strip_language_ui(source):
+    source = social.strip_generated(source)
     source = re.sub(r'<nav class="language-switch".*?</nav>\s*', '', source, flags=re.S)
     source = re.sub(r'<link[^>]+(?:href="language\.css[^\"]*"|rel="alternate")[^>]*>\s*', '', source)
     return re.sub(r'<script src="language(?:-position)?\.js[^\"]*"[^>]*></script>\s*', '', source)
@@ -80,6 +87,8 @@ def decorate(source, hu, en, lang):
     source = re.sub(r'src="script\.js(?:\?[^\"]*)?"', 'src="script.js?v=19.6"', source)
     source = re.sub(r'src="site-config\.js(?:\?[^\"]*)?"', 'src="site-config.js?v=18.3"', source)
     source = source.replace('</body>', '<script src="language-position.js?v=19.1"></script>\n<script src="language.js?v=15.4"></script>\n</body>')
+    source = social.render(source, lang)
+    source = sharing.render(source, hu if lang == 'hu' else en, lang)
     return navigation.render_navigation(source, hu if lang == 'hu' else en, lang)
 
 def remap_links(doc):

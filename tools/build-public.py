@@ -12,7 +12,7 @@ import shutil
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = (Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT.parent / 'output' / 'V19-public').resolve()
+OUT = (Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT.parent / 'output' / 'V20-public').resolve()
 ALLOWED = {'.html', '.css', '.js', '.webp', '.woff2', '.ico', '.png', '.jpg', '.jpeg', '.svg', '.txt', '.pdf', '.xlsx'}
 assert not OUT.exists(), f'Use a fresh output directory: {OUT}'
 assert OUT != ROOT and not OUT.is_relative_to(ROOT), 'Keep output outside website sources'
@@ -42,6 +42,11 @@ while pending:
     selected.add(path)
     if path.suffix == '.html':
         doc = html.fromstring(path.read_text(encoding='utf-8'))
+        # Social crawlers need absolute image URLs, but the images must ship too.
+        for value in doc.xpath('//meta[@property="og:image" or @name="twitter:image"]/@content'):
+            uri = urlsplit(value)
+            assert uri.scheme == 'https' and uri.netloc == 'mihalybence.com', f'Unexpected sharing image origin: {value}'
+            reference(uri.path, path)
         for el in doc.iter():
             if not isinstance(el.tag, str) or el.tag == 'base':
                 continue

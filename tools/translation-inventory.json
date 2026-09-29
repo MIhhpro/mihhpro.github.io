@@ -947,7 +947,7 @@
   {
     "id": 189,
     "page": "services.html",
-    "hu": ". A terembelépőt, az alkalmak időtartamát és a csomagok pontos feltételeit a kezdés előtt külön egyeztetjük."
+    "hu": ". A terembelépő külön fizetendő, a személyi edzés és a tízalkalmas csomag ára nem tartalmazza. Az alkalmak időtartamát és a csomagok pontos feltételeit a kezdés előtt egyeztetjük."
   },
   {
     "id": 190,
@@ -2592,7 +2592,7 @@
   {
     "id": 518,
     "page": "elso-alkalom.html",
-    "hu": "A kezdés előtt külön egyeztessünk a terembelépőről, az alkalmak időtartamáról, a csomag érvényességéről és a lemondás feltételeiről, hogy minden részletet ismerj a döntésedhez."
+    "hu": "A terembelépő külön fizetendő, a személyi edzés és a tízalkalmas csomag ára nem tartalmazza. A kezdés előtt egyeztetjük a belépés részleteit és a csomag feltételeit, hogy minden információt ismerj a döntésedhez."
   },
   {
     "id": 519,
@@ -4253,5 +4253,70 @@
     "id": 850,
     "page": "shared navigation",
     "hu": "Szerződési feltételek"
+  },
+  {
+    "id": 851,
+    "page": "services.html",
+    "hu": "Coachinghívások (60 perc/alkalom)"
+  },
+  {
+    "id": 852,
+    "page": "online-coaching.html",
+    "hu": "Heti 1 × 60 perces coachinghívás"
+  },
+  {
+    "id": 853,
+    "page": "online-coaching.html",
+    "hu": "Heti 2 × 60 perces coachinghívás"
+  },
+  {
+    "id": 854,
+    "page": "services.html",
+    "hu": "A Training Program egyszeri, 4 hetes terv, amelyet PDF-formátumban, emailben kapsz meg; a coachingcsomagok havi együttműködést jelentenek. A coachinghívás egyeztetés, nem élőben felügyelt edzés. A hívások időpontját kezdés előtt megbeszéljük."
+  },
+  {
+    "id": 855,
+    "page": "online-coaching.html",
+    "hu": "PDF-formátumban, emailben küldöm el"
+  },
+  {
+    "id": 856,
+    "page": "services.html",
+    "hu": "A Training Program egyszeri, 4 hetes terv, amelyet PDF-formátumban, emailben kapsz meg a fizetés és a szükséges ügyfélinformációk beérkezése után 3 napon belül. A határidő a kettő közül a későbbi időponttól indul. A coachingcsomagok havi együttműködést jelentenek. A coachinghívás egyeztetés, nem élőben felügyelt edzés. A hívások időpontját kezdés előtt megbeszéljük."
+  },
+  {
+    "id": 857,
+    "page": "online-coaching.html",
+    "hu": "PDF emailben, a fizetés és a szükséges ügyfélinformációk beérkezése után 3 napon belül"
+  },
+  {
+    "id": 858,
+    "page": "services.html",
+    "hu": "1 programmódosítás, az átadástól számított 1 héten belül kérve"
+  },
+  {
+    "id": 859,
+    "page": "online-coaching.html",
+    "hu": "Coaching esetén a következő híváson átbeszéljük, mi változott, és ehhez igazítjuk a programot. Premium csomagban a hívások között üzenetben is egyeztethetünk. Az önálló Training Programhoz egy módosítást kérhetsz az átadástól számított egy héten belül; coachinghívást vagy folyamatos programmódosítást nem tartalmaz."
+  },
+  {
+    "id": 860,
+    "page": "index.html",
+    "hu": "Közösségi média"
+  },
+  {
+    "id": 861,
+    "page": "index.html",
+    "hu": "Itt is megtalálsz"
+  },
+  {
+    "id": 862,
+    "page": "index.html",
+    "hu": "Kapcsolódjunk az edzésen túl."
+  },
+  {
+    "id": 863,
+    "page": "index.html",
+    "hu": "Ismerj meg közelebbről, és kövess a közösségi felületeimen is."
   }
 ]

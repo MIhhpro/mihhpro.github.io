@@ -2,6 +2,7 @@ from pathlib import Path
 from lxml import html
 import json
 import re
+from site_social import strip_generated
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = ['index.html', 'services.html', 'szemelyi-edzes.html', 'online-coaching.html', 'about.html', 'sikerek.html', 'elso-alkalom.html', 'contact.html']
@@ -15,7 +16,8 @@ entries = json.loads(inventory_path.read_text(encoding='utf-8')) if inventory_pa
 seen = {entry['hu'] for entry in entries}
 initial_count = len(entries)
 for name in PAGES:
-    doc = html.fromstring((ROOT / name).read_text(encoding='utf-8'))
+    # Social labels are paired in their shared renderer, not translation IDs.
+    doc = html.fromstring(strip_generated((ROOT / name).read_text(encoding='utf-8')))
     for switch in doc.xpath('//nav[@class="language-switch"]'):
         switch.getparent().remove(switch)
     values = doc.xpath('//text()[not(ancestor::script) and not(ancestor::style)]')
