@@ -329,7 +329,10 @@ document.querySelectorAll("details.question").forEach(details => {
 })();
 
 // ── Contact form + Cal.com handoff ─────────────────────────
-const CAL_EVENTS = window.SITE_CONFIG?.calEvents || {};
+const CAL_EVENTS = {
+  ...window.SITE_CONFIG?.calEvents,
+  ...(isEnglish ? window.SITE_CONFIG?.calEventsEn : {})
+};
 const INQUIRY_EMAIL = window.SITE_CONFIG?.inquiryEmail?.trim() || "mihaly.bence.fitness@gmail.com";
 const APPOINTMENT_SERVICES = new Set(["consult", "pt", "online"]);
 const calEventUrl = (service) => {
@@ -548,6 +551,8 @@ if (contactForm) {
       // Never carry personal details from an abandoned email enquiry into Cal.
       // Only the chosen service/package is passed before a time is selected.
       const notes = `${localText("Szolgáltatás", "Service")}: ${serviceLabel}`;
+      // The English consultation event pins its interface language in Cal.
+      // Cal's current booking UI ignores a plain locale query parameter.
       const config = { notes, theme: "dark", layout: "month_view" };
       const directUrl = new URL(eventUrl);
       Object.entries(config).forEach(([key, value]) => directUrl.searchParams.set(key, value));
