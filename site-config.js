@@ -6,9 +6,10 @@ window.SITE_CONFIG = Object.freeze({
     pt: "https://cal.com/bence-mihaly-gjfcyz/edzes",
     online: "https://cal.com/bence-mihaly-gjfcyz/online"
   }),
-  // English copy of the same 20-minute consultation; Hungarian route stays intact.
+  // Language-specific public events for the English booking page.
   calEventsEn: Object.freeze({
-    consult: "https://cal.com/bence-mihaly-gjfcyz/free-consultation"
+    consult: "https://cal.com/bence-mihaly-gjfcyz/free-consultation",
+    pt: "https://cal.com/bence-mihaly-gjfcyz/personal"
   }),
   inquiryEmail: "mihaly.bence.fitness@gmail.com"
 });
