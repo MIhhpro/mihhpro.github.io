@@ -23,7 +23,7 @@ class Element {
   focus() { this.focused = true; }
   fire(type) { return this.handlers[type]?.({ preventDefault() {} }); }
 }
-function setup(service, calendar = true, language = 'hu', events = {}) {
+function setup(service, calendar = true, language = 'hu', events = {}, englishEvents = {}) {
   const form = new Element(), select = new Element();
   Object.defineProperty(select, 'selectedOptions', {get: () => [{textContent: select.value}]});
   form.reportValidity = () => true;
@@ -54,6 +54,7 @@ function setup(service, calendar = true, language = 'hu', events = {}) {
   const calls = [], listeners = {};
   const win = {SITE_CONFIG:{calEvents:{consult:'https://cal.com/example/consult',pt:'https://cal.com/example/pt',online:'https://cal.com/example/online'},inquiryEmail:'coach@example.test'},location:{search:'?service='+service},addEventListener:(k,f)=>{listeners[k]=f;},setTimeout(){},isSecureContext:true};
   Object.assign(win.SITE_CONFIG.calEvents, events);
+  win.SITE_CONFIG.calEventsEn = englishEvents;
   const calHandlers = {};
   const sdk = (action, args) => {
     if (action === 'inline') { calls.push(args); const iframe = new Element(); args.elementOrSelector.children.iframe = iframe; }
@@ -121,6 +122,15 @@ vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../site-config.js'),'utf
 for(const [key,slug] of [['consult','konz'],['pt','edzes'],['online','online']]) {
  const t=setup(key,true,'hu',production.window.SITE_CONFIG.calEvents);await settle();
  assert.equal(t.calls[0].calLink,'bence-mihaly-gjfcyz/'+slug);
+}
+for (const language of ['hu', 'en']) {
+ for (const [service, slug] of [['consult', language === 'en' ? 'free-consultation' : 'konz'], ['pt', 'edzes'], ['online', 'online']]) {
+  const t = setup(service, true, language, production.window.SITE_CONFIG.calEvents, production.window.SITE_CONFIG.calEventsEn);
+  await settle();
+  assert.equal(t.calls[0].calLink, 'bence-mihaly-gjfcyz/' + slug);
+  const direct = new URL(t.nodes['#booking-direct-link'].href);
+  assert.equal(direct.pathname, '/bence-mihaly-gjfcyz/' + slug);
+ }
 }
 const packages=setup('online&package=basic');await settle();
 for(const [tier,price] of [['basic','29 900'],['plus','39 900'],['premium','49 900']]) {

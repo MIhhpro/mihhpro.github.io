@@ -50,7 +50,7 @@ for file in ROOT.glob('*.html'):
     assert doc.xpath('//link[@rel="icon"]/@href') == ['favicon.ico', 'assets/favicon-32.png'], file.name
     assert doc.xpath('//link[@rel="apple-touch-icon"]/@href') == ['assets/apple-touch-icon.png'], file.name
     assert doc.xpath('//link[starts-with(@href,"styles.css")]/@href') == ['styles.css?v=19.9'], file.name
-    assert doc.xpath('//script[starts-with(@src,"script.js")]/@src') == ['script.js?v=19.6'], file.name
+    assert doc.xpath('//script[starts-with(@src,"script.js")]/@src') == ['script.js?v=20.1'], file.name
     privacy = 'privacy-en.html' if doc.get('lang') == 'en' else 'adatkezeles.html'
     assert doc.xpath('//nav[@class="footer-legal"]/a[@href=$target]/@href', target=privacy) == [privacy], file.name
 for contact, privacy in [('contact.html', 'adatkezeles.html'), ('contact-en.html', 'privacy-en.html')]:
