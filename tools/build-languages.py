@@ -85,7 +85,7 @@ def decorate(source, hu, en, lang):
     source = re.sub(r'<link[^>]+rel="(?:icon|apple-touch-icon)"[^>]*>\s*', '', source)
     source = source.replace('</head>', '<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">\n<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">\n<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">\n</head>')
     source = re.sub(r'src="script\.js(?:\?[^\"]*)?"', 'src="script.js?v=20.1"', source)
-    source = re.sub(r'src="site-config\.js(?:\?[^\"]*)?"', 'src="site-config.js?v=20.1"', source)
+    source = re.sub(r'src="site-config\.js(?:\?[^\"]*)?"', 'src="site-config.js?v=20.2"', source)
     source = source.replace('</body>', '<script src="language-position.js?v=19.1"></script>\n<script src="language.js?v=15.4"></script>\n</body>')
     source = social.render(source, lang)
     source = sharing.render(source, hu if lang == 'hu' else en, lang)
