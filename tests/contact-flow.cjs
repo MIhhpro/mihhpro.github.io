@@ -124,7 +124,7 @@ for(const [key,slug] of [['consult','konz'],['pt','edzes'],['online','online']])
  assert.equal(t.calls[0].calLink,'bence-mihaly-gjfcyz/'+slug);
 }
 for (const language of ['hu', 'en']) {
- for (const [service, slug] of [['consult', language === 'en' ? 'free-consultation' : 'konz'], ['pt', 'edzes'], ['online', 'online']]) {
+ for (const [service, slug] of [['consult', language === 'en' ? 'free-consultation' : 'konz'], ['pt', language === 'en' ? 'personal' : 'edzes'], ['online', 'online']]) {
   const t = setup(service, true, language, production.window.SITE_CONFIG.calEvents, production.window.SITE_CONFIG.calEventsEn);
   await settle();
   assert.equal(t.calls[0].calLink, 'bence-mihaly-gjfcyz/' + slug);
