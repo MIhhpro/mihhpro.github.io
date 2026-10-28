@@ -1,5 +1,5 @@
 Privacy notice
-2026-09-28
+2026-10-28
 Review copy — operational details to confirm
 This describes the website and the confirmed client communication channels. Deletion deadlines, app storage and recording settings, and provider arrangements still need confirmation before finalisation.
 
@@ -17,7 +17,14 @@ Age and availability: I accept training clients aged 14 and over. Participation 
 
 The website is hosted on GitHub Pages. Opening a page can transmit technical data to the host, including your IP address, browser and device details, requested page and request time. These support website delivery and security. Processing needed for secure operation relies on legitimate interests under GDPR Article 6(1)(f): keeping the site available, resolving errors and preventing abuse.
 The website fonts load from this website’s own hosting. Displaying them does not connect your browser to Google Fonts servers.
-The site's own code contains no Google Analytics, advertising pixel, newsletter sign-up or visitor account. Language selection is not stored in cookies or local storage. External providers have their own processing activities.
+The site has no Google Analytics, newsletter sign-up or visitor account. Language selection is not stored in cookies or persistent local storage.
+Meta Pixel and advertising consent
+Meta Pixel (ID: 2784872268573455) loads only after you accept advertising cookies. Its purpose is to measure Facebook and Instagram advertising; the implemented event is PageView (page visit). This processing relies on consent. If you reject it, this website does not load the pixel and you can still use the site.
+After acceptance, Meta may receive technical information such as your IP address, browser details, page URL and referrer, and cookie and click identifiers. Meta may link this information to your account for advertising measurement and advertising purposes. The code does not pass form values or calculator results, and automatic event detection is disabled. The pixel may use first-party cookies such as _fbp and _fbc.
+Your choice and its timestamp are kept in your browser’s localStorage for up to 180 days (mb-marketing-consent-v1). You can withdraw permission at any time using Advertising cookie settings in the footer. Withdrawal disables pixel sending, removes accessible first-party Meta cookies and reloads the page. This does not erase information already sent to Meta.
+Provider: Meta Platforms Ireland Limited. See Meta’s privacy policy and cookie policy for its processing, retention, international transfers and your rights. Provider terms and transfer safeguards still require review before this notice is finalised.
+https://www.facebook.com/privacy/policy/
+https://www.facebook.com/policies/cookies/
 Macro and BMI calculators: weight, height, units, body-type setting and diet purpose are processed in your browser. The site does not send inputs or results, put them in URLs, cookies or persistent local storage (localStorage), or transfer them to booking. When you use the language switch in the same tab, both calculators’ inputs are temporarily placed in that tab’s sessionStorage solely to restore them on the other language page. The stored copy is removed when read; handoffs older than one minute are not restored. If the source page remains open, removal is also attempted after one minute. The browser’s own tab and form restoration may operate independently.
 Reading position when changing language: a same-tab language switch temporarily places the current content identifier and scroll position in that tab’s sessionStorage so you can continue reading at the corresponding position. This record contains no form values and is not sent anywhere. It is removed when read; records older than one minute are not used. If the source page remains open, removal is also attempted after one minute.
 Google Sheets training log: the template link on Free Resources opens an external Google page. The template is not embedded: displaying the card does not load Google code. Google’s own data handling applies when you follow the link. Making an editable copy requires a Google account; the copy goes into the visitor’s own Google Drive. This link does not send me the completed training log.
