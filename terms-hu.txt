@@ -1,5 +1,5 @@
 Általános szerződési feltételek
-2026-09-28-draft-22
+2026-11-04-draft-24
 Egyeztetési tervezet — még nem hatályos
 Ez a változat még véglegesítendő pontokat tartalmaz, ezért végleges szerződéses feltételként nem használható. A fizetős megállapodás előtt megkapod a végleges feltételeket.
 
@@ -54,22 +54,22 @@ Az adatokat és az ajánlatot az elfogadás előtt emailben lehet javítani. Mag
 4. Szolgáltatások és díjak
 
 - Ingyenes konzultáció: 20 perces, díjmentes ismerkedő beszélgetés.
-- Személyi edzés: 11 000 Ft / alkalom; tízalkalmas csomag: 100 000 Ft.
+- Személyi edzés: 10 000 Ft / alkalom; ötalkalmas csomag: 50 000 Ft; tízalkalmas csomag: 100 000 Ft.
 - Training Program: 19 900 Ft, egyszeri díj. Személyre szabott négyhetes program, gyakorlatválasztás, sorozatok, ismétlések, tartalék ismétlésszám (RIR), terhelésnövelés és helyettesítő gyakorlatok.
 - Online Coaching – Basic: 29 900 Ft / hónap. Edzésprogram, heti egy coachinghívás és programmódosítás.
 - Online Coaching – Plus: 39 900 Ft / hónap. Edzésprogram, heti két coachinghívás és programmódosítás.
 - Online Coaching – Premium: 49 900 Ft / hónap. Edzésprogram, heti két hívás, korlátlan üzenetváltás, videós technikaellenőrzés és folyamatos módosítások.
 
-A feltüntetett összegek forintban értendő, fogyasztó által fizetendő teljes díjak. Előzetes tájékoztatás és kifejezett megállapodás nélkül további díj nem számítható fel. A személyi edzés és a tízalkalmas edzéscsomag díja nem tartalmazza a terembelépőt; azt az Ügyfél külön fizeti. A belépés feltételeit és díját még a szerződéskötés előtt tisztázzuk.
+A feltüntetett összegek forintban értendő, fogyasztó által fizetendő teljes díjak. Előzetes tájékoztatás és kifejezett megállapodás nélkül további díj nem számítható fel. A személyi edzés, valamint az öt- és tízalkalmas edzéscsomag díja nem tartalmazza a terembelépőt; azt az Ügyfél külön fizeti. A belépés feltételeit és díját még a szerződéskötés előtt tisztázzuk.
 
-Egy személyi edzés 60 perc. A tízalkalmas személyi edzéscsomag a fizetéstől számított három hónapig használható fel. Ez nem korlátozza a jogszabályon alapuló jogokat vagy a Szolgáltató lemondásával kapcsolatos elszámolást. A Basic, Plus és Premium online coachingcsomagokban minden coachinghívás 60 percig tart. Az önálló Training Programot PDF-formátumban, emailben kapja meg az Ügyfél, a fizetés és a program elkészítéséhez szükséges összes ügyfélinformáció beérkezése közül a későbbi időponttól számított 3 napon belül. Ha a szükséges információk a fizetéskor már rendelkezésre állnak, a határidő a fizetéstől indul; ha később érkeznek meg, akkor azok beérkezésétől. Az önálló Training Program díja egy, az Ügyfél által kért programmódosítást is tartalmaz, amely az eredeti program átadásától számított egy héten belül kérhető. Ez az egyszeri, választható módosítás nem jelent folyamatos coachingot, és nem korlátozza az Ügyfél jogszabályon alapuló igényeit. Az egyéni ajánlat rögzíti az átadási határidőt és az itt meghatározott módosítási lehetőséget. Online munkához megfelelő internetkapcsolat és az egyeztetett hívás-, üzenet- és fájlformátumot kezelő eszköz szükséges; a konkrét követelményeket elfogadás előtt közöljük.
+Egy személyi edzés 60 perc. Az ötalkalmas személyi edzéscsomag a fizetéstől számított két hónapig, a tízalkalmas személyi edzéscsomag három hónapig használható fel. Egyedi ajánlat: heti több alkalom (például heti 3–4 edzés) vagy az Ügyfél anyagi helyzete esetén Bence a fentieknél kedvezőbb egyedi díjat vagy beosztást ajánlhat. Az egyedi feltételeket a kezdés előtt írásban rögzítjük; ezek a fenti díjaknál és feltételeknél az Ügyfélre nézve kedvezőtlenebbek nem lehetnek. Ez nem korlátozza a jogszabályon alapuló jogokat vagy a Szolgáltató lemondásával kapcsolatos elszámolást. A Basic, Plus és Premium online coachingcsomagokban minden coachinghívás 60 percig tart. Az önálló Training Programot PDF-formátumban, emailben kapja meg az Ügyfél, a fizetés és a program elkészítéséhez szükséges összes ügyfélinformáció beérkezése közül a későbbi időponttól számított 3 napon belül. Ha a szükséges információk a fizetéskor már rendelkezésre állnak, a határidő a fizetéstől indul; ha később érkeznek meg, akkor azok beérkezésétől. Az önálló Training Program díja egy, az Ügyfél által kért programmódosítást is tartalmaz, amely az eredeti program átadásától számított egy héten belül kérhető. Ez az egyszeri, választható módosítás nem jelent folyamatos coachingot, és nem korlátozza az Ügyfél jogszabályon alapuló igényeit. Az egyéni ajánlat rögzíti az átadási határidőt és az itt meghatározott módosítási lehetőséget. Online munkához megfelelő internetkapcsolat és az egyeztetett hívás-, üzenet- és fájlformátumot kezelő eszköz szükséges; a konkrét követelményeket elfogadás előtt közöljük.
 
 A havi coaching kezdő és záró dátumát előre rögzítjük. Újabb fizetős időszak csak kifejezett megállapodással indul; nincs automatikus terhelés vagy pusztán a hallgatáson alapuló megújítás. A díjváltozás nem módosítja utólag a már elfogadott időszak díját.
 
 
 5. Fizetés és bizonylatok
 
-A személyi edzés és a tízalkalmas személyi edzési csomag díja készpénzzel vagy banki átutalással fizethető. Az online szolgáltatások, köztük az önálló Edzésprogram és a havi online coaching díja kizárólag banki átutalással fizethető. A díjat a megállapodott szolgáltatás megkezdése előtt kell megfizetni, személyi edzés és online szolgáltatások esetén egyaránt. A fizetés a honlapon kívül történik; a pontos fizetési határidőt az egyéni ajánlat előre tartalmazza. A weboldal nem kér bankkártyaadatot, nem von le díjat, és nem állít ki automatikus számlát vagy nyugtát.
+A személyi edzés és az öt- vagy tízalkalmas személyi edzési csomag díja készpénzzel vagy banki átutalással fizethető. Az online szolgáltatások, köztük az önálló Edzésprogram és a havi online coaching díja kizárólag banki átutalással fizethető. A díjat a megállapodott szolgáltatás megkezdése előtt kell megfizetni, személyi edzés és online szolgáltatások esetén egyaránt. A fizetés a honlapon kívül történik; a pontos fizetési határidőt az egyéni ajánlat előre tartalmazza. A weboldal nem kér bankkártyaadatot, nem von le díjat, és nem állít ki automatikus számlát vagy nyugtát.
 
 Bence közvetlenül kéri el a jogszabály szerint szükséges számlázási adatokat. Bankkártyaadatot, jelszót vagy más szükségtelen pénzügyi adatot üzenetben sem kell megadni. A számlák, nyugták és kapcsolódó nyilvántartások kezelésére a kötelező adózási és megőrzési szabályok vonatkoznak.
 
@@ -82,7 +82,7 @@ A 24 órás szabály kizárólag már megkötött, fizetős szerződés keretéb
 
 Az Ügyfél a visszaigazoló email lemondási lehetőségével, a megállapodott üzenetküldő csatornán vagy a szolgáltató email-címén jelezheti a lemondást. A közlés időpontja számít; nem szükséges megvárni Bence válaszát.
 
-Az alkalom kezdete előtt kevesebb mint 24 órával közölt lemondásnál az adott alkalom előre megállapított díja főszabály szerint nem jár vissza. Tízalkalmas személyi edzési csomagnál ez egy alkalom felhasználását jelenti. Egy online coachinghívás lemondása nem teszi automatikusan elveszíthetővé az egész havi csomagot: legfeljebb az érintett, előre azonosított hívás marad pótlás nélkül; új büntetődíj nem keletkezik.
+Az alkalom kezdete előtt kevesebb mint 24 órával közölt lemondásnál az adott alkalom előre megállapított díja főszabály szerint nem jár vissza. Öt- vagy tízalkalmas személyi edzési csomagnál ez egy alkalom felhasználását jelenti. Egy online coachinghívás lemondása nem teszi automatikusan elveszíthetővé az egész havi csomagot: legfeljebb az érintett, előre azonosított hívás marad pótlás nélkül; új büntetődíj nem keletkezik.
 
 Legalább 24 órával korábbi lemondás esetén az alkalom díjmentesen átfoglalható, és nem számít felhasznált alkalomnak. Ez a személyi edzésre és az online coachinghívásra is vonatkozik. Külön, egy alkalomra befizetett díj esetén az Ügyfél az átfoglalás helyett az adott alkalom teljes díjának visszatérítését is választhatja. Csomagon belüli egyetlen alkalom átfoglalása nem jelenti a teljes csomag megszüntetését. Méltányolható körülmények esetén Bence az Ügyfél javára eltérhet a lemondási szabálytól.
 
@@ -165,9 +165,9 @@ Ha a szolgáltatás tartósan nem teljesíthető, az el nem végzett rész díj�
 
 Az Ügyfél által kért idő előtti lezárás
 
-A tervezett üzleti szabály szerint, ha az Ügyfél a szerződés lejárta előtt saját döntéséből megszünteti a tízalkalmas személyi edzési bérletét vagy havi online coachingját, a befizetett díj fel nem használt részének 40%-át kapja vissza; a fennmaradó 60%-ot a Szolgáltató megtartja. A számítás alapja nem a teljes eredeti díj, hanem annak még fel nem használt része.
+A tervezett üzleti szabály szerint, ha az Ügyfél a szerződés lejárta előtt saját döntéséből megszünteti az öt- vagy tízalkalmas személyi edzési bérletét vagy havi online coachingját, a befizetett díj fel nem használt részének 40%-át kapja vissza; a fennmaradó 60%-ot a Szolgáltató megtartja. A számítás alapja nem a teljes eredeti díj, hanem annak még fel nem használt része.
 
-- Tízalkalmas bérlet: a ténylegesen befizetett csomagdíj tizede szorozva a fel nem használt alkalmak számával, majd ennek 40%-a. Példa: 100 000 Ft befizetés és 6 fel nem használt alkalom esetén a fennmaradó érték 60 000 Ft, a visszatérítés 24 000 Ft. A teljesített alkalmakat nem árazzuk át utólag az egyalkalmas díjra.
+- Öt- vagy tízalkalmas bérlet: a ténylegesen befizetett csomagdíj egy alkalomra jutó része (ötalkalmasnál ötöde, tízalkalmasnál tizede) szorozva a fel nem használt alkalmak számával, majd ennek 40%-a. Példa: 100 000 Ft befizetés és 6 fel nem használt alkalom esetén a fennmaradó érték 60 000 Ft, a visszatérítés 24 000 Ft. A teljesített alkalmakat nem árazzuk át utólag az egyalkalmas díjra.
 - Online coaching: a befizetett coachingidőszak díjának a megszüntetési közléstől hátralévő, fel nem használt időszakra jutó időarányos része képezi az alapot; ennek 40%-a térül vissza. Az elszámolás tartalmazza az időszak kezdő és záró időpontját, a fel nem használt időt és a számítást.
 
 A kérelmet a szolgáltatói email-címen is jelezheted. Az elszámolást írásban rögzítjük. A személyes edzés külön papírszerződésének feltételeit külön kell összehangolni ezzel a tervezettel.

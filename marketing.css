@@ -8,3 +8,11 @@
 .marketing-settings { display: block; margin: 14px auto 0; padding: 10px 14px; min-height: 44px; border: 1px solid #94703f; border-radius: 8px; background: transparent; color: #d6b784; font: inherit; font-size: .85rem; cursor: pointer; }
 .marketing-consent button:focus-visible, .marketing-settings:focus-visible { outline: 2px solid #f1cf90; outline-offset: 3px; }
 @media (max-width: 480px) { .marketing-consent { left: 10px; right: 10px; padding: 16px; } }
+/* V21b: compact phone banner so the first screen and main button stay visible. */
+@media (max-width: 600px) {
+  .marketing-consent { padding: 12px 14px; border-radius: 14px; bottom: max(8px, env(safe-area-inset-bottom)); }
+  .marketing-consent h2 { margin-bottom: 4px; font-size: 1rem; }
+  .marketing-consent p { margin-bottom: 10px; font-size: .8rem; line-height: 1.4; }
+  .marketing-actions { flex-wrap: nowrap; gap: 8px; }
+  .marketing-actions button { flex: 1 1 0; min-width: 0; min-height: 44px; padding: 8px 10px; }
+}

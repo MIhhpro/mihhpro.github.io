@@ -8,7 +8,38 @@
   if (!panel || !settings) return;
   let started = false;
   let granted = false;
+  // Set only when the visitor reopens the banner from the footer settings button.
   let focusOrigin = null;
+  // Last element the visitor focused outside the banner (link, field, etc.).
+  let lastOutsideFocus = null;
+  if (document.addEventListener) {
+    document.addEventListener('focusin', event => {
+      if (!panel.contains || !panel.contains(event.target)) lastOutsideFocus = event.target;
+    });
+  }
+
+  // Move focus without letting the browser scroll the page (V21 fix: the
+  // automatic banner used to send focus to the footer button, which made the
+  // whole page jump to the bottom right after Accept/Reject).
+  function quietFocus(el) {
+    if (!el || typeof el.focus !== 'function') return false;
+    if (el.isConnected === false) return false;
+    try { el.focus({preventScroll: true}); } catch (_) { return false; }
+    return true;
+  }
+
+  function closePanel() {
+    const active = document.activeElement;
+    const focusInside = !!(active && panel.contains && panel.contains(active));
+    panel.hidden = true;
+    if (!focusInside) return;
+    // Reopened from the footer: go back to that button (the visitor is already there).
+    if (focusOrigin && quietFocus(focusOrigin)) { focusOrigin = null; return; }
+    focusOrigin = null;
+    // Automatic first-visit banner: return to whatever the visitor was using, never the footer.
+    if (lastOutsideFocus && lastOutsideFocus !== document.body && quietFocus(lastOutsideFocus)) return;
+    if (active && typeof active.blur === 'function') active.blur();
+  }
 
   function readChoice() {
     try {
@@ -64,8 +95,7 @@
   function choose(choice) {
     try { localStorage.setItem(KEY, JSON.stringify({choice, time: Date.now()})); } catch (_) {}
     apply(choice);
-    panel.hidden = true;
-    (focusOrigin || settings).focus();
+    closePanel();
     // Unload an already loaded SDK immediately when permission is withdrawn.
     if (choice === 'denied' && started) window.location.reload();
   }
@@ -74,7 +104,7 @@
   settings.addEventListener('click', () => {
     focusOrigin = settings;
     panel.hidden = false;
-    panel.querySelector('button').focus();
+    quietFocus(panel.querySelector('button'));
   });
   panel.querySelectorAll('[data-marketing]').forEach(button => {
     button.addEventListener('click', () => choose(button.dataset.marketing));

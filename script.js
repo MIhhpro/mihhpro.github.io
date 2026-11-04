@@ -4,6 +4,50 @@ const isEnglish = root.lang === "en";
 const localText = (hu, en) => isEnglish ? en : hu;
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 const scrollBehavior = () => reducedMotion.matches ? "auto" : "smooth";
+
+// ── Email links: phone mail app on touch devices (V21b) ─────
+// Desktops keep Gmail web compose plus the copy fallback, because many
+// computers have no mail program configured. Phones and tablets always have
+// one, so there a mailto: link opens it with the same prefilled draft.
+const NATIVE_MAIL = (() => {
+  try {
+    const touchOnly = matchMedia("(hover: none) and (pointer: coarse)").matches;
+    const ua = (typeof navigator !== "undefined" && navigator.userAgent) || "";
+    return touchOnly || /Android|iPhone|iPad|iPod|Mobile/i.test(ua);
+  } catch {
+    return false;
+  }
+})();
+const gmailToMailto = (href) => {
+  try {
+    const url = new URL(href);
+    if (url.hostname !== "mail.google.com") return null;
+    const to = url.searchParams.get("to") || "";
+    if (!/^[^\s@?&]+@[^\s@?&]+$/.test(to)) return null;
+    const params = [];
+    const subject = url.searchParams.get("su");
+    const body = url.searchParams.get("body");
+    if (subject) params.push("subject=" + encodeURIComponent(subject));
+    if (body) params.push("body=" + encodeURIComponent(body.replace(/\r?\n/g, "\r\n")));
+    return "mailto:" + to + (params.length ? "?" + params.join("&") : "");
+  } catch {
+    return null;
+  }
+};
+const useNativeMail = (link) => {
+  const mailto = gmailToMailto(link.getAttribute("href") || "");
+  if (!mailto) return;
+  link.setAttribute("href", mailto);
+  link.removeAttribute("target");
+  link.removeAttribute("rel");
+  if ((link.getAttribute("aria-label") || "").includes("Gmail")) {
+    link.setAttribute("aria-label", localText("Email írása a telefonod levelezőjében", "Write an email in your phone’s mail app"));
+  }
+};
+if (NATIVE_MAIL) {
+  root.classList.add("native-mail");
+  document.querySelectorAll('a[href^="https://mail.google.com/mail/"]').forEach(useNativeMail);
+}
 if (matchMedia("(hover: hover) and (pointer: fine)").matches) {
   let ambientFrame = 0;
   let pointerX = 0, pointerY = 0;
@@ -508,7 +552,7 @@ if (contactForm) {
       gmailUrl.searchParams.set("to", INQUIRY_EMAIL);
       gmailUrl.searchParams.set("su", subject);
       gmailUrl.searchParams.set("body", body);
-      inquiryEmailLink.href = gmailUrl.toString();
+      inquiryEmailLink.href = (NATIVE_MAIL && gmailToMailto(gmailUrl.toString())) || gmailUrl.toString();
 
       if (inquiryCopyButton) {
         inquiryCopyButton.dataset.copyText = [

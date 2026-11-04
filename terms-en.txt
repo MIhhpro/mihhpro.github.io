@@ -1,5 +1,5 @@
 Terms of Service
-2026-09-28-draft-22
+2026-11-04-draft-24
 Review draft — not yet in force
 This version contains points still to be finalised and must not be used as the final contracting terms. You will receive the final terms before entering into a paid agreement.
 
@@ -54,22 +54,22 @@ The Client can correct their details and clarify the offer by email before accep
 4. Services and fees
 
 - Free consultation: a 20-minute introductory conversation at no charge.
-- Personal training: 11 000 Ft per session; ten-session package: 100 000 Ft.
+- Personal training: 10 000 Ft per session; five-session package: 50 000 Ft; ten-session package: 100 000 Ft.
 - Training Program: a one-off fee of 19 900 Ft. A personalised four-week programme, exercise selection, sets, repetitions, repetitions in reserve (RIR), progression and exercise substitutions.
 - Online Coaching – Basic: 29 900 Ft per month. Training programme, one coaching call per week and programme adjustments.
 - Online Coaching – Plus: 39 900 Ft per month. Training programme, two coaching calls per week and programme adjustments.
 - Online Coaching – Premium: 49 900 Ft per month. Training programme, two calls per week, unlimited messaging, video/form checks and ongoing adjustments.
 
-Amounts are total consumer prices in Hungarian forints. No extra fee is charged without prior information and express agreement. Personal training and the ten-session training package do not include gym admission; the Client pays for admission separately. Admission conditions and charges are clarified before the contract is concluded.
+Amounts are total consumer prices in Hungarian forints. No extra fee is charged without prior information and express agreement. Personal training and the five- and ten-session training packages do not include gym admission; the Client pays for admission separately. Admission conditions and charges are clarified before the contract is concluded.
 
-Each personal training session lasts 60 minutes. The ten-session personal training package is valid for three months from payment. This does not limit statutory rights or the accounting required when the Provider cancels. Each coaching call in the Basic, Plus and Premium online coaching plans lasts 60 minutes. The standalone Training Program is delivered to the Client as a PDF by email within 3 days of payment or receipt of all client information needed to prepare the programme, whichever occurs later. If the necessary information is already available when payment is made, the period starts from payment; if it arrives later, the period starts when it is received. The standalone Training Program price includes one adjustment requested by the Client within one week of delivery of the original programme. This one-off optional adjustment does not provide ongoing coaching or restrict the Client's statutory remedies. The individual offer records the delivery deadline and this included adjustment. Online services require an appropriate internet connection and a device supporting the agreed call, messaging and file formats; specific requirements are disclosed before acceptance.
+Each personal training session lasts 60 minutes. The five-session personal training package is valid for two months and the ten-session package for three months from payment. Individual offer: for more frequent training (for example 3–4 sessions a week) or in view of the Client’s financial situation, Bence may offer a lower individual fee or schedule. Individual terms are agreed in writing before starting and cannot be less favourable to the Client than the fees and terms above. This does not limit statutory rights or the accounting required when the Provider cancels. Each coaching call in the Basic, Plus and Premium online coaching plans lasts 60 minutes. The standalone Training Program is delivered to the Client as a PDF by email within 3 days of payment or receipt of all client information needed to prepare the programme, whichever occurs later. If the necessary information is already available when payment is made, the period starts from payment; if it arrives later, the period starts when it is received. The standalone Training Program price includes one adjustment requested by the Client within one week of delivery of the original programme. This one-off optional adjustment does not provide ongoing coaching or restrict the Client's statutory remedies. The individual offer records the delivery deadline and this included adjustment. Online services require an appropriate internet connection and a device supporting the agreed call, messaging and file formats; specific requirements are disclosed before acceptance.
 
 The start and end dates of each monthly coaching period are agreed in advance. A further paid period requires express agreement; there is no automatic charge or renewal based solely on silence. A price change does not retrospectively change an already agreed period's fee.
 
 
 5. Payment and receipts
 
-Personal training and the ten-session personal training package can be paid for in cash or by bank transfer. Online services, including the standalone Training Program and monthly online coaching, are payable by bank transfer only. Payment is due before the agreed service begins, for both personal training and online services. Payment takes place outside the website; the exact payment deadline is disclosed in advance in the individual offer. The website does not request card details, collect payments or automatically issue invoices or receipts.
+Personal training and the five- or ten-session personal training packages can be paid for in cash or by bank transfer. Online services, including the standalone Training Program and monthly online coaching, are payable by bank transfer only. Payment is due before the agreed service begins, for both personal training and online services. Payment takes place outside the website; the exact payment deadline is disclosed in advance in the individual offer. The website does not request card details, collect payments or automatically issue invoices or receipts.
 
 Bence requests the billing details required by law directly. Clients should not send card details, passwords or unnecessary financial information through messages. Invoices, receipts and associated records are subject to applicable tax and retention requirements.
 
@@ -82,7 +82,7 @@ The 24-hour rule applies only to appointments booked under an existing paid cont
 
 The Client may cancel through the cancellation option in the confirmation email, the agreed messaging channel or the Provider's email address. The time of notification counts; the Client does not need to wait for Bence's reply.
 
-If the Client cancels less than 24 hours before the appointment, the fee agreed in advance for that appointment is normally non-refundable. For a ten-session personal training package, one session is used. Cancelling one online coaching call does not automatically forfeit the entire monthly package: at most, the affected, previously identified call is not replaced; no new penalty fee is added.
+If the Client cancels less than 24 hours before the appointment, the fee agreed in advance for that appointment is normally non-refundable. For a five- or ten-session personal training package, one session is used. Cancelling one online coaching call does not automatically forfeit the entire monthly package: at most, the affected, previously identified call is not replaced; no new penalty fee is added.
 
 With at least 24 hours’ notice, the appointment can be rescheduled free of charge and does not count as used. This applies to personal training sessions and online coaching calls. For a separately paid single appointment, the Client may choose a full refund of that appointment’s fee instead. Rescheduling an individual package appointment does not end the entire package. Bence may make exceptions in the Client's favour where circumstances justify them.
 
@@ -165,9 +165,9 @@ If the service cannot be performed on an ongoing basis, fees for the unperformed
 
 Early cancellation requested by the Client
 
-Under the proposed business policy, if the Client chooses to end a ten-session personal training pass or monthly online coaching before the contract expires, 40% of the unused portion of the fee paid is refunded; the Provider retains the remaining 60%. The calculation uses the unused value, not the entire original price.
+Under the proposed business policy, if the Client chooses to end a five- or ten-session personal training pass or monthly online coaching before the contract expires, 40% of the unused portion of the fee paid is refunded; the Provider retains the remaining 60%. The calculation uses the unused value, not the entire original price.
 
-- Ten-session pass: one tenth of the actual package payment multiplied by the unused sessions, then multiplied by 40%. Example: HUF 100,000 paid with 6 unused sessions leaves HUF 60,000 unused value and a HUF 24,000 refund. Completed sessions are not retrospectively repriced at the single-session rate.
+- Five- or ten-session pass: the per-session share of the actual package payment (one fifth or one tenth) multiplied by the unused sessions, then multiplied by 40%. Example: HUF 100,000 paid with 6 unused sessions leaves HUF 60,000 unused value and a HUF 24,000 refund. Completed sessions are not retrospectively repriced at the single-session rate.
 - Online coaching: the calculation uses the prepaid coaching fee prorated to the unused time remaining from notice of cancellation; 40% of that amount is refunded. The written settlement identifies the period’s start and end, unused time and calculation.
 
 The request can be sent to the Provider’s email address. The settlement is recorded in writing. The separate paper contract for personal training must be aligned separately with this draft.
